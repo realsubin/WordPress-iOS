@@ -432,8 +432,7 @@ static NSString *const MVCCellReuseIdentifier = @"MVCCellReuseIdentifier";
 
 - (void)navigateToAbout
 {
-    NSString *nibName               = [AboutViewController classNameWithoutNamespaces];
-    AboutViewController *aboutVC    = [[AboutViewController alloc] initWithNibName:nibName bundle:nil];
+    AboutViewController *aboutVC = [AboutViewController new];
     
     [self.navigationController pushViewController:aboutVC animated:YES];
 }
