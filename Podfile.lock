@@ -214,7 +214,8 @@ DEPENDENCIES:
   - WordPress-AppbotX (from `https://github.com/wordpress-mobile/appbotx.git`, commit
     `87bae8c770cfc4e053119f2d00f76b2f653b26ce`)
   - WordPress-iOS-Editor (= 1.1.1)
-  - WordPress-iOS-Shared (= 0.5.2)
+  - WordPress-iOS-Shared (from `https://github.com/wordpress-mobile/WordPress-Shared-iOS.git`,
+    branch `try/tableview-defaults`)
   - WordPressApi (from `https://github.com/wordpress-mobile/WordPress-API-iOS.git`)
   - WordPressCom-Analytics-iOS (= 0.1.3)
   - WordPressCom-Stats-iOS/Services (= 0.6.0)
@@ -234,6 +235,9 @@ EXTERNAL SOURCES:
   WordPress-AppbotX:
     :commit: 87bae8c770cfc4e053119f2d00f76b2f653b26ce
     :git: https://github.com/wordpress-mobile/appbotx.git
+  WordPress-iOS-Shared:
+    :branch: try/tableview-defaults
+    :git: https://github.com/wordpress-mobile/WordPress-Shared-iOS.git
   WordPressApi:
     :git: https://github.com/wordpress-mobile/WordPress-API-iOS.git
 
@@ -247,6 +251,9 @@ CHECKOUT OPTIONS:
   WordPress-AppbotX:
     :commit: 87bae8c770cfc4e053119f2d00f76b2f653b26ce
     :git: https://github.com/wordpress-mobile/appbotx.git
+  WordPress-iOS-Shared:
+    :commit: 4867dd4ae5422cfd8348e47ca3198ac1a38235d1
+    :git: https://github.com/wordpress-mobile/WordPress-Shared-iOS.git
   WordPressApi:
     :commit: a7dc27935fb30b1978942cb1c791d4040fe65395
     :git: https://github.com/wordpress-mobile/WordPress-API-iOS.git
