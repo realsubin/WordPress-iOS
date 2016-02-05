@@ -196,4 +196,11 @@ extension PlanListViewController: UIViewControllerRestoration {
         super.encodeRestorableStateWithCoder(coder)
         viewModel.encodeWithCoder(coder)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let planVC = PlanDetailViewController.controllerWithPlan(availablePlans[indexPath.row])
+        let navigationVC = UINavigationController(rootViewController: planVC)
+        
+        presentViewController(navigationVC, animated: true, completion: nil)
+    }
 }
