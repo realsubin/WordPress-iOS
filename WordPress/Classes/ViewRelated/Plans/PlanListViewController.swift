@@ -11,7 +11,7 @@ struct PlanListRow: ImmuTableRow {
     let description: String
     let icon: UIImage
 
-    let action: ImmuTableAction? = nil
+    let action: ImmuTableAction?
     
     func configureCell(cell: UITableViewCell) {
         WPStyleGuide.configureTableViewSmallSubtitleCell(cell)
@@ -72,19 +72,19 @@ struct PlanListRow: ImmuTableRow {
 struct PlanListViewModel {
     let activePlan: Plan?
 
-    var tableViewModel: ImmuTable {
+    func tableViewModelWithPresenter(presenter: UIViewController) -> ImmuTable {
         return ImmuTable(sections: [
             ImmuTableSection(
                 headerText: NSLocalizedString("WordPress.com Plans", comment: "Title for the Plans list header"),
                 rows: [
-                    rowForPlan(.Free),
-                    rowForPlan(.Premium),
-                    rowForPlan(.Business)
+                    rowForPlan(.Free, presenter: presenter),
+                    rowForPlan(.Premium, presenter: presenter),
+                    rowForPlan(.Business, presenter: presenter)
                 ])
             ])
     }
 
-    private func rowForPlan(plan: Plan) -> PlanListRow {
+    private func rowForPlan(plan: Plan, presenter: UIViewController) -> PlanListRow {
         let active = (activePlan == plan)
         let icon = active ? plan.activeImage : plan.image
 
@@ -93,7 +93,12 @@ struct PlanListViewModel {
             active: active,
             price: priceForPlan(plan),
             description: plan.description,
-            icon: icon
+            icon: icon,
+            action: { _ in
+                let planVC = PlanDetailViewController.controllerWithPlan(plan)
+                let navigationVC = UINavigationController(rootViewController: planVC)
+                presenter.presentViewController(navigationVC, animated: true, completion: nil)
+            }
         )
     }
 
@@ -145,7 +150,7 @@ final class PlanListViewController: UITableViewController {
         WPStyleGuide.resetReadableMarginsForTableView(tableView)
         WPStyleGuide.configureColorsForView(view, andTableView: tableView)
         ImmuTable.registerRows([PlanListRow.self], tableView: tableView)
-        handler.viewModel = viewModel.tableViewModel
+        handler.viewModel = viewModel.tableViewModelWithPresenter(self)
     }
 }
 
@@ -195,12 +200,5 @@ extension PlanListViewController: UIViewControllerRestoration {
     override func encodeRestorableStateWithCoder(coder: NSCoder) {
         super.encodeRestorableStateWithCoder(coder)
         viewModel.encodeWithCoder(coder)
-    }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let planVC = PlanDetailViewController.controllerWithPlan(availablePlans[indexPath.row])
-        let navigationVC = UINavigationController(rootViewController: planVC)
-        
-        presentViewController(navigationVC, animated: true, completion: nil)
     }
 }
