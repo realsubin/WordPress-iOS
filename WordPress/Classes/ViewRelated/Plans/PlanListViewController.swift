@@ -72,6 +72,7 @@ struct PlanListRow: ImmuTableRow {
 
 struct PlanListViewModel {
     let activePlan: Plan?
+    let presenter: UIViewController? = nil
 
     func tableViewModelWithPresenter(presenter: UIViewController) -> ImmuTable {
         return ImmuTable(sections: [
@@ -95,12 +96,16 @@ struct PlanListViewModel {
             price: priceForPlan(plan),
             description: plan.description,
             icon: icon,
-            action: { _ in
-                let planVC = PlanDetailViewController.controllerWithPlan(plan)
-                let navigationVC = UINavigationController(rootViewController: planVC)
-                presenter.presentViewController(navigationVC, animated: true, completion: nil)
-            }
+            action: pushPlanDetails(plan, presenter: presenter)
         )
+    }
+
+    func pushPlanDetails(plan: Plan, presenter: UIViewController) -> ImmuTableAction {
+        return { row in
+            let planVC = PlanDetailViewController.controllerWithPlan(plan)
+            let navigationVC = UINavigationController(rootViewController: planVC)
+            self.presenter?.presentViewController(navigationVC, animated: true, completion: nil)
+        }
     }
 
     // TODO: Prices should always come from StoreKit
