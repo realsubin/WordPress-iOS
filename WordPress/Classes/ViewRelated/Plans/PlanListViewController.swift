@@ -1,4 +1,5 @@
 import UIKit
+import RxSwift
 import WordPressShared
 
 struct PlanListRow: ImmuTableRow {
@@ -12,7 +13,7 @@ struct PlanListRow: ImmuTableRow {
     let icon: UIImage
 
     let action: ImmuTableAction?
-    
+
     func configureCell(cell: UITableViewCell) {
         WPStyleGuide.configureTableViewSmallSubtitleCell(cell)
         cell.imageView?.image = icon
@@ -71,6 +72,7 @@ struct PlanListRow: ImmuTableRow {
 
 struct PlanListViewModel {
     let activePlan: Plan?
+    let cachedPrices: [Plan: String]?
 
     func tableViewModelWithPresenter(presenter: ImmuTablePresenter) -> ImmuTable {
         let rowForPlan = rowGenerator(presenter)
@@ -122,6 +124,10 @@ struct PlanListViewModel {
             return "$299.99"
         }
     }
+
+    func modelWithNewPrices(prices: [Plan: String]) -> PlanListViewModel {
+        return PlanListViewModel(activePlan: activePlan, cachedPrices: prices)
+    }
 }
 
 final class PlanListViewController: UITableViewController, ImmuTablePresenter {
@@ -129,6 +135,7 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
         return ImmuTableViewHandler(takeOver: self)
     }()
     private let viewModel: PlanListViewModel
+    private let bag = DisposeBag()
 
     static let restorationIdentifier = "PlanList"
 
@@ -137,7 +144,7 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
     }
 
     convenience init(activePlan: Plan?) {
-        let viewModel = PlanListViewModel(activePlan: activePlan)
+        let viewModel = PlanListViewModel(activePlan: activePlan, cachedPrices: nil)
         self.init(viewModel: viewModel)
     }
 
@@ -159,6 +166,21 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
         WPStyleGuide.configureColorsForView(view, andTableView: tableView)
         ImmuTable.registerRows([PlanListRow.self], tableView: tableView)
         handler.viewModel = viewModel.tableViewModelWithPresenter(self)
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        let identifiers = Set([
+            "com.wordpress.test.premium.1year",
+            "com.wordpress.test.business.1year"
+        ])
+        StoreKitFacade.productsWithIdentifiers(identifiers)
+            .subscribe(
+                onNext: { products in
+                    DDLogSwift.logInfo("Products obtained: \(products)")
+                }, onError: { error in
+                    DDLogSwift.logError("Error retrieving products: \(error)")
+            })
+            .addDisposableTo(bag)
     }
 }
 
@@ -191,7 +213,7 @@ extension PlanListViewModel/*: NSCoding */ {
         }()
 
         let plan = planID.flatMap({ Plan(rawValue: $0) })
-        self.init(activePlan: plan)
+        self.init(activePlan: plan, cachedPrices: nil)
     }
 }
 
