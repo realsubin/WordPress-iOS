@@ -1,9 +1,8 @@
 import Foundation
-import RxSwift
 import StoreKit
 
 protocol StoreFacade {
-    static func productsWithIdentifiers(identifiers: Set<String>) -> Observable<[Product]>
+    static func productsWithIdentifiers(identifiers: Set<String>, completion: Result<[Product]> -> Void)
 }
 
 class StoreKitFacade: StoreFacade {
@@ -28,34 +27,16 @@ class StoreKitFacade: StoreFacade {
         }
     }
 
-    class ProductRequestDisposable: Disposable {
-        let request: SKProductsRequest
-        let delegate: ProductRequestDelegate
+    static func productsWithIdentifiers(identifiers: Set<String>, completion: Result<[Product]> -> Void) {
+        let request = SKProductsRequest(productIdentifiers: identifiers)
+        let delegate = ProductRequestDelegate(
+            onSuccess: { products in
+                completion(.Success(products))
+            }, onError: { error in
+                completion(.Failure(error))
+        })
+        request.delegate = delegate
 
-        init(request: SKProductsRequest, delegate: ProductRequestDelegate) {
-            self.request = request
-            self.delegate = delegate
-        }
-
-        func dispose() {
-            request.cancel()
-        }
-    }
-
-    static func productsWithIdentifiers(identifiers: Set<String>) -> Observable<[Product]> {
-        return Observable.create { observer in
-            let request = SKProductsRequest(productIdentifiers: identifiers)
-            let delegate = ProductRequestDelegate(
-                onSuccess: { products in
-                    observer.onNext(products)
-                }, onError: { error in
-                    observer.onError(error)
-            })
-            request.delegate = delegate
-
-            request.start()
-
-            return ProductRequestDisposable(request: request, delegate: delegate)
-        }
+        request.start()
     }
 }

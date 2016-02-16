@@ -173,14 +173,14 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
             "com.wordpress.test.premium.1year",
             "com.wordpress.test.business.1year"
         ])
-        StoreKitFacade.productsWithIdentifiers(identifiers)
-            .subscribe(
-                onNext: { products in
+        StoreKitFacade.productsWithIdentifiers(identifiers, completion: { result in
+            switch result {
+            case .Success(let products):
                     DDLogSwift.logInfo("Products obtained: \(products)")
-                }, onError: { error in
+            case .Failure(let error):
                     DDLogSwift.logError("Error retrieving products: \(error)")
-            })
-            .addDisposableTo(bag)
+            }
+        })
     }
 }
 
