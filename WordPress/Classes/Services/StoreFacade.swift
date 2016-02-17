@@ -2,12 +2,12 @@ import Foundation
 import StoreKit
 
 protocol StoreFacade {
-    static func productsWithIdentifiers(identifiers: Set<String>, completion: Result<[Product]> -> Void)
+    static func getProductsWithIdentifiers(identifiers: Set<String>, success: (Products -> Void), failure: (ErrorType -> Void))
 }
 
 class StoreKitFacade: StoreFacade {
     class ProductRequestDelegate: NSObject, SKProductsRequestDelegate {
-        typealias Success = [SKProduct] -> Void
+        typealias Success = Products -> Void
         typealias Failure = ErrorType -> Void
 
         let onSuccess: Success
@@ -27,14 +27,9 @@ class StoreKitFacade: StoreFacade {
         }
     }
 
-    static func productsWithIdentifiers(identifiers: Set<String>, completion: Result<[Product]> -> Void) {
+    static func getProductsWithIdentifiers(identifiers: Set<String>, success: (Products -> Void), failure: (ErrorType -> Void)) {
         let request = SKProductsRequest(productIdentifiers: identifiers)
-        let delegate = ProductRequestDelegate(
-            onSuccess: { products in
-                completion(.Success(products))
-            }, onError: { error in
-                completion(.Failure(error))
-        })
+        let delegate = ProductRequestDelegate(onSuccess: success, onError: failure)
         request.delegate = delegate
 
         request.start()

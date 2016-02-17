@@ -13,6 +13,7 @@ protocol Product {
     
     var productIdentifier: String { get }
 }
+typealias Products = [Product]
 
 extension SKProduct: Product {}
 
