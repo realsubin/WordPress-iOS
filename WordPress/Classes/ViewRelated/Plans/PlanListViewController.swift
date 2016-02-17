@@ -70,36 +70,45 @@ struct PlanListRow: ImmuTableRow {
     }
 }
 
-struct PlanListViewModel {
-    let activePlan: Plan?
-    let cachedPrices: [Plan: String]?
+enum PlanListViewModel {
+    case Loading
+    case Ready(activePlan: Plan, plans:[(Plan, String)])
+    case Error(String)
 
-    func tableViewModelWithPresenter(presenter: ImmuTablePresenter) -> ImmuTable {
-        let rowForPlan = rowGenerator(presenter)
-        return ImmuTable(sections: [
-            ImmuTableSection(
-                headerText: NSLocalizedString("WordPress.com Plans", comment: "Title for the Plans list header"),
-                rows: [
-                    rowForPlan(.Free),
-                    rowForPlan(.Premium),
-                    rowForPlan(.Business)
-                ])
-            ])
+    var noResultsViewAttributes: (title: String, description: String)? {
+        // TODO: Localize these
+        switch self {
+        case .Loading:
+            return ("Loading", "")
+        case .Ready(_):
+            return nil
+        case .Error(let error):
+            return ("Oops", "\(error)")
+        }
     }
 
-    private func rowGenerator(presenter: ImmuTablePresenter) -> Plan -> PlanListRow {
-        return { [unowned presenter] plan in
-            let active = (self.activePlan == plan)
-            let icon = active ? plan.activeImage : plan.image
-
-            return PlanListRow(
-                title: plan.title,
-                active: active,
-                price: self.priceForPlan(plan),
-                description: plan.description,
-                icon: icon,
-                action: presenter.present(self.controllerForPlanDetails(plan))
-            )
+    func tableViewModelWithPresenter(presenter: ImmuTablePresenter) -> ImmuTable {
+        switch self {
+        case .Loading, .Error(_):
+            return ImmuTable.Empty
+        case .Ready(let activePlan, let plans):
+            let rows: [ImmuTableRow] = plans.map({ (plan, price) in
+                let active = (activePlan == plan)
+                let icon = active ? plan.activeImage : plan.image
+                return PlanListRow(
+                    title: plan.title,
+                    active: active,
+                    price: price,
+                    description: plan.description,
+                    icon: icon,
+                    action: presenter.present(self.controllerForPlanDetails(plan))
+                )
+            })
+            return ImmuTable(sections: [
+                ImmuTableSection(
+                    headerText: NSLocalizedString("WordPress.com Plans", comment: "Title for the Plans list header"),
+                    rows: rows)
+                ])
         }
     }
 
@@ -111,31 +120,40 @@ struct PlanListViewModel {
             return navigationVC
         }
     }
-
-    // TODO: Prices should always come from StoreKit
-    // @koke 2016-02-02
-    private func priceForPlan(plan: Plan) -> String {
-        switch plan {
-        case .Free:
-            return ""
-        case .Premium:
-            return "$99.99"
-        case .Business:
-            return "$299.99"
-        }
-    }
-
-    func modelWithNewPrices(prices: [Plan: String]) -> PlanListViewModel {
-        return PlanListViewModel(activePlan: activePlan, cachedPrices: prices)
-    }
 }
 
 final class PlanListViewController: UITableViewController, ImmuTablePresenter {
     private lazy var handler: ImmuTableViewHandler = {
         return ImmuTableViewHandler(takeOver: self)
     }()
-    private let viewModel: PlanListViewModel
-    private let bag = DisposeBag()
+    private var viewModel: PlanListViewModel = .Loading {
+        didSet {
+            handler.viewModel = viewModel.tableViewModelWithPresenter(self)
+            updateNoResults()
+        }
+    }
+
+    private let noResultsView = WPNoResultsView()
+    func updateNoResults() {
+            if let noResultsAttributes = viewModel.noResultsViewAttributes {
+                showNoResults(title: noResultsAttributes.title, description: noResultsAttributes.description)
+            } else {
+                hideNoResults()
+            }
+    }
+    func showNoResults(title title: String, description: String) {
+        noResultsView.titleText = title
+        noResultsView.messageText = description
+        if noResultsView.isDescendantOfView(tableView) {
+            noResultsView.centerInSuperview()
+        } else {
+            tableView.addSubviewWithFadeAnimation(noResultsView)
+        }
+    }
+
+    func hideNoResults() {
+        noResultsView.removeFromSuperview()
+    }
 
     static let restorationIdentifier = "PlanList"
 
@@ -143,13 +161,10 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
         self.init(activePlan: blog.plan)
     }
 
-    convenience init(activePlan: Plan?) {
-        let viewModel = PlanListViewModel(activePlan: activePlan, cachedPrices: nil)
-        self.init(viewModel: viewModel)
-    }
-
-    private init(viewModel: PlanListViewModel) {
-        self.viewModel = viewModel
+    // FIXME: inject active plan for now, get it from Blog ID later
+    let activePlan: Plan?
+    init(activePlan: Plan?) {
+        self.activePlan = activePlan
         super.init(style: .Grouped)
         title = NSLocalizedString("Plans", comment: "Title for the plan selector")
         restorationIdentifier = PlanListViewController.restorationIdentifier
@@ -166,67 +181,46 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
         WPStyleGuide.configureColorsForView(view, andTableView: tableView)
         ImmuTable.registerRows([PlanListRow.self], tableView: tableView)
         handler.viewModel = viewModel.tableViewModelWithPresenter(self)
+        updateNoResults()
     }
 
     override func viewDidAppear(animated: Bool) {
-        let identifiers = Set([
-            "com.wordpress.test.premium.1year",
-            "com.wordpress.test.business.1year"
-        ])
-        StoreKitFacade.getProductsWithIdentifiers(identifiers,
-            success: { products in
-                DDLogSwift.logInfo("Products obtained: \(products)")
+        super.viewDidAppear(animated)
+
+        let service = PlanService(storeFacade: MockStoreFacade())
+        service.plansWithPricesForBlog(0, success: { plansWithPrices in
+            // FIXME: this will crash if there's no active plan
+            self.viewModel = .Ready(activePlan: self.activePlan!, plans: plansWithPrices)
             }, failure: { error in
-                DDLogSwift.logError("Error retrieving products: \(error)")
+                self.viewModel = .Error(String(error))
         })
     }
 }
 
-extension PlanListViewModel: Equatable {}
-func ==(lhs: PlanListViewModel, rhs: PlanListViewModel) -> Bool {
-    return lhs.activePlan == rhs.activePlan
-}
-
-/*
- Since PlanListViewModel is a struct, it can't conform to NSCoding.
- We're just using the same naming for convenience.
- */
-extension PlanListViewModel/*: NSCoding */ {
+extension PlanListViewController: UIViewControllerRestoration {
     struct EncodingKey {
         static let activePlan = "activePlan"
-
     }
-    func encodeWithCoder(aCoder: NSCoder) {
-        if let plan = activePlan {
-            aCoder.encodeInteger(plan.rawValue, forKey: EncodingKey.activePlan)
-        }
-    }
-
-    init(coder aDecoder: NSCoder) {
-        let planID: Int? = {
-            guard aDecoder.containsValueForKey(EncodingKey.activePlan) else {
-                return nil
-            }
-            return aDecoder.decodeIntegerForKey(EncodingKey.activePlan)
-        }()
-
-        let plan = planID.flatMap({ Plan(rawValue: $0) })
-        self.init(activePlan: plan, cachedPrices: nil)
-    }
-}
-
-extension PlanListViewController: UIViewControllerRestoration {
     static func viewControllerWithRestorationIdentifierPath(identifierComponents: [AnyObject], coder: NSCoder) -> UIViewController? {
         guard let identifier = identifierComponents.last as? String where identifier == PlanListViewController.restorationIdentifier else {
             return nil
         }
 
-        let viewModel = PlanListViewModel(coder: coder)
-        return PlanListViewController(viewModel: viewModel)
+        let planID: Int? = {
+            guard coder.containsValueForKey(EncodingKey.activePlan) else {
+                return nil
+            }
+            return coder.decodeIntegerForKey(EncodingKey.activePlan)
+        }()
+
+        let plan = planID.flatMap({ Plan(rawValue: $0) })
+        return PlanListViewController(activePlan: plan)
     }
 
     override func encodeRestorableStateWithCoder(coder: NSCoder) {
         super.encodeRestorableStateWithCoder(coder)
-        viewModel.encodeWithCoder(coder)
+        if let activePlan = self.activePlan {
+            coder.encodeInteger(activePlan.rawValue, forKey: EncodingKey.activePlan)
+        }
     }
 }

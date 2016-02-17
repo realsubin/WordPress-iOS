@@ -23,10 +23,18 @@ extension SKProduct {
     }
 }
 
-struct MockProduct {
+class MockProduct: NSObject, Product {
     let localizedDescription: String
     let localizedTitle: String
     let price: NSDecimalNumber
     let priceLocale: NSLocale
     let productIdentifier: String
+
+    init(localizedDescription: String, localizedTitle: String, price: NSDecimalNumber, priceLocale: NSLocale, productIdentifier: String) {
+        self.localizedDescription = localizedDescription
+        self.localizedTitle = localizedTitle
+        self.price = price
+        self.priceLocale = priceLocale
+        self.productIdentifier = productIdentifier
+    }
 }

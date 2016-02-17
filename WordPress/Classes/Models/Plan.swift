@@ -1,6 +1,7 @@
 import Foundation
 
 typealias Plan = PlanEnum
+typealias Plans = [Plan]
     
 /// Represents a WordPress.com free or paid plan.
 /// - seealso: [WordPress.com Store](https://store.wordpress.com/plans/)
@@ -19,6 +20,18 @@ enum PlanEnum: Int {
             return "premium"
         case .Business:
             return "business"
+        }
+    }
+
+    /// The StoreKit product identifier, or nil for free plans
+    var productIdentifier: String? {
+        switch self {
+        case .Free:
+            return nil
+        case .Premium:
+            return "com.wordpress.test.premium.1year"
+        case .Business:
+            return "com.wordpress.test.business.1year"
         }
     }
     

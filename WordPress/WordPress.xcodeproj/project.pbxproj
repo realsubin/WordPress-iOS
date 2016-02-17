@@ -575,6 +575,7 @@
 		E1D086E2194214C600F0CC19 /* NSDate+WordPressJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D086E1194214C600F0CC19 /* NSDate+WordPressJSON.m */; };
 		E1D0D81616D3B86800E33F4C /* SafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D0D81516D3B86800E33F4C /* SafariActivity.m */; };
 		E1D458691309589C00BF0235 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = E14932B5130427B300154804 /* Coordinate.m */; };
+		E1D7FF381C74EB0E00E7E5E5 /* PlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D7FF371C74EB0E00E7E5E5 /* PlanService.swift */; };
 		E1D86E691B2B414300DD2192 /* WordPress-32-33.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E1D86E681B2B414300DD2192 /* WordPress-32-33.xcmappingmodel */; };
 		E1D91456134A853D0089019C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1D91454134A853D0089019C /* Localizable.strings */; };
 		E1D95EB817A28F5E00A3E9F3 /* WPActivityDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D95EB717A28F5E00A3E9F3 /* WPActivityDefaults.m */; };
@@ -1688,6 +1689,7 @@
 		E1D086E1194214C600F0CC19 /* NSDate+WordPressJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+WordPressJSON.m"; sourceTree = "<group>"; };
 		E1D0D81416D3B86800E33F4C /* SafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafariActivity.h; sourceTree = "<group>"; };
 		E1D0D81516D3B86800E33F4C /* SafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafariActivity.m; sourceTree = "<group>"; };
+		E1D7FF371C74EB0E00E7E5E5 /* PlanService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanService.swift; sourceTree = "<group>"; };
 		E1D86E671B2B406600DD2192 /* WordPress 33.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WordPress 33.xcdatamodel"; sourceTree = "<group>"; };
 		E1D86E681B2B414300DD2192 /* WordPress-32-33.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = "WordPress-32-33.xcmappingmodel"; sourceTree = "<group>"; };
 		E1D91455134A853D0089019C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -3010,6 +3012,7 @@
 				E1C5457D1C6B962D001CEB0E /* MediaSettings.swift */,
 				B5EFB1C11B31B98E007608A3 /* NotificationsService.swift */,
 				93FA59DB18D88C1C001446BC /* PostCategoryService.h */,
+				E1D7FF371C74EB0E00E7E5E5 /* PlanService.swift */,
 				93FA59DC18D88C1C001446BC /* PostCategoryService.m */,
 				082AB9D71C4EEEF4000CA523 /* PostTagService.h */,
 				082AB9D81C4EEEF4000CA523 /* PostTagService.m */,
@@ -4628,6 +4631,7 @@
 				5D577D33189127BE00B964C3 /* PostGeolocationViewController.m in Sources */,
 				FA77E02A1BE17CFC006D45E0 /* ThemeBrowserHeaderView.swift in Sources */,
 				1D3623260D0F684500981E51 /* WordPressAppDelegate.m in Sources */,
+				E1D7FF381C74EB0E00E7E5E5 /* PlanService.swift in Sources */,
 				5D7DEA2919D488DD0032EE77 /* WPStyleGuide+ReaderComments.swift in Sources */,
 				E1D86E691B2B414300DD2192 /* WordPress-32-33.xcmappingmodel in Sources */,
 				5DB3BA0818D11D8D00F3F3E9 /* PublishDatePickerView.m in Sources */,
