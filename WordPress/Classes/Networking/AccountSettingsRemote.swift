@@ -40,34 +40,74 @@ class AccountSettingsRemote: ServiceRemoteREST {
 
     private static func settingsWithApi(api: WordPressComApi) -> Observable<AccountSettings> {
         let settings = Observable<AccountSettings>.create { observer in
-            let remote = AccountSettingsRemote(api: api)
-            let operation = remote.getSettings(
-                success: { settings in
-                    observer.onNext(settings)
-                    observer.onCompleted()
-                }, failure: { error in
-                    let nserror = error as NSError
-                    if nserror.domain == NSURLErrorDomain && nserror.code == NSURLErrorCancelled {
-                        // If we canceled the operation, don't propagate the error
-                        // This probably means the observable is being disposed
-                        DDLogSwift.logError("Canceled refreshing settings")
-                    } else {
-                        observer.onError(error)
-                    }
-            })
-            return AnonymousDisposable() {
-                if let operation = operation {
-                    if !operation.finished {
-                        operation.cancel()
-                    }
-                }
-            }
+            let remote = AccountSettingsRemote.remoteWithApi(api)
+            let lastSettings = remote.getSettingsObservable()
+            return lastSettings.subscribe(observer)
         }
 
         return settings
     }
 
-    func getSettings(success success: AccountSettings -> Void, failure: ErrorType -> Void) -> AFHTTPRequestOperation? {
+    var lastSettings = PublishSubject<AccountSettings>()
+    var getOperation: AFHTTPRequestOperation? = nil
+    var updateOperation: AFHTTPRequestOperation? = nil
+    var pendingChanges = [AccountSettingsChange]()
+
+    func getSettingsObservable() -> Observable<AccountSettings> {
+        if updateOperation == nil && getOperation == nil {
+            getOperation = requestGetSettings()
+        }
+        return lastSettings
+    }
+
+    func getSettings(success: AccountSettings -> Void, failure: ErrorType -> Void) {
+        let lastSettings = getSettingsObservable()
+        _ = lastSettings.subscribe(onNext: success, onError: failure)
+    }
+
+    func updateSetting(change: AccountSettingsChange, success: () -> Void, failure: ErrorType -> Void) {
+        pendingChanges.append(change)
+        getOperation?.cancel()
+        getOperation = nil
+        updateOperation?.cancel()
+        updateOperation = nil
+        _ = lastSettings.subscribe(onNext: { _ in success() }, onError: failure)
+        updateOperation = requestUpdatePendingChanges()
+    }
+
+    private func requestUpdatePendingChanges() -> AFHTTPRequestOperation? {
+        let parameters = pendingChanges.reduce([String: AnyObject]()) { (var params, change) in
+            params[fieldNameForChange(change)] = change.stringValue
+            return params
+        }
+        return requestUpdateSettingWithParameters(parameters)
+    }
+
+    private func receivedSettingsJSON(responseObject: AnyObject) {
+        do {
+            let settings = try self.settingsFromResponse(responseObject)
+            receivedSettings(settings)
+        } catch {
+            receivedError(error)
+        }
+    }
+
+    private func receivedSettings(settings: AccountSettings) {
+        lastSettings.onNext(settings)
+        lastSettings.onCompleted()
+        resetLastSettingsSubject()
+    }
+
+    private func receivedError(error: ErrorType) {
+        lastSettings.onError(error)
+        resetLastSettingsSubject()
+    }
+
+    private func resetLastSettingsSubject() {
+        lastSettings = PublishSubject<AccountSettings>()
+    }
+
+    private func requestGetSettings() -> AFHTTPRequestOperation? {
         let endpoint = "me/settings"
         let parameters = ["context": "edit"]
         let path = pathForEndpoint(endpoint, withVersion: ServiceRemoteRESTApiVersion_1_1)
@@ -75,34 +115,26 @@ class AccountSettingsRemote: ServiceRemoteREST {
         return api.GET(path,
             parameters: parameters,
             success: {
-                operation, responseObject in
-
-                do {
-                    let settings = try self.settingsFromResponse(responseObject)
-                    success(settings)
-                } catch {
-                    failure(error)
-                }
+                [weak self] _, responseObject in
+                self?.receivedSettingsJSON(responseObject)
             },
-            failure: { operation, error in
-                failure(error)
+            failure: { [weak self] _, error in
+                self?.receivedError(error)
         })
     }
 
-    func updateSetting(change: AccountSettingsChange, success: () -> Void, failure: ErrorType -> Void) {
+    private func requestUpdateSettingWithParameters(parameters: [String: AnyObject]) -> AFHTTPRequestOperation? {
         let endpoint = "me/settings"
         let path = pathForEndpoint(endpoint, withVersion: ServiceRemoteRESTApiVersion_1_1)
-        let parameters = [fieldNameForChange(change): change.stringValue]
 
-        api.POST(path,
+        return api.POST(path,
             parameters: parameters,
             success: {
-                operation, responseObject in
-
-                success()
+                [weak self] _, responseObject in
+                self?.receivedSettingsJSON(responseObject)
             },
-            failure: { operation, error in
-                failure(error)
+            failure: { [weak self] _, error in
+                self?.receivedError(error)
         })
     }
 
