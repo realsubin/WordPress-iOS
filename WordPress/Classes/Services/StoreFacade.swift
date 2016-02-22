@@ -105,7 +105,7 @@ private class ProductRequestDelegate: NSObject, SKProductsRequestDelegate {
     }
 }
 
-func priceForProduct(identifier: String, products: Products) throws -> String {
+private func priceForProduct(identifier: String, products: Products) throws -> String {
     guard let product = products.filter({ $0.productIdentifier == identifier }).first else {
         throw ProductRequestError.MissingProduct
     }
@@ -118,7 +118,7 @@ func priceForProduct(identifier: String, products: Products) throws -> String {
     return price
 }
 
-func priceForPlan(plan: Plan, products: Products) throws -> String {
+private func priceForPlan(plan: Plan, products: Products) throws -> String {
     guard let identifier = plan.productIdentifier else {
         return ""
     }
