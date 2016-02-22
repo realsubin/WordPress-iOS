@@ -500,6 +500,7 @@
 		E14B13C31C4E7675009DD68F /* Reachability+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B13C21C4E7675009DD68F /* Reachability+Rx.swift */; };
 		E14B40FD1C58B806005046F6 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B40FC1C58B806005046F6 /* AccountSettingsViewController.swift */; };
 		E14B40FF1C58B93F005046F6 /* SettingsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B40FE1C58B93F005046F6 /* SettingsCommon.swift */; };
+		E14B74111C7B16FD00C26E21 /* WPNoResultsView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B74101C7B16FD00C26E21 /* WPNoResultsView+Model.swift */; };
 		E1556CF2193F6FE900FC52EA /* CommentService.m in Sources */ = {isa = PBXBuildFile; fileRef = E1556CF1193F6FE900FC52EA /* CommentService.m */; };
 		E15618FD16DB8677006532C4 /* UIKitTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E15618FC16DB8677006532C4 /* UIKitTestHelper.m */; };
 		E15618FF16DBA983006532C4 /* xmlrpc-response-newpost.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15618FE16DBA983006532C4 /* xmlrpc-response-newpost.xml */; };
@@ -1584,6 +1585,7 @@
 		E14B13C21C4E7675009DD68F /* Reachability+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reachability+Rx.swift"; sourceTree = "<group>"; };
 		E14B40FC1C58B806005046F6 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
 		E14B40FE1C58B93F005046F6 /* SettingsCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCommon.swift; sourceTree = "<group>"; };
+		E14B74101C7B16FD00C26E21 /* WPNoResultsView+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WPNoResultsView+Model.swift"; sourceTree = "<group>"; };
 		E14D65C717E09663007E3EA4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E150520B16CAC5C400D3DDDC /* BlogJetpackTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogJetpackTest.m; sourceTree = "<group>"; };
 		E150520D16CAC75A00D3DDDC /* CoreDataTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTestHelper.h; sourceTree = "<group>"; };
@@ -3251,6 +3253,7 @@
 				E1C9AA501C10419200732665 /* Math.swift */,
 				E131F5341C2930FC00D2D975 /* String+Helpers.swift */,
 				E116D4401C50D5F400DC5593 /* Rx.swift */,
+				E14B74101C7B16FD00C26E21 /* WPNoResultsView+Model.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -4738,6 +4741,7 @@
 				93C486501810442200A24725 /* SupportViewController.m in Sources */,
 				B5509A9319CA38B3006D2E49 /* EditReplyViewController.m in Sources */,
 				E6D2E1651B8AAD7E0000ED14 /* ReaderSiteStreamHeader.swift in Sources */,
+				E14B74111C7B16FD00C26E21 /* WPNoResultsView+Model.swift in Sources */,
 				E1A6DBE119DC7D140071AC1E /* PostServiceRemoteREST.m in Sources */,
 				E166FA1B1BB0656B00374B5B /* PeopleCellViewModel.swift in Sources */,
 				83FEFC7611FF6C5A0078B462 /* SiteSettingsViewController.m in Sources */,

@@ -75,15 +75,21 @@ enum PlanListViewModel {
     case Ready(activePlan: Plan, plans:[(Plan, String)])
     case Error(String)
 
-    var noResultsViewAttributes: (title: String, description: String)? {
+    var noResultsViewModel: WPNoResultsView.Model? {
         switch self {
         case .Loading:
-            return (NSLocalizedString("Loading Plans...", comment: "Text displayed while loading plans details"), "")
+            return WPNoResultsView.Model(
+                title: NSLocalizedString("Loading Plans...", comment: "Text displayed while loading plans details"),
+                accessoryView: PlansAnimatedBox()
+            )
         case .Ready(_):
             return nil
-        case .Error(let error):
-            // TODO: Localize these
-            return ("Oops", "\(error)")
+        case .Error(_):
+            return WPNoResultsView.Model(
+                title: NSLocalizedString("Oops", comment: ""),
+                message: NSLocalizedString("There was an error loading plans", comment: ""),
+                buttonTitle: NSLocalizedString("Contact support", comment: "")
+            )
         }
     }
 
@@ -122,7 +128,7 @@ enum PlanListViewModel {
     }
 }
 
-final class PlanListViewController: UITableViewController, ImmuTablePresenter {
+final class PlanListViewController: UITableViewController, ImmuTablePresenter, WPNoResultsViewDelegate {
     private lazy var handler: ImmuTableViewHandler = {
         return ImmuTableViewHandler(takeOver: self)
     }()
@@ -133,24 +139,17 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
         }
     }
 
-    private let noResultsView: WPNoResultsView = {
-        let noResultsView = WPNoResultsView()
-        let drakeImage = UIImage(named: "empty-results")
-        let animatedBox = PlansAnimatedBox()
-        noResultsView.accessoryView = animatedBox
-        return noResultsView
-    }()
+    private let noResultsView = WPNoResultsView()
 
     func updateNoResults() {
-            if let noResultsAttributes = viewModel.noResultsViewAttributes {
-                showNoResults(title: noResultsAttributes.title, description: noResultsAttributes.description)
+            if let noResultsViewModel = viewModel.noResultsViewModel {
+                showNoResults(noResultsViewModel)
             } else {
                 hideNoResults()
             }
     }
-    func showNoResults(title title: String, description: String) {
-        noResultsView.titleText = title
-        noResultsView.messageText = description
+    func showNoResults(viewModel: WPNoResultsView.Model) {
+        noResultsView.bindViewModel(viewModel)
         if noResultsView.isDescendantOfView(tableView) {
             noResultsView.centerInSuperview()
         } else {
@@ -176,6 +175,7 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
         title = NSLocalizedString("Plans", comment: "Title for the plan selector")
         restorationIdentifier = PlanListViewController.restorationIdentifier
         restorationClass = PlanListViewController.self
+        noResultsView.delegate = self
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -205,6 +205,10 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
             }, failure: { error in
                 self.viewModel = .Error(String(error))
         })
+    }
+
+    func didTapNoResultsView(noResultsView: WPNoResultsView!) {
+        SupportViewController.showFromTabBar()
     }
 }
 
