@@ -76,13 +76,13 @@ enum PlanListViewModel {
     case Error(String)
 
     var noResultsViewAttributes: (title: String, description: String)? {
-        // TODO: Localize these
         switch self {
         case .Loading:
-            return ("Loading", "")
+            return (NSLocalizedString("Loading Plans...", comment: "Text displayed while loading plans details"), "")
         case .Ready(_):
             return nil
         case .Error(let error):
+            // TODO: Localize these
             return ("Oops", "\(error)")
         }
     }
@@ -133,7 +133,14 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
         }
     }
 
-    private let noResultsView = WPNoResultsView()
+    private let noResultsView: WPNoResultsView = {
+        let noResultsView = WPNoResultsView()
+        let drakeImage = UIImage(named: "empty-results")
+        let animatedBox = PlansAnimatedBox()
+        noResultsView.accessoryView = animatedBox
+        return noResultsView
+    }()
+
     func updateNoResults() {
             if let noResultsAttributes = viewModel.noResultsViewAttributes {
                 showNoResults(title: noResultsAttributes.title, description: noResultsAttributes.description)
@@ -187,7 +194,11 @@ final class PlanListViewController: UITableViewController, ImmuTablePresenter {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        let service = PlanService(storeFacade: MockStoreFacade())
+        if let box = noResultsView.accessoryView as? PlansAnimatedBox {
+            box.animate()
+        }
+
+        let service = PlanService(storeFacade: MockStoreFacade(delay: 4))
         service.plansWithPricesForBlog(0, success: { plansWithPrices in
             // FIXME: this will crash if there's no active plan
             self.viewModel = .Ready(activePlan: self.activePlan!, plans: plansWithPrices)

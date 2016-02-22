@@ -41,6 +41,13 @@ class StoreKitFacade: StoreFacade {
 }
 
 class MockStoreFacade: StoreFacade {
+    /// Response delay in seconds
+    let delay: Double
+
+    init(delay: Double = 1.0) {
+        self.delay = delay
+    }
+
     let products = [
         MockProduct(
             localizedDescription: "1 year of WordPress.com Premium",
@@ -68,7 +75,7 @@ class MockStoreFacade: StoreFacade {
             let products = products.flatMap({ $0 })
 
             dispatch_after(
-                dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))),
+                dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))),
                 dispatch_get_main_queue()) {
                     success(products)
             }
