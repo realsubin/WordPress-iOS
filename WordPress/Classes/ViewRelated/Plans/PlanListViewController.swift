@@ -120,7 +120,7 @@ enum PlanListViewModel {
 
     func controllerForPlanDetails(plan: Plan) -> ImmuTableRowControllerGenerator {
         return { row in
-            let planVC = PlanDetailViewController.controllerWithPlan(plan)
+            let planVC = PlanComparisonViewController.controllerWithInitialPlan(plan)
             let navigationVC = UINavigationController(rootViewController: planVC)
             navigationVC.modalPresentationStyle = .FormSheet
             return navigationVC
