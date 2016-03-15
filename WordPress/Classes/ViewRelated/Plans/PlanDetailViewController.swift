@@ -2,16 +2,17 @@ import UIKit
 import WordPressShared
 
 class PlanDetailViewController: UIViewController {
-    var plan: Plan!
-    
     private let cellIdentifier = "PlanFeatureListItem"
     
     private let tableViewHorizontalMargin: CGFloat = 24.0
     private let planImageDropshadowRadius: CGFloat = 3.0
     
-    var isActivePlan = false
-    
-    private var viewModel: ImmuTable! = nil
+    private var tableViewModel = ImmuTable.Empty {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    private var viewModel: ViewModel? = nil
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var planImageView: UIImageView!
@@ -40,11 +41,12 @@ class PlanDetailViewController: UIViewController {
     
     @IBOutlet weak var headerInfoStackView: UIStackView!
 
-    class func controllerWithPlan(plan: Plan) -> PlanDetailViewController {
+    class func controllerWithPlan(plan: Plan, isActive: Bool) -> PlanDetailViewController {
         let storyboard = UIStoryboard(name: "Plans", bundle: NSBundle.mainBundle())
         let controller = storyboard.instantiateViewControllerWithIdentifier(NSStringFromClass(self)) as! PlanDetailViewController
+        let viewModel = ViewModel(plan: plan, isActivePlan: isActive)
         
-        controller.plan = plan
+        controller.bindViewModel(viewModel)
         
         return controller
     }
@@ -56,11 +58,9 @@ class PlanDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = plan.title
-        
+
         configureAppearance()
-        configureImmuTable()
-        populateHeader()
+        configureTableView()
     }
     
     private func configureAppearance() {
@@ -85,36 +85,15 @@ class PlanDetailViewController: UIViewController {
         dropshadowImageView.layer.shadowPath = UIBezierPath(ovalInRect: dropshadowImageView.bounds).CGPath
     }
     
-    private func configureImmuTable() {
+    private func configureTableView() {
         ImmuTable.registerRows([ FeatureListItemRow.self ], tableView: tableView)
-        
-        viewModel = ImmuTable(sections:
-            [ ImmuTableSection(rows: PlanFeature.allFeatures.map { feature in
-                let available = plan.features.contains(feature)
-
-                if available {
-                    // If a feature is 'available', we have to find and use the feature instance
-                    // from the _plan's_ list of features, as it will have the correct associated values
-                    // for any enum case that has associated values.
-                    let index = plan.features.indexOf(feature)
-                    let planFeature = plan.features[index!]
-                    if let description = planFeature.description {
-                        return TextRow(title: planFeature.title, value: description)
-                    } else {
-                        return FeatureListItemRow(feature: planFeature, available: available)
-                    }
-                }
-                
-                return FeatureListItemRow(feature: feature, available: available)
-            } ) ]
-        )
         
         tableView.layoutMargins = UIEdgeInsetsMake(0, tableViewHorizontalMargin, 0, tableViewHorizontalMargin)
     }
     
     lazy var paddingView = UIView()
     
-    private func populateHeader() {
+    private func populateHeader(plan: Plan, isActivePlan: Bool) {
         planImageView.image = plan.image
         planTitleLabel.text = plan.fullTitle
         planDescriptionLabel.text = plan.description
@@ -143,6 +122,13 @@ class PlanDetailViewController: UIViewController {
             return nil
         }
     }
+
+    func bindViewModel(viewModel: ViewModel) {
+        self.viewModel = viewModel
+        self.tableViewModel = viewModel.tableViewModel
+        title = viewModel.plan.title
+        populateHeader(viewModel.plan, isActivePlan: viewModel.isActivePlan)
+    }
     
     //MARK: - IBActions
     
@@ -153,10 +139,13 @@ class PlanDetailViewController: UIViewController {
         // transaction process to simulate navigation to the post purchase screens.
         // This should be removed when we integrate StoreKit.
         func showSuccessAlert() {
+            guard let plan = viewModel?.plan else {
+                return
+            }
             let alert = UIAlertController(title: "Thank You", message: "Your purchase was successful.", preferredStyle: .Alert)
             alert.addActionWithTitle("OK", style: .Default, handler: { action in })
-            
-            let postPurchase = PlanPostPurchaseViewController(plan: self.plan)
+
+            let postPurchase = PlanPostPurchaseViewController(plan: plan)
             let navigationController = RotationAwareNavigationViewController(rootViewController: postPurchase)
             navigationController.modalTransitionStyle = .CrossDissolve
             navigationController.modalPresentationStyle = .FormSheet
@@ -180,20 +169,46 @@ class PlanDetailViewController: UIViewController {
             self.presentViewController(alert, animated: true, completion: nil)
         })
     }
+
+    struct ViewModel {
+        let plan: Plan
+        let isActivePlan: Bool
+        var tableViewModel: ImmuTable {
+            return ImmuTable(sections:
+                [ ImmuTableSection(rows: PlanFeature.allFeatures.map { feature in
+                    let available = plan.features.contains(feature)
+
+                    if available {
+                        // If a feature is 'available', we have to find and use the feature instance
+                        // from the _plan's_ list of features, as it will have the correct associated values
+                        // for any enum case that has associated values.
+                        let index = plan.features.indexOf(feature)
+                        let planFeature = plan.features[index!]
+                        if let description = planFeature.description {
+                            return TextRow(title: planFeature.title, value: description)
+                        } else {
+                            return FeatureListItemRow(feature: planFeature, available: available)
+                        }
+                    }
+
+                    return FeatureListItemRow(feature: feature, available: available)
+                    } ) ] )
+        }
+    }
 }
 
 // MARK: Table View Data Source / Delegate
 extension PlanDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return viewModel.sections.count
+        return tableViewModel.sections.count
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.sections[section].rows.count
+        return tableViewModel.sections[section].rows.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let row = viewModel.rowAtIndexPath(indexPath)
+        let row = tableViewModel.rowAtIndexPath(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(row.reusableIdentifier, forIndexPath: indexPath)
         
         row.configureCell(cell)

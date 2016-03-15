@@ -25,11 +25,9 @@ class PlanComparisonViewController: UIViewController {
     
     private lazy var viewControllers: [PlanDetailViewController] = {
         return self.allPlans.map { plan in
-            let controller = PlanDetailViewController.controllerWithPlan(plan)
-            if let activePlan = self.activePlan {
-                controller.isActivePlan = activePlan == plan
-            }
-            
+            let isActive = self.activePlan == plan
+            let controller = PlanDetailViewController.controllerWithPlan(plan, isActive: isActive)
+
             return controller
         }
     }()
