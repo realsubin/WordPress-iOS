@@ -9,7 +9,6 @@ Icon
 
 # Xcode
 .DS_Store
-*/build/*
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -53,7 +52,6 @@ WordPress/WordPress.xcodeproj/*.pbxuser
 WordPress/WordPress.xcodeproj/*.perspectivev3
 WordPress/WordPress.xcodeproj/project.xcworkspace
 WordPress/WordPress.xcodeproj/xcuserdata
-/build
 .hockey_app_credentials
 WordPress/InfoPlist.h
 # coverage.py

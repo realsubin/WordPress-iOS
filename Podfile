@@ -24,7 +24,6 @@ target 'WordPress', :exclusive => true do
   pod 'MRProgress', '~>0.7.0'
   pod 'Mixpanel', '2.9.4'
   pod 'Reachability',	'3.2'
-  pod 'ReactiveCocoa', '~> 2.4.7'
   pod 'RxCocoa', '~> 2.1.0'
   pod 'RxSwift', '~> 2.1.0'
   pod 'SVProgressHUD', '~>1.1.3'
