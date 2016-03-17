@@ -131,13 +131,6 @@ PODS:
     - OHHTTPStubs/Core
   - PDKTZipArchive (0.3.5)
   - Reachability (3.2)
-  - ReactiveCocoa (2.4.7):
-    - ReactiveCocoa/UI (= 2.4.7)
-  - ReactiveCocoa/Core (2.4.7):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.4.7)
-  - ReactiveCocoa/UI (2.4.7):
-    - ReactiveCocoa/Core
   - RxCocoa (2.1.0):
     - RxSwift (~> 2.0)
   - RxSwift (2.1.0)
@@ -213,7 +206,6 @@ DEPENDENCIES:
   - OHHTTPStubs (~> 4.6.0)
   - OHHTTPStubs/Swift (~> 4.6.0)
   - Reachability (= 3.2)
-  - ReactiveCocoa (~> 2.4.7)
   - RxCocoa (~> 2.1.0)
   - RxSwift (~> 2.1.0)
   - RxTests (~> 2.1.0)
@@ -288,7 +280,6 @@ SPEC CHECKSUMS:
   OHHTTPStubs: cb1aefbbeb4de4e741644455d4b945538e5248a2
   PDKTZipArchive: 81c4824eb5587131e422fc58b92c043c4aa96466
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveCocoa: eb38dee0a0e698f73a9b25e5c1faea2bb4c79240
   RxCocoa: 79b5feb8378545336e756a0a33fcf5e95050b71c
   RxSwift: 110fb07f81c17c2c3b3254d168363057b1880d18
   RxTests: 94c67ffc37c36bd8c7aec90a84601a3db142be94
