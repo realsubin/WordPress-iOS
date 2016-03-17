@@ -5450,6 +5450,7 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
@@ -5515,6 +5516,7 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -5774,6 +5776,7 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -6043,6 +6046,7 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
