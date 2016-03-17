@@ -1,0 +1,1916 @@
+BCSymbolMap Version: 1.0
+-[DTActivityTitleView init]
+-[DTActivityTitleView layoutSubviews]
+-[DTActivityTitleView setBusy:]
+-[DTActivityTitleView busy]
+-[DTActivityTitleView setTitle:]
+-[DTActivityTitleView title]
+-[DTActivityTitleView activityIndicator]
+-[DTActivityTitleView setActivityIndicator:]
+-[DTActivityTitleView titleLabel]
+-[DTActivityTitleView setTitleLabel:]
+-[DTActivityTitleView .cxx_destruct]
+OBJC_CLASSLIST_SUP_REFS_$_
+OBJC_METH_VAR_NAME_
+OBJC_SELECTOR_REFERENCES_
+OBJC_CLASSLIST_REFERENCES_$_
+OBJC_METH_VAR_NAME_1
+OBJC_SELECTOR_REFERENCES_2
+OBJC_METH_VAR_NAME_3
+OBJC_SELECTOR_REFERENCES_4
+OBJC_METH_VAR_NAME_5
+OBJC_SELECTOR_REFERENCES_6
+OBJC_CLASSLIST_REFERENCES_$_7
+OBJC_METH_VAR_NAME_8
+OBJC_SELECTOR_REFERENCES_9
+OBJC_METH_VAR_NAME_10
+OBJC_SELECTOR_REFERENCES_11
+OBJC_METH_VAR_NAME_12
+OBJC_SELECTOR_REFERENCES_13
+OBJC_METH_VAR_NAME_14
+OBJC_SELECTOR_REFERENCES_15
+OBJC_CLASSLIST_REFERENCES_$_16
+OBJC_METH_VAR_NAME_17
+OBJC_SELECTOR_REFERENCES_18
+OBJC_METH_VAR_NAME_19
+OBJC_SELECTOR_REFERENCES_20
+OBJC_METH_VAR_NAME_21
+OBJC_SELECTOR_REFERENCES_22
+OBJC_METH_VAR_NAME_23
+OBJC_SELECTOR_REFERENCES_24
+OBJC_METH_VAR_NAME_25
+OBJC_SELECTOR_REFERENCES_26
+OBJC_METH_VAR_NAME_27
+OBJC_SELECTOR_REFERENCES_28
+OBJC_METH_VAR_NAME_29
+OBJC_SELECTOR_REFERENCES_30
+OBJC_METH_VAR_NAME_31
+OBJC_SELECTOR_REFERENCES_32
+OBJC_CLASSLIST_REFERENCES_$_33
+OBJC_METH_VAR_NAME_34
+OBJC_SELECTOR_REFERENCES_35
+OBJC_METH_VAR_NAME_36
+OBJC_SELECTOR_REFERENCES_37
+OBJC_METH_VAR_NAME_38
+OBJC_SELECTOR_REFERENCES_39
+OBJC_METH_VAR_NAME_40
+OBJC_SELECTOR_REFERENCES_41
+OBJC_METH_VAR_NAME_42
+OBJC_SELECTOR_REFERENCES_43
+OBJC_METH_VAR_NAME_44
+OBJC_SELECTOR_REFERENCES_45
+OBJC_METH_VAR_NAME_46
+OBJC_SELECTOR_REFERENCES_47
+OBJC_METH_VAR_NAME_48
+OBJC_SELECTOR_REFERENCES_49
+OBJC_METH_VAR_NAME_50
+OBJC_SELECTOR_REFERENCES_51
+OBJC_METH_VAR_NAME_52
+OBJC_SELECTOR_REFERENCES_53
+OBJC_METH_VAR_NAME_54
+OBJC_SELECTOR_REFERENCES_55
+OBJC_CLASSLIST_REFERENCES_$_56
+OBJC_METH_VAR_NAME_57
+OBJC_SELECTOR_REFERENCES_58
+OBJC_METH_VAR_NAME_59
+OBJC_SELECTOR_REFERENCES_60
+OBJC_METH_VAR_NAME_61
+OBJC_SELECTOR_REFERENCES_62
+OBJC_METH_VAR_NAME_63
+OBJC_SELECTOR_REFERENCES_64
+OBJC_METH_VAR_NAME_65
+OBJC_SELECTOR_REFERENCES_66
+OBJC_IVAR_$_DTActivityTitleView._activityIndicator
+OBJC_IVAR_$_DTActivityTitleView._titleLabel
+OBJC_CLASS_NAME_
+l_OBJC_METACLASS_RO_$_DTActivityTitleView
+OBJC_CLASS_NAME_67
+OBJC_METH_VAR_TYPE_
+OBJC_METH_VAR_TYPE_68
+OBJC_METH_VAR_NAME_69
+OBJC_METH_VAR_TYPE_70
+OBJC_METH_VAR_NAME_71
+OBJC_METH_VAR_TYPE_72
+OBJC_METH_VAR_NAME_73
+OBJC_METH_VAR_TYPE_74
+OBJC_METH_VAR_NAME_75
+OBJC_METH_VAR_NAME_76
+l_OBJC_$_INSTANCE_METHODS_DTActivityTitleView
+OBJC_METH_VAR_NAME_77
+OBJC_METH_VAR_TYPE_78
+OBJC_METH_VAR_NAME_79
+OBJC_METH_VAR_TYPE_80
+l_OBJC_$_INSTANCE_VARIABLES_DTActivityTitleView
+OBJC_PROP_NAME_ATTR_
+OBJC_PROP_NAME_ATTR_81
+OBJC_PROP_NAME_ATTR_82
+OBJC_PROP_NAME_ATTR_83
+OBJC_PROP_NAME_ATTR_84
+OBJC_PROP_NAME_ATTR_85
+OBJC_PROP_NAME_ATTR_86
+OBJC_PROP_NAME_ATTR_87
+l_OBJC_$_PROP_LIST_DTActivityTitleView
+l_OBJC_CLASS_RO_$_DTActivityTitleView
+OBJC_CLASSLIST_REFERENCES_$_88
+OBJC_METH_VAR_NAME_89
+OBJC_SELECTOR_REFERENCES_90
+OBJC_METH_VAR_NAME_91
+OBJC_SELECTOR_REFERENCES_92
+OBJC_METH_VAR_NAME_93
+OBJC_SELECTOR_REFERENCES_94
+OBJC_LABEL_CLASS_$
+Apple LLVM version 7.0.2 (clang-700.1.81)
+/Users/koke/Library/Developer/Xcode/DerivedData/DTFoundation-bwxmltooubigkharzbgfsylbsodc/Build/Intermediates/PrecompiledHeaders/DTFoundation-Prefix-elbsmqdpagbslhdmkicmospjsbkn/DTFoundation-Prefix.pch.pch
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/DTFoundation-Prefix.pch
+/Users/koke/Library/Developer/Xcode/DerivedData/DTFoundation-bwxmltooubigkharzbgfsylbsodc/Build/Intermediates/PrecompiledHeaders/DTFoundation-Prefix-elbsmqdpagbslhdmkicmospjsbkn
+CGRectMake
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation
+CGSizeMake
+UI_USER_INTERFACE_IDIOM
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIDevice.h
+-[DTActivityTitleView .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTActivityTitleView.m
+-[DTActivityTitleView setTitleLabel:]
+-[DTActivityTitleView titleLabel]
+-[DTActivityTitleView setActivityIndicator:]
+-[DTActivityTitleView activityIndicator]
+-[DTActivityTitleView title]
+-[DTActivityTitleView setTitle:]
+-[DTActivityTitleView busy]
+-[DTActivityTitleView setBusy:]
+-[DTActivityTitleView layoutSubviews]
+-[DTActivityTitleView init]
+-[DTHTMLParser initWithData:encoding:]
+-[DTHTMLParser dealloc]
+-[DTHTMLParser _resetAccumulateBufferAndReportCharacters]
+-[DTHTMLParser _accumulateCharacters:length:]
+-[DTHTMLParser parse]
+-[DTHTMLParser abortParsing]
+-[DTHTMLParser delegate]
+-[DTHTMLParser setDelegate:]
+-[DTHTMLParser lineNumber]
+-[DTHTMLParser columnNumber]
+-[DTHTMLParser systemID]
+-[DTHTMLParser publicID]
+-[DTHTMLParser parserError]
+-[DTHTMLParser setParserError:]
+-[DTHTMLParser encoding]
+-[DTHTMLParser setEncoding:]
+-[DTHTMLParser .cxx_destruct]
+OBJC_METH_VAR_NAME_7
+OBJC_SELECTOR_REFERENCES_8
+OBJC_CLASSLIST_REFERENCES_$_9
+OBJC_METH_VAR_NAME_16
+OBJC_SELECTOR_REFERENCES_17
+OBJC_METH_VAR_NAME_18
+OBJC_SELECTOR_REFERENCES_19
+OBJC_METH_VAR_NAME_20
+OBJC_SELECTOR_REFERENCES_21
+OBJC_METH_VAR_NAME_22
+OBJC_SELECTOR_REFERENCES_23
+OBJC_METH_VAR_NAME_24
+OBJC_SELECTOR_REFERENCES_25
+OBJC_METH_VAR_NAME_26
+OBJC_SELECTOR_REFERENCES_27
+OBJC_CLASSLIST_REFERENCES_$_28
+OBJC_CLASSLIST_REFERENCES_$_31
+.str
+_unnamed_cfstring_
+OBJC_METH_VAR_NAME_32
+OBJC_SELECTOR_REFERENCES_33
+OBJC_CLASSLIST_REFERENCES_$_40
+OBJC_METH_VAR_NAME_41
+OBJC_SELECTOR_REFERENCES_42
+OBJC_METH_VAR_NAME_43
+OBJC_SELECTOR_REFERENCES_44
+OBJC_METH_VAR_NAME_45
+OBJC_SELECTOR_REFERENCES_46
+OBJC_IVAR_$_DTHTMLParser._data
+OBJC_IVAR_$_DTHTMLParser._encoding
+OBJC_IVAR_$_DTHTMLParser._handler
+OBJC_METH_VAR_NAME_47
+OBJC_SELECTOR_REFERENCES_48
+OBJC_IVAR_$_DTHTMLParser._parserContext
+OBJC_METH_VAR_NAME_49
+OBJC_SELECTOR_REFERENCES_50
+OBJC_IVAR_$_DTHTMLParser._accumulateBuffer
+OBJC_METH_VAR_NAME_51
+OBJC_SELECTOR_REFERENCES_52
+OBJC_METH_VAR_NAME_53
+OBJC_SELECTOR_REFERENCES_54
+OBJC_CLASSLIST_REFERENCES_$_55
+OBJC_METH_VAR_NAME_56
+OBJC_SELECTOR_REFERENCES_57
+OBJC_METH_VAR_NAME_58
+OBJC_SELECTOR_REFERENCES_59
+OBJC_METH_VAR_NAME_60
+OBJC_SELECTOR_REFERENCES_61
+OBJC_METH_VAR_NAME_62
+OBJC_SELECTOR_REFERENCES_63
+OBJC_METH_VAR_NAME_64
+OBJC_SELECTOR_REFERENCES_65
+OBJC_METH_VAR_NAME_66
+OBJC_SELECTOR_REFERENCES_67
+OBJC_IVAR_$_DTHTMLParser._isAborting
+OBJC_IVAR_$_DTHTMLParser._delegate
+OBJC_METH_VAR_NAME_68
+OBJC_SELECTOR_REFERENCES_69
+OBJC_IVAR_$_DTHTMLParser._parserError
+l_OBJC_METACLASS_RO_$_DTHTMLParser
+OBJC_CLASS_NAME_70
+OBJC_METH_VAR_TYPE_73
+OBJC_METH_VAR_NAME_74
+OBJC_METH_VAR_TYPE_75
+OBJC_METH_VAR_TYPE_77
+OBJC_METH_VAR_NAME_81
+OBJC_METH_VAR_NAME_82
+OBJC_METH_VAR_NAME_83
+OBJC_METH_VAR_NAME_84
+OBJC_METH_VAR_TYPE_85
+OBJC_METH_VAR_NAME_86
+OBJC_METH_VAR_TYPE_87
+l_OBJC_$_INSTANCE_METHODS_DTHTMLParser
+OBJC_METH_VAR_NAME_88
+OBJC_METH_VAR_TYPE_89
+OBJC_METH_VAR_NAME_90
+OBJC_METH_VAR_TYPE_91
+OBJC_METH_VAR_NAME_92
+OBJC_METH_VAR_TYPE_93
+OBJC_METH_VAR_NAME_94
+OBJC_METH_VAR_TYPE_95
+OBJC_METH_VAR_NAME_96
+OBJC_METH_VAR_TYPE_97
+OBJC_METH_VAR_NAME_98
+OBJC_METH_VAR_TYPE_99
+OBJC_METH_VAR_NAME_100
+OBJC_METH_VAR_TYPE_101
+OBJC_METH_VAR_NAME_102
+OBJC_METH_VAR_TYPE_103
+l_OBJC_$_INSTANCE_VARIABLES_DTHTMLParser
+OBJC_CLASS_NAME_104
+OBJC_PROP_NAME_ATTR_105
+OBJC_PROP_NAME_ATTR_106
+OBJC_PROP_NAME_ATTR_107
+OBJC_PROP_NAME_ATTR_108
+OBJC_PROP_NAME_ATTR_109
+OBJC_PROP_NAME_ATTR_110
+OBJC_PROP_NAME_ATTR_111
+OBJC_PROP_NAME_ATTR_112
+OBJC_PROP_NAME_ATTR_113
+l_OBJC_$_PROP_LIST_DTHTMLParser
+l_OBJC_CLASS_RO_$_DTHTMLParser
+-[DTHTMLParser .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTHTMLParser/DTHTMLParser.m
+-[DTHTMLParser setEncoding:]
+-[DTHTMLParser encoding]
+-[DTHTMLParser setParserError:]
+-[DTHTMLParser parserError]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTHTMLParser/DTHTMLParser.h
+-[DTHTMLParser publicID]
+-[DTHTMLParser systemID]
+-[DTHTMLParser columnNumber]
+-[DTHTMLParser lineNumber]
+-[DTHTMLParser setDelegate:]
+-[DTHTMLParser delegate]
+-[DTHTMLParser abortParsing]
+-[DTHTMLParser parse]
+-[DTHTMLParser _accumulateCharacters:length:]
+-[DTHTMLParser _resetAccumulateBufferAndReportCharacters]
+-[DTHTMLParser dealloc]
+-[DTHTMLParser initWithData:encoding:]
+_processingInstruction
+_cdataBlock
+_dterror
+_comment
+_characters
+_endElement_no_delegate
+_endElement
+_startElement_no_delegate
+_startElement
+_endDocument
+_startDocument
+-[NSURL(DTComparing) isEqualToURL:]
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSURL_$_DTComparing
+l_OBJC_$_CATEGORY_NSURL_$_DTComparing
+OBJC_LABEL_CATEGORY_$
+-[NSURL(DTComparing) isEqualToURL:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSURL+DTComparing.m
+-[NSFileWrapper(DTCopying) fileWrapperByDeepCopying]
+__52-[NSFileWrapper(DTCopying) fileWrapperByDeepCopying]_block_invoke
+__copy_helper_block_
+__destroy_helper_block_
+__block_descriptor_tmp
+OBJC_METH_VAR_NAME_9
+OBJC_SELECTOR_REFERENCES_10
+OBJC_CLASSLIST_REFERENCES_$_11
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSFileWrapper_$_DTCopying
+l_OBJC_$_CATEGORY_NSFileWrapper_$_DTCopying
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSFileWrapper+DTCopying.m
+-[NSFileWrapper(DTCopying) fileWrapperByDeepCopying]
++[NSArray(DTError) arrayWithContentsOfURL:error:]
++[NSArray(DTError) arrayWithContentsOfFile:error:]
++[NSArray(DTError) arrayWithContentsOfData:error:]
+OBJC_CLASSLIST_REFERENCES_$_1
+OBJC_METH_VAR_NAME_2
+OBJC_SELECTOR_REFERENCES_3
+OBJC_CLASSLIST_REFERENCES_$_4
+OBJC_METH_VAR_NAME_11
+OBJC_SELECTOR_REFERENCES_12
+OBJC_METH_VAR_NAME_13
+l_OBJC_$_CATEGORY_CLASS_METHODS_NSArray_$_DTError
+l_OBJC_$_CATEGORY_NSArray_$_DTError
++[NSArray(DTError) arrayWithContentsOfData:error:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSArray+DTError.m
++[NSArray(DTError) arrayWithContentsOfFile:error:]
++[NSArray(DTError) arrayWithContentsOfURL:error:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTFoundationConstants.m
+-[NSURL(DTUnshorten) unshortenWithCompletion:]
+__46-[NSURL(DTUnshorten) unshortenWithCompletion:]_block_invoke
+__46-[NSURL(DTUnshorten) unshortenWithCompletion:]_block_invoke_2
+__46-[NSURL(DTUnshorten) unshortenWithCompletion:]_block_invoke_3
+__46-[NSURL(DTUnshorten) unshortenWithCompletion:]_block_invoke30
+__copy_helper_block_33
+__destroy_helper_block_34
+__copy_helper_block_41
+__destroy_helper_block_42
+unshortenWithCompletion:.unshortenCache
+unshortenWithCompletion:.shortenQueue
+unshortenWithCompletion:.onceToken
+.str3
+__block_literal_global
+OBJC_METH_VAR_NAME_4
+OBJC_SELECTOR_REFERENCES_5
+.str6
+.str19
+_unnamed_cfstring_20
+.str25
+__block_descriptor_tmp26
+OBJC_CLASSLIST_REFERENCES_$_27
+OBJC_METH_VAR_NAME_28
+OBJC_SELECTOR_REFERENCES_29
+.str35
+__block_descriptor_tmp36
+OBJC_METH_VAR_NAME_37
+OBJC_SELECTOR_REFERENCES_38
+OBJC_METH_VAR_NAME_39
+OBJC_SELECTOR_REFERENCES_40
+__block_descriptor_tmp43
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSURL_$_DTUnshorten
+l_OBJC_$_CATEGORY_NSURL_$_DTUnshorten
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/usr/include/dispatch/once.h
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSURL+DTUnshorten.m
+-[NSURL(DTUnshorten) unshortenWithCompletion:]
++[DTCustomColoredAccessory accessoryWithColor:]
++[DTCustomColoredAccessory accessoryWithColor:type:]
++[DTCustomColoredAccessory squareAccessoryWithColor:backgroundColor:]
+-[DTCustomColoredAccessory initWithFrame:]
+-[DTCustomColoredAccessory drawRect:]
+-[DTCustomColoredAccessory setHighlighted:]
+-[DTCustomColoredAccessory accessoryColor]
+-[DTCustomColoredAccessory highlightedColor]
+-[DTCustomColoredAccessory setAccessoryColor:]
+-[DTCustomColoredAccessory setHighlightedColor:]
+-[DTCustomColoredAccessory type]
+-[DTCustomColoredAccessory setType:]
+-[DTCustomColoredAccessory frontSquareAccessoryColor]
+-[DTCustomColoredAccessory setFrontSquareAccessoryColor:]
+-[DTCustomColoredAccessory backSquareAccessoryColor]
+-[DTCustomColoredAccessory setBackSquareAccessoryColor:]
+-[DTCustomColoredAccessory .cxx_destruct]
+OBJC_IVAR_$_DTCustomColoredAccessory._type
+OBJC_METH_VAR_NAME_30
+OBJC_SELECTOR_REFERENCES_31
+OBJC_IVAR_$_DTCustomColoredAccessory._accessoryColor
+OBJC_IVAR_$_DTCustomColoredAccessory._highlightedColor
+OBJC_IVAR_$_DTCustomColoredAccessory._frontSquareAccessoryColor
+OBJC_IVAR_$_DTCustomColoredAccessory._backSquareAccessoryColor
+OBJC_METH_VAR_TYPE_41
+OBJC_METH_VAR_TYPE_43
+l_OBJC_$_CLASS_METHODS_DTCustomColoredAccessory
+l_OBJC_METACLASS_RO_$_DTCustomColoredAccessory
+OBJC_CLASS_NAME_44
+OBJC_METH_VAR_TYPE_45
+OBJC_METH_VAR_TYPE_47
+OBJC_METH_VAR_TYPE_48
+OBJC_METH_VAR_TYPE_49
+OBJC_METH_VAR_TYPE_51
+OBJC_METH_VAR_TYPE_52
+OBJC_METH_VAR_TYPE_55
+OBJC_METH_VAR_TYPE_56
+l_OBJC_$_INSTANCE_METHODS_DTCustomColoredAccessory
+OBJC_METH_VAR_TYPE_58
+OBJC_METH_VAR_TYPE_61
+l_OBJC_$_INSTANCE_VARIABLES_DTCustomColoredAccessory
+OBJC_PROP_NAME_ATTR_64
+OBJC_PROP_NAME_ATTR_65
+OBJC_PROP_NAME_ATTR_66
+OBJC_PROP_NAME_ATTR_67
+OBJC_PROP_NAME_ATTR_68
+OBJC_PROP_NAME_ATTR_69
+OBJC_PROP_NAME_ATTR_70
+OBJC_PROP_NAME_ATTR_71
+OBJC_PROP_NAME_ATTR_72
+l_OBJC_$_PROP_LIST_DTCustomColoredAccessory
+l_OBJC_CLASS_RO_$_DTCustomColoredAccessory
+-[DTCustomColoredAccessory .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTCustomColoredAccessory.m
+-[DTCustomColoredAccessory setBackSquareAccessoryColor:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTCustomColoredAccessory.h
+-[DTCustomColoredAccessory backSquareAccessoryColor]
+-[DTCustomColoredAccessory setFrontSquareAccessoryColor:]
+-[DTCustomColoredAccessory frontSquareAccessoryColor]
+-[DTCustomColoredAccessory setType:]
+-[DTCustomColoredAccessory type]
+-[DTCustomColoredAccessory setHighlightedColor:]
+-[DTCustomColoredAccessory setAccessoryColor:]
+-[DTCustomColoredAccessory highlightedColor]
+-[DTCustomColoredAccessory accessoryColor]
+-[DTCustomColoredAccessory setHighlighted:]
+-[DTCustomColoredAccessory drawRect:]
+-[DTCustomColoredAccessory initWithFrame:]
++[DTCustomColoredAccessory squareAccessoryWithColor:backgroundColor:]
++[DTCustomColoredAccessory accessoryWithColor:type:]
++[DTCustomColoredAccessory accessoryWithColor:]
++[DTTiledLayerWithoutFade fadeDuration]
+l_OBJC_$_CLASS_METHODS_DTTiledLayerWithoutFade
+l_OBJC_METACLASS_RO_$_DTTiledLayerWithoutFade
+l_OBJC_CLASS_RO_$_DTTiledLayerWithoutFade
++[DTTiledLayerWithoutFade fadeDuration]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTTiledLayerWithoutFade.m
+-[NSData(DTCrypto) encryptedDataUsingSHA1WithKey:]
+-[NSData(DTCrypto) dataWithMD5Hash]
+-[NSData(DTCrypto) dataWithSHA1Hash]
+OBJC_METH_VAR_NAME_6
+OBJC_METH_VAR_TYPE_7
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSData_$_DTCrypto
+l_OBJC_$_CATEGORY_NSData_$_DTCrypto
+-[NSData(DTCrypto) dataWithSHA1Hash]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSData+DTCrypto.m
+-[NSData(DTCrypto) dataWithMD5Hash]
+-[NSData(DTCrypto) encryptedDataUsingSHA1WithKey:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/BlocksAdditions/DTAlertView.m
+-[UIView(DTActionHandlers) setTapActionWithBlock:]
+-[UIView(DTActionHandlers) __handleActionForTapGesture:]
+-[UIView(DTActionHandlers) setLongPressActionWithBlock:]
+-[UIView(DTActionHandlers) __handleActionForLongPressGesture:]
+kDTActionHandlerTapGestureKey
+kDTActionHandlerTapBlockKey
+kDTActionHandlerLongPressGestureKey
+kDTActionHandlerLongPressBlockKey
+OBJC_METH_VAR_TYPE_13
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_UIView_$_DTActionHandlers
+l_OBJC_$_CATEGORY_UIView_$_DTActionHandlers
+-[UIView(DTActionHandlers) __handleActionForLongPressGesture:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/BlocksAdditions/UIView+DTActionHandlers.m
+-[UIView(DTActionHandlers) setLongPressActionWithBlock:]
+-[UIView(DTActionHandlers) __handleActionForTapGesture:]
+-[UIView(DTActionHandlers) setTapActionWithBlock:]
+-[DTSidePanelController dealloc]
+-[DTSidePanelController loadView]
+-[DTSidePanelController viewWillAppear:]
+-[DTSidePanelController viewWillLayoutSubviews]
+-[DTSidePanelController viewDidLayoutSubviews]
+-[DTSidePanelController _updateUserInteractionEnabled]
+-[DTSidePanelController _presentedPanelWithPosition:]
+-[DTSidePanelController _addSubviewForPresentedPanel:]
+-[DTSidePanelController _updatePanelViewControllerPresentationBeforeAnimationForPosition:]
+-[DTSidePanelController _updatePanelViewControllerPresentationAfterAnimationForPosition:]
+-[DTSidePanelController _prepareViewControllerToBeShown:]
+-[DTSidePanelController _removePanelViewController:notifyDidMove:]
+-[DTSidePanelController _shouldAllowClosingOfPanel]
+-[DTSidePanelController _installTapToCloseGesture]
+-[DTSidePanelController _removeTapToCloseGesture]
+-[DTSidePanelController _updateTapToCloseGesture]
+-[DTSidePanelController gestureRecognizer:shouldReceiveTouch:]
+-[DTSidePanelController gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:]
+-[DTSidePanelController _leftPanelVisibleWidth]
+-[DTSidePanelController _rightPanelVisibleWidth]
+-[DTSidePanelController _minCenterPanelPosition]
+-[DTSidePanelController _maxCenterPanelPosition]
+-[DTSidePanelController _centerPanelPositionWithLeftPanelOpen]
+-[DTSidePanelController _centerPanelPositionWithRightPanelOpen]
+-[DTSidePanelController _centerPanelClosedPosition]
+-[DTSidePanelController _usedLeftPanelWidth]
+-[DTSidePanelController _leftPanelFrame]
+-[DTSidePanelController _usedRightPanelWidth]
+-[DTSidePanelController _rightPanelFrame]
+-[DTSidePanelController _animateCenterPanelToPosition:withVelocity:]
+__68-[DTSidePanelController _animateCenterPanelToPosition:withVelocity:]_block_invoke
+__68-[DTSidePanelController _animateCenterPanelToPosition:withVelocity:]_block_invoke126
+__copy_helper_block_133
+__destroy_helper_block_134
+-[DTSidePanelController _animateCenterPanelToRestingPositionWithVelocity:]
+-[DTSidePanelController shouldAutorotate]
+-[DTSidePanelController supportedInterfaceOrientations]
+-[DTSidePanelController shouldAutorotateToInterfaceOrientation:]
+-[DTSidePanelController willRotateToInterfaceOrientation:duration:]
+-[DTSidePanelController didRotateFromInterfaceOrientation:]
+-[DTSidePanelController willAnimateRotationToInterfaceOrientation:duration:]
+-[DTSidePanelController shouldAutomaticallyForwardRotationMethods]
+-[DTSidePanelController shouldAutomaticallyForwardAppearanceMethods]
+-[DTSidePanelController automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers]
+-[DTSidePanelController tapToClose:]
+-[DTSidePanelController handlePan:]
+-[DTSidePanelController presentPanel:animated:]
+-[DTSidePanelController presentedPanel]
+-[DTSidePanelController setWidth:forPanel:animated:]
+__52-[DTSidePanelController setWidth:forPanel:animated:]_block_invoke
+__copy_helper_block_194
+__destroy_helper_block_195
+-[DTSidePanelController setCenterPanelController:]
+-[DTSidePanelController setLeftPanelController:]
+-[DTSidePanelController setRightPanelController:]
+-[DTSidePanelController toggleLeftPanel:]
+-[DTSidePanelController toggleRightPanel:]
+-[DTSidePanelController prepareForSegue:sender:]
+-[DTSidePanelController loadStoryboardControllers]
+-[DTSidePanelController centerPanelController]
+-[DTSidePanelController leftPanelController]
+-[DTSidePanelController rightPanelController]
+-[DTSidePanelController sidePanelDelegate]
+-[DTSidePanelController setSidePanelDelegate:]
+-[DTSidePanelController .cxx_destruct]
+.str1
+_unnamed_cfstring_2
+_unnamed_cfstring_4
+OBJC_IVAR_$_DTSidePanelController._leftPanelController
+OBJC_IVAR_$_DTSidePanelController._centerPanelController
+OBJC_IVAR_$_DTSidePanelController._rightPanelController
+OBJC_IVAR_$_DTSidePanelController._sidePanelDelegate
+OBJC_SELECTOR_REFERENCES_14
+OBJC_CLASSLIST_REFERENCES_$_15
+OBJC_IVAR_$_DTSidePanelController._minimumVisibleCenterWidth
+OBJC_IVAR_$_DTSidePanelController._animationVelocityMaximum
+OBJC_IVAR_$_DTSidePanelController._centerBaseView
+OBJC_IVAR_$_DTSidePanelController._leftBaseView
+OBJC_IVAR_$_DTSidePanelController._rightBaseView
+OBJC_IVAR_$_DTSidePanelController._panelIsMoving
+OBJC_IVAR_$_DTSidePanelController._panelToPresentAfterLayout
+OBJC_IVAR_$_DTSidePanelController._presentedPanelViewController
+OBJC_METH_VAR_NAME_70
+OBJC_SELECTOR_REFERENCES_71
+OBJC_IVAR_$_DTSidePanelController._tapToCloseGesture
+OBJC_CLASSLIST_REFERENCES_$_72
+OBJC_SELECTOR_REFERENCES_74
+OBJC_SELECTOR_REFERENCES_76
+OBJC_SELECTOR_REFERENCES_78
+OBJC_SELECTOR_REFERENCES_80
+OBJC_SELECTOR_REFERENCES_82
+OBJC_SELECTOR_REFERENCES_84
+OBJC_METH_VAR_NAME_85
+OBJC_SELECTOR_REFERENCES_86
+OBJC_METH_VAR_NAME_87
+OBJC_SELECTOR_REFERENCES_88
+OBJC_IVAR_$_DTSidePanelController._centerPanelPanGesture
+OBJC_METH_VAR_NAME_95
+OBJC_SELECTOR_REFERENCES_96
+OBJC_METH_VAR_NAME_97
+OBJC_SELECTOR_REFERENCES_98
+OBJC_METH_VAR_NAME_99
+OBJC_SELECTOR_REFERENCES_100
+OBJC_METH_VAR_NAME_101
+OBJC_SELECTOR_REFERENCES_102
+OBJC_METH_VAR_NAME_103
+OBJC_SELECTOR_REFERENCES_104
+OBJC_METH_VAR_NAME_105
+OBJC_SELECTOR_REFERENCES_106
+OBJC_IVAR_$_DTSidePanelController._leftPanelWidth
+OBJC_IVAR_$_DTSidePanelController._rightPanelWidth
+OBJC_METH_VAR_NAME_107
+OBJC_SELECTOR_REFERENCES_108
+OBJC_METH_VAR_NAME_109
+OBJC_SELECTOR_REFERENCES_110
+OBJC_METH_VAR_NAME_111
+OBJC_SELECTOR_REFERENCES_112
+OBJC_CLASSLIST_REFERENCES_$_113
+.str114
+OBJC_METH_VAR_NAME_115
+OBJC_SELECTOR_REFERENCES_116
+OBJC_METH_VAR_NAME_117
+OBJC_SELECTOR_REFERENCES_118
+__PRETTY_FUNCTION__.-[DTSidePanelController _animateCenterPanelToPosition:withVelocity:]
+.str119
+_unnamed_cfstring_120
+OBJC_METH_VAR_NAME_121
+OBJC_SELECTOR_REFERENCES_122
+OBJC_METH_VAR_NAME_123
+OBJC_SELECTOR_REFERENCES_124
+.str125
+OBJC_METH_VAR_NAME_127
+OBJC_SELECTOR_REFERENCES_128
+OBJC_METH_VAR_NAME_129
+OBJC_SELECTOR_REFERENCES_130
+OBJC_METH_VAR_NAME_131
+OBJC_SELECTOR_REFERENCES_132
+.str135
+__block_descriptor_tmp136
+OBJC_METH_VAR_NAME_137
+OBJC_SELECTOR_REFERENCES_138
+OBJC_METH_VAR_NAME_139
+OBJC_SELECTOR_REFERENCES_140
+OBJC_METH_VAR_NAME_141
+OBJC_SELECTOR_REFERENCES_142
+OBJC_METH_VAR_NAME_143
+OBJC_SELECTOR_REFERENCES_144
+OBJC_METH_VAR_NAME_145
+OBJC_SELECTOR_REFERENCES_146
+OBJC_METH_VAR_NAME_147
+OBJC_SELECTOR_REFERENCES_148
+OBJC_METH_VAR_NAME_149
+OBJC_SELECTOR_REFERENCES_150
+OBJC_METH_VAR_NAME_151
+OBJC_SELECTOR_REFERENCES_152
+OBJC_METH_VAR_NAME_153
+OBJC_SELECTOR_REFERENCES_154
+OBJC_METH_VAR_NAME_155
+OBJC_SELECTOR_REFERENCES_156
+OBJC_METH_VAR_NAME_157
+OBJC_SELECTOR_REFERENCES_158
+OBJC_METH_VAR_NAME_159
+OBJC_SELECTOR_REFERENCES_160
+OBJC_METH_VAR_NAME_161
+OBJC_SELECTOR_REFERENCES_162
+OBJC_METH_VAR_NAME_163
+OBJC_SELECTOR_REFERENCES_164
+OBJC_METH_VAR_NAME_165
+OBJC_SELECTOR_REFERENCES_166
+OBJC_METH_VAR_NAME_167
+OBJC_SELECTOR_REFERENCES_168
+OBJC_IVAR_$_DTSidePanelController._lastTranslation
+OBJC_METH_VAR_NAME_169
+OBJC_SELECTOR_REFERENCES_170
+OBJC_IVAR_$_DTSidePanelController._minPanRange
+OBJC_IVAR_$_DTSidePanelController._maxPanRange
+OBJC_METH_VAR_NAME_171
+OBJC_SELECTOR_REFERENCES_172
+OBJC_CLASSLIST_REFERENCES_$_173
+OBJC_METH_VAR_NAME_174
+OBJC_SELECTOR_REFERENCES_175
+OBJC_METH_VAR_NAME_176
+OBJC_SELECTOR_REFERENCES_177
+OBJC_METH_VAR_NAME_178
+OBJC_SELECTOR_REFERENCES_179
+OBJC_METH_VAR_NAME_180
+OBJC_SELECTOR_REFERENCES_181
+OBJC_METH_VAR_NAME_182
+OBJC_SELECTOR_REFERENCES_183
+__PRETTY_FUNCTION__.-[DTSidePanelController handlePan:]
+.str184
+_unnamed_cfstring_185
+OBJC_METH_VAR_NAME_186
+OBJC_SELECTOR_REFERENCES_187
+OBJC_METH_VAR_NAME_188
+OBJC_SELECTOR_REFERENCES_189
+__PRETTY_FUNCTION__.-[DTSidePanelController setWidth:forPanel:animated:]
+.str190
+_unnamed_cfstring_191
+.str192
+_unnamed_cfstring_193
+__block_descriptor_tmp196
+OBJC_METH_VAR_NAME_197
+OBJC_SELECTOR_REFERENCES_198
+OBJC_METH_VAR_NAME_199
+OBJC_SELECTOR_REFERENCES_200
+OBJC_METH_VAR_NAME_201
+OBJC_SELECTOR_REFERENCES_202
+OBJC_CLASSLIST_REFERENCES_$_203
+OBJC_METH_VAR_NAME_204
+OBJC_SELECTOR_REFERENCES_205
+OBJC_METH_VAR_NAME_206
+OBJC_SELECTOR_REFERENCES_207
+OBJC_METH_VAR_NAME_208
+OBJC_SELECTOR_REFERENCES_209
+OBJC_METH_VAR_NAME_210
+OBJC_METH_VAR_TYPE_211
+OBJC_METH_VAR_NAME_212
+OBJC_METH_VAR_TYPE_213
+OBJC_METH_VAR_TYPE_214
+OBJC_METH_VAR_NAME_215
+OBJC_METH_VAR_NAME_216
+OBJC_METH_VAR_NAME_217
+OBJC_METH_VAR_TYPE_218
+OBJC_METH_VAR_NAME_219
+OBJC_METH_VAR_TYPE_220
+OBJC_CLASS_NAME_221
+OBJC_METH_VAR_NAME_222
+OBJC_METH_VAR_NAME_223
+OBJC_METH_VAR_TYPE_224
+OBJC_METH_VAR_NAME_225
+OBJC_METH_VAR_TYPE_226
+OBJC_METH_VAR_NAME_227
+OBJC_METH_VAR_TYPE_228
+OBJC_METH_VAR_NAME_229
+OBJC_METH_VAR_TYPE_230
+OBJC_METH_VAR_NAME_231
+OBJC_METH_VAR_TYPE_232
+OBJC_METH_VAR_NAME_233
+OBJC_METH_VAR_TYPE_234
+OBJC_METH_VAR_NAME_235
+OBJC_METH_VAR_TYPE_236
+OBJC_METH_VAR_NAME_237
+OBJC_METH_VAR_NAME_238
+OBJC_METH_VAR_TYPE_239
+OBJC_METH_VAR_TYPE_240
+OBJC_METH_VAR_NAME_241
+OBJC_METH_VAR_NAME_242
+OBJC_METH_VAR_TYPE_243
+OBJC_METH_VAR_NAME_244
+OBJC_METH_VAR_NAME_245
+OBJC_METH_VAR_TYPE_246
+OBJC_METH_VAR_NAME_247
+OBJC_METH_VAR_TYPE_248
+OBJC_METH_VAR_NAME_249
+OBJC_METH_VAR_NAME_250
+OBJC_METH_VAR_NAME_251
+OBJC_METH_VAR_TYPE_252
+OBJC_METH_VAR_NAME_253
+OBJC_CLASS_NAME_254
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+OBJC_PROP_NAME_ATTR_255
+OBJC_PROP_NAME_ATTR_256
+OBJC_PROP_NAME_ATTR_257
+OBJC_PROP_NAME_ATTR_258
+OBJC_PROP_NAME_ATTR_259
+OBJC_PROP_NAME_ATTR_260
+l_OBJC_$_PROP_LIST_NSObject
+l_OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_$_PROTOCOL_REFS_UIGestureRecognizerDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIGestureRecognizerDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UIGestureRecognizerDelegate
+l_OBJC_PROTOCOL_$_UIGestureRecognizerDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIGestureRecognizerDelegate
+l_OBJC_CLASS_PROTOCOLS_$_DTSidePanelController
+l_OBJC_METACLASS_RO_$_DTSidePanelController
+OBJC_CLASS_NAME_261
+OBJC_METH_VAR_TYPE_262
+OBJC_METH_VAR_NAME_263
+OBJC_METH_VAR_TYPE_264
+OBJC_METH_VAR_TYPE_265
+OBJC_METH_VAR_TYPE_266
+OBJC_METH_VAR_TYPE_267
+OBJC_METH_VAR_TYPE_268
+OBJC_METH_VAR_TYPE_269
+OBJC_METH_VAR_TYPE_270
+OBJC_METH_VAR_TYPE_271
+OBJC_METH_VAR_TYPE_272
+OBJC_METH_VAR_TYPE_273
+OBJC_METH_VAR_TYPE_274
+OBJC_METH_VAR_TYPE_275
+OBJC_METH_VAR_TYPE_276
+OBJC_METH_VAR_NAME_277
+OBJC_METH_VAR_NAME_278
+OBJC_METH_VAR_NAME_279
+OBJC_METH_VAR_TYPE_280
+OBJC_METH_VAR_NAME_281
+OBJC_METH_VAR_TYPE_282
+OBJC_METH_VAR_NAME_283
+OBJC_METH_VAR_NAME_284
+OBJC_METH_VAR_NAME_285
+OBJC_METH_VAR_NAME_286
+OBJC_METH_VAR_NAME_287
+OBJC_METH_VAR_NAME_288
+OBJC_METH_VAR_TYPE_289
+OBJC_METH_VAR_NAME_290
+OBJC_METH_VAR_NAME_291
+OBJC_METH_VAR_NAME_292
+OBJC_METH_VAR_NAME_293
+OBJC_METH_VAR_NAME_294
+OBJC_METH_VAR_NAME_295
+l_OBJC_$_INSTANCE_METHODS_DTSidePanelController
+OBJC_METH_VAR_NAME_296
+OBJC_METH_VAR_TYPE_297
+OBJC_METH_VAR_NAME_298
+OBJC_METH_VAR_NAME_299
+OBJC_METH_VAR_NAME_300
+OBJC_METH_VAR_TYPE_301
+OBJC_METH_VAR_NAME_302
+OBJC_METH_VAR_NAME_303
+OBJC_METH_VAR_NAME_304
+OBJC_METH_VAR_TYPE_305
+OBJC_METH_VAR_NAME_306
+OBJC_METH_VAR_NAME_307
+OBJC_METH_VAR_TYPE_308
+OBJC_METH_VAR_NAME_309
+OBJC_METH_VAR_TYPE_310
+OBJC_METH_VAR_NAME_311
+OBJC_METH_VAR_NAME_312
+OBJC_METH_VAR_NAME_313
+OBJC_METH_VAR_TYPE_314
+OBJC_METH_VAR_NAME_315
+OBJC_METH_VAR_TYPE_316
+OBJC_METH_VAR_NAME_317
+OBJC_METH_VAR_TYPE_318
+OBJC_METH_VAR_NAME_319
+OBJC_METH_VAR_TYPE_320
+OBJC_METH_VAR_NAME_321
+OBJC_METH_VAR_NAME_322
+OBJC_METH_VAR_NAME_323
+l_OBJC_$_INSTANCE_VARIABLES_DTSidePanelController
+OBJC_CLASS_NAME_324
+OBJC_PROP_NAME_ATTR_325
+OBJC_PROP_NAME_ATTR_326
+OBJC_PROP_NAME_ATTR_327
+OBJC_PROP_NAME_ATTR_328
+OBJC_PROP_NAME_ATTR_329
+OBJC_PROP_NAME_ATTR_330
+OBJC_PROP_NAME_ATTR_331
+OBJC_PROP_NAME_ATTR_332
+l_OBJC_$_PROP_LIST_DTSidePanelController
+l_OBJC_CLASS_RO_$_DTSidePanelController
+CGPointMake
+-[DTSidePanelController .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSidePanel/DTSidePanelController.m
+-[DTSidePanelController setSidePanelDelegate:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSidePanel/DTSidePanelController.h
+-[DTSidePanelController sidePanelDelegate]
+-[DTSidePanelController rightPanelController]
+-[DTSidePanelController leftPanelController]
+-[DTSidePanelController centerPanelController]
+-[DTSidePanelController loadStoryboardControllers]
+-[DTSidePanelController prepareForSegue:sender:]
+-[DTSidePanelController toggleRightPanel:]
+-[DTSidePanelController toggleLeftPanel:]
+-[DTSidePanelController setRightPanelController:]
+-[DTSidePanelController setLeftPanelController:]
+-[DTSidePanelController setCenterPanelController:]
+-[DTSidePanelController setWidth:forPanel:animated:]
+-[DTSidePanelController presentedPanel]
+-[DTSidePanelController presentPanel:animated:]
+-[DTSidePanelController handlePan:]
+-[DTSidePanelController tapToClose:]
+-[DTSidePanelController automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers]
+-[DTSidePanelController shouldAutomaticallyForwardAppearanceMethods]
+-[DTSidePanelController shouldAutomaticallyForwardRotationMethods]
+-[DTSidePanelController willAnimateRotationToInterfaceOrientation:duration:]
+-[DTSidePanelController didRotateFromInterfaceOrientation:]
+-[DTSidePanelController willRotateToInterfaceOrientation:duration:]
+-[DTSidePanelController shouldAutorotateToInterfaceOrientation:]
+-[DTSidePanelController supportedInterfaceOrientations]
+-[DTSidePanelController shouldAutorotate]
+-[DTSidePanelController _animateCenterPanelToRestingPositionWithVelocity:]
+-[DTSidePanelController _animateCenterPanelToPosition:withVelocity:]
+-[DTSidePanelController _rightPanelFrame]
+-[DTSidePanelController _usedRightPanelWidth]
+-[DTSidePanelController _leftPanelFrame]
+-[DTSidePanelController _usedLeftPanelWidth]
+-[DTSidePanelController _centerPanelClosedPosition]
+-[DTSidePanelController _centerPanelPositionWithRightPanelOpen]
+-[DTSidePanelController _centerPanelPositionWithLeftPanelOpen]
+-[DTSidePanelController _maxCenterPanelPosition]
+-[DTSidePanelController _minCenterPanelPosition]
+-[DTSidePanelController _rightPanelVisibleWidth]
+-[DTSidePanelController _leftPanelVisibleWidth]
+-[DTSidePanelController gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:]
+-[DTSidePanelController gestureRecognizer:shouldReceiveTouch:]
+-[DTSidePanelController _updateTapToCloseGesture]
+-[DTSidePanelController _removeTapToCloseGesture]
+-[DTSidePanelController _installTapToCloseGesture]
+-[DTSidePanelController _shouldAllowClosingOfPanel]
+-[DTSidePanelController _removePanelViewController:notifyDidMove:]
+-[DTSidePanelController _prepareViewControllerToBeShown:]
+-[DTSidePanelController _updatePanelViewControllerPresentationAfterAnimationForPosition:]
+-[DTSidePanelController _updatePanelViewControllerPresentationBeforeAnimationForPosition:]
+-[DTSidePanelController _addSubviewForPresentedPanel:]
+-[DTSidePanelController _presentedPanelWithPosition:]
+-[DTSidePanelController _updateUserInteractionEnabled]
+-[DTSidePanelController viewDidLayoutSubviews]
+-[DTSidePanelController viewWillLayoutSubviews]
+-[DTSidePanelController viewWillAppear:]
+-[DTSidePanelController loadView]
+-[DTSidePanelController dealloc]
+DTAnimatedGIFFromImageSource
+DTAnimatedGIFFrameDurationForImageAtIndex
+OBJC_METH_VAR_NAME_15
+OBJC_SELECTOR_REFERENCES_16
+DTAnimatedGIFGreatestCommonFactor
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTAnimatedGIF/DTAnimatedGIF.m
+CFBridgingRelease
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSObject.h
+DTAnimatedGIFFromData
+DTAnimatedGIFFromFile
++[NSString(DTFormatNumbers) stringByFormattingBytes:]
+.str5
+_unnamed_cfstring_6
+.str7
+_unnamed_cfstring_8
+l_OBJC_$_CATEGORY_CLASS_METHODS_NSString_$_DTFormatNumbers
+l_OBJC_$_CATEGORY_NSString_$_DTFormatNumbers
++[NSString(DTFormatNumbers) stringByFormattingBytes:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSString+DTFormatNumbers.m
+-[UIView(DTFoundation) snapshotImage]
+-[UIView(DTFoundation) setRoundedCornersWithRadius:width:color:]
+-[UIView(DTFoundation) addShadowWithColor:alpha:radius:offset:]
+-[UIView(DTFoundation) updateShadowPathToBounds:withDuration:]
+.str27
+_unnamed_cfstring_28
+OBJC_METH_VAR_NAME_33
+OBJC_SELECTOR_REFERENCES_34
+OBJC_METH_VAR_NAME_35
+OBJC_SELECTOR_REFERENCES_36
+OBJC_CLASSLIST_REFERENCES_$_37
+OBJC_METH_VAR_TYPE_50
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_UIView_$_DTFoundation
+l_OBJC_$_CATEGORY_UIView_$_DTFoundation
+-[UIView(DTFoundation) updateShadowPathToBounds:withDuration:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/UIView+DTFoundation.m
+-[UIView(DTFoundation) addShadowWithColor:alpha:radius:offset:]
+-[UIView(DTFoundation) setRoundedCornersWithRadius:width:color:]
+-[UIView(DTFoundation) snapshotImage]
+-[DTBase64Coding init]
++[DTBase64Coding stringByEncodingData:]
++[DTBase64Coding dataByDecodingString:]
+base64DecodeLookup
+base64EncodeLookup
+l_OBJC_$_CLASS_METHODS_DTBase64Coding
+l_OBJC_METACLASS_RO_$_DTBase64Coding
+OBJC_METH_VAR_TYPE_22
+l_OBJC_$_INSTANCE_METHODS_DTBase64Coding
+l_OBJC_CLASS_RO_$_DTBase64Coding
++[DTBase64Coding dataByDecodingString:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTBase64Coding.m
++[DTBase64Coding stringByEncodingData:]
+-[DTBase64Coding init]
+DT__NewBase64Encode
+DT__NewBase64Decode
+-[DTSmartPagingScrollView initWithFrame:]
+-[DTSmartPagingScrollView initWithCoder:]
+-[DTSmartPagingScrollView _commonInit]
+-[DTSmartPagingScrollView layoutSubviews]
+-[DTSmartPagingScrollView _updateCurrentPage]
+-[DTSmartPagingScrollView rangeOfVisiblePages]
+-[DTSmartPagingScrollView viewForIndex:]
+-[DTSmartPagingScrollView _setupVisiblePageViews]
+-[DTSmartPagingScrollView frameForPageViewAtIndex:]
+-[DTSmartPagingScrollView scrollToPage:animated:]
+-[DTSmartPagingScrollView reloadData]
+-[DTSmartPagingScrollView setPageDatasource:]
+-[DTSmartPagingScrollView setCurrentPageIndex:]
+-[DTSmartPagingScrollView pageDatasource]
+-[DTSmartPagingScrollView currentPageIndex]
+-[DTSmartPagingScrollView .cxx_destruct]
+OBJC_IVAR_$_DTSmartPagingScrollView._viewsByPage
+OBJC_IVAR_$_DTSmartPagingScrollView._visiblePageViews
+OBJC_IVAR_$_DTSmartPagingScrollView._numberOfPages
+OBJC_IVAR_$_DTSmartPagingScrollView._currentPageIndex
+OBJC_IVAR_$_DTSmartPagingScrollView._pageDatasource
+OBJC_CLASSLIST_REFERENCES_$_46
+OBJC_METH_VAR_NAME_55
+OBJC_SELECTOR_REFERENCES_56
+OBJC_CLASSLIST_REFERENCES_$_57
+OBJC_METH_VAR_NAME_72
+OBJC_SELECTOR_REFERENCES_73
+OBJC_SELECTOR_REFERENCES_75
+OBJC_SELECTOR_REFERENCES_77
+OBJC_METH_VAR_NAME_78
+OBJC_SELECTOR_REFERENCES_79
+OBJC_METH_VAR_NAME_80
+OBJC_SELECTOR_REFERENCES_81
+OBJC_SELECTOR_REFERENCES_83
+OBJC_SELECTOR_REFERENCES_85
+OBJC_SELECTOR_REFERENCES_87
+OBJC_SELECTOR_REFERENCES_89
+OBJC_SELECTOR_REFERENCES_91
+OBJC_SELECTOR_REFERENCES_93
+OBJC_SELECTOR_REFERENCES_95
+OBJC_SELECTOR_REFERENCES_97
+OBJC_METH_VAR_TYPE_104
+OBJC_METH_VAR_TYPE_106
+OBJC_METH_VAR_TYPE_107
+OBJC_METH_VAR_NAME_108
+OBJC_METH_VAR_NAME_110
+OBJC_METH_VAR_TYPE_112
+OBJC_METH_VAR_TYPE_113
+OBJC_METH_VAR_NAME_114
+OBJC_METH_VAR_TYPE_115
+OBJC_METH_VAR_TYPE_116
+OBJC_METH_VAR_TYPE_118
+OBJC_METH_VAR_TYPE_119
+OBJC_METH_VAR_NAME_120
+OBJC_METH_VAR_TYPE_121
+OBJC_METH_VAR_TYPE_122
+OBJC_CLASS_NAME_124
+OBJC_METH_VAR_NAME_125
+OBJC_METH_VAR_NAME_126
+OBJC_METH_VAR_TYPE_127
+OBJC_METH_VAR_NAME_128
+OBJC_METH_VAR_TYPE_129
+OBJC_METH_VAR_NAME_130
+OBJC_METH_VAR_TYPE_131
+OBJC_METH_VAR_NAME_132
+OBJC_METH_VAR_TYPE_133
+OBJC_METH_VAR_NAME_134
+OBJC_METH_VAR_TYPE_135
+OBJC_METH_VAR_NAME_136
+OBJC_METH_VAR_TYPE_137
+OBJC_METH_VAR_NAME_138
+OBJC_METH_VAR_TYPE_139
+OBJC_METH_VAR_NAME_140
+OBJC_METH_VAR_TYPE_142
+OBJC_METH_VAR_TYPE_143
+OBJC_METH_VAR_NAME_144
+OBJC_METH_VAR_TYPE_146
+OBJC_METH_VAR_NAME_148
+OBJC_METH_VAR_TYPE_149
+OBJC_METH_VAR_NAME_150
+OBJC_METH_VAR_TYPE_151
+OBJC_METH_VAR_NAME_152
+OBJC_METH_VAR_NAME_154
+OBJC_METH_VAR_TYPE_155
+OBJC_METH_VAR_NAME_156
+OBJC_CLASS_NAME_157
+OBJC_PROP_NAME_ATTR_158
+OBJC_PROP_NAME_ATTR_159
+OBJC_PROP_NAME_ATTR_160
+OBJC_PROP_NAME_ATTR_161
+OBJC_PROP_NAME_ATTR_162
+OBJC_PROP_NAME_ATTR_163
+l_OBJC_$_PROTOCOL_REFS_UIScrollViewDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIScrollViewDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UIScrollViewDelegate
+l_OBJC_PROTOCOL_$_UIScrollViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIScrollViewDelegate
+l_OBJC_CLASS_PROTOCOLS_$_DTSmartPagingScrollView
+l_OBJC_METACLASS_RO_$_DTSmartPagingScrollView
+OBJC_CLASS_NAME_164
+OBJC_METH_VAR_TYPE_165
+OBJC_METH_VAR_TYPE_166
+OBJC_METH_VAR_TYPE_167
+OBJC_METH_VAR_TYPE_168
+OBJC_METH_VAR_TYPE_169
+OBJC_METH_VAR_TYPE_170
+OBJC_METH_VAR_NAME_172
+OBJC_METH_VAR_TYPE_173
+OBJC_METH_VAR_NAME_175
+l_OBJC_$_INSTANCE_METHODS_DTSmartPagingScrollView
+OBJC_METH_VAR_NAME_177
+OBJC_METH_VAR_TYPE_178
+OBJC_METH_VAR_NAME_179
+OBJC_METH_VAR_TYPE_180
+OBJC_METH_VAR_NAME_181
+OBJC_METH_VAR_TYPE_182
+OBJC_METH_VAR_NAME_183
+OBJC_METH_VAR_TYPE_184
+OBJC_METH_VAR_NAME_185
+OBJC_IVAR_$_DTSmartPagingScrollView._firstLayoutDone
+OBJC_METH_VAR_TYPE_187
+l_OBJC_$_INSTANCE_VARIABLES_DTSmartPagingScrollView
+OBJC_CLASS_NAME_188
+OBJC_PROP_NAME_ATTR_189
+OBJC_PROP_NAME_ATTR_190
+OBJC_PROP_NAME_ATTR_191
+OBJC_PROP_NAME_ATTR_192
+l_OBJC_$_PROP_LIST_DTSmartPagingScrollView
+l_OBJC_CLASS_RO_$_DTSmartPagingScrollView
+NSMaxRange
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
+NSMakeRange
+__tg_ceil
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.2/include/tgmath.h
+__tg_floor
+__tg_round
+__CGSizeEqualToSize
+-[DTSmartPagingScrollView .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSmartPagingScrollView.m
+-[DTSmartPagingScrollView currentPageIndex]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSmartPagingScrollView.h
+-[DTSmartPagingScrollView pageDatasource]
+-[DTSmartPagingScrollView setCurrentPageIndex:]
+-[DTSmartPagingScrollView setPageDatasource:]
+-[DTSmartPagingScrollView reloadData]
+-[DTSmartPagingScrollView scrollToPage:animated:]
+-[DTSmartPagingScrollView frameForPageViewAtIndex:]
+-[DTSmartPagingScrollView _setupVisiblePageViews]
+-[DTSmartPagingScrollView viewForIndex:]
+-[DTSmartPagingScrollView rangeOfVisiblePages]
+-[DTSmartPagingScrollView _updateCurrentPage]
+-[DTSmartPagingScrollView layoutSubviews]
+-[DTSmartPagingScrollView _commonInit]
+-[DTSmartPagingScrollView initWithCoder:]
+-[DTSmartPagingScrollView initWithFrame:]
++[NSString(DTUtilities) stringWithUUID]
+-[NSString(DTUtilities) md5Checksum]
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSString_$_DTUtilities
+l_OBJC_$_CATEGORY_CLASS_METHODS_NSString_$_DTUtilities
+l_OBJC_$_CATEGORY_NSString_$_DTUtilities
+-[NSString(DTUtilities) md5Checksum]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSString+DTUtilities.m
++[NSString(DTUtilities) stringWithUUID]
+-[DTSidePanelPanGestureRecognizer touchesMoved:withEvent:]
+-[DTSidePanelPanGestureRecognizer canPreventGestureRecognizer:]
+-[DTSidePanelPanGestureRecognizer reset]
+OBJC_IVAR_$_DTSidePanelPanGestureRecognizer._moveY
+l_OBJC_METACLASS_RO_$_DTSidePanelPanGestureRecognizer
+OBJC_METH_VAR_TYPE_16
+OBJC_METH_VAR_TYPE_17
+l_OBJC_$_INSTANCE_METHODS_DTSidePanelPanGestureRecognizer
+OBJC_METH_VAR_TYPE_19
+l_OBJC_$_INSTANCE_VARIABLES_DTSidePanelPanGestureRecognizer
+l_OBJC_CLASS_RO_$_DTSidePanelPanGestureRecognizer
+-[DTSidePanelPanGestureRecognizer reset]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSidePanel/DTSidePanelPanGestureRecognizer.m
+-[DTSidePanelPanGestureRecognizer canPreventGestureRecognizer:]
+-[DTSidePanelPanGestureRecognizer touchesMoved:withEvent:]
++[DTAsyncFileDeleter sharedInstance]
+__36+[DTAsyncFileDeleter sharedInstance]_block_invoke
+-[DTAsyncFileDeleter init]
+__26-[DTAsyncFileDeleter init]_block_invoke
+-[DTAsyncFileDeleter waitUntilFinished]
+-[DTAsyncFileDeleter removeItemAtPath:]
+__39-[DTAsyncFileDeleter removeItemAtPath:]_block_invoke
+__39-[DTAsyncFileDeleter removeItemAtPath:]_block_invoke_2
+__39-[DTAsyncFileDeleter removeItemAtPath:]_block_invoke_3
+__copy_helper_block_25
+__destroy_helper_block_26
+__copy_helper_block_28
+__destroy_helper_block_29
+-[DTAsyncFileDeleter removeItemAtURL:]
+-[DTAsyncFileDeleter _supportsTaskCompletion]
+sharedInstance.instanceOnceToken
+_sharedInstance
+onceToken
+_delQueue
+_delGroup
+.str4
+_renameQueue
+__block_descriptor_tmp5
+__block_literal_global6
+OBJC_CLASSLIST_REFERENCES_$_10
+OBJC_CLASSLIST_REFERENCES_$_13
+__block_descriptor_tmp18
+__block_descriptor_tmp27
+__block_descriptor_tmp30
+OBJC_CLASSLIST_REFERENCES_$_35
+l_OBJC_$_CLASS_METHODS_DTAsyncFileDeleter
+l_OBJC_METACLASS_RO_$_DTAsyncFileDeleter
+OBJC_METH_VAR_TYPE_44
+l_OBJC_$_INSTANCE_METHODS_DTAsyncFileDeleter
+l_OBJC_CLASS_RO_$_DTAsyncFileDeleter
+-[DTAsyncFileDeleter _supportsTaskCompletion]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTAsyncFileDeleter.m
+-[DTAsyncFileDeleter removeItemAtURL:]
+-[DTAsyncFileDeleter removeItemAtPath:]
+-[DTAsyncFileDeleter waitUntilFinished]
+-[DTAsyncFileDeleter init]
++[DTAsyncFileDeleter sharedInstance]
+-[UIApplication(DTNetworkActivity) pushActiveNetworkOperation]
+__62-[UIApplication(DTNetworkActivity) pushActiveNetworkOperation]_block_invoke
+-[UIApplication(DTNetworkActivity) popActiveNetworkOperation]
+__61-[UIApplication(DTNetworkActivity) popActiveNetworkOperation]_block_invoke
+__copy_helper_block_3
+__destroy_helper_block_4
+__internalOperationCount
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_UIApplication_$_DTNetworkActivity
+l_OBJC_$_CATEGORY_UIApplication_$_DTNetworkActivity
+dispatch_get_main_queue
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/usr/include/dispatch/queue.h
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/UIApplication+DTNetworkActivity.m
+-[UIApplication(DTNetworkActivity) popActiveNetworkOperation]
+-[UIApplication(DTNetworkActivity) pushActiveNetworkOperation]
+-[DTVersion initWithMajor:minor:maintenance:build:]
+-[DTVersion initWithMajor:minor:maintenance:]
++[DTVersion versionWithString:]
++[DTVersion appBundleVersion]
++[DTVersion osVersion]
+__22+[DTVersion osVersion]_block_invoke
++[DTVersion osVersionIsLessThen:]
++[DTVersion osVersionIsGreaterThen:]
+-[DTVersion isLessThenVersion:]
+-[DTVersion isGreaterThenVersion:]
+-[DTVersion isLessThenVersionString:]
+-[DTVersion isGreaterThenVersionString:]
+-[DTVersion isEqualToVersion:]
+-[DTVersion isEqualToString:]
+-[DTVersion hash]
+-[DTVersion isEqual:]
+-[DTVersion compare:]
+-[DTVersion description]
+-[DTVersion copyWithZone:]
+-[DTVersion major]
+-[DTVersion minor]
+-[DTVersion maintenance]
+-[DTVersion build]
+OBJC_CLASSLIST_REFERENCES_$_17
+OBJC_CLASSLIST_REFERENCES_$_20
+_unnamed_cfstring_26
+osVersion.onceToken
+osVersion.version
+.str36
+OBJC_CLASSLIST_REFERENCES_$_63
+.str66
+_unnamed_cfstring_67
+.str70
+_unnamed_cfstring_71
+.str72
+_unnamed_cfstring_73
+OBJC_METH_VAR_TYPE_79
+l_OBJC_$_CLASS_METHODS_DTVersion
+l_OBJC_METACLASS_RO_$_DTVersion
+OBJC_METH_VAR_TYPE_81
+OBJC_METH_VAR_TYPE_83
+OBJC_METH_VAR_TYPE_90
+l_OBJC_$_INSTANCE_METHODS_DTVersion
+OBJC_METH_VAR_TYPE_92
+l_OBJC_$_INSTANCE_VARIABLES_DTVersion
+OBJC_PROP_NAME_ATTR_96
+OBJC_PROP_NAME_ATTR_97
+OBJC_PROP_NAME_ATTR_98
+OBJC_PROP_NAME_ATTR_99
+OBJC_PROP_NAME_ATTR_100
+OBJC_PROP_NAME_ATTR_101
+OBJC_PROP_NAME_ATTR_102
+l_OBJC_$_PROP_LIST_DTVersion
+l_OBJC_CLASS_RO_$_DTVersion
+-[DTVersion build]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTVersion.h
+-[DTVersion maintenance]
+-[DTVersion minor]
+-[DTVersion major]
+-[DTVersion copyWithZone:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTVersion.m
+-[DTVersion description]
+-[DTVersion compare:]
+-[DTVersion isEqual:]
+-[DTVersion hash]
+-[DTVersion isEqualToString:]
+-[DTVersion isEqualToVersion:]
+-[DTVersion isGreaterThenVersionString:]
+-[DTVersion isLessThenVersionString:]
+-[DTVersion isGreaterThenVersion:]
+-[DTVersion isLessThenVersion:]
++[DTVersion osVersionIsGreaterThen:]
++[DTVersion osVersionIsLessThen:]
++[DTVersion osVersion]
++[DTVersion appBundleVersion]
++[DTVersion versionWithString:]
+-[DTVersion initWithMajor:minor:maintenance:]
+-[DTVersion initWithMajor:minor:maintenance:build:]
+-[UIWebView(DTFoundation) documentTitle]
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_UIWebView_$_DTFoundation
+l_OBJC_$_CATEGORY_UIWebView_$_DTFoundation
+-[UIWebView(DTFoundation) documentTitle]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/UIWebView+DTFoundation.m
+OBJC_CLASSLIST_REFERENCES_$_8
+.str13
+.str14
+OBJC_CLASSLIST_REFERENCES_$_18
+.str23
+DTLogGetMessages
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTLog.m
+DTLogMessage
+DTLogMessagev
+DTLogSetLogLevel
+DTLogSetLoggerBlock
+-[NSString(DTURLEncoding) stringByURLEncoding]
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSString_$_DTURLEncoding
+l_OBJC_$_CATEGORY_NSString_$_DTURLEncoding
+-[NSString(DTURLEncoding) stringByURLEncoding]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSString+DTURLEncoding.m
+-[UIViewController(DTSidePanelController) sidePanelController]
+-[UIViewController(DTSidePanelController) setSidePanelController:]
+DTSidePanelControllerKey
+OBJC_METH_VAR_TYPE_10
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_UIViewController_$_DTSidePanelController
+l_OBJC_$_CATEGORY_UIViewController_$_DTSidePanelController
+-[UIViewController(DTSidePanelController) setSidePanelController:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSidePanel/UIViewController+DTSidePanelController.m
+-[UIViewController(DTSidePanelController) sidePanelController]
++[DTPieProgressIndicator pieProgressIndicator]
+-[DTPieProgressIndicator initWithFrame:]
+-[DTPieProgressIndicator awakeFromNib]
+-[DTPieProgressIndicator drawRect:]
+-[DTPieProgressIndicator setProgressPercent:]
+-[DTPieProgressIndicator setColor:]
+-[DTPieProgressIndicator progressPercent]
+-[DTPieProgressIndicator color]
+-[DTPieProgressIndicator .cxx_destruct]
+OBJC_CLASSLIST_REFERENCES_$_5
+OBJC_SELECTOR_REFERENCES_7
+OBJC_IVAR_$_DTPieProgressIndicator._color
+OBJC_IVAR_$_DTPieProgressIndicator._progressPercent
+l_OBJC_$_CLASS_METHODS_DTPieProgressIndicator
+l_OBJC_METACLASS_RO_$_DTPieProgressIndicator
+OBJC_CLASS_NAME_21
+OBJC_METH_VAR_TYPE_23
+OBJC_METH_VAR_TYPE_25
+OBJC_METH_VAR_TYPE_27
+OBJC_METH_VAR_TYPE_29
+OBJC_METH_VAR_TYPE_32
+l_OBJC_$_INSTANCE_METHODS_DTPieProgressIndicator
+OBJC_METH_VAR_TYPE_35
+OBJC_METH_VAR_TYPE_37
+l_OBJC_$_INSTANCE_VARIABLES_DTPieProgressIndicator
+OBJC_PROP_NAME_ATTR_38
+OBJC_PROP_NAME_ATTR_39
+OBJC_PROP_NAME_ATTR_40
+l_OBJC_$_PROP_LIST_DTPieProgressIndicator
+l_OBJC_CLASS_RO_$_DTPieProgressIndicator
+-[DTPieProgressIndicator .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTPieProgressIndicator.m
+-[DTPieProgressIndicator color]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTPieProgressIndicator.h
+-[DTPieProgressIndicator progressPercent]
+-[DTPieProgressIndicator setColor:]
+-[DTPieProgressIndicator setProgressPercent:]
+-[DTPieProgressIndicator drawRect:]
+-[DTPieProgressIndicator awakeFromNib]
+-[DTPieProgressIndicator initWithFrame:]
++[DTPieProgressIndicator pieProgressIndicator]
++[NSDictionary(DTError) dictionaryWithContentsOfURL:error:]
++[NSDictionary(DTError) dictionaryWithContentsOfFile:error:]
++[NSDictionary(DTError) dictionaryWithContentsOfData:error:]
+l_OBJC_$_CATEGORY_CLASS_METHODS_NSDictionary_$_DTError
+l_OBJC_$_CATEGORY_NSDictionary_$_DTError
++[NSDictionary(DTError) dictionaryWithContentsOfData:error:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSDictionary+DTError.m
++[NSDictionary(DTError) dictionaryWithContentsOfFile:error:]
++[NSDictionary(DTError) dictionaryWithContentsOfURL:error:]
+-[NSMutableArray(DTMoving) moveObjectsAtIndexes:toIndex:]
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSMutableArray_$_DTMoving
+l_OBJC_$_CATEGORY_NSMutableArray_$_DTMoving
+-[NSMutableArray(DTMoving) moveObjectsAtIndexes:toIndex:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSMutableArray+DTMoving.m
+-[DTExtendedFileAttributes initWithPath:]
+-[DTExtendedFileAttributes removeAttribute:]
+-[DTExtendedFileAttributes setValue:forAttribute:]
+-[DTExtendedFileAttributes valueForAttribute:]
+-[DTExtendedFileAttributes .cxx_destruct]
+OBJC_IVAR_$_DTExtendedFileAttributes._path
+l_OBJC_METACLASS_RO_$_DTExtendedFileAttributes
+OBJC_CLASS_NAME_13
+OBJC_METH_VAR_TYPE_15
+OBJC_METH_VAR_TYPE_20
+l_OBJC_$_INSTANCE_METHODS_DTExtendedFileAttributes
+l_OBJC_$_INSTANCE_VARIABLES_DTExtendedFileAttributes
+l_OBJC_CLASS_RO_$_DTExtendedFileAttributes
+-[DTExtendedFileAttributes .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTExtendedFileAttributes.m
+-[DTExtendedFileAttributes valueForAttribute:]
+-[DTExtendedFileAttributes setValue:forAttribute:]
+-[DTExtendedFileAttributes removeAttribute:]
+-[DTExtendedFileAttributes initWithPath:]
+-[DTASN1Parser initWithData:]
+-[DTASN1Parser _parseErrorEncountered:]
+-[DTASN1Parser _parseLengthAtLocation:lengthOfLength:]
+-[DTASN1Parser _parseValueWithTag:dataRange:]
+-[DTASN1Parser _parseRange:]
+-[DTASN1Parser parse]
+-[DTASN1Parser abortParsing]
+-[DTASN1Parser delegate]
+-[DTASN1Parser setDelegate:]
+-[DTASN1Parser parserError]
+-[DTASN1Parser .cxx_destruct]
+OBJC_IVAR_$_DTASN1Parser._data
+OBJC_IVAR_$_DTASN1Parser._dataLength
+OBJC_IVAR_$_DTASN1Parser._UTCFormatter
+.str8
+_unnamed_cfstring_9
+OBJC_IVAR_$_DTASN1Parser._abortParsing
+OBJC_CLASSLIST_REFERENCES_$_14
+.str18
+_unnamed_cfstring_19
+OBJC_IVAR_$_DTASN1Parser._parserError
+OBJC_IVAR_$_DTASN1Parser._delegateFlags
+OBJC_IVAR_$_DTASN1Parser._delegate
+.str26
+_unnamed_cfstring_27
+.str30
+_unnamed_cfstring_31
+.str32
+_unnamed_cfstring_33
+OBJC_CLASSLIST_REFERENCES_$_34
+OBJC_CLASSLIST_REFERENCES_$_41
+OBJC_CLASSLIST_REFERENCES_$_48
+.str62
+_unnamed_cfstring_63
+.str64
+_unnamed_cfstring_65
+OBJC_CLASSLIST_REFERENCES_$_70
+OBJC_SELECTOR_REFERENCES_72
+.str79
+_unnamed_cfstring_80
+.str83
+_unnamed_cfstring_84
+OBJC_IVAR_$_DTASN1Parser._parseLevel
+.str85
+_unnamed_cfstring_86
+.str101
+_unnamed_cfstring_102
+l_OBJC_METACLASS_RO_$_DTASN1Parser
+OBJC_CLASS_NAME_109
+OBJC_METH_VAR_TYPE_111
+OBJC_METH_VAR_TYPE_114
+OBJC_METH_VAR_NAME_119
+OBJC_METH_VAR_TYPE_120
+OBJC_METH_VAR_NAME_122
+l_OBJC_$_INSTANCE_METHODS_DTASN1Parser
+OBJC_METH_VAR_NAME_124
+OBJC_METH_VAR_TYPE_125
+OBJC_METH_VAR_TYPE_130
+OBJC_METH_VAR_TYPE_132
+OBJC_METH_VAR_NAME_133
+OBJC_METH_VAR_TYPE_134
+OBJC_METH_VAR_NAME_135
+OBJC_METH_VAR_TYPE_136
+OBJC_METH_VAR_TYPE_138
+l_OBJC_$_INSTANCE_VARIABLES_DTASN1Parser
+OBJC_CLASS_NAME_139
+OBJC_PROP_NAME_ATTR_140
+OBJC_PROP_NAME_ATTR_141
+OBJC_PROP_NAME_ATTR_142
+l_OBJC_$_PROP_LIST_DTASN1Parser
+l_OBJC_CLASS_RO_$_DTASN1Parser
+-[DTASN1Parser .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTASN1/DTASN1Parser.m
+-[DTASN1Parser parserError]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTASN1/DTASN1Parser.h
+-[DTASN1Parser setDelegate:]
+-[DTASN1Parser delegate]
+-[DTASN1Parser abortParsing]
+-[DTASN1Parser parse]
+-[DTASN1Parser _parseRange:]
+-[DTASN1Parser _parseValueWithTag:dataRange:]
+-[DTASN1Parser _parseLengthAtLocation:lengthOfLength:]
+-[DTASN1Parser _parseErrorEncountered:]
+-[DTASN1Parser initWithData:]
+-[NSObject(DTRuntime) addDeallocBlock:]
++[NSObject(DTRuntime) addInstanceMethodWithSelectorName:block:]
++[NSObject(DTRuntime) swizzleMethod:withMethod:]
++[NSObject(DTRuntime) swizzleClassMethod:withMethod:]
+DTRuntimeDeallocBlocks
+OBJC_CLASSLIST_REFERENCES_$_3
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSObject_$_DTRuntime
+OBJC_METH_VAR_TYPE_12
+OBJC_METH_VAR_TYPE_14
+l_OBJC_$_CATEGORY_CLASS_METHODS_NSObject_$_DTRuntime
+l_OBJC_$_CATEGORY_NSObject_$_DTRuntime
++[NSObject(DTRuntime) swizzleClassMethod:withMethod:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/Runtime/NSObject+DTRuntime.m
++[NSObject(DTRuntime) swizzleMethod:withMethod:]
++[NSObject(DTRuntime) addInstanceMethodWithSelectorName:block:]
+-[NSObject(DTRuntime) addDeallocBlock:]
++[NSURL(DTAppLinks) appStoreURLforApplicationIdentifier:]
++[NSURL(DTAppLinks) appStoreReviewURLForApplicationIdentifier:]
+_unnamed_cfstring_5
+l_OBJC_$_CATEGORY_CLASS_METHODS_NSURL_$_DTAppLinks
+l_OBJC_$_CATEGORY_NSURL_$_DTAppLinks
++[NSURL(DTAppLinks) appStoreReviewURLForApplicationIdentifier:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/NSURL+DTAppLinks.m
++[NSURL(DTAppLinks) appStoreURLforApplicationIdentifier:]
++[UIImage(DTFoundation) imageWithSolidColor:size:]
+-[UIImage(DTFoundation) imageMaskedAndTintedWithColor:]
++[UIImage(DTFoundation) imageWithContentsOfURL:cachePolicy:error:]
+__Block_byref_object_copy_
+__Block_byref_object_dispose_
+__66+[UIImage(DTFoundation) imageWithContentsOfURL:cachePolicy:error:]_block_invoke
+-[UIImage(DTFoundation) drawInRect:withContentMode:]
+-[UIImage(DTFoundation) tileImageAtColumn:ofColumns:row:ofRows:]
+-[UIImage(DTFoundation) tileImageInClipRect:inBounds:scale:]
+-[UIImage(DTFoundation) imageScaledToSize:]
+__PRETTY_FUNCTION__.+[UIImage(DTFoundation) imageWithContentsOfURL:cachePolicy:error:]
+.str22
+_unnamed_cfstring_23
+OBJC_CLASSLIST_REFERENCES_$_24
+OBJC_CLASSLIST_REFERENCES_$_32
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_UIImage_$_DTFoundation
+l_OBJC_$_CATEGORY_CLASS_METHODS_UIImage_$_DTFoundation
+l_OBJC_$_CATEGORY_UIImage_$_DTFoundation
+__CGAffineTransformMake
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGAffineTransform.h
+-[UIImage(DTFoundation) imageScaledToSize:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/UIImage+DTFoundation.m
+-[UIImage(DTFoundation) tileImageInClipRect:inBounds:scale:]
+-[UIImage(DTFoundation) tileImageAtColumn:ofColumns:row:ofRows:]
+-[UIImage(DTFoundation) drawInRect:withContentMode:]
++[UIImage(DTFoundation) imageWithContentsOfURL:cachePolicy:error:]
+-[UIImage(DTFoundation) imageMaskedAndTintedWithColor:]
++[UIImage(DTFoundation) imageWithSolidColor:size:]
+-[DTSidePanelControllerSegue perform]
++[DTSidePanelControllerSegue getPositionIdentifier:]
++[DTSidePanelControllerSegue getOptionIdentifier:]
+-[DTSidePanelControllerSegue sidePanelController]
+-[DTSidePanelControllerSegue setSidePanelController:]
+-[DTSidePanelControllerSegue .cxx_destruct]
+OBJC_IVAR_$_DTSidePanelControllerSegue._sidePanelController
+.str31
+_unnamed_cfstring_32
+_unnamed_cfstring_36
+.str37
+_unnamed_cfstring_38
+l_OBJC_$_CLASS_METHODS_DTSidePanelControllerSegue
+l_OBJC_METACLASS_RO_$_DTSidePanelControllerSegue
+l_OBJC_$_INSTANCE_METHODS_DTSidePanelControllerSegue
+OBJC_METH_VAR_TYPE_54
+l_OBJC_$_INSTANCE_VARIABLES_DTSidePanelControllerSegue
+OBJC_CLASS_NAME_55
+OBJC_PROP_NAME_ATTR_56
+l_OBJC_$_PROP_LIST_DTSidePanelControllerSegue
+l_OBJC_CLASS_RO_$_DTSidePanelControllerSegue
+-[DTSidePanelControllerSegue .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSidePanel/DTSidePanelControllerSegue.m
+-[DTSidePanelControllerSegue setSidePanelController:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/DTSidePanel/DTSidePanelControllerSegue.h
+-[DTSidePanelControllerSegue sidePanelController]
++[DTSidePanelControllerSegue getOptionIdentifier:]
++[DTSidePanelControllerSegue getPositionIdentifier:]
+-[DTSidePanelControllerSegue perform]
++[DTFolderMonitor folderMonitorForURL:block:]
+-[DTFolderMonitor initWithURL:block:]
+-[DTFolderMonitor dealloc]
+-[DTFolderMonitor startMonitoring]
+__34-[DTFolderMonitor startMonitoring]_block_invoke
+-[DTFolderMonitor stopMonitoring]
+-[DTFolderMonitor .cxx_destruct]
+OBJC_IVAR_$_DTFolderMonitor._URL
+OBJC_IVAR_$_DTFolderMonitor._block
+OBJC_IVAR_$_DTFolderMonitor._queue
+OBJC_IVAR_$_DTFolderMonitor._source
+OBJC_IVAR_$_DTFolderMonitor._fileDescriptor
+.str15
+l_OBJC_$_CLASS_METHODS_DTFolderMonitor
+l_OBJC_METACLASS_RO_$_DTFolderMonitor
+OBJC_CLASS_NAME_17
+OBJC_METH_VAR_TYPE_18
+l_OBJC_$_INSTANCE_METHODS_DTFolderMonitor
+OBJC_METH_VAR_TYPE_24
+OBJC_METH_VAR_TYPE_26
+OBJC_METH_VAR_TYPE_28
+OBJC_METH_VAR_TYPE_30
+l_OBJC_$_INSTANCE_VARIABLES_DTFolderMonitor
+l_OBJC_CLASS_RO_$_DTFolderMonitor
+-[DTFolderMonitor .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTFolderMonitor.m
+-[DTFolderMonitor stopMonitoring]
+-[DTFolderMonitor startMonitoring]
+-[DTFolderMonitor dealloc]
+-[DTFolderMonitor initWithURL:block:]
++[DTFolderMonitor folderMonitorForURL:block:]
+-[UIView(DTDebug) methodCalledNotFromMainThread:]
+-[UIView(DTDebug) _setNeedsLayout_MainThreadCheck]
+-[UIView(DTDebug) _setNeedsDisplay_MainThreadCheck]
+-[UIView(DTDebug) _setNeedsDisplayInRect_MainThreadCheck:]
++[UIView(DTDebug) toggleViewMainThreadChecking]
+__PRETTY_FUNCTION__.-[UIView(DTDebug) methodCalledNotFromMainThread:]
+OBJC_CLASSLIST_REFERENCES_$_6
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_UIView_$_DTDebug
+l_OBJC_$_CATEGORY_CLASS_METHODS_UIView_$_DTDebug
+l_OBJC_$_CATEGORY_UIView_$_DTDebug
++[UIView(DTDebug) toggleViewMainThreadChecking]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/Debug/UIView+DTDebug.m
+-[UIView(DTDebug) _setNeedsDisplayInRect_MainThreadCheck:]
+-[UIView(DTDebug) _setNeedsDisplay_MainThreadCheck]
+-[UIView(DTDebug) _setNeedsLayout_MainThreadCheck]
+-[UIView(DTDebug) methodCalledNotFromMainThread:]
++[DTObjectBlockExecutor blockExecutorWithDeallocBlock:]
+-[DTObjectBlockExecutor dealloc]
+-[DTObjectBlockExecutor deallocBlock]
+-[DTObjectBlockExecutor setDeallocBlock:]
+-[DTObjectBlockExecutor .cxx_destruct]
+OBJC_IVAR_$_DTObjectBlockExecutor._deallocBlock
+l_OBJC_$_CLASS_METHODS_DTObjectBlockExecutor
+l_OBJC_METACLASS_RO_$_DTObjectBlockExecutor
+OBJC_CLASS_NAME_8
+OBJC_METH_VAR_TYPE_9
+l_OBJC_$_INSTANCE_METHODS_DTObjectBlockExecutor
+l_OBJC_$_INSTANCE_VARIABLES_DTObjectBlockExecutor
+OBJC_PROP_NAME_ATTR_16
+l_OBJC_$_PROP_LIST_DTObjectBlockExecutor
+l_OBJC_CLASS_RO_$_DTObjectBlockExecutor
+-[DTObjectBlockExecutor .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/Runtime/DTObjectBlockExecutor.m
+-[DTObjectBlockExecutor setDeallocBlock:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/Runtime/DTObjectBlockExecutor.h
+-[DTObjectBlockExecutor deallocBlock]
+-[DTObjectBlockExecutor dealloc]
++[DTObjectBlockExecutor blockExecutorWithDeallocBlock:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/BlocksAdditions/DTActionSheet.m
+DTBlockPerformSyncOnMainThread
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTBlockFunctions.m
+DTBlockPerformSyncIfOnMainThreadElseAsync
++[DTASN1Serialization objectWithData:]
+-[DTASN1Serialization initWithData:]
+-[DTASN1Serialization _pushContainer:]
+-[DTASN1Serialization _addObjectToCurrentContainer:]
+-[DTASN1Serialization _popContainer]
+-[DTASN1Serialization parser:didStartContainerWithType:]
+-[DTASN1Serialization parser:didEndContainerWithType:]
+-[DTASN1Serialization parser:didStartContextWithTag:constructed:]
+-[DTASN1Serialization parser:didEndContextWithTag:constructed:]
+-[DTASN1Serialization parserFoundNull:]
+-[DTASN1Serialization parser:foundDate:]
+-[DTASN1Serialization parser:foundObjectIdentifier:]
+-[DTASN1Serialization parser:foundString:]
+-[DTASN1Serialization parser:foundData:]
+-[DTASN1Serialization parser:foundBitString:]
+-[DTASN1Serialization parser:foundNumber:]
+-[DTASN1Serialization rootObject]
+-[DTASN1Serialization .cxx_destruct]
+OBJC_IVAR_$_DTASN1Serialization._stack
+OBJC_CLASSLIST_REFERENCES_$_12
+OBJC_IVAR_$_DTASN1Serialization._rootObject
+OBJC_IVAR_$_DTASN1Serialization._currentContainer
+OBJC_CLASSLIST_REFERENCES_$_25
+l_OBJC_$_CLASS_METHODS_DTASN1Serialization
+OBJC_METH_VAR_TYPE_38
+OBJC_METH_VAR_TYPE_39
+OBJC_METH_VAR_TYPE_42
+OBJC_METH_VAR_TYPE_57
+OBJC_METH_VAR_TYPE_59
+OBJC_CLASS_NAME_62
+OBJC_METH_VAR_TYPE_64
+OBJC_METH_VAR_TYPE_66
+OBJC_METH_VAR_NAME_67
+OBJC_METH_VAR_TYPE_76
+OBJC_METH_VAR_TYPE_86
+OBJC_CLASS_NAME_97
+OBJC_PROP_NAME_ATTR_103
+l_OBJC_$_PROTOCOL_REFS_DTASN1ParserDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_DTASN1ParserDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_DTASN1ParserDelegate
+l_OBJC_PROTOCOL_$_DTASN1ParserDelegate
+l_OBJC_LABEL_PROTOCOL_$_DTASN1ParserDelegate
+l_OBJC_CLASS_PROTOCOLS_$_DTASN1Serialization
+l_OBJC_METACLASS_RO_$_DTASN1Serialization
+OBJC_METH_VAR_TYPE_105
+OBJC_METH_VAR_NAME_106
+l_OBJC_$_INSTANCE_METHODS_DTASN1Serialization
+OBJC_METH_VAR_NAME_112
+OBJC_METH_VAR_NAME_113
+l_OBJC_$_INSTANCE_VARIABLES_DTASN1Serialization
+OBJC_PROP_NAME_ATTR_115
+OBJC_PROP_NAME_ATTR_116
+l_OBJC_$_PROP_LIST_DTASN1Serialization
+l_OBJC_CLASS_RO_$_DTASN1Serialization
+-[DTASN1Serialization .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTASN1/DTASN1Serialization.m
+-[DTASN1Serialization rootObject]
+-[DTASN1Serialization parser:foundNumber:]
+-[DTASN1Serialization parser:foundBitString:]
+-[DTASN1Serialization parser:foundData:]
+-[DTASN1Serialization parser:foundString:]
+-[DTASN1Serialization parser:foundObjectIdentifier:]
+-[DTASN1Serialization parser:foundDate:]
+-[DTASN1Serialization parserFoundNull:]
+-[DTASN1Serialization parser:didEndContextWithTag:constructed:]
+-[DTASN1Serialization parser:didStartContextWithTag:constructed:]
+-[DTASN1Serialization parser:didEndContainerWithType:]
+-[DTASN1Serialization parser:didStartContainerWithType:]
+-[DTASN1Serialization _popContainer]
+-[DTASN1Serialization _addObjectToCurrentContainer:]
+-[DTASN1Serialization _pushContainer:]
+-[DTASN1Serialization initWithData:]
++[DTASN1Serialization objectWithData:]
++[NSString(DTPaths) cachesPath]
+__31+[NSString(DTPaths) cachesPath]_block_invoke
++[NSString(DTPaths) documentsPath]
+__34+[NSString(DTPaths) documentsPath]_block_invoke
++[NSString(DTPaths) temporaryPath]
+__34+[NSString(DTPaths) temporaryPath]_block_invoke
++[NSString(DTPaths) pathForTemporaryFile]
+-[NSString(DTPaths) pathByIncrementingSequenceNumber]
+__53-[NSString(DTPaths) pathByIncrementingSequenceNumber]_block_invoke
+-[NSString(DTPaths) pathByDeletingSequenceNumber]
+__49-[NSString(DTPaths) pathByDeletingSequenceNumber]_block_invoke
+__copy_helper_block_45
+__destroy_helper_block_46
+cachesPath.onceToken
+cachesPath.cachedPath
+documentsPath.onceToken
+documentsPath.cachedPath
+__block_descriptor_tmp1
+__block_literal_global2
+temporaryPath.onceToken
+temporaryPath.cachedPath
+__block_descriptor_tmp3
+__block_literal_global4
+.str41
+_unnamed_cfstring_42
+__block_descriptor_tmp47
+OBJC_CLASS_NAME_50
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_NSString_$_DTPaths
+l_OBJC_$_CATEGORY_CLASS_METHODS_NSString_$_DTPaths
+l_OBJC_$_CATEGORY_NSString_$_DTPaths
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/NSString+DTPaths.m
+-[NSString(DTPaths) pathByDeletingSequenceNumber]
+-[NSString(DTPaths) pathByIncrementingSequenceNumber]
++[NSString(DTPaths) pathForTemporaryFile]
++[NSString(DTPaths) temporaryPath]
++[NSString(DTPaths) documentsPath]
++[NSString(DTPaths) cachesPath]
+-[DTASN1BitString initWithData:unusedBits:]
+-[DTASN1BitString description]
+-[DTASN1BitString stringWithBits]
+-[DTASN1BitString valueOfBitAtIndex:]
+-[DTASN1BitString unusedBits]
+-[DTASN1BitString setUnusedBits:]
+-[DTASN1BitString .cxx_destruct]
+OBJC_IVAR_$_DTASN1BitString._data
+OBJC_IVAR_$_DTASN1BitString._unusedBits
+l_OBJC_METACLASS_RO_$_DTASN1BitString
+l_OBJC_$_INSTANCE_METHODS_DTASN1BitString
+l_OBJC_$_INSTANCE_VARIABLES_DTASN1BitString
+OBJC_PROP_NAME_ATTR_29
+l_OBJC_$_PROP_LIST_DTASN1BitString
+l_OBJC_CLASS_RO_$_DTASN1BitString
+-[DTASN1BitString .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTASN1/DTASN1BitString.m
+-[DTASN1BitString setUnusedBits:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTASN1/DTASN1BitString.h
+-[DTASN1BitString unusedBits]
+-[DTASN1BitString valueOfBitAtIndex:]
+-[DTASN1BitString stringWithBits]
+-[DTASN1BitString description]
+-[DTASN1BitString initWithData:unusedBits:]
+.str10
+_unnamed_cfstring_11
+.str12
+_unnamed_cfstring_13
+DTCGRectCenter
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/DTCoreGraphicsUtils.m
+DTCGRectCreateDictionaryRepresentation
+DTCGRectMakeWithDictionaryRepresentation
+DTCGSizeCreateDictionaryRepresentation
+DTCGSizeMakeWithDictionaryRepresentation
+DTCGSizeThatFillsKeepingAspectRatio
+DTCGSizeThatFitsKeepingAspectRatio
++[UIColor(DTDebug) randomColor]
+l_OBJC_$_CATEGORY_CLASS_METHODS_UIColor_$_DTDebug
+l_OBJC_$_CATEGORY_UIColor_$_DTDebug
++[UIColor(DTDebug) randomColor]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/DTFoundation/Core/Source/iOS/Debug/UIColor+DTDebug.m
+/Users/koke/Library/Developer/Xcode/DerivedData/DTFoundation-bwxmltooubigkharzbgfsylbsodc/Build/Intermediates/DTFoundation.build/Release-iphoneos/DTFoundation (iOS).build/DerivedSources/DTFoundation_vers.c
+_ZL15__ARCLite__loadv
+_ZL58__arclite_NSMutableDictionary__setObject_forKeyedSubscriptP19NSMutableDictionaryP13objc_selectorP11objc_objectS4_
+_ZL22add_image_hook_swiftV1PK11mach_headerl
+_ZL42__arclite_NSUndoManagerProxy_isKindOfClassP11objc_objectP13objc_selectorP10objc_class
+_ZL13replaceMethodP10objc_classP13objc_selectorPFP11objc_objectS4_S2_zEPS6_
+_ZL30__arclite_NSManagedObject_initP11objc_objectP13objc_selector
+_ZL41__arclite_NSManagedObject_allocWithEntityP11objc_objectP13objc_selectorS0_
+_ZL36__arclite_NSManagedObject_allocBatchP11objc_objectP13objc_selectorPS0_S0_j
+_ZL37__arclite_NSKKMS_fastIndexForKnownKeyP11objc_objectP13objc_selectorS0_
+_ZL28__arclite_NSKKMS_indexForKeyP11objc_objectP13objc_selectorS0_
+_ZL29__arclite_NSKKsD_objectForKeyP11objc_objectP13objc_selectorS0_
+_ZL35__arclite_NSKKsD_removeObjectForKeyP11objc_objectP13objc_selectorS0_
+_ZL33__arclite_NSKKsD_setObject_forKeyP11objc_objectP13objc_selectorS0_S0_
+_ZL41__arclite_NSKKsD_addEntriesFromDictionaryP11objc_objectP13objc_selectorP12NSDictionary
+_ZL28__arclite_objc_readClassPairP10objc_classPK15objc_image_info
+_ZL32__arclite_objc_allocateClassPairP10objc_classPKcm
+_ZL32__arclite_object_getIndexedIvarsP11objc_object
+_ZL23__arclite_objc_getClassPKc
+_ZL27__arclite_objc_getMetaClassPKc
+_ZL31__arclite_objc_getRequiredClassPKc
+_ZL26__arclite_objc_lookUpClassPKc
+_ZL26__arclite_objc_getProtocolPKc
+_ZL23__arclite_class_getNameP10objc_class
+_ZL26__arclite_protocol_getNameP8Protocol
+_ZL37__arclite_objc_copyClassNamesForImagePKcPj
+_ZL17transcribeMethodsP10objc_classP15glue_class_ro_t
+_ZL19transcribeProtocolsP10objc_classP15glue_class_ro_t
+_ZL20transcribePropertiesP10objc_classP15glue_class_ro_t
+_ZL14initialize_impP11objc_objectP13objc_selector
+_ZL18allocateMaybeSwiftP18glue_swift_class_tm
+_ZL22copySwiftV1MangledNamePKcb
+_ZL13demangledNamePKcb
+_ZL16scanMangledFieldRPKcS0_S1_Ri
+_ZL30arclite_uninitialized_functionv
+_ZL12cxxConstructP11objc_object
+_ZL20fixStringForCoreDataP11objc_object
+OBJC_METACLASS_$___ARCLite__
+_ZL24OBJC_CLASS_$___ARCLite__
+_ZL31OBJC_METACLASS_RO_$___ARCLite__
+_non_lazy_classes
+_ZL27OBJC_CLASS_RO_$___ARCLite__
+_ZL11_class_name
+_ZL32OBJC_$_CLASS_METHODS___ARCLite__
+_ZL17_load_method_name
+_ZL17_load_method_type
+OBJC_METH_VAR_TYPE_6
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS___ARCLiteKeyedSubscripting__
+l_OBJC_$_PROTOCOL_METHOD_TYPES___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_LABEL_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_REFERENCE_$___ARCLiteKeyedSubscripting__
+_ZL30NSUndoManagerProxy_targetClass
+.str11
+_ZL29original_NSManagedObject_init
+_ZL40original_NSManagedObject_allocWithEntity
+_ZL35original_NSManagedObject_allocBatch
+_ZL25NSMutableDictionary_class
+_ZL22NSConstantString_class
+.str20
+_ZL14NSString_class
+.str21
+_ZL36original_NSKKMS_fastIndexForKnownKey
+_ZL27original_NSKKMS_indexForKey
+_ZL28original_NSKKsD_objectForKey
+_ZL34original_NSKKsD_removeObjectForKey
+_ZL32original_NSKKsD_setObject_forKey
+_ZL40original_NSKKsD_addEntriesFromDictionary
+_ZZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+_ZGVZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+_ZL31original_objc_allocateClassPair
+.str33
+_ZL31original_object_getIndexedIvars
+.str34
+_ZL22original_objc_getClass
+_ZL26original_objc_getMetaClass
+_ZL30original_objc_getRequiredClass
+_ZL25original_objc_lookUpClass
+.str38
+_ZL25original_objc_getProtocol
+.str39
+_ZL22original_class_getName
+.str40
+_ZL25original_protocol_getName
+_ZL36original_objc_copyClassNamesForImage
+.str46
+.str47
+.str48
+.str49
+.str50
+.str51
+.str52
+.str53
+_ZL12demangleLock
+_ZL9Demangled
+.str54
+.str55
+.str56
+.str57
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -Wno-trigraphs -fno-exceptions -fno-rtti -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=4.3 -g -fno-threadsafe-statics -Wno-sign-conversion -fembed-bitcode -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -fgnu-inline-asm -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-65/source/arclite.mm -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-65~172/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.o -mlinker-version=253.9
+__arclite_NSKKsD_addEntriesFromDictionary
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-65/source/arclite.mm
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-65
+__arclite_NSKKsD_setObject_forKey
+__arclite_NSKKsD_removeObjectForKey
+__arclite_NSKKsD_objectForKey
+__arclite_NSKKMS_indexForKey
+fixStringForCoreData
+__arclite_NSKKMS_fastIndexForKnownKey
+__arclite_NSManagedObject_allocBatch
+__arclite_NSManagedObject_allocWithEntity
+cxxConstruct
+__arclite_NSManagedObject_init
+arclite_uninitialized_function
+replaceMethod
+__arclite_NSUndoManagerProxy_isKindOfClass
+patch_lazy_pointers
+patch_t<const char **(const char *, unsigned int *)>
+__arclite_objc_copyClassNamesForImage
+patch_t<const char *(Protocol *)>
+__arclite_protocol_getName
+patch_t<const char *(Class)>
+__isctype
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.Internal.sdk/usr/include/ctype.h
+isdigit
+scanMangledField
+copySwiftV1DemangledName
+demangledName
+__arclite_class_getName
+patch_t<Protocol *(const char *)>
+__arclite_objc_getProtocol
+__arclite_objc_lookUpClass
+__arclite_objc_getRequiredClass
+__arclite_objc_getMetaClass
+patch_t<Class (const char *)>
+copySwiftV1MangledName
+__arclite_objc_getClass
+patch_t<void *(id)>
+word_align
+__arclite_object_getIndexedIvars
+patch_t<Class (Class, const char *, unsigned long)>
+allocateMaybeSwift
+isSwift
+metaclass
+__arclite_objc_allocateClassPair
+patch_t<Class (Class, const objc_image_info *)>
+initialize_imp
+property_list_nth
+transcribeProperties
+transcribeProtocols
+method_list_nth
+transcribeMethods
+alignment
+max
+ivar_list_nth
+transcribeIvars
+fastFlags
+data
+ro
+__arclite_objc_readClassPair
+add_image_hook_swiftV1
+install_swiftV1
+install_ARC
+objc_collectingEnabled
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.Internal.sdk/usr/include/objc/objc-auto.h
+keyedGetter
+__arclite_NSMutableDictionary__setObject_forKeyedSubscript
+addOrReplaceMethod
+install_dict_nil_value
+install_subscripting
+install_autoreleasepool
+__ARCLite__load

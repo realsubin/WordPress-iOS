@@ -1,9 +1,10 @@
+@import DTCoreText;
+
 #import "Comment.h"
 #import "ContextManager.h"
 #import "Blog.h"
 #import "BasePost.h"
 #import "NSString+XMLExtensions.h"
-#import "NSString+HTML.h"
 #import "NSString+Helpers.h"
 
 NSString * const CommentUploadFailedNotification = @"CommentUploadFailed";

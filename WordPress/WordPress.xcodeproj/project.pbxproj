@@ -470,6 +470,11 @@
 		E10B3654158F2D4500419A93 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10B3653158F2D4500419A93 /* UIKit.framework */; };
 		E10B3655158F2D7800419A93 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 834CE7371256D0F60046A4A3 /* CoreGraphics.framework */; };
 		E10B5ACF1C4518E100F6A390 /* AccountService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10B5ACE1C4518E100F6A390 /* AccountService+Rx.swift */; };
+		E10C2B451C9B73010012AEFC /* DTCoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C2B411C9B73010012AEFC /* DTCoreText.framework */; };
+		E10C2B461C9B73010012AEFC /* Mixpanel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C2B421C9B73010012AEFC /* Mixpanel.framework */; };
+		E10C2B471C9B73010012AEFC /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C2B431C9B73010012AEFC /* RxCocoa.framework */; };
+		E10C2B481C9B73010012AEFC /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C2B441C9B73010012AEFC /* RxSwift.framework */; };
+		E10C2B4A1C9B755E0012AEFC /* DTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C2B491C9B755E0012AEFC /* DTFoundation.framework */; };
 		E11330511A13BAA300D36D84 /* me-sites-with-jetpack.json in Resources */ = {isa = PBXBuildFile; fileRef = E11330501A13BAA300D36D84 /* me-sites-with-jetpack.json */; };
 		E11450DF1C4E47E600A6BD0F /* ErrorAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11450DE1C4E47E600A6BD0F /* ErrorAnimator.swift */; };
 		E114D79A153D85A800984182 /* WPError.m in Sources */ = {isa = PBXBuildFile; fileRef = E114D799153D85A800984182 /* WPError.m */; };
@@ -530,6 +535,8 @@
 		E16AB93414D978240047A2E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E16AB93214D978240047A2E5 /* InfoPlist.strings */; };
 		E1703A5C1C28006B00C57FA0 /* UITableViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1703A5B1C28006B00C57FA0 /* UITableViewController+Helpers.swift */; };
 		E174F6E6172A73960004F23A /* WPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E105E9CE1726955600C0D9E7 /* WPAccount.m */; };
+		E17EA1F01C9B77A6000D9220 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C2B441C9B73010012AEFC /* RxSwift.framework */; };
+		E17EA1F21C9B77A6000D9220 /* RxTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E17EA1F11C9B77A6000D9220 /* RxTests.framework */; };
 		E18165FD14E4428B006CE885 /* loader.html in Resources */ = {isa = PBXBuildFile; fileRef = E18165FC14E4428B006CE885 /* loader.html */; };
 		E183BD7417621D87000B0822 /* WPCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = E183BD7317621D86000B0822 /* WPCookie.m */; };
 		E183EC9C16B215FE00C2EB11 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01C542D0E24E88400D411F2 /* SystemConfiguration.framework */; };
@@ -1549,6 +1556,11 @@
 		E10B3651158F2D3F00419A93 /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E10B3653158F2D4500419A93 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E10B5ACE1C4518E100F6A390 /* AccountService+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountService+Rx.swift"; sourceTree = "<group>"; };
+		E10C2B411C9B73010012AEFC /* DTCoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DTCoreText.framework; path = ../Carthage/Build/iOS/DTCoreText.framework; sourceTree = "<group>"; };
+		E10C2B421C9B73010012AEFC /* Mixpanel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mixpanel.framework; path = ../Carthage/Build/iOS/Mixpanel.framework; sourceTree = "<group>"; };
+		E10C2B431C9B73010012AEFC /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		E10C2B441C9B73010012AEFC /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		E10C2B491C9B755E0012AEFC /* DTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DTFoundation.framework; path = ../Carthage/Build/iOS/DTFoundation.framework; sourceTree = "<group>"; };
 		E11330501A13BAA300D36D84 /* me-sites-with-jetpack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "me-sites-with-jetpack.json"; sourceTree = "<group>"; };
 		E11450DE1C4E47E600A6BD0F /* ErrorAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorAnimator.swift; sourceTree = "<group>"; };
 		E114D798153D85A800984182 /* WPError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPError.h; sourceTree = "<group>"; };
@@ -1659,6 +1671,7 @@
 		E1756E621694A08200D9EC00 /* gencredentials.rb */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = gencredentials.rb; sourceTree = "<group>"; };
 		E17B98E7171FFB450073E30D /* WordPress 11.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "WordPress 11.xcdatamodel"; sourceTree = "<group>"; };
 		E17BE7A9134DEC12007285FD /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E17EA1F11C9B77A6000D9220 /* RxTests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTests.framework; path = ../Carthage/Build/iOS/RxTests.framework; sourceTree = "<group>"; };
 		E18165FC14E4428B006CE885 /* loader.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = loader.html; path = Resources/HTML/loader.html; sourceTree = "<group>"; };
 		E183BD7217621D85000B0822 /* WPCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPCookie.h; sourceTree = "<group>"; };
 		E183BD7317621D86000B0822 /* WPCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPCookie.m; sourceTree = "<group>"; };
@@ -1949,6 +1962,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E10C2B4A1C9B755E0012AEFC /* DTFoundation.framework in Frameworks */,
+				E10C2B451C9B73010012AEFC /* DTCoreText.framework in Frameworks */,
+				E10C2B461C9B73010012AEFC /* Mixpanel.framework in Frameworks */,
+				E10C2B471C9B73010012AEFC /* RxCocoa.framework in Frameworks */,
+				E10C2B481C9B73010012AEFC /* RxSwift.framework in Frameworks */,
 				E1A2A42F1C9B159B002C1BAC /* ReactiveCocoa.framework in Frameworks */,
 				FF75933B1BE2423800814D3B /* Photos.framework in Frameworks */,
 				93E5285619A77BAC003A1A9C /* NotificationCenter.framework in Frameworks */,
@@ -1998,6 +2016,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E17EA1F21C9B77A6000D9220 /* RxTests.framework in Frameworks */,
+				E17EA1F01C9B77A6000D9220 /* RxSwift.framework in Frameworks */,
 				E131CB5416CACB05004B0314 /* libxml2.dylib in Frameworks */,
 				E183EC9D16B2160200C2EB11 /* MobileCoreServices.framework in Frameworks */,
 				E183EC9C16B215FE00C2EB11 /* SystemConfiguration.framework in Frameworks */,
@@ -2162,6 +2182,12 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E17EA1F11C9B77A6000D9220 /* RxTests.framework */,
+				E10C2B491C9B755E0012AEFC /* DTFoundation.framework */,
+				E10C2B411C9B73010012AEFC /* DTCoreText.framework */,
+				E10C2B421C9B73010012AEFC /* Mixpanel.framework */,
+				E10C2B431C9B73010012AEFC /* RxCocoa.framework */,
+				E10C2B441C9B73010012AEFC /* RxSwift.framework */,
 				E1A2A42E1C9B159B002C1BAC /* ReactiveCocoa.framework */,
 				FF75933A1BE2423800814D3B /* Photos.framework */,
 				B5AA54D41A8E7510003BDD12 /* WebKit.framework */,
@@ -4169,6 +4195,7 @@
 				E16AB92714D978240047A2E5 /* Resources */,
 				767242251A35CCC309715FA4 /* Embed Pods Frameworks */,
 				A94006E9925D5249D3010E51 /* Copy Pods Resources */,
+				E17EA1F31C9B78C1000D9220 /* Carthage Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -4645,13 +4672,34 @@
 			shellScript = "DERIVED_TMP_DIR=/tmp/WordPress.build\ncp ${SOURCE_ROOT}/WordPressApi/WordPressComApiCredentials.m ${DERIVED_TMP_DIR}/WordPressComApiCredentials.m\n\necho \"Checking for WordPress.com Oauth App Secret in $WPCOM_CONFIG\"\nif [ -a $WPCOM_CONFIG ]\nthen\necho \"Config found\"\nsource $WPCOM_CONFIG\nelse\necho \"No config found\"\nexit 0\nfi\n\nif [ -z $WPCOM_APP_ID ]\nthen\necho \"warning: Missing WPCOM_APP_ID\"\nexit 1\nfi\nif [ -z $WPCOM_APP_SECRET ]\nthen\necho \"warning: Missing WPCOM_APP_SECRET\"\nexit 1\nfi\n\necho \"Generating credentials file in ${DERIVED_TMP_DIR}/WordPressComApiCredentials.m\"\nruby ${SOURCE_ROOT}/WordPressApi/gencredentials.rb > ${DERIVED_TMP_DIR}/WordPressComApiCredentials.m\n";
 			showEnvVarsInLog = 0;
 		};
+		E17EA1F31C9B78C1000D9220 /* Carthage Copy Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxTests.framework",
+			);
+			name = "Carthage Copy Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		E1A2A4301C9B15E6002C1BAC /* Carthage Copy Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/DTCoreText.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/DTFoundation.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Mixpanel.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
@@ -5450,7 +5498,6 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
@@ -5516,7 +5563,6 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -5736,6 +5782,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -5776,7 +5823,6 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -6006,6 +6052,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -6046,7 +6093,6 @@
 					"\"$(SRCROOT)/Classes\"",
 					"$(SRCROOT)",
 					"$(PROJECT_DIR)",
-					"$(SRCROOT)/../Carthage/Build/iOS",
 				);
 				GCC_PREFIX_HEADER = WordPress_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -6349,6 +6395,7 @@
 			buildSettings = {
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
@@ -6375,6 +6422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

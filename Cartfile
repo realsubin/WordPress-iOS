@@ -1,1 +1,5 @@
+github "Cocoanetics/DTCoreText" == 1.6.16
+github "Cocoanetics/DTFoundation" == 1.7.9
+github "mixpanel/mixpanel-iphone" == 2.9.4
 github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveX/RxSwift" ~> 2.1.0

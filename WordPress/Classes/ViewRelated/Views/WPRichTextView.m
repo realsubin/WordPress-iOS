@@ -1,7 +1,7 @@
+@import DTFoundation;
+@import DTCoreText;
+
 #import "WPRichTextView.h"
-#import <DTCoreText/DTCoreText.h>
-#import "DTTiledLayerWithoutFade.h"
-#import "DTAttributedTextContentView.h"
 #import "WPTableImageSource.h"
 #import "UIImage+Util.h"
 #import "WordPress-Swift.h"
