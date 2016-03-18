@@ -4,6 +4,6 @@ if ! cmp -s Cartfile.resolved Carthage/Cartfile.resolved; then
   Scripts/bootstrap
 fi
 
-if ! cmp -s Podfile.locl Pods/Manifest.lock; then
+if ! cmp -s Podfile.lock Pods/Manifest.lock; then
   pod install
 fi
