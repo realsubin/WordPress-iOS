@@ -1,5 +1,6 @@
+@import Mixpanel;
+
 #import "HelpShiftUtils.h"
-#import <Mixpanel/MPTweakInline.h>
 #import "WordPressComApiCredentials.h"
 #import <Helpshift/HelpshiftCore.h>
 #import <Helpshift/HelpshiftSupport.h>
@@ -55,7 +56,9 @@ CGFloat const HelpshiftFlagCheckDelay = 10.0;
         return;
     }
 
-    if (MPTweakValue(@"Helpshift Enabled", NO)) {
+//    if (MPTweakValue(@"Helpshift Enabled", NO)) {
+#warning Overriding MPTweakValue for Carthage testing
+    if (YES) {
         DDLogInfo(@"Helpshift Enabled");
 
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
