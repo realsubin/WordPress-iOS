@@ -56,4 +56,5 @@ WordPress/WordPress.xcodeproj/xcuserdata
 WordPress/InfoPlist.h
 # coverage.py
 */CoverageData/*
-Carthage
+Carthage/Checkouts
+Carthage/Cartfile.resolved
