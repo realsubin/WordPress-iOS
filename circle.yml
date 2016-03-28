@@ -4,8 +4,6 @@ machine:
 dependencies:
   override:
     - Scripts/bootstrap-if-needed
-  cache_directories:
-    - "Carthage"
 test:
   override:
     - Scripts/build.sh
