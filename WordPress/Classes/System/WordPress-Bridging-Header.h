@@ -31,6 +31,7 @@
 
 #import "Notification.h"
 #import "Notification+Internals.h"
+#import "NSString+Helpers.h"
 #import "NSAttributedString+Util.h"
 #import "NSBundle+VersionNumberHelper.h"
 #import "NSDate+StringFormatting.h"
@@ -60,6 +61,8 @@
 #import "SettingsMultiTextViewController.h"
 #import "SettingTableViewCell.h"
 #import "SettingsTextViewController.h"
+#import "SFHFKeychainUtils.h"
+#import "SiteSettingsViewController.h"
 #import "SourcePostAttribution.h"
 #import "SuggestionsTableView.h"
 #import "SupportViewController.h"
