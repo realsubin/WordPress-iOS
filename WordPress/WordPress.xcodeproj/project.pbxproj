@@ -555,6 +555,7 @@
 		E166FA221BB1359E00374B5B /* PeopleRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = E166FA211BB1359E00374B5B /* PeopleRemote.swift */; };
 		E16AB92E14D978240047A2E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		E16AB93414D978240047A2E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E16AB93214D978240047A2E5 /* InfoPlist.strings */; };
+		E16EB8281CA933650034F727 /* wpxmlrpc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E16EB8271CA933650034F727 /* wpxmlrpc.framework */; };
 		E1703A5C1C28006B00C57FA0 /* UITableViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1703A5B1C28006B00C57FA0 /* UITableViewController+Helpers.swift */; };
 		E174F6E6172A73960004F23A /* WPAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = E105E9CE1726955600C0D9E7 /* WPAccount.m */; };
 		E17EA1F01C9B77A6000D9220 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10C2B441C9B73010012AEFC /* RxSwift.framework */; };
@@ -1728,6 +1729,7 @@
 		E16AB93114D978240047A2E5 /* WordPressTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordPressTest-Info.plist"; sourceTree = "<group>"; };
 		E16AB93314D978240047A2E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E16AB93814D978240047A2E5 /* WordPressTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPressTest-Prefix.pch"; sourceTree = "<group>"; };
+		E16EB8271CA933650034F727 /* wpxmlrpc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = wpxmlrpc.framework; path = ../Carthage/Build/iOS/wpxmlrpc.framework; sourceTree = "<group>"; };
 		E1703A5B1C28006B00C57FA0 /* UITableViewController+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewController+Helpers.swift"; sourceTree = "<group>"; };
 		E1756DD41694560100D9EC00 /* WordPressComApiCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordPressComApiCredentials.h; sourceTree = "<group>"; };
 		E1756DD51694560100D9EC00 /* WordPressComApiCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordPressComApiCredentials.m; sourceTree = "<group>"; };
@@ -2026,6 +2028,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16EB8281CA933650034F727 /* wpxmlrpc.framework in Frameworks */,
 				E10C2B4A1C9B755E0012AEFC /* DTFoundation.framework in Frameworks */,
 				E10C2B451C9B73010012AEFC /* DTCoreText.framework in Frameworks */,
 				E10C2B461C9B73010012AEFC /* Mixpanel.framework in Frameworks */,
@@ -2256,6 +2259,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E16EB8271CA933650034F727 /* wpxmlrpc.framework */,
 				E17EA1F11C9B77A6000D9220 /* RxTests.framework */,
 				E10C2B491C9B755E0012AEFC /* DTFoundation.framework */,
 				E10C2B411C9B73010012AEFC /* DTCoreText.framework */,
@@ -4902,6 +4906,7 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/ReactiveCocoa.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/wpxmlrpc.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (

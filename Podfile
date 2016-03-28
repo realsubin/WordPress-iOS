@@ -45,7 +45,6 @@ target 'WordPress', :exclusive => true do
   pod 'WordPressApi', :git => "https://github.com/wordpress-mobile/WordPress-API-iOS.git"
   pod 'WordPressCom-Analytics-iOS', '0.1.5'
   pod 'WordPressCom-Stats-iOS/UI', '0.6.3'
-  pod 'wpxmlrpc', '~> 0.8'
 end
 
 target 'WordPressShareExtension', :exclusive => true do

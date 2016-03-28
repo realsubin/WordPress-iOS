@@ -203,7 +203,6 @@ DEPENDENCIES:
   - WordPressComKit (from `https://github.com/Automattic/WordPressComKit.git`, tag
     `0.0.1`)
   - WPMediaPicker (~> 0.9.0)
-  - wpxmlrpc (~> 0.8)
 
 EXTERNAL SOURCES:
   Automattic-Tracks-iOS:
