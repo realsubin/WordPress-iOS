@@ -1,0 +1,82 @@
+BCSymbolMap Version: 1.0
++[WPAnalytics trackers]
+__23+[WPAnalytics trackers]_block_invoke
++[WPAnalytics registerTracker:]
++[WPAnalytics clearTrackers]
++[WPAnalytics beginTimerForStat:]
++[WPAnalytics endTimerForStat:withProperties:]
++[WPAnalytics track:]
++[WPAnalytics track:withProperties:]
++[WPAnalytics beginSession]
++[WPAnalytics endSession]
++[WPAnalytics refreshMetadata]
+.str
+_unnamed_cfstring_
+.str.1
+_unnamed_cfstring_.2
+.str.3
+_unnamed_cfstring_.4
+.str.5
+_unnamed_cfstring_.6
+trackers.trackers
+trackers.predicate
+OBJC_CLASSLIST_REFERENCES_$_
+OBJC_METH_VAR_NAME_
+OBJC_SELECTOR_REFERENCES_
+OBJC_METH_VAR_NAME_.7
+OBJC_SELECTOR_REFERENCES_.8
+.str.9
+__block_descriptor_tmp
+__block_literal_global
+OBJC_METH_VAR_NAME_.10
+OBJC_SELECTOR_REFERENCES_.11
+OBJC_METH_VAR_NAME_.12
+OBJC_SELECTOR_REFERENCES_.13
+OBJC_METH_VAR_NAME_.14
+OBJC_SELECTOR_REFERENCES_.15
+OBJC_METH_VAR_NAME_.16
+OBJC_SELECTOR_REFERENCES_.17
+OBJC_METH_VAR_NAME_.18
+OBJC_SELECTOR_REFERENCES_.19
+OBJC_METH_VAR_NAME_.20
+OBJC_SELECTOR_REFERENCES_.21
+OBJC_METH_VAR_NAME_.22
+OBJC_SELECTOR_REFERENCES_.23
+OBJC_METH_VAR_NAME_.24
+OBJC_SELECTOR_REFERENCES_.25
+OBJC_METH_VAR_NAME_.26
+OBJC_SELECTOR_REFERENCES_.27
+OBJC_METH_VAR_NAME_.28
+OBJC_SELECTOR_REFERENCES_.29
+OBJC_METH_VAR_NAME_.30
+OBJC_SELECTOR_REFERENCES_.31
+OBJC_METH_VAR_NAME_.32
+OBJC_SELECTOR_REFERENCES_.33
+OBJC_CLASS_NAME_
+OBJC_METH_VAR_TYPE_
+OBJC_METH_VAR_NAME_.34
+OBJC_METH_VAR_TYPE_.35
+OBJC_METH_VAR_NAME_.36
+OBJC_METH_VAR_TYPE_.37
+OBJC_METH_VAR_TYPE_.38
+OBJC_METH_VAR_TYPE_.39
+l_OBJC_$_CLASS_METHODS_WPAnalytics
+l_OBJC_METACLASS_RO_$_WPAnalytics
+l_OBJC_CLASS_RO_$_WPAnalytics
+OBJC_LABEL_CLASS_$
+Apple LLVM version 7.3.0 (clang-703.0.29)
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/dispatch/once.h
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/WordPressCom-Analytics-iOS
++[WPAnalytics refreshMetadata]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/WordPressCom-Analytics-iOS/WordPressCom-Analytics-iOS/WPAnalytics.m
++[WPAnalytics endSession]
++[WPAnalytics beginSession]
++[WPAnalytics track:withProperties:]
++[WPAnalytics track:]
++[WPAnalytics endTimerForStat:withProperties:]
++[WPAnalytics beginTimerForStat:]
++[WPAnalytics clearTrackers]
++[WPAnalytics registerTracker:]
++[WPAnalytics trackers]
+/Users/koke/Library/Developer/Xcode/DerivedData/WordPressCom-Analytics-iOS-ahozhvrkyzmwcnbyacdwatllvvij/Build/Intermediates/WordPressCom-Analytics-iOS.build/Release-iphoneos/WordPressComAnalytics.build/DerivedSources/WordPressComAnalytics_vers.c

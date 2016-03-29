@@ -196,7 +196,6 @@ DEPENDENCIES:
   - WordPress-iOS-Editor (= 1.2)
   - WordPress-iOS-Shared (= 0.5.3)
   - WordPressApi (from `https://github.com/wordpress-mobile/WordPress-API-iOS.git`)
-  - WordPressCom-Analytics-iOS (= 0.1.5)
   - WordPressCom-Stats-iOS/Services (= 0.6.3)
   - WordPressCom-Stats-iOS/UI (= 0.6.3)
   - WordPressComKit (from `https://github.com/Automattic/WordPressComKit.git`, tag
