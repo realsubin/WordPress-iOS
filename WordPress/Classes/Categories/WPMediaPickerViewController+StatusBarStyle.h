@@ -1,4 +1,4 @@
-#import "WPMediaPickerViewController.h"
+@import WPMediaPicker;
 
 @interface WPMediaPickerViewController (StatusBarStyle)
 
