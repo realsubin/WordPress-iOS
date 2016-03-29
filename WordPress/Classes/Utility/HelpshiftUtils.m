@@ -58,6 +58,7 @@ CGFloat const HelpshiftFlagCheckDelay = 10.0;
 
 //    if (MPTweakValue(@"Helpshift Enabled", NO)) {
 #warning Overriding MPTweakValue for Carthage testing
+    // See https://github.com/mixpanel/mixpanel-iphone/issues/451
     if (YES) {
         DDLogInfo(@"Helpshift Enabled");
 
