@@ -1,6 +1,0 @@
-framework module Simperium_iOS {
-  umbrella header "Simperium_iOS.h"
-
-  export *
-  module * { export * }
-}

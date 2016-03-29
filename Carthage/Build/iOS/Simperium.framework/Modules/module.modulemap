@@ -1,0 +1,6 @@
+framework module Simperium {
+  umbrella header "Simperium.h"
+
+  export *
+  module * { export * }
+}
