@@ -4907,6 +4907,7 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/wpxmlrpc.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/WPMediaPicker.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
