@@ -1,0 +1,6 @@
+framework module WPMediaPicker {
+  umbrella header "WPMediaPicker.h"
+
+  export *
+  module * { export * }
+}

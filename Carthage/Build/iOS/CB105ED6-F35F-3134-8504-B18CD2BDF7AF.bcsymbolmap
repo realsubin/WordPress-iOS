@@ -1,0 +1,2100 @@
+BCSymbolMap Version: 1.0
+-[WPMediaCapturePreviewCollectionView initWithFrame:]
+-[WPMediaCapturePreviewCollectionView commonInit]
+-[WPMediaCapturePreviewCollectionView dealloc]
+-[WPMediaCapturePreviewCollectionView layoutSubviews]
+-[WPMediaCapturePreviewCollectionView stopCaptureOnCompletion:]
+__63-[WPMediaCapturePreviewCollectionView stopCaptureOnCompletion:]_block_invoke
+__copy_helper_block_
+__destroy_helper_block_
+-[WPMediaCapturePreviewCollectionView startCapture]
+__51-[WPMediaCapturePreviewCollectionView startCapture]_block_invoke
+__51-[WPMediaCapturePreviewCollectionView startCapture]_block_invoke_2
+__copy_helper_block_.102
+__destroy_helper_block_.103
+__copy_helper_block_.105
+__destroy_helper_block_.106
+-[WPMediaCapturePreviewCollectionView deviceOrientationDidChange:]
+-[WPMediaCapturePreviewCollectionView isAccessibilityElement]
+-[WPMediaCapturePreviewCollectionView accessibilityLabel]
+-[WPMediaCapturePreviewCollectionView session]
+-[WPMediaCapturePreviewCollectionView setSession:]
+-[WPMediaCapturePreviewCollectionView sessionQueue]
+-[WPMediaCapturePreviewCollectionView setSessionQueue:]
+-[WPMediaCapturePreviewCollectionView previewView]
+-[WPMediaCapturePreviewCollectionView setPreviewView:]
+-[WPMediaCapturePreviewCollectionView captureVideoPreviewLayer]
+-[WPMediaCapturePreviewCollectionView setCaptureVideoPreviewLayer:]
+-[WPMediaCapturePreviewCollectionView .cxx_destruct]
+OBJC_CLASSLIST_SUP_REFS_$_
+OBJC_METH_VAR_NAME_
+OBJC_SELECTOR_REFERENCES_
+OBJC_METH_VAR_NAME_.1
+OBJC_SELECTOR_REFERENCES_.2
+OBJC_CLASSLIST_REFERENCES_$_
+OBJC_METH_VAR_NAME_.3
+OBJC_SELECTOR_REFERENCES_.4
+OBJC_METH_VAR_NAME_.5
+OBJC_SELECTOR_REFERENCES_.6
+OBJC_CLASSLIST_REFERENCES_$_.7
+OBJC_METH_VAR_NAME_.8
+OBJC_SELECTOR_REFERENCES_.9
+OBJC_METH_VAR_NAME_.10
+OBJC_SELECTOR_REFERENCES_.11
+OBJC_METH_VAR_NAME_.12
+OBJC_SELECTOR_REFERENCES_.13
+OBJC_CLASSLIST_REFERENCES_$_.14
+OBJC_METH_VAR_NAME_.15
+OBJC_SELECTOR_REFERENCES_.16
+OBJC_METH_VAR_NAME_.17
+OBJC_SELECTOR_REFERENCES_.18
+.str
+OBJC_IVAR_$_WPMediaCapturePreviewCollectionView._sessionQueue
+OBJC_CLASSLIST_REFERENCES_$_.19
+OBJC_METH_VAR_NAME_.20
+OBJC_SELECTOR_REFERENCES_.21
+OBJC_METH_VAR_NAME_.22
+OBJC_SELECTOR_REFERENCES_.23
+OBJC_IVAR_$_WPMediaCapturePreviewCollectionView._previewView
+OBJC_METH_VAR_NAME_.24
+OBJC_SELECTOR_REFERENCES_.25
+OBJC_METH_VAR_NAME_.26
+OBJC_SELECTOR_REFERENCES_.27
+OBJC_CLASSLIST_REFERENCES_$_.28
+.str.29
+_unnamed_cfstring_
+.str.30
+_unnamed_cfstring_.31
+OBJC_METH_VAR_NAME_.32
+OBJC_SELECTOR_REFERENCES_.33
+OBJC_CLASSLIST_REFERENCES_$_.34
+OBJC_METH_VAR_NAME_.35
+OBJC_SELECTOR_REFERENCES_.36
+OBJC_METH_VAR_NAME_.37
+OBJC_SELECTOR_REFERENCES_.38
+OBJC_METH_VAR_NAME_.39
+OBJC_SELECTOR_REFERENCES_.40
+OBJC_METH_VAR_NAME_.41
+OBJC_SELECTOR_REFERENCES_.42
+OBJC_METH_VAR_NAME_.43
+OBJC_SELECTOR_REFERENCES_.44
+OBJC_METH_VAR_NAME_.45
+OBJC_SELECTOR_REFERENCES_.46
+OBJC_METH_VAR_NAME_.47
+OBJC_SELECTOR_REFERENCES_.48
+OBJC_METH_VAR_NAME_.49
+OBJC_SELECTOR_REFERENCES_.50
+OBJC_METH_VAR_NAME_.51
+OBJC_SELECTOR_REFERENCES_.52
+OBJC_METH_VAR_NAME_.53
+OBJC_SELECTOR_REFERENCES_.54
+OBJC_METH_VAR_NAME_.55
+OBJC_SELECTOR_REFERENCES_.56
+OBJC_METH_VAR_NAME_.57
+OBJC_SELECTOR_REFERENCES_.58
+OBJC_METH_VAR_NAME_.59
+OBJC_SELECTOR_REFERENCES_.60
+OBJC_METH_VAR_NAME_.61
+OBJC_SELECTOR_REFERENCES_.62
+OBJC_METH_VAR_NAME_.63
+OBJC_SELECTOR_REFERENCES_.64
+OBJC_METH_VAR_NAME_.65
+OBJC_SELECTOR_REFERENCES_.66
+.str.67
+__block_descriptor_tmp
+OBJC_CLASSLIST_REFERENCES_$_.68
+OBJC_METH_VAR_NAME_.69
+OBJC_SELECTOR_REFERENCES_.70
+OBJC_CLASSLIST_REFERENCES_$_.71
+OBJC_METH_VAR_NAME_.72
+OBJC_SELECTOR_REFERENCES_.73
+OBJC_METH_VAR_NAME_.74
+OBJC_SELECTOR_REFERENCES_.75
+OBJC_METH_VAR_NAME_.76
+OBJC_SELECTOR_REFERENCES_.77
+OBJC_METH_VAR_NAME_.78
+OBJC_SELECTOR_REFERENCES_.79
+OBJC_CLASSLIST_REFERENCES_$_.80
+OBJC_METH_VAR_NAME_.81
+OBJC_SELECTOR_REFERENCES_.82
+OBJC_METH_VAR_NAME_.83
+OBJC_SELECTOR_REFERENCES_.84
+.str.85
+_unnamed_cfstring_.86
+OBJC_METH_VAR_NAME_.87
+OBJC_SELECTOR_REFERENCES_.88
+OBJC_METH_VAR_NAME_.89
+OBJC_SELECTOR_REFERENCES_.90
+OBJC_METH_VAR_NAME_.91
+OBJC_SELECTOR_REFERENCES_.92
+OBJC_CLASSLIST_REFERENCES_$_.93
+OBJC_METH_VAR_NAME_.94
+OBJC_SELECTOR_REFERENCES_.95
+OBJC_METH_VAR_NAME_.96
+OBJC_SELECTOR_REFERENCES_.97
+OBJC_METH_VAR_NAME_.98
+OBJC_SELECTOR_REFERENCES_.99
+OBJC_IVAR_$_WPMediaCapturePreviewCollectionView._captureVideoPreviewLayer
+OBJC_METH_VAR_NAME_.100
+OBJC_SELECTOR_REFERENCES_.101
+__block_descriptor_tmp.104
+__block_descriptor_tmp.107
+OBJC_METH_VAR_NAME_.108
+OBJC_SELECTOR_REFERENCES_.109
+OBJC_CLASSLIST_REFERENCES_$_.110
+OBJC_METH_VAR_NAME_.111
+OBJC_SELECTOR_REFERENCES_.112
+OBJC_METH_VAR_NAME_.113
+OBJC_SELECTOR_REFERENCES_.114
+OBJC_METH_VAR_NAME_.115
+OBJC_SELECTOR_REFERENCES_.116
+OBJC_CLASSLIST_REFERENCES_$_.117
+OBJC_METH_VAR_NAME_.118
+OBJC_SELECTOR_REFERENCES_.119
+.str.120
+_unnamed_cfstring_.121
+.str.122
+_unnamed_cfstring_.123
+OBJC_METH_VAR_NAME_.124
+OBJC_SELECTOR_REFERENCES_.125
+OBJC_IVAR_$_WPMediaCapturePreviewCollectionView._session
+OBJC_CLASS_NAME_
+l_OBJC_METACLASS_RO_$_WPMediaCapturePreviewCollectionView
+OBJC_CLASS_NAME_.126
+OBJC_METH_VAR_TYPE_
+OBJC_METH_VAR_TYPE_.127
+OBJC_METH_VAR_NAME_.128
+OBJC_METH_VAR_TYPE_.129
+OBJC_METH_VAR_NAME_.130
+OBJC_METH_VAR_TYPE_.131
+OBJC_METH_VAR_NAME_.132
+OBJC_METH_VAR_TYPE_.133
+OBJC_METH_VAR_NAME_.134
+OBJC_METH_VAR_TYPE_.135
+OBJC_METH_VAR_NAME_.136
+OBJC_METH_VAR_NAME_.137
+OBJC_METH_VAR_NAME_.138
+l_OBJC_$_INSTANCE_METHODS_WPMediaCapturePreviewCollectionView
+OBJC_METH_VAR_NAME_.139
+OBJC_METH_VAR_TYPE_.140
+OBJC_METH_VAR_NAME_.141
+OBJC_METH_VAR_TYPE_.142
+OBJC_METH_VAR_NAME_.143
+OBJC_METH_VAR_TYPE_.144
+OBJC_METH_VAR_NAME_.145
+OBJC_METH_VAR_TYPE_.146
+l_OBJC_$_INSTANCE_VARIABLES_WPMediaCapturePreviewCollectionView
+OBJC_PROP_NAME_ATTR_
+OBJC_PROP_NAME_ATTR_.147
+OBJC_PROP_NAME_ATTR_.148
+OBJC_PROP_NAME_ATTR_.149
+OBJC_PROP_NAME_ATTR_.150
+OBJC_PROP_NAME_ATTR_.151
+OBJC_PROP_NAME_ATTR_.152
+OBJC_PROP_NAME_ATTR_.153
+l_OBJC_$_PROP_LIST_WPMediaCapturePreviewCollectionView
+l_OBJC_CLASS_RO_$_WPMediaCapturePreviewCollectionView
+OBJC_LABEL_CLASS_$
+Apple LLVM version 7.3.0 (clang-703.0.29)
+dispatch_get_main_queue
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/dispatch/queue.h
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS
+CGPointMake
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
+-[WPMediaCapturePreviewCollectionView .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaCapturePreviewCollectionView.m
+-[WPMediaCapturePreviewCollectionView setCaptureVideoPreviewLayer:]
+-[WPMediaCapturePreviewCollectionView captureVideoPreviewLayer]
+-[WPMediaCapturePreviewCollectionView setPreviewView:]
+-[WPMediaCapturePreviewCollectionView previewView]
+-[WPMediaCapturePreviewCollectionView setSessionQueue:]
+-[WPMediaCapturePreviewCollectionView sessionQueue]
+-[WPMediaCapturePreviewCollectionView setSession:]
+-[WPMediaCapturePreviewCollectionView session]
+-[WPMediaCapturePreviewCollectionView accessibilityLabel]
+-[WPMediaCapturePreviewCollectionView isAccessibilityElement]
+-[WPMediaCapturePreviewCollectionView deviceOrientationDidChange:]
+-[WPMediaCapturePreviewCollectionView startCapture]
+-[WPMediaCapturePreviewCollectionView stopCaptureOnCompletion:]
+-[WPMediaCapturePreviewCollectionView layoutSubviews]
+-[WPMediaCapturePreviewCollectionView dealloc]
+-[WPMediaCapturePreviewCollectionView commonInit]
+-[WPMediaCapturePreviewCollectionView initWithFrame:]
+-[WPIndexMove init:to:]
+-[WPIndexMove from]
+-[WPIndexMove setFrom:]
+-[WPIndexMove to]
+-[WPIndexMove setTo:]
+OBJC_IVAR_$_WPIndexMove._from
+OBJC_IVAR_$_WPIndexMove._to
+OBJC_METH_VAR_NAME_.2
+OBJC_CLASS_NAME_.3
+OBJC_METH_VAR_NAME_.4
+OBJC_METH_VAR_TYPE_.5
+OBJC_METH_VAR_NAME_.6
+OBJC_METH_VAR_TYPE_.7
+OBJC_METH_VAR_TYPE_.9
+OBJC_METH_VAR_TYPE_.11
+OBJC_METH_VAR_TYPE_.13
+OBJC_METH_VAR_NAME_.14
+OBJC_METH_VAR_TYPE_.15
+OBJC_METH_VAR_NAME_.16
+OBJC_METH_VAR_TYPE_.17
+OBJC_METH_VAR_NAME_.18
+OBJC_METH_VAR_TYPE_.19
+OBJC_METH_VAR_NAME_.21
+OBJC_METH_VAR_TYPE_.22
+OBJC_METH_VAR_NAME_.23
+OBJC_METH_VAR_TYPE_.24
+OBJC_METH_VAR_NAME_.25
+OBJC_METH_VAR_TYPE_.27
+OBJC_METH_VAR_NAME_.28
+OBJC_METH_VAR_NAME_.29
+OBJC_METH_VAR_NAME_.30
+OBJC_METH_VAR_TYPE_.31
+OBJC_METH_VAR_NAME_.33
+OBJC_METH_VAR_NAME_.34
+OBJC_METH_VAR_TYPE_.35
+OBJC_METH_VAR_NAME_.36
+OBJC_CLASS_NAME_.37
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_NSObject
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_NSObject
+OBJC_PROP_NAME_ATTR_.38
+OBJC_PROP_NAME_ATTR_.39
+OBJC_PROP_NAME_ATTR_.40
+OBJC_PROP_NAME_ATTR_.41
+OBJC_PROP_NAME_ATTR_.42
+OBJC_PROP_NAME_ATTR_.43
+l_OBJC_$_PROP_LIST_NSObject
+l_OBJC_$_PROTOCOL_METHOD_TYPES_NSObject
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_$_PROTOCOL_REFS_WPMediaMove
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_WPMediaMove
+l_OBJC_$_PROTOCOL_METHOD_TYPES_WPMediaMove
+l_OBJC_PROTOCOL_$_WPMediaMove
+l_OBJC_LABEL_PROTOCOL_$_WPMediaMove
+l_OBJC_CLASS_PROTOCOLS_$_WPIndexMove
+l_OBJC_METACLASS_RO_$_WPIndexMove
+OBJC_METH_VAR_NAME_.44
+OBJC_METH_VAR_TYPE_.45
+OBJC_METH_VAR_NAME_.46
+OBJC_METH_VAR_TYPE_.47
+OBJC_METH_VAR_NAME_.48
+l_OBJC_$_INSTANCE_METHODS_WPIndexMove
+OBJC_METH_VAR_TYPE_.50
+l_OBJC_$_INSTANCE_VARIABLES_WPIndexMove
+OBJC_PROP_NAME_ATTR_.52
+OBJC_PROP_NAME_ATTR_.53
+OBJC_PROP_NAME_ATTR_.54
+OBJC_PROP_NAME_ATTR_.55
+l_OBJC_$_PROP_LIST_WPIndexMove
+l_OBJC_CLASS_RO_$_WPIndexMove
+-[WPIndexMove setTo:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPIndexMove.m
+-[WPIndexMove to]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPIndexMove.h
+-[WPIndexMove setFrom:]
+-[WPIndexMove from]
+-[WPIndexMove init:to:]
+-[WPMediaGroupPickerViewController init]
+-[WPMediaGroupPickerViewController dealloc]
+-[WPMediaGroupPickerViewController viewDidLoad]
+__47-[WPMediaGroupPickerViewController viewDidLoad]_block_invoke
+-[WPMediaGroupPickerViewController loadData]
+-[WPMediaGroupPickerViewController numberOfSectionsInTableView:]
+-[WPMediaGroupPickerViewController tableView:numberOfRowsInSection:]
+-[WPMediaGroupPickerViewController tableView:cellForRowAtIndexPath:]
+__68-[WPMediaGroupPickerViewController tableView:cellForRowAtIndexPath:]_block_invoke
+__68-[WPMediaGroupPickerViewController tableView:cellForRowAtIndexPath:]_block_invoke_2
+__copy_helper_block_.78
+__destroy_helper_block_.79
+__copy_helper_block_.82
+__destroy_helper_block_.83
+-[WPMediaGroupPickerViewController tableView:willSelectRowAtIndexPath:]
+-[WPMediaGroupPickerViewController tableView:didSelectRowAtIndexPath:]
+-[WPMediaGroupPickerViewController cancelPicker:]
+-[WPMediaGroupPickerViewController notifySelectionOfGroup]
+-[WPMediaGroupPickerViewController delegate]
+-[WPMediaGroupPickerViewController setDelegate:]
+-[WPMediaGroupPickerViewController dataSource]
+-[WPMediaGroupPickerViewController setDataSource:]
+-[WPMediaGroupPickerViewController changesObserver]
+-[WPMediaGroupPickerViewController setChangesObserver:]
+-[WPMediaGroupPickerViewController .cxx_destruct]
+OBJC_IVAR_$_WPMediaGroupPickerViewController._dataSource
+OBJC_IVAR_$_WPMediaGroupPickerViewController._changesObserver
+OBJC_METH_VAR_NAME_.7
+OBJC_SELECTOR_REFERENCES_.8
+.str.9
+_unnamed_cfstring_.10
+.str.11
+_unnamed_cfstring_.12
+OBJC_METH_VAR_NAME_.13
+OBJC_SELECTOR_REFERENCES_.14
+OBJC_METH_VAR_NAME_.19
+OBJC_SELECTOR_REFERENCES_.20
+OBJC_SELECTOR_REFERENCES_.22
+OBJC_SELECTOR_REFERENCES_.24
+OBJC_CLASSLIST_REFERENCES_$_.25
+OBJC_SELECTOR_REFERENCES_.29
+OBJC_CLASSLIST_REFERENCES_$_.30
+OBJC_METH_VAR_NAME_.31
+OBJC_SELECTOR_REFERENCES_.32
+OBJC_SELECTOR_REFERENCES_.34
+OBJC_CLASSLIST_REFERENCES_$_.39
+OBJC_METH_VAR_NAME_.40
+OBJC_SELECTOR_REFERENCES_.41
+OBJC_METH_VAR_NAME_.42
+OBJC_SELECTOR_REFERENCES_.43
+OBJC_SELECTOR_REFERENCES_.45
+OBJC_SELECTOR_REFERENCES_.47
+OBJC_SELECTOR_REFERENCES_.49
+OBJC_METH_VAR_NAME_.50
+OBJC_SELECTOR_REFERENCES_.51
+.str.52
+OBJC_METH_VAR_NAME_.67
+OBJC_SELECTOR_REFERENCES_.68
+.str.80
+__block_descriptor_tmp.81
+.str.84
+__block_descriptor_tmp.85
+OBJC_METH_VAR_NAME_.86
+OBJC_SELECTOR_REFERENCES_.87
+OBJC_METH_VAR_NAME_.88
+OBJC_SELECTOR_REFERENCES_.89
+OBJC_METH_VAR_NAME_.90
+OBJC_SELECTOR_REFERENCES_.91
+OBJC_METH_VAR_NAME_.92
+OBJC_SELECTOR_REFERENCES_.93
+OBJC_CLASSLIST_REFERENCES_$_.100
+.str.101
+_unnamed_cfstring_.102
+OBJC_METH_VAR_NAME_.103
+OBJC_SELECTOR_REFERENCES_.104
+.str.105
+_unnamed_cfstring_.106
+OBJC_METH_VAR_NAME_.107
+OBJC_SELECTOR_REFERENCES_.108
+OBJC_METH_VAR_NAME_.109
+OBJC_SELECTOR_REFERENCES_.110
+OBJC_METH_VAR_NAME_.117
+OBJC_SELECTOR_REFERENCES_.118
+OBJC_METH_VAR_NAME_.119
+OBJC_SELECTOR_REFERENCES_.120
+OBJC_METH_VAR_NAME_.121
+OBJC_SELECTOR_REFERENCES_.122
+OBJC_METH_VAR_NAME_.123
+OBJC_SELECTOR_REFERENCES_.124
+OBJC_METH_VAR_NAME_.125
+OBJC_SELECTOR_REFERENCES_.126
+OBJC_METH_VAR_NAME_.127
+OBJC_SELECTOR_REFERENCES_.128
+OBJC_METH_VAR_NAME_.129
+OBJC_SELECTOR_REFERENCES_.130
+OBJC_METH_VAR_NAME_.131
+OBJC_SELECTOR_REFERENCES_.132
+OBJC_METH_VAR_NAME_.133
+OBJC_SELECTOR_REFERENCES_.134
+OBJC_IVAR_$_WPMediaGroupPickerViewController._delegate
+OBJC_METH_VAR_NAME_.135
+OBJC_METH_VAR_TYPE_.136
+OBJC_METH_VAR_TYPE_.138
+OBJC_METH_VAR_TYPE_.139
+OBJC_METH_VAR_NAME_.140
+OBJC_METH_VAR_TYPE_.141
+OBJC_CLASS_NAME_.143
+OBJC_METH_VAR_TYPE_.145
+OBJC_METH_VAR_NAME_.146
+OBJC_METH_VAR_TYPE_.147
+OBJC_METH_VAR_NAME_.148
+OBJC_METH_VAR_TYPE_.149
+OBJC_METH_VAR_NAME_.150
+OBJC_METH_VAR_TYPE_.151
+OBJC_METH_VAR_NAME_.152
+OBJC_METH_VAR_TYPE_.153
+OBJC_METH_VAR_NAME_.154
+OBJC_METH_VAR_TYPE_.155
+OBJC_METH_VAR_NAME_.156
+OBJC_METH_VAR_TYPE_.157
+OBJC_METH_VAR_NAME_.158
+OBJC_METH_VAR_NAME_.159
+OBJC_METH_VAR_TYPE_.160
+OBJC_METH_VAR_TYPE_.161
+OBJC_METH_VAR_NAME_.162
+OBJC_METH_VAR_NAME_.163
+OBJC_METH_VAR_TYPE_.164
+OBJC_METH_VAR_NAME_.165
+OBJC_METH_VAR_NAME_.166
+OBJC_METH_VAR_TYPE_.167
+OBJC_METH_VAR_NAME_.168
+OBJC_METH_VAR_TYPE_.169
+OBJC_METH_VAR_NAME_.170
+OBJC_METH_VAR_NAME_.171
+OBJC_METH_VAR_NAME_.172
+OBJC_METH_VAR_TYPE_.173
+OBJC_METH_VAR_NAME_.174
+OBJC_CLASS_NAME_.175
+OBJC_PROP_NAME_ATTR_.176
+OBJC_PROP_NAME_ATTR_.177
+OBJC_PROP_NAME_ATTR_.178
+OBJC_PROP_NAME_ATTR_.179
+OBJC_PROP_NAME_ATTR_.180
+OBJC_PROP_NAME_ATTR_.181
+l_OBJC_$_PROTOCOL_REFS_UIImagePickerControllerDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIImagePickerControllerDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UIImagePickerControllerDelegate
+l_OBJC_PROTOCOL_$_UIImagePickerControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIImagePickerControllerDelegate
+OBJC_METH_VAR_NAME_.182
+OBJC_METH_VAR_TYPE_.183
+OBJC_METH_VAR_TYPE_.184
+OBJC_METH_VAR_NAME_.185
+OBJC_METH_VAR_NAME_.186
+OBJC_METH_VAR_TYPE_.187
+OBJC_METH_VAR_TYPE_.188
+OBJC_METH_VAR_NAME_.189
+OBJC_METH_VAR_TYPE_.190
+OBJC_METH_VAR_TYPE_.191
+OBJC_METH_VAR_NAME_.192
+OBJC_METH_VAR_TYPE_.193
+OBJC_METH_VAR_TYPE_.194
+OBJC_METH_VAR_NAME_.195
+OBJC_METH_VAR_TYPE_.196
+OBJC_METH_VAR_TYPE_.197
+OBJC_CLASS_NAME_.198
+l_OBJC_$_PROTOCOL_REFS_UINavigationControllerDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UINavigationControllerDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UINavigationControllerDelegate
+l_OBJC_PROTOCOL_$_UINavigationControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_UINavigationControllerDelegate
+l_OBJC_CLASS_PROTOCOLS_$_WPMediaGroupPickerViewController
+l_OBJC_METACLASS_RO_$_WPMediaGroupPickerViewController
+OBJC_CLASS_NAME_.199
+OBJC_METH_VAR_NAME_.200
+OBJC_METH_VAR_TYPE_.201
+OBJC_METH_VAR_NAME_.202
+OBJC_METH_VAR_NAME_.203
+OBJC_METH_VAR_TYPE_.204
+OBJC_METH_VAR_NAME_.205
+OBJC_METH_VAR_NAME_.206
+OBJC_METH_VAR_NAME_.207
+OBJC_METH_VAR_NAME_.208
+OBJC_METH_VAR_NAME_.209
+OBJC_METH_VAR_NAME_.210
+OBJC_METH_VAR_NAME_.211
+l_OBJC_$_INSTANCE_METHODS_WPMediaGroupPickerViewController
+OBJC_METH_VAR_NAME_.212
+OBJC_METH_VAR_TYPE_.213
+OBJC_METH_VAR_NAME_.214
+OBJC_METH_VAR_TYPE_.215
+OBJC_METH_VAR_NAME_.216
+OBJC_METH_VAR_TYPE_.217
+l_OBJC_$_INSTANCE_VARIABLES_WPMediaGroupPickerViewController
+OBJC_CLASS_NAME_.218
+OBJC_PROP_NAME_ATTR_.219
+OBJC_PROP_NAME_ATTR_.220
+OBJC_PROP_NAME_ATTR_.221
+OBJC_PROP_NAME_ATTR_.222
+OBJC_PROP_NAME_ATTR_.223
+OBJC_PROP_NAME_ATTR_.224
+l_OBJC_$_PROP_LIST_WPMediaGroupPickerViewController
+l_OBJC_CLASS_RO_$_WPMediaGroupPickerViewController
+CGSizeMake
+__CGSizeApplyAffineTransform
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGAffineTransform.h
+-[WPMediaGroupPickerViewController .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaGroupPickerViewController.m
+-[WPMediaGroupPickerViewController setChangesObserver:]
+-[WPMediaGroupPickerViewController changesObserver]
+-[WPMediaGroupPickerViewController setDataSource:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaGroupPickerViewController.h
+-[WPMediaGroupPickerViewController dataSource]
+-[WPMediaGroupPickerViewController setDelegate:]
+-[WPMediaGroupPickerViewController delegate]
+-[WPMediaGroupPickerViewController notifySelectionOfGroup]
+-[WPMediaGroupPickerViewController cancelPicker:]
+-[WPMediaGroupPickerViewController tableView:didSelectRowAtIndexPath:]
+-[WPMediaGroupPickerViewController tableView:willSelectRowAtIndexPath:]
+-[WPMediaGroupPickerViewController tableView:cellForRowAtIndexPath:]
+-[WPMediaGroupPickerViewController tableView:numberOfRowsInSection:]
+-[WPMediaGroupPickerViewController numberOfSectionsInTableView:]
+-[WPMediaGroupPickerViewController loadData]
+-[WPMediaGroupPickerViewController viewDidLoad]
+-[WPMediaGroupPickerViewController dealloc]
+-[WPMediaGroupPickerViewController init]
+-[WPMediaGroupTableViewCell initWithStyle:reuseIdentifier:]
+-[WPMediaGroupTableViewCell layoutSubviews]
+-[WPMediaGroupTableViewCell imagePosterView]
+-[WPMediaGroupTableViewCell setImagePosterView:]
+-[WPMediaGroupTableViewCell titleLabel]
+-[WPMediaGroupTableViewCell setTitleLabel:]
+-[WPMediaGroupTableViewCell countLabel]
+-[WPMediaGroupTableViewCell setCountLabel:]
+-[WPMediaGroupTableViewCell .cxx_destruct]
+OBJC_CLASSLIST_REFERENCES_$_.3
+OBJC_SELECTOR_REFERENCES_.5
+OBJC_SELECTOR_REFERENCES_.7
+OBJC_IVAR_$_WPMediaGroupTableViewCell._imagePosterView
+OBJC_SELECTOR_REFERENCES_.15
+OBJC_CLASSLIST_REFERENCES_$_.16
+OBJC_IVAR_$_WPMediaGroupTableViewCell._titleLabel
+OBJC_CLASSLIST_REFERENCES_$_.17
+OBJC_SELECTOR_REFERENCES_.19
+OBJC_IVAR_$_WPMediaGroupTableViewCell._countLabel
+OBJC_SELECTOR_REFERENCES_.31
+OBJC_SELECTOR_REFERENCES_.35
+OBJC_SELECTOR_REFERENCES_.37
+OBJC_METH_VAR_NAME_.38
+OBJC_SELECTOR_REFERENCES_.39
+l_OBJC_METACLASS_RO_$_WPMediaGroupTableViewCell
+OBJC_CLASS_NAME_.46
+OBJC_METH_VAR_TYPE_.49
+OBJC_METH_VAR_TYPE_.51
+OBJC_METH_VAR_NAME_.52
+l_OBJC_$_INSTANCE_METHODS_WPMediaGroupTableViewCell
+OBJC_METH_VAR_NAME_.54
+OBJC_METH_VAR_TYPE_.55
+OBJC_METH_VAR_NAME_.56
+OBJC_METH_VAR_TYPE_.57
+OBJC_METH_VAR_NAME_.58
+l_OBJC_$_INSTANCE_VARIABLES_WPMediaGroupTableViewCell
+OBJC_PROP_NAME_ATTR_.59
+OBJC_PROP_NAME_ATTR_.60
+OBJC_PROP_NAME_ATTR_.61
+OBJC_PROP_NAME_ATTR_.62
+OBJC_PROP_NAME_ATTR_.63
+l_OBJC_$_PROP_LIST_WPMediaGroupTableViewCell
+l_OBJC_CLASS_RO_$_WPMediaGroupTableViewCell
+CGRectMake
+-[WPMediaGroupTableViewCell .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaGroupTableViewCell.m
+-[WPMediaGroupTableViewCell setCountLabel:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaGroupTableViewCell.h
+-[WPMediaGroupTableViewCell countLabel]
+-[WPMediaGroupTableViewCell setTitleLabel:]
+-[WPMediaGroupTableViewCell titleLabel]
+-[WPMediaGroupTableViewCell setImagePosterView:]
+-[WPMediaGroupTableViewCell imagePosterView]
+-[WPMediaGroupTableViewCell layoutSubviews]
+-[WPMediaGroupTableViewCell initWithStyle:reuseIdentifier:]
+-[WPPHAssetDataSource init]
+-[WPPHAssetDataSource dealloc]
++[WPPHAssetDataSource sharedImageManager]
+__41+[WPPHAssetDataSource sharedImageManager]_block_invoke
+-[WPPHAssetDataSource photoLibraryDidChange:]
+__45-[WPPHAssetDataSource photoLibraryDidChange:]_block_invoke
+__45-[WPPHAssetDataSource photoLibraryDidChange:]_block_invoke.52
+__copy_helper_block_.53
+__destroy_helper_block_.54
+-[WPPHAssetDataSource loadDataWithSuccess:failure:]
+__51-[WPPHAssetDataSource loadDataWithSuccess:failure:]_block_invoke
+__51-[WPPHAssetDataSource loadDataWithSuccess:failure:]_block_invoke_2
+__copy_helper_block_.74
+__destroy_helper_block_.75
+__copy_helper_block_.79
+__destroy_helper_block_.80
+-[WPPHAssetDataSource smartAlbumsToShow]
+-[WPPHAssetDataSource loadGroupsWithSuccess:failure:]
+-[WPPHAssetDataSource loadAssetsWithSuccess:failure:]
+-[WPPHAssetDataSource numberOfGroups]
+-[WPPHAssetDataSource groupAtIndex:]
+-[WPPHAssetDataSource selectedGroup]
+-[WPPHAssetDataSource setSelectedGroup:]
+-[WPPHAssetDataSource numberOfAssets]
+-[WPPHAssetDataSource mediaAtIndex:]
+-[WPPHAssetDataSource mediaWithIdentifier:]
+-[WPPHAssetDataSource registerChangeObserverBlock:]
+-[WPPHAssetDataSource unregisterChangeObserver:]
+-[WPPHAssetDataSource addImage:metadata:completionBlock:]
+__57-[WPPHAssetDataSource addImage:metadata:completionBlock:]_block_invoke
+__copy_helper_block_.181
+__destroy_helper_block_.182
+-[WPPHAssetDataSource addVideoFromURL:completionBlock:]
+__55-[WPPHAssetDataSource addVideoFromURL:completionBlock:]_block_invoke
+__copy_helper_block_.189
+__destroy_helper_block_.190
+-[WPPHAssetDataSource addAssetWithChangeRequest:completionBlock:]
+__Block_byref_object_copy_
+__Block_byref_object_dispose_
+__65-[WPPHAssetDataSource addAssetWithChangeRequest:completionBlock:]_block_invoke
+__copy_helper_block_.203
+__destroy_helper_block_.204
+__65-[WPPHAssetDataSource addAssetWithChangeRequest:completionBlock:]_block_invoke.206
+__65-[WPPHAssetDataSource addAssetWithChangeRequest:completionBlock:]_block_invoke_2
+__copy_helper_block_.207
+__destroy_helper_block_.208
+__65-[WPPHAssetDataSource addAssetWithChangeRequest:completionBlock:]_block_invoke.212
+__copy_helper_block_.213
+__destroy_helper_block_.214
+__65-[WPPHAssetDataSource addAssetWithChangeRequest:completionBlock:]_block_invoke.216
+__copy_helper_block_.217
+__destroy_helper_block_.218
+__copy_helper_block_.220
+__destroy_helper_block_.221
+-[WPPHAssetDataSource setMediaTypeFilter:]
+-[WPPHAssetDataSource activeAssetsCollection]
+-[WPPHAssetDataSource setActiveAssetsCollection:]
+-[WPPHAssetDataSource assetsCollections]
+-[WPPHAssetDataSource setAssetsCollections:]
+-[WPPHAssetDataSource assets]
+-[WPPHAssetDataSource setAssets:]
+-[WPPHAssetDataSource mediaTypeFilter]
+-[WPPHAssetDataSource observers]
+-[WPPHAssetDataSource setObservers:]
+-[WPPHAssetDataSource refreshGroups]
+-[WPPHAssetDataSource setRefreshGroups:]
+-[WPPHAssetDataSource ascendingOrdering]
+-[WPPHAssetDataSource setAscendingOrdering:]
+-[WPPHAssetDataSource .cxx_destruct]
+-[PHAsset(WPMediaAsset) imageWithSize:completionHandler:]
+__57-[PHAsset(WPMediaAsset) imageWithSize:completionHandler:]_block_invoke
+__copy_helper_block_.346
+__destroy_helper_block_.347
+-[PHAsset(WPMediaAsset) cancelImageRequest:]
+-[PHAsset(WPMediaAsset) assetType]
+-[PHAsset(WPMediaAsset) baseAsset]
+-[PHAsset(WPMediaAsset) identifier]
+-[PHAsset(WPMediaAsset) date]
+-[PHAssetCollection(WPMediaGroup) name]
+-[PHAssetCollection(WPMediaGroup) imageWithSize:completionHandler:]
+-[PHAssetCollection(WPMediaGroup) cancelImageRequest:]
+-[PHAssetCollection(WPMediaGroup) baseGroup]
+-[PHAssetCollection(WPMediaGroup) identifier]
+-[PHAssetCollection(WPMediaGroup) numberOfAssets]
+OBJC_IVAR_$_WPPHAssetDataSource._mediaTypeFilter
+OBJC_IVAR_$_WPPHAssetDataSource._observers
+OBJC_IVAR_$_WPPHAssetDataSource._refreshGroups
+sharedImageManager._sharedImageManager
+sharedImageManager._onceToken
+OBJC_CLASSLIST_REFERENCES_$_.12
+.str.15
+__block_literal_global
+OBJC_SELECTOR_REFERENCES_.17
+OBJC_CLASSLIST_REFERENCES_$_.32
+OBJC_CLASSLIST_REFERENCES_$_.37
+.str.42
+__block_descriptor_tmp.43
+.str.55
+__block_descriptor_tmp.56
+OBJC_CLASSLIST_REFERENCES_$_.61
+OBJC_METH_VAR_NAME_.62
+OBJC_SELECTOR_REFERENCES_.63
+OBJC_METH_VAR_NAME_.64
+OBJC_SELECTOR_REFERENCES_.65
+OBJC_METH_VAR_NAME_.66
+OBJC_SELECTOR_REFERENCES_.67
+OBJC_METH_VAR_NAME_.68
+OBJC_SELECTOR_REFERENCES_.69
+OBJC_METH_VAR_NAME_.70
+OBJC_SELECTOR_REFERENCES_.71
+__block_descriptor_tmp.76
+OBJC_METH_VAR_NAME_.77
+OBJC_SELECTOR_REFERENCES_.78
+.str.81
+__block_descriptor_tmp.82
+OBJC_CLASSLIST_REFERENCES_$_.85
+OBJC_CLASSLIST_REFERENCES_$_.88
+OBJC_METH_VAR_NAME_.102
+OBJC_SELECTOR_REFERENCES_.103
+OBJC_CLASSLIST_REFERENCES_$_.104
+OBJC_METH_VAR_NAME_.105
+OBJC_SELECTOR_REFERENCES_.106
+OBJC_CLASSLIST_REFERENCES_$_.111
+OBJC_METH_VAR_NAME_.112
+OBJC_SELECTOR_REFERENCES_.113
+OBJC_METH_VAR_NAME_.114
+OBJC_SELECTOR_REFERENCES_.115
+OBJC_CLASSLIST_REFERENCES_$_.116
+OBJC_CLASSLIST_REFERENCES_$_.123
+.str.124
+_unnamed_cfstring_.125
+OBJC_METH_VAR_NAME_.126
+OBJC_SELECTOR_REFERENCES_.127
+OBJC_SELECTOR_REFERENCES_.129
+OBJC_SELECTOR_REFERENCES_.131
+OBJC_SELECTOR_REFERENCES_.133
+OBJC_SELECTOR_REFERENCES_.135
+OBJC_SELECTOR_REFERENCES_.137
+OBJC_SELECTOR_REFERENCES_.139
+OBJC_CLASSLIST_REFERENCES_$_.140
+OBJC_SELECTOR_REFERENCES_.142
+OBJC_SELECTOR_REFERENCES_.144
+OBJC_CLASSLIST_REFERENCES_$_.145
+.str.146
+_unnamed_cfstring_.147
+OBJC_SELECTOR_REFERENCES_.149
+OBJC_SELECTOR_REFERENCES_.151
+.str.152
+_unnamed_cfstring_.153
+OBJC_CLASSLIST_REFERENCES_$_.154
+.str.155
+_unnamed_cfstring_.156
+OBJC_METH_VAR_NAME_.157
+OBJC_SELECTOR_REFERENCES_.158
+OBJC_SELECTOR_REFERENCES_.160
+OBJC_METH_VAR_NAME_.161
+OBJC_SELECTOR_REFERENCES_.162
+OBJC_SELECTOR_REFERENCES_.164
+OBJC_SELECTOR_REFERENCES_.166
+OBJC_METH_VAR_NAME_.167
+OBJC_SELECTOR_REFERENCES_.168
+OBJC_CLASSLIST_REFERENCES_$_.169
+OBJC_SELECTOR_REFERENCES_.171
+OBJC_SELECTOR_REFERENCES_.173
+OBJC_SELECTOR_REFERENCES_.175
+OBJC_METH_VAR_NAME_.176
+OBJC_SELECTOR_REFERENCES_.177
+OBJC_CLASSLIST_REFERENCES_$_.178
+OBJC_METH_VAR_NAME_.179
+OBJC_SELECTOR_REFERENCES_.180
+.str.183
+__block_descriptor_tmp.184
+OBJC_SELECTOR_REFERENCES_.186
+OBJC_METH_VAR_NAME_.187
+OBJC_SELECTOR_REFERENCES_.188
+__block_descriptor_tmp.191
+OBJC_SELECTOR_REFERENCES_.193
+OBJC_METH_VAR_NAME_.194
+OBJC_SELECTOR_REFERENCES_.195
+OBJC_METH_VAR_NAME_.196
+OBJC_SELECTOR_REFERENCES_.197
+OBJC_CLASSLIST_REFERENCES_$_.198
+OBJC_METH_VAR_NAME_.199
+OBJC_SELECTOR_REFERENCES_.200
+OBJC_METH_VAR_NAME_.201
+OBJC_SELECTOR_REFERENCES_.202
+__block_descriptor_tmp.205
+__block_descriptor_tmp.209
+.str.210
+_unnamed_cfstring_.211
+__block_descriptor_tmp.215
+__block_descriptor_tmp.219
+.str.222
+__block_descriptor_tmp.223
+OBJC_METH_VAR_NAME_.224
+OBJC_SELECTOR_REFERENCES_.225
+OBJC_IVAR_$_WPPHAssetDataSource._activeAssetsCollection
+OBJC_IVAR_$_WPPHAssetDataSource._assetsCollections
+OBJC_IVAR_$_WPPHAssetDataSource._assets
+OBJC_IVAR_$_WPPHAssetDataSource._ascendingOrdering
+l_OBJC_$_CLASS_METHODS_WPPHAssetDataSource
+OBJC_METH_VAR_NAME_.226
+OBJC_METH_VAR_TYPE_.227
+OBJC_METH_VAR_TYPE_.228
+OBJC_CLASS_NAME_.229
+OBJC_METH_VAR_NAME_.230
+OBJC_METH_VAR_TYPE_.231
+OBJC_METH_VAR_TYPE_.232
+OBJC_METH_VAR_NAME_.233
+OBJC_METH_VAR_NAME_.234
+OBJC_METH_VAR_TYPE_.235
+OBJC_METH_VAR_NAME_.236
+OBJC_METH_VAR_TYPE_.237
+OBJC_METH_VAR_NAME_.238
+OBJC_METH_VAR_TYPE_.239
+OBJC_METH_VAR_NAME_.240
+OBJC_METH_VAR_TYPE_.241
+OBJC_METH_VAR_NAME_.242
+OBJC_METH_VAR_TYPE_.243
+OBJC_METH_VAR_NAME_.244
+OBJC_METH_VAR_NAME_.245
+OBJC_METH_VAR_TYPE_.246
+OBJC_METH_VAR_NAME_.247
+OBJC_METH_VAR_TYPE_.248
+OBJC_METH_VAR_NAME_.249
+OBJC_METH_VAR_NAME_.250
+OBJC_METH_VAR_TYPE_.251
+OBJC_METH_VAR_NAME_.252
+OBJC_METH_VAR_NAME_.253
+OBJC_METH_VAR_TYPE_.254
+OBJC_METH_VAR_NAME_.255
+OBJC_METH_VAR_TYPE_.256
+OBJC_METH_VAR_NAME_.257
+OBJC_METH_VAR_NAME_.258
+OBJC_METH_VAR_NAME_.259
+OBJC_METH_VAR_TYPE_.260
+OBJC_METH_VAR_NAME_.261
+OBJC_CLASS_NAME_.262
+OBJC_PROP_NAME_ATTR_.263
+OBJC_PROP_NAME_ATTR_.264
+OBJC_PROP_NAME_ATTR_.265
+OBJC_PROP_NAME_ATTR_.266
+OBJC_PROP_NAME_ATTR_.267
+OBJC_PROP_NAME_ATTR_.268
+l_OBJC_$_PROTOCOL_REFS_PHPhotoLibraryChangeObserver
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_PHPhotoLibraryChangeObserver
+l_OBJC_$_PROTOCOL_METHOD_TYPES_PHPhotoLibraryChangeObserver
+l_OBJC_PROTOCOL_$_PHPhotoLibraryChangeObserver
+l_OBJC_LABEL_PROTOCOL_$_PHPhotoLibraryChangeObserver
+OBJC_METH_VAR_NAME_.269
+OBJC_METH_VAR_TYPE_.270
+OBJC_METH_VAR_NAME_.271
+OBJC_METH_VAR_TYPE_.272
+OBJC_METH_VAR_TYPE_.273
+OBJC_METH_VAR_NAME_.274
+OBJC_METH_VAR_TYPE_.275
+OBJC_METH_VAR_NAME_.276
+OBJC_METH_VAR_TYPE_.277
+OBJC_METH_VAR_NAME_.278
+OBJC_METH_VAR_NAME_.279
+OBJC_METH_VAR_TYPE_.280
+OBJC_METH_VAR_NAME_.281
+OBJC_METH_VAR_TYPE_.282
+OBJC_METH_VAR_TYPE_.283
+OBJC_METH_VAR_NAME_.284
+OBJC_METH_VAR_TYPE_.285
+OBJC_METH_VAR_TYPE_.286
+OBJC_METH_VAR_TYPE_.287
+OBJC_METH_VAR_NAME_.288
+OBJC_METH_VAR_TYPE_.289
+OBJC_METH_VAR_TYPE_.290
+OBJC_METH_VAR_NAME_.291
+OBJC_METH_VAR_TYPE_.292
+OBJC_METH_VAR_TYPE_.293
+OBJC_METH_VAR_NAME_.294
+OBJC_METH_VAR_TYPE_.295
+OBJC_METH_VAR_TYPE_.296
+OBJC_METH_VAR_NAME_.297
+OBJC_METH_VAR_TYPE_.298
+OBJC_METH_VAR_NAME_.299
+OBJC_METH_VAR_TYPE_.300
+OBJC_CLASS_NAME_.301
+l_OBJC_$_PROTOCOL_REFS_WPMediaCollectionDataSource
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_WPMediaCollectionDataSource
+l_OBJC_$_PROTOCOL_METHOD_TYPES_WPMediaCollectionDataSource
+l_OBJC_PROTOCOL_$_WPMediaCollectionDataSource
+l_OBJC_LABEL_PROTOCOL_$_WPMediaCollectionDataSource
+l_OBJC_CLASS_PROTOCOLS_$_WPPHAssetDataSource
+l_OBJC_METACLASS_RO_$_WPPHAssetDataSource
+OBJC_CLASS_NAME_.302
+OBJC_METH_VAR_TYPE_.303
+OBJC_METH_VAR_NAME_.304
+OBJC_METH_VAR_NAME_.305
+l_OBJC_$_INSTANCE_METHODS_WPPHAssetDataSource
+OBJC_METH_VAR_NAME_.306
+OBJC_METH_VAR_TYPE_.307
+OBJC_METH_VAR_NAME_.308
+OBJC_METH_VAR_NAME_.309
+OBJC_METH_VAR_TYPE_.310
+OBJC_METH_VAR_NAME_.311
+OBJC_METH_VAR_TYPE_.312
+OBJC_METH_VAR_NAME_.313
+OBJC_METH_VAR_NAME_.314
+OBJC_METH_VAR_TYPE_.315
+OBJC_METH_VAR_NAME_.316
+OBJC_METH_VAR_TYPE_.317
+l_OBJC_$_INSTANCE_VARIABLES_WPPHAssetDataSource
+OBJC_PROP_NAME_ATTR_.318
+OBJC_PROP_NAME_ATTR_.319
+OBJC_PROP_NAME_ATTR_.320
+OBJC_PROP_NAME_ATTR_.321
+OBJC_PROP_NAME_ATTR_.322
+OBJC_PROP_NAME_ATTR_.323
+OBJC_PROP_NAME_ATTR_.324
+OBJC_PROP_NAME_ATTR_.325
+OBJC_PROP_NAME_ATTR_.326
+OBJC_PROP_NAME_ATTR_.327
+OBJC_PROP_NAME_ATTR_.328
+OBJC_PROP_NAME_ATTR_.329
+OBJC_PROP_NAME_ATTR_.330
+OBJC_PROP_NAME_ATTR_.331
+l_OBJC_$_PROP_LIST_WPPHAssetDataSource
+l_OBJC_CLASS_RO_$_WPPHAssetDataSource
+OBJC_CLASSLIST_REFERENCES_$_.332
+OBJC_METH_VAR_NAME_.333
+OBJC_SELECTOR_REFERENCES_.334
+OBJC_METH_VAR_NAME_.335
+OBJC_SELECTOR_REFERENCES_.336
+OBJC_METH_VAR_NAME_.337
+OBJC_SELECTOR_REFERENCES_.338
+OBJC_METH_VAR_NAME_.339
+OBJC_SELECTOR_REFERENCES_.340
+OBJC_CLASSLIST_REFERENCES_$_.341
+OBJC_METH_VAR_NAME_.342
+OBJC_SELECTOR_REFERENCES_.343
+OBJC_METH_VAR_NAME_.344
+OBJC_SELECTOR_REFERENCES_.345
+.str.348
+__block_descriptor_tmp.349
+OBJC_METH_VAR_NAME_.350
+OBJC_SELECTOR_REFERENCES_.351
+OBJC_METH_VAR_NAME_.352
+OBJC_SELECTOR_REFERENCES_.353
+OBJC_METH_VAR_NAME_.354
+OBJC_SELECTOR_REFERENCES_.355
+OBJC_METH_VAR_NAME_.356
+OBJC_SELECTOR_REFERENCES_.357
+OBJC_CLASS_NAME_.358
+OBJC_METH_VAR_NAME_.359
+OBJC_METH_VAR_TYPE_.360
+OBJC_METH_VAR_NAME_.361
+OBJC_METH_VAR_NAME_.362
+OBJC_METH_VAR_NAME_.363
+OBJC_METH_VAR_NAME_.364
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_PHAsset_$_WPMediaAsset
+OBJC_METH_VAR_TYPE_.365
+OBJC_METH_VAR_NAME_.366
+OBJC_METH_VAR_TYPE_.367
+OBJC_METH_VAR_TYPE_.368
+l_OBJC_$_PROTOCOL_REFS_WPMediaAsset
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_WPMediaAsset
+l_OBJC_$_PROTOCOL_METHOD_TYPES_WPMediaAsset
+l_OBJC_PROTOCOL_$_WPMediaAsset
+l_OBJC_LABEL_PROTOCOL_$_WPMediaAsset
+l_OBJC_CATEGORY_PROTOCOLS_$_PHAsset_$_WPMediaAsset
+l_OBJC_$_PROP_LIST_PHAsset_$_WPMediaAsset
+l_OBJC_$_CATEGORY_PHAsset_$_WPMediaAsset
+OBJC_METH_VAR_NAME_.369
+OBJC_SELECTOR_REFERENCES_.370
+OBJC_SELECTOR_REFERENCES_.371
+OBJC_METH_VAR_NAME_.372
+OBJC_SELECTOR_REFERENCES_.373
+OBJC_CLASS_NAME_.374
+OBJC_METH_VAR_NAME_.375
+l_OBJC_$_CATEGORY_INSTANCE_METHODS_PHAssetCollection_$_WPMediaGroup
+l_OBJC_$_PROTOCOL_REFS_WPMediaGroup
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_WPMediaGroup
+l_OBJC_$_PROTOCOL_METHOD_TYPES_WPMediaGroup
+l_OBJC_PROTOCOL_$_WPMediaGroup
+l_OBJC_LABEL_PROTOCOL_$_WPMediaGroup
+l_OBJC_CATEGORY_PROTOCOLS_$_PHAssetCollection_$_WPMediaGroup
+l_OBJC_$_PROP_LIST_PHAssetCollection_$_WPMediaGroup
+l_OBJC_$_CATEGORY_PHAssetCollection_$_WPMediaGroup
+OBJC_LABEL_CATEGORY_$
+NSMakeRange
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSRange.h
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/include/dispatch/once.h
+-[PHAssetCollection(WPMediaGroup) numberOfAssets]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPPHAssetDataSource.m
+-[PHAssetCollection(WPMediaGroup) identifier]
+-[PHAssetCollection(WPMediaGroup) baseGroup]
+-[PHAssetCollection(WPMediaGroup) cancelImageRequest:]
+-[PHAssetCollection(WPMediaGroup) imageWithSize:completionHandler:]
+-[PHAssetCollection(WPMediaGroup) name]
+-[PHAsset(WPMediaAsset) date]
+-[PHAsset(WPMediaAsset) identifier]
+-[PHAsset(WPMediaAsset) baseAsset]
+-[PHAsset(WPMediaAsset) assetType]
+-[PHAsset(WPMediaAsset) cancelImageRequest:]
+-[PHAsset(WPMediaAsset) imageWithSize:completionHandler:]
+-[WPPHAssetDataSource .cxx_destruct]
+-[WPPHAssetDataSource setAscendingOrdering:]
+-[WPPHAssetDataSource ascendingOrdering]
+-[WPPHAssetDataSource setRefreshGroups:]
+-[WPPHAssetDataSource refreshGroups]
+-[WPPHAssetDataSource setObservers:]
+-[WPPHAssetDataSource observers]
+-[WPPHAssetDataSource mediaTypeFilter]
+-[WPPHAssetDataSource setAssets:]
+-[WPPHAssetDataSource assets]
+-[WPPHAssetDataSource setAssetsCollections:]
+-[WPPHAssetDataSource assetsCollections]
+-[WPPHAssetDataSource setActiveAssetsCollection:]
+-[WPPHAssetDataSource activeAssetsCollection]
+-[WPPHAssetDataSource setMediaTypeFilter:]
+-[WPPHAssetDataSource addAssetWithChangeRequest:completionBlock:]
+-[WPPHAssetDataSource addVideoFromURL:completionBlock:]
+-[WPPHAssetDataSource addImage:metadata:completionBlock:]
+-[WPPHAssetDataSource unregisterChangeObserver:]
+-[WPPHAssetDataSource registerChangeObserverBlock:]
+-[WPPHAssetDataSource mediaWithIdentifier:]
+-[WPPHAssetDataSource mediaAtIndex:]
+-[WPPHAssetDataSource numberOfAssets]
+-[WPPHAssetDataSource setSelectedGroup:]
+-[WPPHAssetDataSource selectedGroup]
+-[WPPHAssetDataSource groupAtIndex:]
+-[WPPHAssetDataSource numberOfGroups]
+-[WPPHAssetDataSource loadAssetsWithSuccess:failure:]
+-[WPPHAssetDataSource loadGroupsWithSuccess:failure:]
+-[WPPHAssetDataSource smartAlbumsToShow]
+-[WPPHAssetDataSource loadDataWithSuccess:failure:]
+-[WPPHAssetDataSource photoLibraryDidChange:]
++[WPPHAssetDataSource sharedImageManager]
+-[WPPHAssetDataSource dealloc]
+-[WPPHAssetDataSource init]
+-[WPMediaPickerViewController initWithNibName:bundle:]
+-[WPMediaPickerViewController viewDidLoad]
+-[WPMediaPickerViewController didReceiveMemoryWarning]
+-[WPMediaPickerViewController setupNavigationController]
+-[WPMediaPickerViewController defaulDataSource]
+__47-[WPMediaPickerViewController defaulDataSource]_block_invoke
+-[WPMediaPickerViewController delegate]
+-[WPMediaPickerViewController setDelegate:]
+-[WPMediaPickerViewController dataSource]
+-[WPMediaPickerViewController setDataSource:]
+-[WPMediaPickerViewController allowCaptureOfMedia]
+-[WPMediaPickerViewController setAllowCaptureOfMedia:]
+-[WPMediaPickerViewController showMostRecentFirst]
+-[WPMediaPickerViewController setShowMostRecentFirst:]
+-[WPMediaPickerViewController filter]
+-[WPMediaPickerViewController setFilter:]
+-[WPMediaPickerViewController allowMultipleSelection]
+-[WPMediaPickerViewController setAllowMultipleSelection:]
+-[WPMediaPickerViewController .cxx_destruct]
+OBJC_IVAR_$_WPMediaPickerViewController._allowCaptureOfMedia
+OBJC_IVAR_$_WPMediaPickerViewController._showMostRecentFirst
+OBJC_IVAR_$_WPMediaPickerViewController._allowMultipleSelection
+OBJC_IVAR_$_WPMediaPickerViewController._filter
+OBJC_METH_VAR_NAME_.9
+OBJC_SELECTOR_REFERENCES_.10
+OBJC_METH_VAR_NAME_.11
+OBJC_SELECTOR_REFERENCES_.12
+OBJC_SELECTOR_REFERENCES_.26
+OBJC_METH_VAR_NAME_.27
+OBJC_SELECTOR_REFERENCES_.28
+OBJC_SELECTOR_REFERENCES_.30
+OBJC_CLASSLIST_REFERENCES_$_.33
+defaulDataSource.assetSource
+defaulDataSource.onceToken
+OBJC_CLASSLIST_REFERENCES_$_.52
+.str.53
+OBJC_IVAR_$_WPMediaPickerViewController._delegate
+OBJC_IVAR_$_WPMediaPickerViewController._dataSource
+OBJC_METH_VAR_TYPE_.58
+OBJC_METH_VAR_TYPE_.59
+OBJC_METH_VAR_NAME_.60
+OBJC_METH_VAR_TYPE_.61
+OBJC_METH_VAR_TYPE_.62
+OBJC_METH_VAR_TYPE_.64
+OBJC_METH_VAR_TYPE_.65
+OBJC_METH_VAR_TYPE_.67
+OBJC_METH_VAR_TYPE_.68
+OBJC_CLASS_NAME_.69
+OBJC_METH_VAR_TYPE_.71
+OBJC_METH_VAR_TYPE_.73
+OBJC_METH_VAR_TYPE_.75
+OBJC_METH_VAR_TYPE_.77
+OBJC_METH_VAR_TYPE_.79
+OBJC_METH_VAR_NAME_.80
+OBJC_METH_VAR_TYPE_.81
+OBJC_METH_VAR_NAME_.82
+OBJC_METH_VAR_TYPE_.83
+OBJC_METH_VAR_NAME_.84
+OBJC_METH_VAR_TYPE_.85
+OBJC_METH_VAR_TYPE_.88
+OBJC_METH_VAR_TYPE_.90
+OBJC_METH_VAR_TYPE_.93
+OBJC_METH_VAR_NAME_.95
+OBJC_METH_VAR_TYPE_.96
+OBJC_METH_VAR_NAME_.97
+OBJC_METH_VAR_TYPE_.98
+OBJC_METH_VAR_NAME_.99
+OBJC_METH_VAR_NAME_.101
+OBJC_METH_VAR_TYPE_.102
+OBJC_CLASS_NAME_.104
+OBJC_PROP_NAME_ATTR_.105
+OBJC_PROP_NAME_ATTR_.106
+OBJC_PROP_NAME_ATTR_.107
+OBJC_PROP_NAME_ATTR_.108
+OBJC_PROP_NAME_ATTR_.109
+OBJC_PROP_NAME_ATTR_.110
+l_OBJC_CLASS_PROTOCOLS_$_WPMediaPickerViewController
+l_OBJC_METACLASS_RO_$_WPMediaPickerViewController
+OBJC_METH_VAR_TYPE_.111
+OBJC_METH_VAR_TYPE_.114
+OBJC_METH_VAR_TYPE_.115
+OBJC_METH_VAR_TYPE_.116
+OBJC_METH_VAR_TYPE_.117
+l_OBJC_$_INSTANCE_METHODS_WPMediaPickerViewController
+OBJC_METH_VAR_TYPE_.119
+OBJC_METH_VAR_NAME_.120
+OBJC_METH_VAR_NAME_.122
+OBJC_METH_VAR_TYPE_.123
+OBJC_METH_VAR_TYPE_.125
+l_OBJC_$_INSTANCE_VARIABLES_WPMediaPickerViewController
+OBJC_CLASS_NAME_.128
+OBJC_PROP_NAME_ATTR_.129
+OBJC_PROP_NAME_ATTR_.130
+OBJC_PROP_NAME_ATTR_.131
+OBJC_PROP_NAME_ATTR_.132
+OBJC_PROP_NAME_ATTR_.133
+OBJC_PROP_NAME_ATTR_.134
+OBJC_PROP_NAME_ATTR_.135
+OBJC_PROP_NAME_ATTR_.136
+OBJC_PROP_NAME_ATTR_.137
+OBJC_PROP_NAME_ATTR_.138
+OBJC_PROP_NAME_ATTR_.139
+OBJC_PROP_NAME_ATTR_.140
+l_OBJC_$_PROP_LIST_WPMediaPickerViewController
+l_OBJC_CLASS_RO_$_WPMediaPickerViewController
+-[WPMediaPickerViewController .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaPickerViewController.m
+-[WPMediaPickerViewController setAllowMultipleSelection:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaPickerViewController.h
+-[WPMediaPickerViewController allowMultipleSelection]
+-[WPMediaPickerViewController setFilter:]
+-[WPMediaPickerViewController filter]
+-[WPMediaPickerViewController setShowMostRecentFirst:]
+-[WPMediaPickerViewController showMostRecentFirst]
+-[WPMediaPickerViewController setAllowCaptureOfMedia:]
+-[WPMediaPickerViewController allowCaptureOfMedia]
+-[WPMediaPickerViewController setDataSource:]
+-[WPMediaPickerViewController dataSource]
+-[WPMediaPickerViewController setDelegate:]
+-[WPMediaPickerViewController delegate]
+-[WPMediaPickerViewController defaulDataSource]
+-[WPMediaPickerViewController setupNavigationController]
+-[WPMediaPickerViewController didReceiveMemoryWarning]
+-[WPMediaPickerViewController viewDidLoad]
+-[WPMediaPickerViewController initWithNibName:bundle:]
+-[WPMediaCollectionViewController init]
+-[WPMediaCollectionViewController dealloc]
+-[WPMediaCollectionViewController viewDidLoad]
+__46-[WPMediaCollectionViewController viewDidLoad]_block_invoke
+__46-[WPMediaCollectionViewController viewDidLoad]_block_invoke_2
+__copy_helper_block_.90
+__destroy_helper_block_.91
+-[WPMediaCollectionViewController setupLayout]
+-[WPMediaCollectionViewController viewWillLayoutSubviews]
+-[WPMediaCollectionViewController pullToRefresh:]
+-[WPMediaCollectionViewController changeGroup:]
+-[WPMediaCollectionViewController adaptivePresentationStyleForPresentationController:]
+-[WPMediaCollectionViewController adaptivePresentationStyleForPresentationController:traitCollection:]
+-[WPMediaCollectionViewController cancelPicker:]
+-[WPMediaCollectionViewController finishPicker:]
+-[WPMediaCollectionViewController picker]
+-[WPMediaCollectionViewController isShowingCaptureCell]
+-[WPMediaCollectionViewController refreshTitle]
+-[WPMediaCollectionViewController updateDataWithRemoved:inserted:changed:moved:]
+__80-[WPMediaCollectionViewController updateDataWithRemoved:inserted:changed:moved:]_block_invoke
+__copy_helper_block_.176
+__destroy_helper_block_.177
+__80-[WPMediaCollectionViewController updateDataWithRemoved:inserted:changed:moved:]_block_invoke.179
+__80-[WPMediaCollectionViewController updateDataWithRemoved:inserted:changed:moved:]_block_invoke_2
+__copy_helper_block_.193
+__destroy_helper_block_.194
+__80-[WPMediaCollectionViewController updateDataWithRemoved:inserted:changed:moved:]_block_invoke.196
+__copy_helper_block_.201
+__destroy_helper_block_.202
+-[WPMediaCollectionViewController indexPathsFromIndexSet:section:]
+__66-[WPMediaCollectionViewController indexPathsFromIndexSet:section:]_block_invoke
+__copy_helper_block_.216
+__destroy_helper_block_.217
+-[WPMediaCollectionViewController refreshData]
+__46-[WPMediaCollectionViewController refreshData]_block_invoke
+__46-[WPMediaCollectionViewController refreshData]_block_invoke_2
+__46-[WPMediaCollectionViewController refreshData]_block_invoke_3
+__copy_helper_block_.249
+__destroy_helper_block_.250
+__copy_helper_block_.252
+__destroy_helper_block_.253
+__copy_helper_block_.255
+__destroy_helper_block_.256
+__46-[WPMediaCollectionViewController refreshData]_block_invoke.258
+__46-[WPMediaCollectionViewController refreshData]_block_invoke_2.259
+__copy_helper_block_.262
+__destroy_helper_block_.263
+__copy_helper_block_.265
+__destroy_helper_block_.266
+-[WPMediaCollectionViewController showError:]
+__45-[WPMediaCollectionViewController showError:]_block_invoke
+__copy_helper_block_.296
+__destroy_helper_block_.297
+__45-[WPMediaCollectionViewController showError:]_block_invoke.304
+-[WPMediaCollectionViewController refreshSelection]
+-[WPMediaCollectionViewController numberOfSectionsInCollectionView:]
+-[WPMediaCollectionViewController collectionView:numberOfItemsInSection:]
+-[WPMediaCollectionViewController assetForPosition:]
+-[WPMediaCollectionViewController collectionView:cellForItemAtIndexPath:]
+-[WPMediaCollectionViewController collectionView:layout:referenceSizeForHeaderInSection:]
+-[WPMediaCollectionViewController collectionView:layout:referenceSizeForFooterInSection:]
+-[WPMediaCollectionViewController collectionView:viewForSupplementaryElementOfKind:atIndexPath:]
+-[WPMediaCollectionViewController showCapture]
+__46-[WPMediaCollectionViewController showCapture]_block_invoke
+__copy_helper_block_.361
+__destroy_helper_block_.362
+-[WPMediaCollectionViewController positionOfAssetInSelection:]
+__62-[WPMediaCollectionViewController positionOfAssetInSelection:]_block_invoke
+__copy_helper_block_.368
+__destroy_helper_block_.369
+-[WPMediaCollectionViewController collectionView:shouldSelectItemAtIndexPath:]
+-[WPMediaCollectionViewController collectionView:didSelectItemAtIndexPath:]
+-[WPMediaCollectionViewController collectionView:shouldDeselectItemAtIndexPath:]
+-[WPMediaCollectionViewController collectionView:didDeselectItemAtIndexPath:]
+__77-[WPMediaCollectionViewController collectionView:didDeselectItemAtIndexPath:]_block_invoke
+__copy_helper_block_.388
+__destroy_helper_block_.389
+-[WPMediaCollectionViewController animateCellSelection:completion:]
+__67-[WPMediaCollectionViewController animateCellSelection:completion:]_block_invoke
+__67-[WPMediaCollectionViewController animateCellSelection:completion:]_block_invoke_2
+__copy_helper_block_.396
+__destroy_helper_block_.397
+__67-[WPMediaCollectionViewController animateCellSelection:completion:]_block_invoke.401
+__copy_helper_block_.402
+__destroy_helper_block_.403
+__copy_helper_block_.405
+__destroy_helper_block_.406
+__67-[WPMediaCollectionViewController animateCellSelection:completion:]_block_invoke.408
+__copy_helper_block_.409
+__destroy_helper_block_.410
+-[WPMediaCollectionViewController animateCaptureCellSelection:completion:]
+__74-[WPMediaCollectionViewController animateCaptureCellSelection:completion:]_block_invoke
+__74-[WPMediaCollectionViewController animateCaptureCellSelection:completion:]_block_invoke_2
+__copy_helper_block_.416
+__destroy_helper_block_.417
+__copy_helper_block_.419
+__destroy_helper_block_.420
+__74-[WPMediaCollectionViewController animateCaptureCellSelection:completion:]_block_invoke.422
+__copy_helper_block_.423
+__destroy_helper_block_.424
+-[WPMediaCollectionViewController isMediaDeviceAvailable]
+-[WPMediaCollectionViewController showMediaCaptureViewController]
+__65-[WPMediaCollectionViewController showMediaCaptureViewController]_block_invoke
+-[WPMediaCollectionViewController captureMedia]
+__47-[WPMediaCollectionViewController captureMedia]_block_invoke
+__47-[WPMediaCollectionViewController captureMedia]_block_invoke_2
+__copy_helper_block_.456
+__destroy_helper_block_.457
+__copy_helper_block_.459
+__destroy_helper_block_.460
+__47-[WPMediaCollectionViewController captureMedia]_block_invoke.464
+__copy_helper_block_.465
+__destroy_helper_block_.466
+-[WPMediaCollectionViewController showAlertAboutMediaCapturePermission]
+__71-[WPMediaCollectionViewController showAlertAboutMediaCapturePermission]_block_invoke
+-[WPMediaCollectionViewController processMediaCaptured:]
+__56-[WPMediaCollectionViewController processMediaCaptured:]_block_invoke
+__copy_helper_block_.480
+__destroy_helper_block_.481
+-[WPMediaCollectionViewController addMedia:animated:]
+-[WPMediaCollectionViewController imagePickerController:didFinishPickingMediaWithInfo:]
+__87-[WPMediaCollectionViewController imagePickerController:didFinishPickingMediaWithInfo:]_block_invoke
+__copy_helper_block_.492
+__destroy_helper_block_.493
+-[WPMediaCollectionViewController imagePickerControllerDidCancel:]
+__66-[WPMediaCollectionViewController imagePickerControllerDidCancel:]_block_invoke
+__copy_helper_block_.497
+__destroy_helper_block_.498
+-[WPMediaCollectionViewController mediaGroupPickerViewController:didPickGroup:]
+__79-[WPMediaCollectionViewController mediaGroupPickerViewController:didPickGroup:]_block_invoke
+__copy_helper_block_.502
+__destroy_helper_block_.503
+-[WPMediaCollectionViewController mediaGroupPickerViewControllerDidCancel:]
+-[WPMediaCollectionViewController allowCaptureOfMedia]
+-[WPMediaCollectionViewController setAllowCaptureOfMedia:]
+-[WPMediaCollectionViewController showMostRecentFirst]
+-[WPMediaCollectionViewController setShowMostRecentFirst:]
+-[WPMediaCollectionViewController filter]
+-[WPMediaCollectionViewController setFilter:]
+-[WPMediaCollectionViewController allowMultipleSelection]
+-[WPMediaCollectionViewController setAllowMultipleSelection:]
+-[WPMediaCollectionViewController dataSource]
+-[WPMediaCollectionViewController setDataSource:]
+-[WPMediaCollectionViewController layout]
+-[WPMediaCollectionViewController setLayout:]
+-[WPMediaCollectionViewController selectedAssets]
+-[WPMediaCollectionViewController setSelectedAssets:]
+-[WPMediaCollectionViewController captureCell]
+-[WPMediaCollectionViewController setCaptureCell:]
+-[WPMediaCollectionViewController titleButton]
+-[WPMediaCollectionViewController setTitleButton:]
+-[WPMediaCollectionViewController refreshControl]
+-[WPMediaCollectionViewController setRefreshControl:]
+-[WPMediaCollectionViewController changesObserver]
+-[WPMediaCollectionViewController setChangesObserver:]
+-[WPMediaCollectionViewController firstVisibleCell]
+-[WPMediaCollectionViewController setFirstVisibleCell:]
+-[WPMediaCollectionViewController refreshGroupFirstTime]
+-[WPMediaCollectionViewController setRefreshGroupFirstTime:]
+-[WPMediaCollectionViewController .cxx_destruct]
+.str.1
+_unnamed_cfstring_.2
+OBJC_IVAR_$_WPMediaCollectionViewController._layout
+OBJC_IVAR_$_WPMediaCollectionViewController._selectedAssets
+OBJC_IVAR_$_WPMediaCollectionViewController._allowCaptureOfMedia
+OBJC_IVAR_$_WPMediaCollectionViewController._showMostRecentFirst
+OBJC_IVAR_$_WPMediaCollectionViewController._filter
+OBJC_IVAR_$_WPMediaCollectionViewController._refreshGroupFirstTime
+OBJC_IVAR_$_WPMediaCollectionViewController._dataSource
+OBJC_IVAR_$_WPMediaCollectionViewController._changesObserver
+OBJC_CLASSLIST_REFERENCES_$_.41
+OBJC_CLASSLIST_REFERENCES_$_.46
+OBJC_CLASSLIST_REFERENCES_$_.51
+OBJC_SELECTOR_REFERENCES_.53
+OBJC_SELECTOR_REFERENCES_.55
+OBJC_SELECTOR_REFERENCES_.57
+OBJC_SELECTOR_REFERENCES_.59
+OBJC_SELECTOR_REFERENCES_.61
+OBJC_CLASSLIST_REFERENCES_$_.64
+OBJC_METH_VAR_NAME_.71
+OBJC_SELECTOR_REFERENCES_.72
+OBJC_METH_VAR_NAME_.73
+OBJC_SELECTOR_REFERENCES_.74
+OBJC_METH_VAR_NAME_.75
+OBJC_SELECTOR_REFERENCES_.76
+OBJC_METH_VAR_NAME_.79
+OBJC_SELECTOR_REFERENCES_.80
+OBJC_METH_VAR_NAME_.85
+OBJC_SELECTOR_REFERENCES_.86
+.str.89
+.str.92
+__block_descriptor_tmp.93
+OBJC_METH_VAR_NAME_.104
+OBJC_SELECTOR_REFERENCES_.105
+OBJC_METH_VAR_NAME_.106
+OBJC_SELECTOR_REFERENCES_.107
+OBJC_METH_VAR_NAME_.110
+OBJC_SELECTOR_REFERENCES_.111
+OBJC_CLASSLIST_REFERENCES_$_.114
+OBJC_SELECTOR_REFERENCES_.136
+OBJC_SELECTOR_REFERENCES_.138
+OBJC_SELECTOR_REFERENCES_.140
+OBJC_SELECTOR_REFERENCES_.146
+OBJC_METH_VAR_NAME_.147
+OBJC_SELECTOR_REFERENCES_.148
+OBJC_METH_VAR_NAME_.149
+OBJC_SELECTOR_REFERENCES_.150
+OBJC_METH_VAR_NAME_.151
+OBJC_SELECTOR_REFERENCES_.152
+OBJC_METH_VAR_NAME_.153
+OBJC_SELECTOR_REFERENCES_.154
+OBJC_METH_VAR_NAME_.155
+OBJC_SELECTOR_REFERENCES_.156
+OBJC_CLASSLIST_REFERENCES_$_.159
+.str.160
+_unnamed_cfstring_.161
+OBJC_SELECTOR_REFERENCES_.163
+OBJC_METH_VAR_NAME_.164
+OBJC_SELECTOR_REFERENCES_.165
+OBJC_SELECTOR_REFERENCES_.167
+OBJC_SELECTOR_REFERENCES_.169
+__block_descriptor_tmp.178
+OBJC_METH_VAR_NAME_.180
+OBJC_SELECTOR_REFERENCES_.181
+OBJC_SELECTOR_REFERENCES_.183
+OBJC_CLASSLIST_REFERENCES_$_.184
+OBJC_SELECTOR_REFERENCES_.190
+OBJC_METH_VAR_NAME_.191
+OBJC_SELECTOR_REFERENCES_.192
+__block_descriptor_tmp.195
+OBJC_METH_VAR_NAME_.197
+OBJC_SELECTOR_REFERENCES_.198
+.str.203
+__block_descriptor_tmp.204
+OBJC_SELECTOR_REFERENCES_.206
+OBJC_SELECTOR_REFERENCES_.211
+OBJC_SELECTOR_REFERENCES_.213
+OBJC_SELECTOR_REFERENCES_.215
+.str.218
+OBJC_METH_VAR_NAME_.220
+OBJC_SELECTOR_REFERENCES_.221
+OBJC_CLASSLIST_REFERENCES_$_.222
+OBJC_METH_VAR_NAME_.223
+OBJC_SELECTOR_REFERENCES_.224
+OBJC_METH_VAR_NAME_.225
+OBJC_SELECTOR_REFERENCES_.226
+OBJC_METH_VAR_NAME_.227
+OBJC_SELECTOR_REFERENCES_.228
+OBJC_METH_VAR_NAME_.229
+OBJC_SELECTOR_REFERENCES_.230
+OBJC_METH_VAR_NAME_.231
+OBJC_SELECTOR_REFERENCES_.232
+OBJC_SELECTOR_REFERENCES_.234
+OBJC_METH_VAR_NAME_.235
+OBJC_SELECTOR_REFERENCES_.236
+OBJC_METH_VAR_NAME_.237
+OBJC_SELECTOR_REFERENCES_.238
+OBJC_METH_VAR_NAME_.239
+OBJC_SELECTOR_REFERENCES_.240
+OBJC_METH_VAR_NAME_.241
+OBJC_SELECTOR_REFERENCES_.242
+OBJC_METH_VAR_NAME_.243
+OBJC_SELECTOR_REFERENCES_.244
+OBJC_SELECTOR_REFERENCES_.246
+OBJC_SELECTOR_REFERENCES_.248
+__block_descriptor_tmp.251
+__block_descriptor_tmp.254
+__block_descriptor_tmp.257
+OBJC_METH_VAR_NAME_.260
+OBJC_SELECTOR_REFERENCES_.261
+__block_descriptor_tmp.264
+.str.267
+__block_descriptor_tmp.268
+OBJC_SELECTOR_REFERENCES_.270
+OBJC_CLASSLIST_REFERENCES_$_.271
+OBJC_METH_VAR_NAME_.272
+OBJC_SELECTOR_REFERENCES_.273
+.str.274
+_unnamed_cfstring_.275
+.str.276
+_unnamed_cfstring_.277
+OBJC_SELECTOR_REFERENCES_.279
+.str.280
+_unnamed_cfstring_.281
+.str.282
+_unnamed_cfstring_.283
+OBJC_SELECTOR_REFERENCES_.285
+OBJC_METH_VAR_NAME_.286
+OBJC_SELECTOR_REFERENCES_.287
+.str.288
+_unnamed_cfstring_.289
+.str.290
+_unnamed_cfstring_.291
+OBJC_CLASSLIST_REFERENCES_$_.292
+OBJC_METH_VAR_NAME_.293
+OBJC_SELECTOR_REFERENCES_.294
+OBJC_CLASSLIST_REFERENCES_$_.295
+.str.298
+__block_descriptor_tmp.299
+OBJC_METH_VAR_NAME_.300
+OBJC_SELECTOR_REFERENCES_.301
+OBJC_METH_VAR_NAME_.302
+OBJC_SELECTOR_REFERENCES_.303
+OBJC_CLASSLIST_REFERENCES_$_.305
+OBJC_SELECTOR_REFERENCES_.307
+OBJC_CLASSLIST_REFERENCES_$_.308
+OBJC_SELECTOR_REFERENCES_.310
+OBJC_SELECTOR_REFERENCES_.312
+__block_descriptor_tmp.313
+OBJC_SELECTOR_REFERENCES_.315
+OBJC_SELECTOR_REFERENCES_.317
+OBJC_METH_VAR_NAME_.318
+OBJC_SELECTOR_REFERENCES_.319
+OBJC_METH_VAR_NAME_.320
+OBJC_SELECTOR_REFERENCES_.321
+OBJC_METH_VAR_NAME_.322
+OBJC_SELECTOR_REFERENCES_.323
+OBJC_METH_VAR_NAME_.324
+OBJC_SELECTOR_REFERENCES_.325
+OBJC_METH_VAR_NAME_.326
+OBJC_SELECTOR_REFERENCES_.327
+OBJC_METH_VAR_NAME_.328
+OBJC_SELECTOR_REFERENCES_.329
+OBJC_METH_VAR_NAME_.330
+OBJC_SELECTOR_REFERENCES_.331
+OBJC_METH_VAR_NAME_.332
+OBJC_SELECTOR_REFERENCES_.333
+OBJC_METH_VAR_NAME_.334
+OBJC_SELECTOR_REFERENCES_.335
+OBJC_METH_VAR_NAME_.336
+OBJC_SELECTOR_REFERENCES_.337
+OBJC_METH_VAR_NAME_.338
+OBJC_SELECTOR_REFERENCES_.339
+OBJC_METH_VAR_NAME_.340
+OBJC_SELECTOR_REFERENCES_.341
+OBJC_METH_VAR_NAME_.346
+OBJC_SELECTOR_REFERENCES_.347
+OBJC_METH_VAR_NAME_.348
+OBJC_SELECTOR_REFERENCES_.349
+OBJC_CLASSLIST_REFERENCES_$_.350
+OBJC_METH_VAR_NAME_.351
+OBJC_SELECTOR_REFERENCES_.352
+OBJC_METH_VAR_NAME_.353
+OBJC_SELECTOR_REFERENCES_.354
+OBJC_METH_VAR_NAME_.355
+OBJC_SELECTOR_REFERENCES_.356
+OBJC_METH_VAR_NAME_.357
+OBJC_SELECTOR_REFERENCES_.358
+OBJC_SELECTOR_REFERENCES_.360
+__block_descriptor_tmp.363
+OBJC_SELECTOR_REFERENCES_.365
+OBJC_SELECTOR_REFERENCES_.367
+.str.370
+__block_descriptor_tmp.371
+OBJC_METH_VAR_NAME_.374
+OBJC_SELECTOR_REFERENCES_.375
+OBJC_METH_VAR_NAME_.376
+OBJC_SELECTOR_REFERENCES_.377
+OBJC_METH_VAR_NAME_.378
+OBJC_SELECTOR_REFERENCES_.379
+OBJC_METH_VAR_NAME_.380
+OBJC_SELECTOR_REFERENCES_.381
+OBJC_METH_VAR_NAME_.382
+OBJC_SELECTOR_REFERENCES_.383
+OBJC_METH_VAR_NAME_.384
+OBJC_SELECTOR_REFERENCES_.385
+OBJC_METH_VAR_NAME_.386
+OBJC_SELECTOR_REFERENCES_.387
+__block_descriptor_tmp.390
+OBJC_METH_VAR_NAME_.391
+OBJC_SELECTOR_REFERENCES_.392
+OBJC_CLASSLIST_REFERENCES_$_.393
+OBJC_METH_VAR_NAME_.394
+OBJC_SELECTOR_REFERENCES_.395
+__block_descriptor_tmp.398
+OBJC_METH_VAR_NAME_.399
+OBJC_SELECTOR_REFERENCES_.400
+__block_descriptor_tmp.404
+__block_descriptor_tmp.407
+__block_descriptor_tmp.411
+OBJC_METH_VAR_NAME_.412
+OBJC_SELECTOR_REFERENCES_.413
+OBJC_METH_VAR_NAME_.414
+OBJC_SELECTOR_REFERENCES_.415
+__block_descriptor_tmp.418
+__block_descriptor_tmp.421
+__block_descriptor_tmp.425
+OBJC_CLASSLIST_REFERENCES_$_.426
+OBJC_METH_VAR_NAME_.427
+OBJC_SELECTOR_REFERENCES_.428
+OBJC_CLASSLIST_REFERENCES_$_.429
+OBJC_METH_VAR_NAME_.430
+OBJC_SELECTOR_REFERENCES_.431
+OBJC_METH_VAR_NAME_.432
+OBJC_SELECTOR_REFERENCES_.433
+OBJC_CLASSLIST_REFERENCES_$_.434
+OBJC_METH_VAR_NAME_.435
+OBJC_SELECTOR_REFERENCES_.436
+OBJC_METH_VAR_NAME_.437
+OBJC_SELECTOR_REFERENCES_.438
+OBJC_METH_VAR_NAME_.439
+OBJC_SELECTOR_REFERENCES_.440
+OBJC_METH_VAR_NAME_.441
+OBJC_SELECTOR_REFERENCES_.442
+OBJC_METH_VAR_NAME_.443
+OBJC_SELECTOR_REFERENCES_.444
+OBJC_METH_VAR_NAME_.445
+OBJC_SELECTOR_REFERENCES_.446
+__block_descriptor_tmp.447
+__block_literal_global.448
+OBJC_CLASSLIST_REFERENCES_$_.449
+OBJC_METH_VAR_NAME_.450
+OBJC_SELECTOR_REFERENCES_.451
+OBJC_METH_VAR_NAME_.452
+OBJC_SELECTOR_REFERENCES_.453
+OBJC_METH_VAR_NAME_.454
+OBJC_SELECTOR_REFERENCES_.455
+__block_descriptor_tmp.458
+__block_descriptor_tmp.461
+OBJC_METH_VAR_NAME_.462
+OBJC_SELECTOR_REFERENCES_.463
+__block_descriptor_tmp.467
+.str.468
+_unnamed_cfstring_.469
+.str.470
+_unnamed_cfstring_.471
+__block_descriptor_tmp.472
+__block_literal_global.473
+.str.474
+_unnamed_cfstring_.475
+OBJC_METH_VAR_NAME_.476
+OBJC_SELECTOR_REFERENCES_.477
+OBJC_METH_VAR_NAME_.478
+OBJC_SELECTOR_REFERENCES_.479
+.str.482
+__block_descriptor_tmp.483
+OBJC_METH_VAR_NAME_.484
+OBJC_SELECTOR_REFERENCES_.485
+OBJC_METH_VAR_NAME_.486
+OBJC_SELECTOR_REFERENCES_.487
+OBJC_METH_VAR_NAME_.488
+OBJC_SELECTOR_REFERENCES_.489
+OBJC_METH_VAR_NAME_.490
+OBJC_SELECTOR_REFERENCES_.491
+__block_descriptor_tmp.494
+OBJC_METH_VAR_NAME_.495
+OBJC_SELECTOR_REFERENCES_.496
+__block_descriptor_tmp.499
+OBJC_METH_VAR_NAME_.500
+OBJC_SELECTOR_REFERENCES_.501
+__block_descriptor_tmp.504
+OBJC_IVAR_$_WPMediaCollectionViewController._allowMultipleSelection
+OBJC_IVAR_$_WPMediaCollectionViewController._captureCell
+OBJC_IVAR_$_WPMediaCollectionViewController._titleButton
+OBJC_IVAR_$_WPMediaCollectionViewController._refreshControl
+OBJC_IVAR_$_WPMediaCollectionViewController._firstVisibleCell
+OBJC_METH_VAR_NAME_.505
+OBJC_METH_VAR_TYPE_.506
+OBJC_METH_VAR_NAME_.507
+OBJC_METH_VAR_TYPE_.508
+OBJC_METH_VAR_TYPE_.509
+OBJC_METH_VAR_NAME_.510
+OBJC_METH_VAR_TYPE_.511
+OBJC_METH_VAR_TYPE_.512
+OBJC_CLASS_NAME_.513
+OBJC_METH_VAR_TYPE_.514
+OBJC_METH_VAR_TYPE_.515
+OBJC_METH_VAR_NAME_.516
+OBJC_METH_VAR_TYPE_.517
+OBJC_METH_VAR_NAME_.518
+OBJC_METH_VAR_TYPE_.519
+OBJC_METH_VAR_NAME_.520
+OBJC_METH_VAR_TYPE_.521
+OBJC_METH_VAR_NAME_.522
+OBJC_METH_VAR_TYPE_.523
+OBJC_METH_VAR_NAME_.524
+OBJC_METH_VAR_TYPE_.525
+OBJC_METH_VAR_NAME_.526
+OBJC_METH_VAR_TYPE_.527
+OBJC_METH_VAR_NAME_.528
+OBJC_METH_VAR_NAME_.529
+OBJC_METH_VAR_TYPE_.530
+OBJC_METH_VAR_TYPE_.531
+OBJC_METH_VAR_NAME_.532
+OBJC_METH_VAR_NAME_.533
+OBJC_METH_VAR_TYPE_.534
+OBJC_METH_VAR_NAME_.535
+OBJC_METH_VAR_NAME_.536
+OBJC_METH_VAR_TYPE_.537
+OBJC_METH_VAR_NAME_.538
+OBJC_METH_VAR_TYPE_.539
+OBJC_METH_VAR_NAME_.540
+OBJC_METH_VAR_NAME_.541
+OBJC_METH_VAR_NAME_.542
+OBJC_METH_VAR_TYPE_.543
+OBJC_METH_VAR_NAME_.544
+OBJC_CLASS_NAME_.545
+OBJC_PROP_NAME_ATTR_.546
+OBJC_PROP_NAME_ATTR_.547
+OBJC_PROP_NAME_ATTR_.548
+OBJC_PROP_NAME_ATTR_.549
+OBJC_PROP_NAME_ATTR_.550
+OBJC_PROP_NAME_ATTR_.551
+OBJC_METH_VAR_NAME_.552
+OBJC_METH_VAR_TYPE_.553
+OBJC_METH_VAR_TYPE_.554
+OBJC_METH_VAR_NAME_.555
+OBJC_METH_VAR_NAME_.556
+OBJC_METH_VAR_TYPE_.557
+OBJC_METH_VAR_TYPE_.558
+OBJC_METH_VAR_NAME_.559
+OBJC_METH_VAR_TYPE_.560
+OBJC_METH_VAR_TYPE_.561
+OBJC_METH_VAR_NAME_.562
+OBJC_METH_VAR_TYPE_.563
+OBJC_METH_VAR_TYPE_.564
+OBJC_METH_VAR_NAME_.565
+OBJC_METH_VAR_TYPE_.566
+OBJC_METH_VAR_TYPE_.567
+OBJC_CLASS_NAME_.568
+OBJC_METH_VAR_NAME_.569
+OBJC_METH_VAR_TYPE_.570
+OBJC_METH_VAR_NAME_.571
+OBJC_METH_VAR_TYPE_.572
+OBJC_CLASS_NAME_.573
+l_OBJC_$_PROTOCOL_REFS_WPMediaGroupPickerViewControllerDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_WPMediaGroupPickerViewControllerDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_WPMediaGroupPickerViewControllerDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_WPMediaGroupPickerViewControllerDelegate
+l_OBJC_PROTOCOL_$_WPMediaGroupPickerViewControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_WPMediaGroupPickerViewControllerDelegate
+OBJC_METH_VAR_NAME_.574
+OBJC_METH_VAR_TYPE_.575
+OBJC_METH_VAR_NAME_.576
+OBJC_METH_VAR_TYPE_.577
+OBJC_METH_VAR_NAME_.578
+OBJC_METH_VAR_NAME_.579
+OBJC_METH_VAR_TYPE_.580
+OBJC_METH_VAR_TYPE_.581
+OBJC_CLASS_NAME_.582
+OBJC_METH_VAR_NAME_.583
+OBJC_METH_VAR_TYPE_.584
+OBJC_METH_VAR_NAME_.585
+OBJC_METH_VAR_TYPE_.586
+OBJC_METH_VAR_TYPE_.587
+OBJC_METH_VAR_NAME_.588
+OBJC_METH_VAR_TYPE_.589
+OBJC_METH_VAR_TYPE_.590
+OBJC_METH_VAR_NAME_.591
+OBJC_METH_VAR_TYPE_.592
+OBJC_METH_VAR_TYPE_.593
+OBJC_CLASS_NAME_.594
+l_OBJC_$_PROTOCOL_REFS_UIAdaptivePresentationControllerDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIAdaptivePresentationControllerDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UIAdaptivePresentationControllerDelegate
+l_OBJC_PROTOCOL_$_UIAdaptivePresentationControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIAdaptivePresentationControllerDelegate
+l_OBJC_$_PROTOCOL_REFS_UIPopoverPresentationControllerDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIPopoverPresentationControllerDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UIPopoverPresentationControllerDelegate
+l_OBJC_PROTOCOL_$_UIPopoverPresentationControllerDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIPopoverPresentationControllerDelegate
+OBJC_METH_VAR_NAME_.595
+OBJC_METH_VAR_TYPE_.596
+OBJC_METH_VAR_TYPE_.597
+OBJC_METH_VAR_NAME_.598
+OBJC_METH_VAR_TYPE_.599
+OBJC_METH_VAR_TYPE_.600
+OBJC_METH_VAR_NAME_.601
+OBJC_METH_VAR_TYPE_.602
+OBJC_METH_VAR_TYPE_.603
+OBJC_METH_VAR_NAME_.604
+OBJC_METH_VAR_NAME_.605
+OBJC_METH_VAR_TYPE_.606
+OBJC_METH_VAR_TYPE_.607
+OBJC_METH_VAR_NAME_.608
+OBJC_CLASS_NAME_.609
+OBJC_METH_VAR_NAME_.610
+OBJC_METH_VAR_TYPE_.611
+OBJC_METH_VAR_TYPE_.612
+OBJC_METH_VAR_NAME_.613
+OBJC_METH_VAR_TYPE_.614
+OBJC_METH_VAR_NAME_.615
+OBJC_METH_VAR_NAME_.616
+OBJC_METH_VAR_NAME_.617
+OBJC_METH_VAR_NAME_.618
+OBJC_METH_VAR_NAME_.619
+OBJC_METH_VAR_NAME_.620
+OBJC_METH_VAR_TYPE_.621
+OBJC_METH_VAR_NAME_.622
+OBJC_METH_VAR_TYPE_.623
+OBJC_METH_VAR_TYPE_.624
+OBJC_METH_VAR_NAME_.625
+OBJC_METH_VAR_NAME_.626
+OBJC_METH_VAR_NAME_.627
+OBJC_METH_VAR_NAME_.628
+OBJC_METH_VAR_TYPE_.629
+OBJC_METH_VAR_TYPE_.630
+OBJC_METH_VAR_NAME_.631
+OBJC_METH_VAR_TYPE_.632
+OBJC_METH_VAR_TYPE_.633
+OBJC_METH_VAR_NAME_.634
+OBJC_METH_VAR_TYPE_.635
+OBJC_METH_VAR_TYPE_.636
+OBJC_METH_VAR_NAME_.637
+OBJC_METH_VAR_NAME_.638
+OBJC_METH_VAR_TYPE_.639
+OBJC_METH_VAR_NAME_.640
+OBJC_METH_VAR_TYPE_.641
+OBJC_METH_VAR_NAME_.642
+OBJC_METH_VAR_TYPE_.643
+OBJC_METH_VAR_TYPE_.644
+OBJC_METH_VAR_NAME_.645
+OBJC_METH_VAR_TYPE_.646
+OBJC_METH_VAR_NAME_.647
+OBJC_METH_VAR_TYPE_.648
+OBJC_METH_VAR_TYPE_.649
+OBJC_CLASS_NAME_.650
+OBJC_METH_VAR_NAME_.651
+OBJC_METH_VAR_TYPE_.652
+OBJC_METH_VAR_NAME_.653
+OBJC_METH_VAR_NAME_.654
+OBJC_METH_VAR_NAME_.655
+OBJC_METH_VAR_TYPE_.656
+OBJC_METH_VAR_TYPE_.657
+OBJC_METH_VAR_NAME_.658
+OBJC_METH_VAR_TYPE_.659
+OBJC_METH_VAR_TYPE_.660
+OBJC_METH_VAR_NAME_.661
+OBJC_METH_VAR_NAME_.662
+OBJC_METH_VAR_NAME_.663
+OBJC_METH_VAR_NAME_.664
+OBJC_METH_VAR_TYPE_.665
+OBJC_METH_VAR_NAME_.666
+OBJC_METH_VAR_TYPE_.667
+OBJC_METH_VAR_NAME_.668
+OBJC_METH_VAR_TYPE_.669
+OBJC_METH_VAR_TYPE_.670
+OBJC_METH_VAR_NAME_.671
+OBJC_METH_VAR_TYPE_.672
+OBJC_METH_VAR_NAME_.673
+OBJC_CLASS_NAME_.674
+l_OBJC_$_PROTOCOL_REFS_UIScrollViewDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UIScrollViewDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UIScrollViewDelegate
+l_OBJC_PROTOCOL_$_UIScrollViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIScrollViewDelegate
+l_OBJC_$_PROTOCOL_REFS_UICollectionViewDelegate
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UICollectionViewDelegate
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UICollectionViewDelegate
+l_OBJC_PROTOCOL_$_UICollectionViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_UICollectionViewDelegate
+l_OBJC_$_PROTOCOL_REFS_UICollectionViewDelegateFlowLayout
+l_OBJC_$_PROTOCOL_INSTANCE_METHODS_OPT_UICollectionViewDelegateFlowLayout
+l_OBJC_$_PROTOCOL_METHOD_TYPES_UICollectionViewDelegateFlowLayout
+l_OBJC_PROTOCOL_$_UICollectionViewDelegateFlowLayout
+l_OBJC_LABEL_PROTOCOL_$_UICollectionViewDelegateFlowLayout
+l_OBJC_CLASS_PROTOCOLS_$_WPMediaCollectionViewController
+l_OBJC_METACLASS_RO_$_WPMediaCollectionViewController
+OBJC_CLASS_NAME_.675
+OBJC_METH_VAR_TYPE_.676
+OBJC_METH_VAR_NAME_.677
+OBJC_METH_VAR_NAME_.678
+OBJC_METH_VAR_TYPE_.679
+OBJC_METH_VAR_NAME_.680
+OBJC_METH_VAR_NAME_.681
+OBJC_METH_VAR_TYPE_.682
+OBJC_METH_VAR_NAME_.683
+OBJC_METH_VAR_NAME_.684
+OBJC_METH_VAR_NAME_.685
+OBJC_METH_VAR_TYPE_.686
+OBJC_METH_VAR_NAME_.687
+OBJC_METH_VAR_TYPE_.688
+OBJC_METH_VAR_NAME_.689
+OBJC_METH_VAR_TYPE_.690
+OBJC_METH_VAR_NAME_.691
+OBJC_METH_VAR_NAME_.692
+OBJC_METH_VAR_NAME_.693
+OBJC_METH_VAR_NAME_.694
+OBJC_METH_VAR_NAME_.695
+l_OBJC_$_INSTANCE_METHODS_WPMediaCollectionViewController
+OBJC_METH_VAR_NAME_.696
+OBJC_METH_VAR_TYPE_.697
+OBJC_METH_VAR_NAME_.698
+OBJC_METH_VAR_NAME_.699
+OBJC_METH_VAR_NAME_.700
+OBJC_METH_VAR_NAME_.701
+OBJC_METH_VAR_TYPE_.702
+OBJC_METH_VAR_NAME_.703
+OBJC_METH_VAR_TYPE_.704
+OBJC_METH_VAR_NAME_.705
+OBJC_METH_VAR_TYPE_.706
+OBJC_METH_VAR_NAME_.707
+OBJC_METH_VAR_TYPE_.708
+OBJC_METH_VAR_NAME_.709
+OBJC_METH_VAR_TYPE_.710
+OBJC_METH_VAR_NAME_.711
+OBJC_METH_VAR_TYPE_.712
+OBJC_METH_VAR_NAME_.713
+OBJC_METH_VAR_TYPE_.714
+OBJC_METH_VAR_NAME_.715
+OBJC_METH_VAR_TYPE_.716
+OBJC_METH_VAR_NAME_.717
+OBJC_METH_VAR_TYPE_.718
+l_OBJC_$_INSTANCE_VARIABLES_WPMediaCollectionViewController
+OBJC_CLASS_NAME_.719
+OBJC_PROP_NAME_ATTR_.720
+OBJC_PROP_NAME_ATTR_.721
+OBJC_PROP_NAME_ATTR_.722
+OBJC_PROP_NAME_ATTR_.723
+OBJC_PROP_NAME_ATTR_.724
+OBJC_PROP_NAME_ATTR_.725
+OBJC_PROP_NAME_ATTR_.726
+OBJC_PROP_NAME_ATTR_.727
+OBJC_PROP_NAME_ATTR_.728
+OBJC_PROP_NAME_ATTR_.729
+OBJC_PROP_NAME_ATTR_.730
+OBJC_PROP_NAME_ATTR_.731
+OBJC_PROP_NAME_ATTR_.732
+OBJC_PROP_NAME_ATTR_.733
+OBJC_PROP_NAME_ATTR_.734
+OBJC_PROP_NAME_ATTR_.735
+OBJC_PROP_NAME_ATTR_.736
+OBJC_PROP_NAME_ATTR_.737
+OBJC_PROP_NAME_ATTR_.738
+OBJC_PROP_NAME_ATTR_.739
+OBJC_PROP_NAME_ATTR_.740
+OBJC_PROP_NAME_ATTR_.741
+OBJC_PROP_NAME_ATTR_.742
+OBJC_PROP_NAME_ATTR_.743
+OBJC_PROP_NAME_ATTR_.744
+OBJC_PROP_NAME_ATTR_.745
+l_OBJC_$_PROP_LIST_WPMediaCollectionViewController
+l_OBJC_CLASS_RO_$_WPMediaCollectionViewController
+UIEdgeInsetsMake
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIGeometry.h
+-[WPMediaCollectionViewController .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaCollectionViewController.m
+-[WPMediaCollectionViewController setRefreshGroupFirstTime:]
+-[WPMediaCollectionViewController refreshGroupFirstTime]
+-[WPMediaCollectionViewController setFirstVisibleCell:]
+-[WPMediaCollectionViewController firstVisibleCell]
+-[WPMediaCollectionViewController setChangesObserver:]
+-[WPMediaCollectionViewController changesObserver]
+-[WPMediaCollectionViewController setRefreshControl:]
+-[WPMediaCollectionViewController refreshControl]
+-[WPMediaCollectionViewController setTitleButton:]
+-[WPMediaCollectionViewController titleButton]
+-[WPMediaCollectionViewController setCaptureCell:]
+-[WPMediaCollectionViewController captureCell]
+-[WPMediaCollectionViewController setSelectedAssets:]
+-[WPMediaCollectionViewController selectedAssets]
+-[WPMediaCollectionViewController setLayout:]
+-[WPMediaCollectionViewController layout]
+-[WPMediaCollectionViewController setDataSource:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaCollectionViewController.h
+-[WPMediaCollectionViewController dataSource]
+-[WPMediaCollectionViewController setAllowMultipleSelection:]
+-[WPMediaCollectionViewController allowMultipleSelection]
+-[WPMediaCollectionViewController setFilter:]
+-[WPMediaCollectionViewController filter]
+-[WPMediaCollectionViewController setShowMostRecentFirst:]
+-[WPMediaCollectionViewController showMostRecentFirst]
+-[WPMediaCollectionViewController setAllowCaptureOfMedia:]
+-[WPMediaCollectionViewController allowCaptureOfMedia]
+-[WPMediaCollectionViewController mediaGroupPickerViewControllerDidCancel:]
+-[WPMediaCollectionViewController mediaGroupPickerViewController:didPickGroup:]
+-[WPMediaCollectionViewController imagePickerControllerDidCancel:]
+-[WPMediaCollectionViewController imagePickerController:didFinishPickingMediaWithInfo:]
+-[WPMediaCollectionViewController addMedia:animated:]
+-[WPMediaCollectionViewController processMediaCaptured:]
+-[WPMediaCollectionViewController showAlertAboutMediaCapturePermission]
+-[WPMediaCollectionViewController captureMedia]
+-[WPMediaCollectionViewController showMediaCaptureViewController]
+-[WPMediaCollectionViewController isMediaDeviceAvailable]
+-[WPMediaCollectionViewController animateCaptureCellSelection:completion:]
+-[WPMediaCollectionViewController animateCellSelection:completion:]
+-[WPMediaCollectionViewController collectionView:didDeselectItemAtIndexPath:]
+-[WPMediaCollectionViewController collectionView:shouldDeselectItemAtIndexPath:]
+-[WPMediaCollectionViewController collectionView:didSelectItemAtIndexPath:]
+-[WPMediaCollectionViewController collectionView:shouldSelectItemAtIndexPath:]
+-[WPMediaCollectionViewController positionOfAssetInSelection:]
+-[WPMediaCollectionViewController showCapture]
+-[WPMediaCollectionViewController collectionView:viewForSupplementaryElementOfKind:atIndexPath:]
+-[WPMediaCollectionViewController collectionView:layout:referenceSizeForFooterInSection:]
+-[WPMediaCollectionViewController collectionView:layout:referenceSizeForHeaderInSection:]
+-[WPMediaCollectionViewController collectionView:cellForItemAtIndexPath:]
+-[WPMediaCollectionViewController assetForPosition:]
+-[WPMediaCollectionViewController collectionView:numberOfItemsInSection:]
+-[WPMediaCollectionViewController numberOfSectionsInCollectionView:]
+-[WPMediaCollectionViewController refreshSelection]
+-[WPMediaCollectionViewController showError:]
+-[WPMediaCollectionViewController refreshData]
+-[WPMediaCollectionViewController indexPathsFromIndexSet:section:]
+-[WPMediaCollectionViewController updateDataWithRemoved:inserted:changed:moved:]
+-[WPMediaCollectionViewController refreshTitle]
+-[WPMediaCollectionViewController isShowingCaptureCell]
+-[WPMediaCollectionViewController picker]
+-[WPMediaCollectionViewController finishPicker:]
+-[WPMediaCollectionViewController cancelPicker:]
+-[WPMediaCollectionViewController adaptivePresentationStyleForPresentationController:traitCollection:]
+-[WPMediaCollectionViewController adaptivePresentationStyleForPresentationController:]
+-[WPMediaCollectionViewController changeGroup:]
+-[WPMediaCollectionViewController pullToRefresh:]
+-[WPMediaCollectionViewController viewWillLayoutSubviews]
+-[WPMediaCollectionViewController setupLayout]
+-[WPMediaCollectionViewController viewDidLoad]
+-[WPMediaCollectionViewController dealloc]
+-[WPMediaCollectionViewController init]
+-[WPMediaCollectionViewCell initWithFrame:]
+-[WPMediaCollectionViewCell initWithCoder:]
+-[WPMediaCollectionViewCell prepareForReuse]
+-[WPMediaCollectionViewCell commonInit]
+-[WPMediaCollectionViewCell setAsset:]
+__38-[WPMediaCollectionViewCell setAsset:]_block_invoke
+__38-[WPMediaCollectionViewCell setAsset:]_block_invoke_2
+__copy_helper_block_.97
+__destroy_helper_block_.98
++[WPMediaCollectionViewCell dateFormatter]
+__42+[WPMediaCollectionViewCell dateFormatter]_block_invoke
+-[WPMediaCollectionViewCell stringFromTimeInterval:]
+-[WPMediaCollectionViewCell setImage:]
+-[WPMediaCollectionViewCell setImage:animated:]
+__47-[WPMediaCollectionViewCell setImage:animated:]_block_invoke
+__copy_helper_block_.145
+__destroy_helper_block_.146
+-[WPMediaCollectionViewCell setPosition:]
+-[WPMediaCollectionViewCell setCaption:]
+-[WPMediaCollectionViewCell setSelected:]
+-[WPMediaCollectionViewCell tintColorDidChange]
+-[WPMediaCollectionViewCell asset]
+-[WPMediaCollectionViewCell position]
+-[WPMediaCollectionViewCell positionLabel]
+-[WPMediaCollectionViewCell setPositionLabel:]
+-[WPMediaCollectionViewCell selectionFrame]
+-[WPMediaCollectionViewCell setSelectionFrame:]
+-[WPMediaCollectionViewCell imageView]
+-[WPMediaCollectionViewCell setImageView:]
+-[WPMediaCollectionViewCell captionLabel]
+-[WPMediaCollectionViewCell setCaptionLabel:]
+-[WPMediaCollectionViewCell .cxx_destruct]
+.str.17
+_unnamed_cfstring_.18
+OBJC_IVAR_$_WPMediaCollectionViewCell._imageView
+OBJC_IVAR_$_WPMediaCollectionViewCell._selectionFrame
+OBJC_CLASSLIST_REFERENCES_$_.56
+OBJC_CLASSLIST_REFERENCES_$_.59
+OBJC_IVAR_$_WPMediaCollectionViewCell._positionLabel
+OBJC_CLASSLIST_REFERENCES_$_.60
+OBJC_IVAR_$_WPMediaCollectionViewCell._captionLabel
+OBJC_IVAR_$_WPMediaCollectionViewCell._asset
+OBJC_CLASSLIST_REFERENCES_$_.83
+OBJC_SELECTOR_REFERENCES_.85
+OBJC_CLASSLIST_REFERENCES_$_.86
+.str.96
+.str.99
+__block_descriptor_tmp.100
+OBJC_SELECTOR_REFERENCES_.102
+OBJC_CLASSLIST_REFERENCES_$_.105
+OBJC_CLASSLIST_REFERENCES_$_.106
+.str.109
+_unnamed_cfstring_.110
+.str.123
+_unnamed_cfstring_.124
+dateFormatter._dateFormatter
+dateFormatter._onceToken
+OBJC_CLASSLIST_REFERENCES_$_.133
+__block_descriptor_tmp.138
+.str.139
+_unnamed_cfstring_.140
+.str.141
+_unnamed_cfstring_.142
+__block_descriptor_tmp.147
+OBJC_IVAR_$_WPMediaCollectionViewCell._position
+OBJC_SELECTOR_REFERENCES_.155
+OBJC_SELECTOR_REFERENCES_.157
+OBJC_SELECTOR_REFERENCES_.159
+OBJC_METH_VAR_NAME_.160
+OBJC_SELECTOR_REFERENCES_.161
+OBJC_CLASS_NAME_.164
+l_OBJC_$_CLASS_METHODS_WPMediaCollectionViewCell
+l_OBJC_METACLASS_RO_$_WPMediaCollectionViewCell
+OBJC_CLASS_NAME_.165
+OBJC_METH_VAR_TYPE_.166
+OBJC_METH_VAR_TYPE_.168
+OBJC_METH_VAR_NAME_.169
+OBJC_METH_VAR_TYPE_.170
+OBJC_METH_VAR_TYPE_.171
+OBJC_METH_VAR_TYPE_.172
+OBJC_METH_VAR_TYPE_.174
+OBJC_METH_VAR_NAME_.175
+OBJC_METH_VAR_TYPE_.177
+OBJC_METH_VAR_NAME_.178
+OBJC_METH_VAR_NAME_.181
+l_OBJC_$_INSTANCE_METHODS_WPMediaCollectionViewCell
+OBJC_METH_VAR_NAME_.183
+OBJC_METH_VAR_TYPE_.186
+OBJC_METH_VAR_TYPE_.192
+OBJC_METH_VAR_NAME_.193
+l_OBJC_$_INSTANCE_VARIABLES_WPMediaCollectionViewCell
+OBJC_PROP_NAME_ATTR_.194
+OBJC_PROP_NAME_ATTR_.195
+OBJC_PROP_NAME_ATTR_.196
+OBJC_PROP_NAME_ATTR_.197
+OBJC_PROP_NAME_ATTR_.198
+OBJC_PROP_NAME_ATTR_.199
+OBJC_PROP_NAME_ATTR_.200
+OBJC_PROP_NAME_ATTR_.201
+OBJC_PROP_NAME_ATTR_.202
+OBJC_PROP_NAME_ATTR_.203
+OBJC_PROP_NAME_ATTR_.204
+l_OBJC_$_PROP_LIST_WPMediaCollectionViewCell
+l_OBJC_CLASS_RO_$_WPMediaCollectionViewCell
+-[WPMediaCollectionViewCell .cxx_destruct]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaCollectionViewCell.m
+-[WPMediaCollectionViewCell setCaptionLabel:]
+-[WPMediaCollectionViewCell captionLabel]
+-[WPMediaCollectionViewCell setImageView:]
+-[WPMediaCollectionViewCell imageView]
+-[WPMediaCollectionViewCell setSelectionFrame:]
+-[WPMediaCollectionViewCell selectionFrame]
+-[WPMediaCollectionViewCell setPositionLabel:]
+-[WPMediaCollectionViewCell positionLabel]
+-[WPMediaCollectionViewCell position]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaCollectionViewCell.h
+-[WPMediaCollectionViewCell asset]
+-[WPMediaCollectionViewCell tintColorDidChange]
+-[WPMediaCollectionViewCell setSelected:]
+-[WPMediaCollectionViewCell setCaption:]
+-[WPMediaCollectionViewCell setPosition:]
+-[WPMediaCollectionViewCell setImage:animated:]
+-[WPMediaCollectionViewCell setImage:]
+-[WPMediaCollectionViewCell stringFromTimeInterval:]
++[WPMediaCollectionViewCell dateFormatter]
+-[WPMediaCollectionViewCell setAsset:]
+-[WPMediaCollectionViewCell commonInit]
+-[WPMediaCollectionViewCell prepareForReuse]
+-[WPMediaCollectionViewCell initWithCoder:]
+-[WPMediaCollectionViewCell initWithFrame:]
++[WPMediaPickerResources resourceBundle]
+__40+[WPMediaPickerResources resourceBundle]_block_invoke
++[WPMediaPickerResources imageNamed:withExtension:]
+resourceBundle._bundle
+resourceBundle._onceToken
+.str.3
+_unnamed_cfstring_.4
+OBJC_CLASSLIST_REFERENCES_$_.10
+.str.18
+_unnamed_cfstring_.19
+OBJC_CLASSLIST_REFERENCES_$_.24
+OBJC_CLASS_NAME_.27
+OBJC_METH_VAR_TYPE_.29
+l_OBJC_$_CLASS_METHODS_WPMediaPickerResources
+l_OBJC_METACLASS_RO_$_WPMediaPickerResources
+l_OBJC_CLASS_RO_$_WPMediaPickerResources
++[WPMediaPickerResources imageNamed:withExtension:]
+/Users/koke/automattic/wordpress-ios/Carthage/Checkouts/MediaPicker-iOS/Sources/Classes/WPMediaPickerResources.m
++[WPMediaPickerResources resourceBundle]
+/Users/koke/Library/Developer/Xcode/DerivedData/MediaPicker-cbmvwldwlrmraubcppulemuxktmm/Build/Intermediates/MediaPicker.build/Release-iphoneos/WPMediaPicker.build/DerivedSources/WPMediaPicker_vers.c
