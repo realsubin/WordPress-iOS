@@ -637,6 +637,7 @@
 		E1E4CE0B1773C59B00430844 /* WPAvatarSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4CE0A1773C59B00430844 /* WPAvatarSource.m */; };
 		E1E4CE0D177439D100430844 /* WPAvatarSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E1E4CE0C177439D100430844 /* WPAvatarSourceTest.m */; };
 		E1E4CE0F1774563F00430844 /* misteryman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1E4CE0E1774531500430844 /* misteryman.jpg */; };
+		E1E6F8A41CAAD0FF0092522E /* SafeExpectations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E6F8A31CAAD0FF0092522E /* SafeExpectations.framework */; };
 		E1EBC36F1C118EA500F638E0 /* ImmuTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBC36E1C118EA500F638E0 /* ImmuTable.swift */; };
 		E1EBC3731C118ED200F638E0 /* ImmuTableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EBC3721C118ED200F638E0 /* ImmuTableTest.swift */; };
 		E1EBC3751C118EDE00F638E0 /* ImmuTableTestViewCellWithNib.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1EBC3741C118EDE00F638E0 /* ImmuTableTestViewCellWithNib.xib */; };
@@ -1830,6 +1831,7 @@
 		E1E4CE0A1773C59B00430844 /* WPAvatarSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAvatarSource.m; sourceTree = "<group>"; };
 		E1E4CE0C177439D100430844 /* WPAvatarSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAvatarSourceTest.m; sourceTree = "<group>"; };
 		E1E4CE0E1774531500430844 /* misteryman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = misteryman.jpg; sourceTree = "<group>"; };
+		E1E6F8A31CAAD0FF0092522E /* SafeExpectations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafeExpectations.framework; path = ../Carthage/Build/iOS/SafeExpectations.framework; sourceTree = "<group>"; };
 		E1E977BC17B0FA9A00AFB867 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E1EBC36E1C118EA500F638E0 /* ImmuTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmuTable.swift; sourceTree = "<group>"; };
 		E1EBC3721C118ED200F638E0 /* ImmuTableTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImmuTableTest.swift; sourceTree = "<group>"; };
@@ -2030,6 +2032,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E6F8A41CAAD0FF0092522E /* SafeExpectations.framework in Frameworks */,
 				E1A597CF1CAA9ABF0047815E /* WordPressComAnalytics.framework in Frameworks */,
 				E16EB8281CA933650034F727 /* wpxmlrpc.framework in Frameworks */,
 				E10C2B4A1C9B755E0012AEFC /* DTFoundation.framework in Frameworks */,
@@ -2262,6 +2265,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1E6F8A31CAAD0FF0092522E /* SafeExpectations.framework */,
 				E1A597CE1CAA9ABF0047815E /* WordPressComAnalytics.framework */,
 				E16EB8271CA933650034F727 /* wpxmlrpc.framework */,
 				E17EA1F11C9B77A6000D9220 /* RxTests.framework */,
@@ -4913,6 +4917,7 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/wpxmlrpc.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/WPMediaPicker.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/WordPressComAnalytics.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/SafeExpectations.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (

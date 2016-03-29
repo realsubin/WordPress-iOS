@@ -1,0 +1,6 @@
+framework module SafeExpectations {
+  umbrella header "SafeExpectations.h"
+
+  export *
+  module * { export * }
+}

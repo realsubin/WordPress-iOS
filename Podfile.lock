@@ -181,7 +181,6 @@ DEPENDENCIES:
     branch `gifsupport`)
   - MRProgress (~> 0.7.0)
   - Nimble (~> 3.2.0)
-  - NSObject-SafeExpectations (= 0.0.2)
   - NSURL+IDN (= 0.3)
   - OCMock (= 3.1.2)
   - OHHTTPStubs (~> 4.6.0)
