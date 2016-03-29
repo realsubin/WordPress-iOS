@@ -9,6 +9,12 @@
 
 @implementation AccountServiceRemoteRESTTests
 
+// Add a failing test so we can debug issue #5004
+- (void)testFailing
+{
+  XCTFail();
+}
+
 #pragma mark - Getting blogs
 
 - (void)testThatGetBlogsWorks
