@@ -544,7 +544,7 @@
 		E14B40FD1C58B806005046F6 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B40FC1C58B806005046F6 /* AccountSettingsViewController.swift */; };
 		E14B40FF1C58B93F005046F6 /* SettingsCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B40FE1C58B93F005046F6 /* SettingsCommon.swift */; };
 		E14B74111C7B16FD00C26E21 /* WPNoResultsView+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14B74101C7B16FD00C26E21 /* WPNoResultsView+Model.swift */; };
-		E14BDCFE1CAAFEC500162C94 /* Simperium_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14BDCFD1CAAFEC500162C94 /* Simperium_iOS.framework */; };
+		E14BDD001CAB91CD00162C94 /* Simperium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14BDCFF1CAB91CD00162C94 /* Simperium.framework */; };
 		E1556CF2193F6FE900FC52EA /* CommentService.m in Sources */ = {isa = PBXBuildFile; fileRef = E1556CF1193F6FE900FC52EA /* CommentService.m */; };
 		E15618FD16DB8677006532C4 /* UIKitTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E15618FC16DB8677006532C4 /* UIKitTestHelper.m */; };
 		E15618FF16DBA983006532C4 /* xmlrpc-response-newpost.xml in Resources */ = {isa = PBXBuildFile; fileRef = E15618FE16DBA983006532C4 /* xmlrpc-response-newpost.xml */; };
@@ -1704,7 +1704,7 @@
 		E14B40FC1C58B806005046F6 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
 		E14B40FE1C58B93F005046F6 /* SettingsCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCommon.swift; sourceTree = "<group>"; };
 		E14B74101C7B16FD00C26E21 /* WPNoResultsView+Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WPNoResultsView+Model.swift"; sourceTree = "<group>"; };
-		E14BDCFD1CAAFEC500162C94 /* Simperium_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Simperium_iOS.framework; path = ../Carthage/Build/iOS/Simperium_iOS.framework; sourceTree = "<group>"; };
+		E14BDCFF1CAB91CD00162C94 /* Simperium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Simperium.framework; path = ../Carthage/Build/iOS/Simperium.framework; sourceTree = "<group>"; };
 		E14D65C717E09663007E3EA4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E150520B16CAC5C400D3DDDC /* BlogJetpackTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlogJetpackTest.m; sourceTree = "<group>"; };
 		E150520D16CAC75A00D3DDDC /* CoreDataTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTestHelper.h; sourceTree = "<group>"; };
@@ -2034,7 +2034,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E14BDCFE1CAAFEC500162C94 /* Simperium_iOS.framework in Frameworks */,
+				E14BDD001CAB91CD00162C94 /* Simperium.framework in Frameworks */,
 				E1E6F8A41CAAD0FF0092522E /* SafeExpectations.framework in Frameworks */,
 				E1A597CF1CAA9ABF0047815E /* WordPressComAnalytics.framework in Frameworks */,
 				E16EB8281CA933650034F727 /* wpxmlrpc.framework in Frameworks */,
@@ -2268,7 +2268,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E14BDCFD1CAAFEC500162C94 /* Simperium_iOS.framework */,
+				E14BDCFF1CAB91CD00162C94 /* Simperium.framework */,
 				E1E6F8A31CAAD0FF0092522E /* SafeExpectations.framework */,
 				E1A597CE1CAA9ABF0047815E /* WordPressComAnalytics.framework */,
 				E16EB8271CA933650034F727 /* wpxmlrpc.framework */,
@@ -4922,7 +4922,7 @@
 				"$(SRCROOT)/../Carthage/Build/iOS/WPMediaPicker.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/WordPressComAnalytics.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/SafeExpectations.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/Simperium_iOS.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/Simperium.framework",
 			);
 			name = "Carthage Copy Frameworks";
 			outputPaths = (
