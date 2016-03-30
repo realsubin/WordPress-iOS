@@ -19,6 +19,7 @@
 #import "WPTableViewSectionHeaderFooterView.h"
 #import "WPWebViewController.h"
 #import "WordPress-Swift.h"
+#import "UIViewController+SizeClass.h"
 
 @import Gridicons;
 
@@ -480,21 +481,25 @@ NSInteger const BlogDetailAccountHideViewAdminDay = 7;
     [WPAppAnalytics track:WPAnalyticsStatOpenedComments withBlog:self.blog];
     CommentsViewController *controller = [[CommentsViewController alloc] initWithStyle:UITableViewStyleGrouped];
     controller.blog = self.blog;
-    [self.navigationController pushViewController:controller animated:YES];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showPostList
 {
     [WPAppAnalytics track:WPAnalyticsStatOpenedPosts withBlog:self.blog];
     PostListViewController *controller = [PostListViewController controllerWithBlog:self.blog];
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showPageList
 {
     [WPAppAnalytics track:WPAnalyticsStatOpenedPages withBlog:self.blog];
     PageListViewController *controller = [PageListViewController controllerWithBlog:self.blog];
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showPeople
@@ -502,21 +507,24 @@ NSInteger const BlogDetailAccountHideViewAdminDay = 7;
     // TODO(@koke, 2015-11-02): add analytics
     PeopleViewController *controller = [[UIStoryboard storyboardWithName:@"People" bundle:nil] instantiateInitialViewController];
     controller.blog = self.blog;
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showPlans
 {
     // TODO(@koke, 2016-01-28): add analytics
     PlanListViewController *controller = [[PlanListViewController alloc] initWithBlog:self.blog];
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showSettings
 {
     [WPAppAnalytics track:WPAnalyticsStatOpenedSiteSettings withBlog:self.blog];
     SiteSettingsViewController *controller = [[SiteSettingsViewController alloc] initWithBlog:self.blog];
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showSharing
@@ -531,23 +539,25 @@ NSInteger const BlogDetailAccountHideViewAdminDay = 7;
     }
 
     [WPAppAnalytics track:WPAnalyticsStatOpenedSharingManagement withBlog:self.blog];
-    [self.navigationController pushViewController:controller animated:YES];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showStats
 {
     [WPAppAnalytics track:WPAnalyticsStatStatsAccessed withBlog:self.blog];
-    StatsViewController *statsView = [StatsViewController new];
-    statsView.blog = self.blog;
-    [self.navigationController pushViewController:statsView animated:YES];
+    StatsViewController *controller = [StatsViewController new];
+    controller.blog = self.blog;
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showThemes
 {
     [WPAppAnalytics track:WPAnalyticsStatThemesAccessedThemeBrowser withBlog:self.blog];
-    ThemeBrowserViewController *viewController = [ThemeBrowserViewController browserWithBlog:self.blog];
-    [self.navigationController pushViewController:viewController
-                                         animated:YES];
+    ThemeBrowserViewController *controller = [ThemeBrowserViewController browserWithBlog:self.blog];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    [self showDetailViewController:navController sender:nil];
 }
 
 - (void)showViewSite
@@ -561,7 +571,12 @@ NSInteger const BlogDetailAccountHideViewAdminDay = 7;
     webViewController.wpLoginURL = [NSURL URLWithString:self.blog.loginUrl];
 
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:webViewController];
-    [self presentViewController:navController animated:YES completion:nil];
+    
+    if ([self.tabBarController isViewHorizontallyCompact]) {
+        [self presentViewController:navController animated:YES completion:nil];
+    } else {
+        [self showDetailViewController:navController sender:nil];
+    }
 }
 
 - (void)showViewAdmin

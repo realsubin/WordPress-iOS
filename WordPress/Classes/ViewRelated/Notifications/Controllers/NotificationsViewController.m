@@ -769,7 +769,7 @@ typedef NS_ENUM(NSUInteger, NotificationFilter)
     __weak __typeof(self) weakSelf  = self;
     
     if([segue.identifier isEqualToString:detailsSegueID]) {
-        NotificationDetailsViewController *detailsViewController = segue.destinationViewController;
+        NotificationDetailsViewController *detailsViewController = ((UINavigationController *)segue.destinationViewController).topViewController;
         [detailsViewController setupWithNotification:note];
         detailsViewController.onDeletionRequestCallback = ^(NotificationDeletionActionBlock onUndoTimeout){
             [weakSelf showUndeleteForNoteWithID:note.objectID onTimeout:onUndoTimeout];

@@ -65,6 +65,7 @@ static NSInteger const WPTabBarIconOffset = 5;
 
 @end
 
+
 @implementation WPTabBarController
 
 #pragma mark - Class methods
@@ -86,6 +87,25 @@ static NSInteger const WPTabBarIconOffset = 5;
 
 #pragma mark - Instance methods
 
+- (UISplitViewController *)splitWrappedViewController:(UIViewController *)viewController
+{
+    UINavigationController *navigationController = [UINavigationController new];
+    navigationController.navigationBar.translucent = NO;
+    navigationController.navigationBar.opaque = YES;
+    
+    WPSplitViewController *splitViewController = [[WPSplitViewController alloc] init];
+    splitViewController.viewControllers = @[viewController, navigationController];
+    splitViewController.extendedLayoutIncludesOpaqueBars = YES;
+    splitViewController.tabBarItem.image = viewController.tabBarItem.image;
+    splitViewController.tabBarItem.selectedImage = viewController.tabBarItem.selectedImage;
+    splitViewController.tabBarItem.imageInsets = viewController.tabBarItem.imageInsets;
+    splitViewController.restorationIdentifier = viewController.restorationIdentifier;
+    splitViewController.tabBarItem.accessibilityLabel = viewController.tabBarItem.accessibilityLabel;
+    splitViewController.view.backgroundColor = [WPStyleGuide greyLighten30];
+    
+    return splitViewController;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -101,13 +121,13 @@ static NSInteger const WPTabBarIconOffset = 5;
         // (not strictly needed when white, but left here for possible customization)
         [[self tabBar] setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
 
-        [self setViewControllers:@[self.blogListNavigationController,
+        [self setViewControllers:@[[self splitWrappedViewController:self.blogListNavigationController],
                                    self.readerNavigationController,
                                    self.newPostViewController,
                                    self.meNavigationController,
-                                   self.notificationsNavigationController]];
+                                   [self splitWrappedViewController:self.notificationsNavigationController]]];
 
-        [self setSelectedViewController:self.blogListNavigationController];
+        [self setSelectedIndex:0];
 
         // adds the orange dot on top of the notification tab
         [self addNotificationBadgeIcon];
@@ -262,7 +282,7 @@ static NSInteger const WPTabBarIconOffset = 5;
     _notificationsNavigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(WPTabBarIconOffset, 0, -1 * WPTabBarIconOffset, 0);
     _notificationsNavigationController.restorationIdentifier = WPNotificationsNavigationRestorationID;
     _notificationsNavigationController.tabBarItem.accessibilityLabel = NSLocalizedString(@"Notifications", @"Notifications tab bar item accessibility label");
-
+    
     return _notificationsNavigationController;
 }
 
@@ -458,7 +478,8 @@ static NSInteger const WPTabBarIconOffset = 5;
         // Don't kick of this auto selecting behavior if the user taps the the active tab as it
         // would break from standard iOS UX
         if (tabBarController.selectedIndex != WPTabNewPost) {
-            UINavigationController *navController = (UINavigationController *)viewController;
+            UISplitViewController *splitController = (UISplitViewController *)viewController;
+            UINavigationController *navController = (UINavigationController *)splitController.viewControllers[0];
             BlogListViewController *blogListViewController = (BlogListViewController *)navController.viewControllers[0];
             if ([blogListViewController shouldBypassBlogListViewControllerWhenSelectedFromTabBar]) {
                 if ([navController.visibleViewController isKindOfClass:[blogListViewController class]]) {

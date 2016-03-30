@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="doV-5W-Rtg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="doV-5W-Rtg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Notifications View Controller-->
@@ -24,8 +24,8 @@
                         <outlet property="ratingsTopConstraint" destination="SJu-PU-nzt" id="4a1-TZ-SUd"/>
                         <outlet property="ratingsView" destination="ZnY-3K-upT" id="lUG-fd-Stc"/>
                         <outlet property="tableHeaderView" destination="Uvo-9e-l6I" id="dxx-mK-msp"/>
-                        <segue destination="veA-Pg-QAw" kind="show" identifier="NotificationDetailsViewController" id="7uj-uJ-yZ8"/>
-                        <segue destination="6Ef-w3-Us2" kind="show" identifier="ReaderDetailViewController" id="zp4-jZ-apm"/>
+                        <segue destination="s0w-3n-9By" kind="showDetail" identifier="NotificationDetailsViewController" action="showViewController:sender:" id="7uj-uJ-yZ8"/>
+                        <segue destination="6Ef-w3-Us2" kind="showDetail" identifier="ReaderDetailViewController" action="showViewController:sender:" id="zp4-jZ-apm"/>
                     </connections>
                 </tableViewController>
                 <view contentMode="scaleToFill" id="Uvo-9e-l6I" userLabel="Header View">
@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="59U-6R-KoD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2949" y="-1279"/>
+            <point key="canvasLocation" x="3761" y="-1279"/>
         </scene>
         <!--WebView-->
         <scene sceneID="1zS-D4-F1Z">
@@ -127,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEj-cd-uMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2949.375" y="-587.32394366197184"/>
+            <point key="canvasLocation" x="3761" y="-588"/>
         </scene>
         <!--Notification Details-->
         <scene sceneID="0B7-mU-JSs">
@@ -138,11 +138,11 @@
                         <viewControllerLayoutGuide type="bottom" id="6LW-NS-qSh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lvM-1n-Dgf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dcn-Il-AtN">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
                                 <inset key="separatorInset" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -179,7 +179,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1734.375" y="-634.85915492957747"/>
+            <point key="canvasLocation" x="2546" y="-635"/>
         </scene>
         <!--StatsView-->
         <scene sceneID="iWL-VB-TOS">
@@ -191,8 +191,26 @@
             </objects>
             <point key="canvasLocation" x="2949.375" y="148.94366197183098"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FhZ-77-xAg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s0w-3n-9By" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UJ0-Lp-8D2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="veA-Pg-QAw" kind="relationship" relationship="rootViewController" id="TWe-ir-8o1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o35-7i-ckF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1734" y="-635"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zp4-jZ-apm"/>
+        <segue reference="WHD-nZ-mNK"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -528,7 +528,7 @@ static NSTimeInterval HideAllSitesInterval = 2.0;
 
         BlogDetailsViewController *blogDetailsViewController = [[BlogDetailsViewController alloc] init];
         blogDetailsViewController.blog = blog;
-        [self.navigationController pushViewController:blogDetailsViewController animated:YES];
+        [self showViewController:blogDetailsViewController sender:nil];
     }
 }
 
