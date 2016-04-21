@@ -1,7 +1,10 @@
 import UIKit
 
 public class PeopleViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+    @IBOutlet var filterButton: NavBarTitleDropdownButton!
+    
     public var blog: Blog?
+    
     private lazy var resultsController: NSFetchedResultsController = {
         let request = NSFetchRequest(entityName: "Person")
         request.predicate = NSPredicate(format: "siteID = %@", self.blog!.dotComID)
@@ -42,6 +45,10 @@ public class PeopleViewController: UITableViewController, NSFetchedResultsContro
 
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.titleView = self.filterButton
+        setFilterButtonTitle()
+        
         do {
             try resultsController.performFetch()
         } catch {
@@ -68,5 +75,13 @@ public class PeopleViewController: UITableViewController, NSFetchedResultsContro
         let managedPerson = resultsController.objectAtIndexPath(indexPath) as! ManagedPerson
         let person = Person(managedPerson: managedPerson)
         return person
+    }
+    
+    private func setFilterButtonTitle() {
+        self.filterButton.setAttributedTitleForTitle("Team")
+    }
+    
+    @IBAction func didTapFilterButton(sender: NavBarTitleDropdownButton) {
+        
     }
 }

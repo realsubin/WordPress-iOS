@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5ll-RY-leg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5ll-RY-leg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -11,7 +11,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Team-->
+        <!--People View Controller-->
         <scene sceneID="0Jd-lB-cu0">
             <objects>
                 <tableViewController storyboardIdentifier="PeopleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5ll-RY-leg" customClass="PeopleViewController" customModule="WordPress" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="86" width="600" height="86"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kMD-3K-Yok" id="HXS-gQ-WaR">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="85"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="85.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gravatar" translatesAutoresizingMaskIntoConstraints="NO" id="fUp-Sh-uv5" customClass="CircularImageView" customModule="WordPress" customModuleProvider="target">
@@ -128,13 +128,27 @@
                             <outlet property="delegate" destination="5ll-RY-leg" id="6WP-qQ-O8G"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Team" id="oDa-Zu-7RH"/>
+                    <navigationItem key="navigationItem" id="oDa-Zu-7RH">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3B4-T0-z7o" customClass="NavBarTitleDropdownButton">
+                            <rect key="frame" x="251.5" y="7" width="97" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="didTapFilterButton:" destination="5ll-RY-leg" eventType="touchUpInside" id="rh5-1y-jVd"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="q1N-ER-0Uo">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
                             <action selector="refresh" destination="5ll-RY-leg" eventType="valueChanged" id="E1Z-J4-CRW"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="filterButton" destination="3B4-T0-z7o" id="wGs-cG-xQq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLo-F0-Yvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
