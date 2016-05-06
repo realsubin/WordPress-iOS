@@ -45,7 +45,7 @@ target 'WordPress', :exclusive => true do
   pod 'NSURL+IDN', '0.3'
   pod 'Simperium', '0.8.15'
   pod 'WPMediaPicker', '~> 0.9.1'
-  pod 'WordPress-iOS-Editor', :git => 'https://github.com/wordpress-mobile/WordPress-Editor-iOS.git', :commit => '0676e19ea16e8503460abee1faa72409b5ea2632'
+  pod 'WordPress-iOS-Editor', :git => 'https://github.com/wordpress-mobile/WordPress-Editor-iOS.git', :commit => '4cad4ce53fdcf9df2c11e548ee81ce781c8a2144'
   pod 'WordPress-iOS-Shared', '0.5.6'
   pod 'WordPressApi', '0.4.0'
   pod 'WordPressCom-Analytics-iOS', '0.1.9'
