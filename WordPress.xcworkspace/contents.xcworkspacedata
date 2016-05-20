@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../../../../Desktop/Page+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
-      location = "group:../../../../../../Desktop/Page.swift">
-   </FileRef>
-   <FileRef
       location = "group:WordPress/WordPress.xcodeproj">
    </FileRef>
    <FileRef
