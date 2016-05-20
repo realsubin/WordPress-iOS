@@ -1,6 +1,7 @@
 import Foundation
 import CoreData
 
+@objc (Page)
 class Page: AbstractPost {
 
     /// Number of seconds in twenty-four hours.
