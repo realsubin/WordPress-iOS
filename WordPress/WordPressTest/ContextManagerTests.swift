@@ -2,6 +2,8 @@ import Foundation
 import XCTest
 import CoreData
 
+@testable import WordPress
+
 class ContextManagerTests: XCTestCase {
     var contextManager:TestContextManager!
 
@@ -256,7 +258,7 @@ class ContextManagerTests: XCTestCase {
         // Test for existence of authorAvatarURL in the model
         let secondAccount = newAccountInContext(secondContext)
         let secondBlog = newBlogInAccount(secondAccount)
-        let page = NSEntityDescription.insertNewObjectForEntityForName("Page", inManagedObjectContext: secondContext) as! Page
+        let page = NSEntityDescription.insertNewObjectForEntityForName(Page.classNameWithoutNamespaces(), inManagedObjectContext: secondContext) as! Page
         page.blog = secondBlog
         page.authorAvatarURL = authorAvatarURL
 
