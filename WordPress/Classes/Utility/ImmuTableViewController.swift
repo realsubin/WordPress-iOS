@@ -1,5 +1,4 @@
 import UIKit
-import RxSwift
 import WordPressShared
 
 typealias ImmuTableRowControllerGenerator = ImmuTableRow -> UIViewController
@@ -21,18 +20,27 @@ extension ImmuTablePresenter where Self: UIViewController {
     func present(controllerGenerator: ImmuTableRowControllerGenerator) -> ImmuTableAction {
         return {
             [unowned self] in
-            let navigationController = UINavigationController(rootViewController: controllerGenerator($0))
-            navigationController.modalPresentationStyle = .FormSheet
-            self.presentViewController(navigationController, animated: true, completion: nil)
+            let controller = controllerGenerator($0)
+            self.presentViewController(controller, animated: true, completion: nil)
         }
+    }
+}
+
+extension ImmuTablePresenter {
+    func prompt<T: UIViewController where T: Confirmable>(controllerGenerator: ImmuTableRow -> T) -> ImmuTableAction {
+        return present({
+            let controller = controllerGenerator($0)
+            return PromptViewController(controller)
+        })
     }
 }
 
 protocol ImmuTableController {
     var title: String { get }
     var immuTableRows: [ImmuTableRow.Type] { get }
-    var errorMessage: Observable<String?> { get }
-    func tableViewModelWithPresenter(presenter: ImmuTablePresenter) -> Observable<ImmuTable>
+    var noticeMessage: String? { get }
+    func tableViewModelWithPresenter(presenter: ImmuTablePresenter) -> ImmuTable
+    func refreshModel()
 }
 
 /// Generic view controller to present ImmuTable-based tables
@@ -45,35 +53,19 @@ final class ImmuTableViewController: UITableViewController, ImmuTablePresenter {
         return ImmuTableViewHandler(takeOver: self)
     }()
 
-    private var visibleSubject = PublishSubject<Bool>()
-
-    private var errorAnimator: ErrorAnimator!
+    private var noticeAnimator: NoticeAnimator!
 
     let controller: ImmuTableController
-
-    private let bag = DisposeBag()
 
     // MARK: - Table View Controller
 
     init(controller: ImmuTableController) {
         self.controller = controller
         super.init(style: .Grouped)
+
         title = controller.title
         registerRows(controller.immuTableRows)
-        controller.tableViewModelWithPresenter(self)
-            .pausable(visible)
-            .observeOn(MainScheduler.instance)
-            .subscribeNext({ [weak self] in
-                self?.handler.viewModel = $0
-                })
-            .addDisposableTo(bag)
-        controller.errorMessage
-            .pausable(visible)
-            .observeOn(MainScheduler.instance)
-            .subscribeNext({ [weak self] in
-                self?.errorMessage = $0
-                })
-            .addDisposableTo(bag)
+        controller.refreshModel()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -83,7 +75,7 @@ final class ImmuTableViewController: UITableViewController, ImmuTablePresenter {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        errorAnimator = ErrorAnimator(target: view)
+        noticeAnimator = NoticeAnimator(target: view)
 
         WPStyleGuide.resetReadableMarginsForTableView(tableView)
         WPStyleGuide.configureColorsForView(view, andTableView: tableView)
@@ -91,17 +83,24 @@ final class ImmuTableViewController: UITableViewController, ImmuTablePresenter {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        errorAnimator.layout()
+        noticeAnimator.layout()
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        visibleSubject.on(.Next(true))
+        loadModel()
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: #selector(ImmuTableViewController.loadModel),
+            name: ImmuTableViewController.modelChangedNotification,
+            object: nil)
     }
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        visibleSubject.on(.Next(false))
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: ImmuTableViewController.modelChangedNotification,
+                                                            object: nil)
     }
 
     // MARK: - Inputs
@@ -112,16 +111,19 @@ final class ImmuTableViewController: UITableViewController, ImmuTablePresenter {
         ImmuTable.registerRows(rows, tableView: tableView)
     }
 
-    var errorMessage: String? = nil {
+    func loadModel() {
+        handler.viewModel = controller.tableViewModelWithPresenter(self)
+        noticeMessage = controller.noticeMessage
+    }
+
+    var noticeMessage: String? = nil {
         didSet {
-            errorAnimator.animateErrorMessage(errorMessage)
+            guard noticeMessage != oldValue else { return }
+            noticeAnimator.animateMessage(noticeMessage)
         }
     }
 
-    // MARK: - Outputs
+    // MARK: - Constants
 
-    /// Emits a value when the view controller appears or disappears
-    var visible: Observable<Bool> {
-        return visibleSubject
-    }
+    static let modelChangedNotification = "ImmuTableControllerChanged"
 }

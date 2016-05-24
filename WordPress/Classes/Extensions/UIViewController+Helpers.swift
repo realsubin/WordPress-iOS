@@ -9,16 +9,22 @@ extension UIViewController
         let visibleAsRoot       = view.window?.rootViewController == self
         let visibleAsTopOnStack = navigationController?.topViewController == self && view.window != nil
         let visibleAsPresented  = view.window?.rootViewController?.presentedViewController == self
-        
+
         return visibleAsRoot || visibleAsTopOnStack || visibleAsPresented
     }
-    
+
     /// Determines if the current ViewController's View is horizontally Compact
     ///
-    public func isViewHorizontallyCompact() -> Bool {
+    public func hasHorizontallyCompactView() -> Bool {
         return traitCollection.horizontalSizeClass == .Compact
     }
-    
+
+    /// Determines if the horizontal size class is specified or not.
+    ///
+    public func isHorizontalSizeClassUnspecified() -> Bool {
+        return traitCollection.horizontalSizeClass == .Unspecified
+    }
+
     /// Determines if the current ViewController is being presented modally
     ///
     public func isModal() -> Bool {

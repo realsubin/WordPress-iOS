@@ -3,9 +3,35 @@
 This file documents changes in the data model. Please explain any changes to the
 data model as well as any custom migrations.
 
-## WordPress 48 (@sergioestevao 2016-04-05)
+## WordPress 49
 
-- `Media` added new integer attribute `postID` to store the post to where the media is attached to.
+- @frosty 2016-05-17
+- Added `Domain` entity. Represents a domain belonging to a site.
+- `Blog` added new relationship `domains`. An unordered set of `Domain`s for the blog.
+- @jleandroperez 2016-05-13
+- `Person` updated `siteID` to Int64.
+- `Person` updated `userID` to Int64.
+- `Person` added Boolean `isFollower`.
+- @frosty 2016-05-12
+- `Blog` added String `planTitle`.
+- @aerych 2016-05-12
+- Added `ReaderSearchTopic` entity. Represents a search in the reader.
+- @jleandroperez 2016-05-04
+ - `Person` added Int64 `linkedUserID`.
+- @jleandroperez 2016-04-22
+ - `Blog` added transformable `capabilities`.
+
+## WordPress 48 
+
+- @sergioestevao 2016-04-05
+ - `Media` added new integer attribute `postID` to store the post to where the media is attached to.
+- @kurzee 2016-04-08
+ - `Menu` changing `menuId` attribute to `menuID` as a int_32 number instead of string.
+ - `MenuItem` changing `itemId` attribute to `itemID` as an int_32 number instead of string.
+ - `MenuItem` changing `contentId` attribute to `contentID` as an int_64 number instead of string.
+- @jleandroperez 2016-04-11
+ - `AccountSettings` added new string `emailPendingAddress`. Whenever it's not nil, contains the new User's Email Address.
+ - `AccountSettings` added new bool `emailPendingChange`. Indicates whether there's a pending Email change, or not.
 
 ## WordPress 47 (@kurzee 2016-03-07)
 

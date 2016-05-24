@@ -4,7 +4,6 @@
 #import "WPNUXSecondaryButton.h"
 #import "WPWalkthroughTextField.h"
 #import "WPAsyncBlockOperation.h"
-#import "WPComLanguages.h"
 #import "WPWalkthroughOverlayView.h"
 #import "WPNUXUtility.h"
 #import "WPStyleGuide.h"
@@ -35,7 +34,7 @@
     BOOL _userDefinedSiteAddress;
     CGFloat _keyboardOffset;
     
-    NSDictionary *_currentLanguage;
+    NSNumber *_currentLanguageId;
 }
 
 @end
@@ -58,7 +57,7 @@ static UIEdgeInsets const CreateBlogCancelButtonPaddingPad  = {1.0, 13.0, 0.0, 0
     self = [super init];
     if (self) {
         _operationQueue = [[NSOperationQueue alloc] init];
-        _currentLanguage = [WPComLanguages currentLanguage];
+        _currentLanguageId = [[WordPressComLanguageDatabase new] deviceLanguageId];
     }
     return self;
 }
@@ -491,11 +490,7 @@ static UIEdgeInsets const CreateBlogCancelButtonPaddingPad  = {1.0, 13.0, 0.0, 0
             [WPAnalytics track:WPAnalyticsStatCreatedAccount];
             [operation didSucceed];
             
-            NSMutableDictionary *blogOptions = [[responseDictionary dictionaryForKey:@"blog_details"] mutableCopy];
-            if ([blogOptions objectForKey:@"blogname"]) {
-                [blogOptions setObject:[blogOptions objectForKey:@"blogname"] forKey:@"blogName"];
-                [blogOptions removeObjectForKey:@"blogname"];
-            }
+            NSDictionary *blogOptions = [responseDictionary dictionaryForKey:@"blog_details"];
             
             NSManagedObjectContext *context = [[ContextManager sharedInstance] mainContext];
             AccountService *accountService = [[AccountService alloc] initWithManagedObjectContext:context];
@@ -509,7 +504,7 @@ static UIEdgeInsets const CreateBlogCancelButtonPaddingPad  = {1.0, 13.0, 0.0, 0
             }
             blog.dotComID = [blogOptions numberForKey:@"blogid"];
             blog.url = blogOptions[@"url"];
-            blog.settings.name = [blogOptions[@"blogname"] stringByDecodingXMLCharacters];
+            blog.settings.name = [[blogOptions stringForKey:@"blogname"] stringByDecodingXMLCharacters];
             defaultAccount.defaultBlog = blog;
             
             [[ContextManager sharedInstance] saveContext:context];
@@ -529,7 +524,7 @@ static UIEdgeInsets const CreateBlogCancelButtonPaddingPad  = {1.0, 13.0, 0.0, 0
             [self displayRemoteError:error];
         };
         
-        NSString *languageId = [_currentLanguage stringForKey:@"lang_id"];
+        NSString *languageId = [_currentLanguageId stringValue];
         
         NSManagedObjectContext *context = [[ContextManager sharedInstance] mainContext];
         AccountService *accountService = [[AccountService alloc] initWithManagedObjectContext:context];

@@ -2,84 +2,17 @@ import UIKit
 import WordPressShared
 
 class PlanDetailViewController: UIViewController {
-    struct ViewModel {
-        let plan: Plan
-        let siteID: Int
-
-        let isActivePlan: Bool
-
-        /// Plan price. Empty string for a free plan
-        let price: String
-
-        let features: FeaturesViewModel
-
-        enum FeaturesViewModel {
-            case Loading
-            case Error(String)
-            case Ready([PlanFeatureGroup])
-        }
-
-        func withFeatures(features: FeaturesViewModel) -> ViewModel {
-            return ViewModel(
-                plan: plan,
-                siteID: siteID,
-                isActivePlan: isActivePlan,
-                price: price,
-                features: features
-            )
-        }
-
-        var tableViewModel: ImmuTable {
-            switch features {
-            case .Loading, .Error(_):
-                return ImmuTable.Empty
-            case .Ready(let groups):
-                return ImmuTable(sections: groups.map { group in
-                    let rows: [ImmuTableRow] = group.features.map({ feature in
-                        return FeatureItemRow(title: feature.title, description: feature.description, iconURL: feature.iconURL)
-                    })
-                    return ImmuTableSection(headerText: group.title, rows: rows, footerText: nil)
-                    })
-            }
-        }
-
-        var noResultsViewModel: WPNoResultsView.Model? {
-            switch features {
-            case .Loading:
-                return WPNoResultsView.Model(
-                    title: NSLocalizedString("Loading Plan...", comment: "Text displayed while loading plans details")
-                )
-            case .Ready(_):
-                return nil
-            case .Error(_):
-                return WPNoResultsView.Model(
-                    title: NSLocalizedString("Oops", comment: ""),
-                    message: NSLocalizedString("There was an error loading the plan", comment: ""),
-                    buttonTitle: NSLocalizedString("Contact support", comment: "")
-                )
-            }
-        }
-
-        var priceText: String {
-            if price.isEmpty  {
-                return NSLocalizedString("Free for life", comment: "Price label for the free plan")
-            } else {
-                return String(format: NSLocalizedString("%@ per year", comment: "Plan yearly price"), price)
-            }
-        }
-    }
-
     private let cellIdentifier = "PlanFeatureListItem"
-    
+
     private let tableViewHorizontalMargin: CGFloat = 24.0
     private let planImageDropshadowRadius: CGFloat = 3.0
-    
+
     private var tableViewModel = ImmuTable.Empty {
         didSet {
             tableView?.reloadData()
         }
     }
-    var viewModel: ViewModel! {
+    var viewModel: PlanDetailViewModel! {
         didSet {
             tableViewModel = viewModel.tableViewModel
             title = viewModel.plan.title
@@ -90,9 +23,9 @@ class PlanDetailViewController: UIViewController {
             }
         }
     }
-    
+
     private let noResultsView = WPNoResultsView()
-    
+
     func updateNoResults() {
         if let noResultsViewModel = viewModel.noResultsViewModel {
             showNoResults(noResultsViewModel)
@@ -108,7 +41,7 @@ class PlanDetailViewController: UIViewController {
             tableView.addSubviewWithFadeAnimation(noResultsView)
         }
     }
-    
+
     func hideNoResults() {
         noResultsView.removeFromSuperview()
     }
@@ -135,56 +68,62 @@ class PlanDetailViewController: UIViewController {
         wrapper.translatesAutoresizingMaskIntoConstraints = false
         wrapper.addSubview(label)
         wrapper.pinSubviewToAllEdges(label)
-        
+
         return wrapper
     }()
-    
-    @IBOutlet weak var headerInfoStackView: UIStackView!
 
-    class func controllerWithPlan(plan: Plan, siteID: Int, isActive: Bool, price: String) -> PlanDetailViewController {
+    class func controllerWithPlan(plan: Plan, siteID: Int, activePlan: Plan, price: String) -> PlanDetailViewController {
         let storyboard = UIStoryboard(name: "Plans", bundle: NSBundle.mainBundle())
         let controller = storyboard.instantiateViewControllerWithIdentifier(NSStringFromClass(self)) as! PlanDetailViewController
 
-        controller.viewModel = ViewModel(plan: plan, siteID: siteID, isActivePlan: isActive, price: price, features: .Loading)
+        controller.viewModel = PlanDetailViewModel(plan: plan, siteID: siteID, activePlan: activePlan, price: price, features: .Loading)
 
         return controller
     }
-    
+
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configureAppearance()
         configureTableView()
         populateHeader()
         updateNoResults()
     }
-    
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        registerForPurchaseNotifications()
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        unregisterForPurchaseNotifications()
+    }
+
     private func configureAppearance() {
         planTitleLabel.textColor = WPStyleGuide.darkGrey()
         planDescriptionLabel.textColor = WPStyleGuide.grey()
         planPriceLabel.textColor = WPStyleGuide.grey()
-        
+
         purchaseButton?.tintColor = WPStyleGuide.wordPressBlue()
-        
+
         dropshadowImageView.backgroundColor = UIColor.whiteColor()
         configurePlanImageDropshadow()
-        
+
         separator.backgroundColor = WPStyleGuide.greyLighten30()
     }
-    
+
     private func configureTableView() {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 80.0
-
-        // This is required to remove the extra grouped tableview
-        // padding at the top of the tableview
-        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 1))
     }
-    
+
     private func configurePlanImageDropshadow() {
         dropshadowImageView.layer.masksToBounds = false
         dropshadowImageView.layer.shadowColor = WPStyleGuide.greyLighten30().CGColor
@@ -193,27 +132,51 @@ class PlanDetailViewController: UIViewController {
         dropshadowImageView.layer.shadowOffset = .zero
         dropshadowImageView.layer.shadowPath = UIBezierPath(ovalInRect: dropshadowImageView.bounds).CGPath
     }
-    
-    lazy var paddingView = UIView()
-    
+
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var purchaseWrapperView: UIView!
+
     private func populateHeader() {
         let plan = viewModel.plan
-        planImageView.image = plan.image
+        let iconUrl = viewModel.isActivePlan ? plan.activeIconUrl : plan.iconUrl
+        planImageView.downloadResizedImage(iconUrl, placeholderImage: nil, pointSize: planImageView.bounds.size)
         planTitleLabel.text = plan.fullTitle
         planDescriptionLabel.text = plan.tagline
         planPriceLabel.text = viewModel.priceText
-        
+
+        if !viewModel.purchaseButtonVisible {
+            purchaseButton?.removeFromSuperview()
+        } else {
+            purchaseButton?.selected = viewModel.purchaseButtonSelected
+        }
+
         if viewModel.isActivePlan {
-            purchaseButton?.removeFromSuperview()
-            headerInfoStackView.addArrangedSubview(currentPlanLabel)
-        } else if plan.isFreePlan {
-            purchaseButton?.removeFromSuperview()
-            headerInfoStackView.addArrangedSubview(paddingView)
+            purchaseWrapperView.addSubview(currentPlanLabel)
+            purchaseWrapperView.pinSubviewToAllEdgeMargins(currentPlanLabel)
         }
     }
-    
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        layoutHeaderIfNeeded()
+    }
+
+    private func layoutHeaderIfNeeded() {
+        headerView.layoutIfNeeded()
+
+        // Table header views don't automatically resize using Auto Layout,
+        // so we need to calculate the correct size to fit the content, update the frame,
+        // and then reset the tableHeaderView property so that the new size takes effect.
+        let size = headerView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+        if size.height != headerView.frame.size.height {
+            headerView.frame.size.height = size.height
+            tableView.tableHeaderView = headerView
+        }
+    }
+
     //MARK: - IBActions
-    
+
     @IBAction private func purchaseTapped() {
         guard let identifier = viewModel.plan.productIdentifier else {
             return
@@ -223,12 +186,65 @@ class PlanDetailViewController: UIViewController {
         store.getProductsWithIdentifiers(
             Set([identifier]),
             success: { [viewModel] products in
-                StoreKitCoordinator.instance.purchasePlan(viewModel.plan, product: products[0], forSite: viewModel.siteID)
+                do {
+                    try StoreKitCoordinator.instance.purchaseProduct(products[0], forSite: viewModel.siteID)
+                } catch StoreCoordinatorError.PaymentAlreadyInProgress {
+                    self.purchaseButton?.selected = false
+                } catch {}
             },
             failure: { error in
                 DDLogSwift.logError("Error fetching Store products: \(error)")
                 self.purchaseButton?.selected = false
         })
+    }
+
+    private func registerForPurchaseNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(storeTransactionDidFinish(_:)),
+                                                         name: StoreKitCoordinator.TransactionDidFinishNotification,
+                                                         object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(storeTransactionDidFail(_:)),
+                                                         name: StoreKitCoordinator.TransactionDidFailNotification,
+                                                         object: nil)
+    }
+
+    private func unregisterForPurchaseNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: StoreKitCoordinator.TransactionDidFinishNotification,
+                                                            object: nil)
+
+        NSNotificationCenter.defaultCenter().removeObserver(self,
+                                                            name: StoreKitCoordinator.TransactionDidFailNotification,
+                                                            object: nil)
+    }
+
+    @objc private func storeTransactionDidFinish(notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+        let productID = userInfo[StoreKitCoordinator.NotificationProductIdentifierKey] as? String else { return }
+
+        if productID == viewModel.plan.productIdentifier {
+            purchaseButton?.selected = false
+
+            let postPurchaseViewController = PlanPostPurchaseViewController(plan: viewModel.plan)
+            presentViewController(postPurchaseViewController, animated: true, completion: nil)
+        }
+    }
+
+    @objc private func storeTransactionDidFail(notification: NSNotification) {
+        purchaseButton?.selected = false
+
+        if let userInfo = notification.userInfo,
+            let productID = userInfo[StoreKitCoordinator.NotificationProductIdentifierKey] as? String,
+            let error = userInfo[NSUnderlyingErrorKey] as? NSError
+            where productID == viewModel.plan.productIdentifier {
+            let alert = UIAlertController(title: NSLocalizedString("Purchase Failed", comment: "Title of alert displayed when an in-app purchase couldn't be completed."),
+                                          message: error.localizedDescription,
+                                          preferredStyle: .Alert)
+            alert.addActionWithTitle(NSLocalizedString("Dismiss", comment: "Dismiss a view. Verb."), style: .Cancel, handler: nil)
+            alert.presentFromRootViewController()
+        }
     }
 }
 
@@ -245,20 +261,20 @@ extension PlanDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let row = tableViewModel.rowAtIndexPath(indexPath)
         let cell = tableView.dequeueReusableCellWithIdentifier(row.reusableIdentifier, forIndexPath: indexPath)
-        
+
         row.configureCell(cell)
-        
+
         return cell
     }
-    
+
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         guard let cell = cell as? FeatureItemCell else { return }
-        
+
         let separatorInset: CGFloat = 15
         let isLastCellInSection = indexPath.row == self.tableView(tableView, numberOfRowsInSection: indexPath.section) - 1
         let isLastSection = indexPath.section == self.numberOfSectionsInTableView(tableView) - 1
-        
-        // The separator for the last cell in each section has no insets, 
+
+        // The separator for the last cell in each section has no insets,
         // except for in the last section, where there's no separator at all.
         if isLastCellInSection {
             if isLastSection {
@@ -270,11 +286,11 @@ extension PlanDetailViewController: UITableViewDataSource, UITableViewDelegate {
             cell.separatorInset = UIEdgeInsets(top: 0, left: separatorInset, bottom: 0, right: separatorInset)
         }
     }
-    
+
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return tableViewModel.sections[section].headerText
     }
-    
+
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let title = self.tableView(tableView, titleForHeaderInSection: section) where !title.isEmpty {
             let header = WPTableViewSectionHeaderFooterView(reuseIdentifier: nil, style: .Header)
@@ -284,84 +300,12 @@ extension PlanDetailViewController: UITableViewDataSource, UITableViewDelegate {
             return nil
         }
     }
-}
 
-class FeatureItemCell: WPTableViewCell {
-    @IBOutlet weak var featureIconImageView: UIImageView!
-    @IBOutlet weak var featureTitleLabel: UILabel!
-    @IBOutlet weak var featureDescriptionLabel: UILabel!
-    @IBOutlet weak var separator: UIView!
-    @IBOutlet var separatorEdgeConstraints: [NSLayoutConstraint]!
-    
-    override var separatorInset: UIEdgeInsets {
-        didSet {
-            for constraint in separatorEdgeConstraints {
-                if constraint.firstAttribute == .Leading {
-                    constraint.constant = separatorInset.left
-                } else if constraint.firstAttribute == .Trailing {
-                    constraint.constant = separatorInset.right
-                }
-            }
-            
-            separator.layoutIfNeeded()
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if let headerView = self.tableView(tableView, viewForHeaderInSection: section) as? WPTableViewSectionHeaderFooterView {
+            return WPTableViewSectionHeaderFooterView.heightForHeader(headerView.title, width: CGRectGetWidth(view.bounds))
+        } else {
+            return 0
         }
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-        layoutMargins = UIEdgeInsetsZero
-        
-        separator.backgroundColor = WPStyleGuide.greyLighten30()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        separator.hidden = false
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        // This is required to fix an issue where only the first line of text would
-        // is displayed on the iPhone 6(s) Plus due to a fractional Y position.
-        featureDescriptionLabel.frame = CGRectIntegral(featureDescriptionLabel.frame)
-    }
-}
-
-struct FeatureItemRow : ImmuTableRow {
-    static let cell = ImmuTableCell.Class(FeatureItemCell)
-    
-    let title: String
-    let description: String
-    let iconURL: NSURL
-    let action: ImmuTableAction? = nil
-    
-    func configureCell(cell: UITableViewCell) {
-        guard let cell = cell as? FeatureItemCell else { return }
-        
-        cell.featureTitleLabel?.text = title
-        
-        if let featureDescriptionLabel = cell.featureDescriptionLabel {
-            cell.featureDescriptionLabel?.attributedText = attributedDescriptionText(description, font: featureDescriptionLabel.font)
-        }
-        
-        cell.featureIconImageView?.setImageWithURL(iconURL, placeholderImage: nil)
-        
-        cell.featureTitleLabel.textColor = WPStyleGuide.darkGrey()
-        cell.featureDescriptionLabel.textColor = WPStyleGuide.grey()
-        WPStyleGuide.configureTableViewCell(cell)
-    }
-    
-    private func attributedDescriptionText(text: String, font: UIFont) -> NSAttributedString {
-        let lineHeight: CGFloat = 18
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.maximumLineHeight = lineHeight
-        paragraphStyle.minimumLineHeight = lineHeight
-        
-        let attributedText = NSMutableAttributedString(string: text, attributes: [NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName: font])
-        return attributedText
     }
 }

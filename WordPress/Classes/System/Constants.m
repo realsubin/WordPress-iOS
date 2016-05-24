@@ -14,7 +14,7 @@ NSString *const WPJetpackInformationURL                             = @"https://
 NSString *const WPAutomatticMainURL                                 = @"https://automattic.com/";
 NSString *const WPAutomatticTermsOfServiceURL                       = @"https://wordpress.com/tos/";
 NSString *const WPAutomatticPrivacyURL                              = @"https://automattic.com/privacy/";
-NSString *const WPAutomatticAppsBlogURL                             = @"https://apps.wordpress.org/blog/";
+NSString *const WPAutomatticAppsBlogURL                             = @"https://apps.wordpress.com/blog/";
 NSString *const WPGithubMainURL                                     = @"https://github.com/wordpress-mobile/WordPress-iOS/";
 NSString *const WPTwitterWordPressHandle                            = @"@WordPressiOS";
 NSString *const WPTwitterWordPressMobileURL                         = @"https://twitter.com/WordPressiOS";
@@ -31,10 +31,10 @@ NSString *const WPNotificationsBucketName                           = @"note20";
 /// Keychain Constants
 ///
 #ifdef INTERNAL_BUILD
-NSString *const WPAppGroupName                              = @"group.org.wordpress.internal";
+NSString *const WPAppGroupName                                      = @"group.org.wordpress.internal";
 NSString *const WPAppKeychainAccessGroup                            = @"99KV9Z6BKV.org.wordpress.internal";
 #else
-NSString *const WPAppGroupName                              = @"group.org.wordpress";
+NSString *const WPAppGroupName                                      = @"group.org.wordpress";
 NSString *const WPAppKeychainAccessGroup                            = @"3TMU3BH3NK.org.wordpress";
 #endif
 

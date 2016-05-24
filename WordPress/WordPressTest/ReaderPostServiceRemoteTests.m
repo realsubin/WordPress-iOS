@@ -9,6 +9,7 @@
 #import "RemoteReaderPost.h"
 #import <XCTest/XCTest.h>
 #import "TestContextManager.h"
+#import "WordPress-Swift.h"
 
 @interface ReaderPostServiceRemote ()
 
@@ -93,8 +94,8 @@
  */
 - (ReaderPostServiceRemote*)service
 {
-    WordPressComApi *api = [[WordPressComApi alloc] initWithBaseURL:[NSURL URLWithString:@""]];
-    return [[ReaderPostServiceRemote alloc] initWithApi:api];
+    WordPressComRestApi *api = [[WordPressComRestApi alloc] initWithOAuthToken:nil userAgent:nil];
+    return [[ReaderPostServiceRemote alloc] initWithWordPressComRestApi:api];
 }
 
 #pragma mark - ReaderPostServiceRemote tests
@@ -331,6 +332,28 @@
     
     readingTime = [remoteService readingTimeForWordCount:@1000];
     XCTAssertTrue([readingTime integerValue] == 4, @"1000 words should take about 4 minutes to read");
+}
+
+- (void)testEndpointUrlForSearchPhrase
+{
+    ReaderPostServiceRemote *remoteService = nil;
+    XCTAssertNoThrow(remoteService = [self service]);
+
+    NSString *phrase = @"coffee";
+    NSString *endpoint = [remoteService endpointUrlForSearchPhrase:phrase];
+    XCTAssertTrue([endpoint hasSuffix:@"q=coffee"], @"The expected search term was not found");
+
+    phrase = @"coffee talk";
+    endpoint = [remoteService endpointUrlForSearchPhrase:phrase];
+    XCTAssertTrue([endpoint hasSuffix:@"q=coffee%20talk"], @"The expected search term was not found");
+
+    phrase = @"coffee-talk";
+    endpoint = [remoteService endpointUrlForSearchPhrase:phrase];
+    XCTAssertTrue([endpoint hasSuffix:@"q=coffee-talk"], @"The expected search term was not found");
+
+    phrase = @"coffee & cake";
+    endpoint = [remoteService endpointUrlForSearchPhrase:phrase];
+    XCTAssertTrue([endpoint hasSuffix:@"q=coffee%20&%20cake"], @"The expected search term was not found");
 }
 
 @end

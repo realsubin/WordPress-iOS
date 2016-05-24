@@ -1,7 +1,7 @@
 #import "WPAnalyticsTrackerMixpanel.h"
 #import "MixpanelProxy.h"
 #import "WPAnalyticsTrackerMixpanelInstructionsForStat.h"
-#import "WordPressComApiCredentials.h"
+#import "ApiCredentials.h"
 #import "AccountService.h"
 #import "WPAccount.h"
 #import "ContextManager.h"
@@ -50,7 +50,7 @@ NSString *const SessionCount = @"session_count";
 
 - (void)beginSession
 {
-    [self.mixpanelProxy registerInstanceWithToken:[WordPressComApiCredentials mixpanelAPIToken]];
+    [self.mixpanelProxy registerInstanceWithToken:[ApiCredentials mixpanelAPIToken]];
     [self refreshMetadata];
     [self flagIfUserHasSeenLegacyEditor];
 }
@@ -91,8 +91,12 @@ NSString *const SessionCount = @"session_count";
 - (void)track:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties
 {
     WPAnalyticsTrackerMixpanelInstructionsForStat *instructions = [self instructionsForStat:stat];
+
     if (instructions == nil) {
-        DDLogInfo(@"No instructions, do nothing");
+        // Getting no instructions back means the tracker doesn't want to handle a specific event,
+        // so we can simply return.  This is intentional and allowed.
+        // - Diego Rey Mendez, 12 May 2016
+        //
         return;
     }
 
@@ -249,6 +253,9 @@ NSString *const SessionCount = @"session_count";
     WPAnalyticsTrackerMixpanelInstructionsForStat *instructions;
 
     switch (stat) {
+        case WPAnalyticsStatABTestStart:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"AB Test - Started"];
+            break;
         case WPAnalyticsStatApplicationOpened:
             instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Application Opened"];
             [instructions setPeoplePropertyToIncrement:@"Application Opened"];
@@ -497,6 +504,15 @@ NSString *const SessionCount = @"session_count";
             [instructions setSuperPropertyAndPeoplePropertyToIncrement:@"number_of_times_editor_published_post"];
             [instructions setCurrentDateForPeopleProperty:@"last_time_published_post"];
             break;
+        case WPAnalyticsStatGravatarCropped:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Me - Gravatar Cropped"];
+            break;
+        case WPAnalyticsStatGravatarTapped:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Me - Tapped Gravatar"];
+            break;
+        case WPAnalyticsStatGravatarUploaded:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Me - Gravatar Uploaded"];
+            break;
         case WPAnalyticsStatPushNotificationAlertPressed:
             instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Push Notification - Alert Tapped"];
             break;
@@ -645,6 +661,12 @@ NSString *const SessionCount = @"session_count";
             break;
         case WPAnalyticsStatOpenedNotificationSettingDetails:
             instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Notification Settings - Accessed Details"];
+            break;
+        case WPAnalyticsStatOpenedPlans:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Site Menu - Opened Plans"];
+            break;
+        case WPAnalyticsStatOpenedPlansComparison:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Plans - Opened Comparison"];
             break;
         case WPAnalyticsStatOpenedSharingManagement:
             instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Site Menu - Opened Sharing Management"];
@@ -873,6 +895,9 @@ NSString *const SessionCount = @"session_count";
         case WPAnalyticsStatOpenedAccountSettings:
             instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Me - Opened Account Settings"];
             break;
+        case WPAnalyticsStatOpenedAppSettings:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Me - Opened App Settings"];
+            break;
         case WPAnalyticsStatOpenedMyProfile:
             instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Me - Opened My Profile"];
             break;
@@ -939,7 +964,40 @@ NSString *const SessionCount = @"session_count";
         case WPAnalyticsStatSharingPublicizeConnectionAvailableToAllChanged:
             instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Sharing Management - Publicize Connection Availablility Changed"];
             break;
-
+        case WPAnalyticsStatMenusAccessed:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menus Accessed"];
+            break;
+        case WPAnalyticsStatMenusCreatedItem:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Item Created."];
+            break;
+        case WPAnalyticsStatMenusCreatedMenu:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Created."];
+            break;
+        case WPAnalyticsStatMenusDeletedMenu:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Deleted."];
+            break;
+        case WPAnalyticsStatMenusDeletedItem:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Item Deleted."];
+            break;
+        case WPAnalyticsStatMenusDiscardedChanges:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Discarded Changes."];
+            break;
+        case WPAnalyticsStatMenusEditedItem:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Item Edited."];
+            break;
+        case WPAnalyticsStatMenusOpenedItemEditor:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Item Editor Opened."];
+            break;
+        case WPAnalyticsStatMenusOrderedItems:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Items Ordered."];
+            break;
+        case WPAnalyticsStatMenusSavedMenu:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Saved."];
+            break;
+        case WPAnalyticsStatMenusUpdatedMenuName:
+            instructions = [WPAnalyticsTrackerMixpanelInstructionsForStat mixpanelInstructionsForEventName:@"Menus - Menu Name Updated."];
+            break;
+            
             // to be implemented with the sign in refactor
         case WPAnalyticsStatLoginMagicLinkExited:
         case WPAnalyticsStatLoginMagicLinkFailed:
@@ -947,6 +1005,11 @@ NSString *const SessionCount = @"session_count";
         case WPAnalyticsStatLoginMagicLinkRequested:
         case WPAnalyticsStatLoginMagicLinkSucceeded:
 
+            // To be implemented
+        case WPAnalyticsStatOpenedPeople:
+        case WPAnalyticsStatOpenedPerson:
+        case WPAnalyticsStatPersonRemoved:
+        case WPAnalyticsStatPersonUpdated:
 
         case WPAnalyticsStatAppUpgraded:
         case WPAnalyticsStatDefaultAccountChanged:

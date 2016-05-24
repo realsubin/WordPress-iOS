@@ -5,7 +5,6 @@
 #import "RemoteReaderPost.h"
 #import "RemoteSourcePostAttribution.h"
 #import "ReaderTopicServiceRemote.h"
-#import "WordPressComApi.h"
 #import <WordPressShared/NSString+XMLExtensions.h>
 #import "WordPress-Swift.h"
 
@@ -51,6 +50,7 @@ NSString * const PostRESTKeySlug = @"slug";
 NSString * const PostRESTKeyStatus = @"status";
 NSString * const PostRESTKeyTitle = @"title";
 NSString * const PostRESTKeyTags = @"tags";
+NSString * const POSTRESTKeyTagDisplayName = @"display_name";
 NSString * const PostRESTKeyURL = @"URL";
 NSString * const PostRESTKeyWordCount = @"word_count";
 
@@ -95,13 +95,13 @@ static const NSInteger MinutesToReadThreshold = 2;
           success:(void (^)(RemoteReaderPost *post))success
           failure:(void (^)(NSError *error))failure {
 
-    NSString *path = [NSString stringWithFormat:@"sites/%d/posts/%d/?meta=site", siteID, postID];
+    NSString *path = [NSString stringWithFormat:@"read/sites/%d/posts/%d/?meta=site", siteID, postID];
     NSString *requestUrl = [self pathForEndpoint:path
-                                     withVersion:ServiceRemoteRESTApiVersion_1_1];
+                                     withVersion:ServiceRemoteWordPressComRESTApiVersion_1_2];
     
-    [self.api GET:requestUrl
+    [self.wordPressComRestApi GET:requestUrl
            parameters:nil
-              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
                   if (!success) {
                       return;
                   }
@@ -109,7 +109,7 @@ static const NSInteger MinutesToReadThreshold = 2;
                   RemoteReaderPost *post = [self formatPostDictionary:(NSDictionary *)responseObject];
                   success(post);
 
-              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
                   if (failure) {
                       failure(error);
                   }
@@ -123,13 +123,13 @@ static const NSInteger MinutesToReadThreshold = 2;
 {
     NSString *path = [NSString stringWithFormat:@"sites/%d/posts/%d/likes/new", siteID, postID];
     NSString *requestUrl = [self pathForEndpoint:path
-                                     withVersion:ServiceRemoteRESTApiVersion_1_1];
+                                     withVersion:ServiceRemoteWordPressComRESTApiVersion_1_1];
     
-    [self.api POST:requestUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.wordPressComRestApi POST:requestUrl parameters:nil success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
         if (success) {
             success();
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
         if (failure) {
             failure(error);
         }
@@ -143,17 +143,27 @@ static const NSInteger MinutesToReadThreshold = 2;
 {
     NSString *path = [NSString stringWithFormat:@"sites/%d/posts/%d/likes/mine/delete", siteID, postID];
     NSString *requestUrl = [self pathForEndpoint:path
-                                     withVersion:ServiceRemoteRESTApiVersion_1_1];
+                                     withVersion:ServiceRemoteWordPressComRESTApiVersion_1_1];
     
-    [self.api POST:requestUrl parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self.wordPressComRestApi POST:requestUrl parameters:nil success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
         if (success) {
             success();
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
         if (failure) {
             failure(error);
         }
     }];
+}
+
+- (NSString *)endpointUrlForSearchPhrase:(NSString *)phrase
+{
+    NSAssert([phrase length] > 0, @"A search phrase is required.");
+
+    NSString *endpoint = [NSString stringWithFormat:@"read/search?q=%@", [phrase stringByUrlEncoding]];
+    NSString *absolutePath = [self pathForEndpoint:endpoint withVersion:ServiceRemoteWordPressComRESTApiVersion_1_2];
+    NSURL *url = [NSURL URLWithString:absolutePath relativeToURL:[NSURL URLWithString:WordPressComRestApi.apiBaseURLString]];
+    return [url absoluteString];
 }
 
 
@@ -173,9 +183,9 @@ static const NSInteger MinutesToReadThreshold = 2;
 {
     NSString *path = [endpoint absoluteString];
     
-    [self.api GET:path
+    [self.wordPressComRestApi GET:path
            parameters:params
-              success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
                   if (!success) {
                       return;
                   }
@@ -186,7 +196,7 @@ static const NSInteger MinutesToReadThreshold = 2;
                   }];
                   success(posts);
 
-              } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
                   if (failure) {
                       failure(error);
                   }
@@ -323,6 +333,7 @@ static const NSInteger MinutesToReadThreshold = 2;
     if (remoteTags) {
         NSInteger highestCount = 0;
         NSInteger secondHighestCount = 0;
+        NSString *tagTitle;
         for (NSDictionary *tag in remoteTags) {
             NSInteger count = [[tag numberForKey:PostRESTKeyPostCount] integerValue];
             if (count > highestCount) {
@@ -330,12 +341,14 @@ static const NSInteger MinutesToReadThreshold = 2;
                 secondaryTagSlug = primaryTagSlug;
                 secondHighestCount = highestCount;
 
-                primaryTag = [tag stringForKey:PostRESTKeyName] ?: @"";
+                tagTitle = [tag stringForKey:POSTRESTKeyTagDisplayName] ?: [tag stringForKey:PostRESTKeyName];
+                primaryTag = tagTitle ?: @"";
                 primaryTagSlug = [tag stringForKey:PostRESTKeySlug] ?: @"";
                 highestCount = count;
 
             } else if (count > secondHighestCount) {
-                secondaryTag = [tag stringForKey:PostRESTKeyName] ?: @"";
+                tagTitle = [tag stringForKey:POSTRESTKeyTagDisplayName] ?: [tag stringForKey:PostRESTKeyName];
+                secondaryTag = tagTitle ?: @"";
                 secondaryTagSlug = [tag stringForKey:PostRESTKeySlug] ?: @"";
                 secondHighestCount = count;
 

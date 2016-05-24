@@ -58,3 +58,10 @@ WordPress/WordPress.xcodeproj/xcuserdata
 WordPress/InfoPlist.h
 # coverage.py
 */CoverageData/*
+
+# Bundler
+/vendor/bundle/
+.bundle/
+
+# Dependencies
+/vendor/

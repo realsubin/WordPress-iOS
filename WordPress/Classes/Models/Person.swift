@@ -1,10 +1,55 @@
 import Foundation
-import CoreData
 import WordPressShared
 
-typealias People = [Person]
 
-struct Person {
+// MARK: - Defines all of the peroperties a Person may have
+//
+protocol Person {
+    /// Properties
+    ///
+    var ID: Int { get }
+    var username: String { get }
+    var firstName: String? { get }
+    var lastName: String? { get }
+    var displayName: String { get }
+    var role: Role { get }
+    var siteID: Int { get }
+    var linkedUserID: Int { get }
+    var avatarURL: NSURL? { get }
+    var isSuperAdmin: Bool { get }
+    var fullName: String { get }
+
+    /// Initializers
+    ///
+    init(ID: Int,
+         username: String,
+         firstName: String?,
+         lastName: String?,
+         displayName: String,
+         role: Role,
+         siteID: Int,
+         linkedUserID: Int,
+         avatarURL: NSURL?,
+         isSuperAdmin: Bool)
+    init(managedPerson: ManagedPerson)
+}
+
+// MARK: - Specifies all of the Roles a Person may have
+//
+enum Role: String, Comparable, Equatable, CustomStringConvertible {
+    case SuperAdmin     = "super-admin"
+    case Admin          = "administrator"
+    case Editor         = "editor"
+    case Author         = "author"
+    case Contributor    = "contributor"
+    case Subscriber     = "subscriber"
+    case Follower       = "follower"
+    case Unsupported    = "unsupported"
+}
+
+// MARK: - Defines a Blog's User
+//
+struct User: Person {
     let ID: Int
     let username: String
     let firstName: String?
@@ -12,116 +57,43 @@ struct Person {
     let displayName: String
     let role: Role
     let siteID: Int
+    let linkedUserID: Int
     let avatarURL: NSURL?
     let isSuperAdmin: Bool
-
-    enum Role: Int, Comparable, CustomStringConvertible {
-        case SuperAdmin
-        case Admin
-        case Editor
-        case Author
-        case Contributor
-        case Unsupported
-
-        init(string: String) {
-            switch string {
-            case "administrator":
-                self = .Admin
-            case "editor":
-                self = .Editor
-            case "author":
-                self = .Author
-            case "contributor":
-                self = .Contributor
-            default:
-                self = .Unsupported
-            }
-        }
-
-        func color() -> UIColor {
-            switch self {
-            case .SuperAdmin:
-                return WPStyleGuide.People.superAdminColor
-            case .Admin:
-                return WPStyleGuide.People.adminColor
-            case .Editor:
-                return WPStyleGuide.People.editorColor
-            case .Author:
-                return WPStyleGuide.People.authorColor
-            case .Contributor:
-                return WPStyleGuide.People.contributorColor
-            case .Unsupported:
-                return WPStyleGuide.People.contributorColor
-            }
-        }
-
-        func localizedName() -> String {
-            switch self {
-            case .SuperAdmin:
-                return NSLocalizedString("Super Admin", comment: "User role badge")
-            case .Admin:
-                return NSLocalizedString("Admin", comment: "User role badge")
-            case .Editor:
-                return NSLocalizedString("Editor", comment: "User role badge")
-            case .Author:
-                return NSLocalizedString("Author", comment: "User role badge")
-            case .Contributor:
-                return NSLocalizedString("Contributor", comment: "User role badge")
-            case .Unsupported:
-                return NSLocalizedString("Unsupported", comment: "User role badge")
-            }
-        }
-
-        var description: String {
-            switch self {
-            case .SuperAdmin:
-                return "super-admin"
-            case .Admin:
-                return "administrator"
-            case .Editor:
-                return "editor"
-            case .Author:
-                return "author"
-            case .Contributor:
-                return "contributor"
-            default:
-                return "unsupported"
-            }
-        }
-    }
 }
 
-func <(lhs: Person.Role, rhs: Person.Role) -> Bool {
-    return lhs.rawValue < rhs.rawValue
+// MARK: - Defines a Blog's Follower
+//
+struct Follower: Person {
+    let ID: Int
+    let username: String
+    let firstName: String?
+    let lastName: String?
+    let displayName: String
+    let role: Role
+    let siteID: Int
+    let linkedUserID: Int
+    let avatarURL: NSURL?
+    let isSuperAdmin: Bool
 }
 
-class ManagedPerson: NSManagedObject {
-    @NSManaged var avatarURL: String?
-    @NSManaged var displayName: String
-    @NSManaged var firstName: String?
-    @NSManaged var lastName: String?
-    @NSManaged var role: String
-    @NSManaged var siteID: Int32
-    @NSManaged var userID: Int32
-    @NSManaged var username: String
-    @NSManaged var isSuperAdmin: Bool
-
-    @NSManaged var blog: Blog
-
-    func updateWith(person: Person) {
-        avatarURL = person.avatarURL?.absoluteString
-        displayName = person.displayName
-        firstName = person.firstName
-        lastName = person.lastName
-        role = String(person.role)
-        siteID = Int32(person.siteID)
-        userID = Int32(person.ID)
-        username = person.username
-        isSuperAdmin = person.isSuperAdmin
-    }
-}
-
+// MARK: - Extensions
+//
 extension Person {
+    var fullName: String {
+        let first = firstName ?? String()
+        let last = lastName ?? String()
+        let separator = (first.isEmpty == false && last.isEmpty == false) ? " " : ""
+
+        return "\(first)\(separator)\(last)"
+    }
+
+    static var isFollower: Bool {
+        return self == Follower.self
+    }
+}
+
+extension User {
     init(managedPerson: ManagedPerson) {
         ID = Int(managedPerson.userID)
         username = managedPerson.username
@@ -130,14 +102,87 @@ extension Person {
         displayName = managedPerson.displayName
         role = Role(string: managedPerson.role)
         siteID = Int(managedPerson.siteID)
+        linkedUserID = Int(managedPerson.linkedUserID)
         avatarURL = managedPerson.avatarURL.flatMap { NSURL(string: $0) }
         isSuperAdmin = managedPerson.isSuperAdmin
     }
 }
 
-extension Person: Equatable {}
+extension Follower {
+    init(managedPerson: ManagedPerson) {
+        ID = Int(managedPerson.userID)
+        username = managedPerson.username
+        firstName = managedPerson.firstName
+        lastName = managedPerson.lastName
+        displayName = managedPerson.displayName
+        role = Role.Follower
+        siteID = Int(managedPerson.siteID)
+        linkedUserID = Int(managedPerson.linkedUserID)
+        avatarURL = managedPerson.avatarURL.flatMap { NSURL(string: $0) }
+        isSuperAdmin = managedPerson.isSuperAdmin
+    }
+}
 
-func ==(lhs: Person, rhs: Person) -> Bool {
+extension Role {
+    init(string: String) {
+        guard let parsedRole = Role(rawValue: string) else {
+            self = .Unsupported
+            return
+        }
+
+        self = parsedRole
+    }
+
+    var color: UIColor {
+        guard let color = self.dynamicType.colorsMap[self] else {
+            fatalError()
+        }
+
+        return color
+    }
+
+    var description: String {
+        return rawValue
+    }
+
+    var localizedName: String {
+        guard let localized = self.dynamicType.localizedMap[self] else {
+            fatalError()
+        }
+
+        return localized
+    }
+
+    // MARK: - Private Properties
+    //
+    private static let colorsMap = [
+        SuperAdmin  : WPStyleGuide.People.superAdminColor,
+        Admin       : WPStyleGuide.People.adminColor,
+        Editor      : WPStyleGuide.People.editorColor,
+        Author      : WPStyleGuide.People.authorColor,
+        Contributor : WPStyleGuide.People.contributorColor,
+        Subscriber  : WPStyleGuide.People.contributorColor,
+        Follower    : WPStyleGuide.People.contributorColor,
+        Unsupported : WPStyleGuide.People.contributorColor
+    ]
+
+    private static let localizedMap = [
+        SuperAdmin  : NSLocalizedString("Super Admin", comment: "User role badge"),
+        Admin       : NSLocalizedString("Admin", comment: "User role badge"),
+        Editor      : NSLocalizedString("Editor", comment: "User role badge"),
+        Author      : NSLocalizedString("Author", comment: "User role badge"),
+        Contributor : NSLocalizedString("Contributor", comment: "User role badge"),
+        Subscriber  : NSLocalizedString("Subscriber", comment: "User role badge"),
+        Follower    : NSLocalizedString("Follower", comment: "User role badge"),
+        Unsupported : NSLocalizedString("Unsupported", comment: "User role badge")
+    ]
+}
+
+
+
+// MARK: - Operator Overloading
+
+func ==<T : Person>(lhs: T, rhs: T) -> Bool {
     return lhs.ID == rhs.ID
         && lhs.username == rhs.username
         && lhs.firstName == rhs.firstName
@@ -145,7 +190,16 @@ func ==(lhs: Person, rhs: Person) -> Bool {
         && lhs.displayName == rhs.displayName
         && lhs.role == rhs.role
         && lhs.siteID == rhs.siteID
+        && lhs.linkedUserID == rhs.linkedUserID
         && lhs.avatarURL == rhs.avatarURL
         && lhs.isSuperAdmin == rhs.isSuperAdmin
+        && lhs.dynamicType == rhs.dynamicType
 }
 
+func ==(lhs: Role, rhs: Role) -> Bool {
+    return lhs.rawValue == rhs.rawValue
+}
+
+func <(lhs: Role, rhs: Role) -> Bool {
+    return lhs.rawValue < rhs.rawValue
+}

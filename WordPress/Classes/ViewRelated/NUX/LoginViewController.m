@@ -18,7 +18,6 @@
 #import "WPWalkthroughOverlayView.h"
 #import "WPWebViewController.h"
 
-#import "WordPressComOAuthClient.h"
 #import "ContextManager.h"
 #import "AccountService.h"
 #import "BlogService.h"
@@ -268,6 +267,11 @@ static NSString * const LoginSharedWebCredentialFQDN = @"wordpress.com";
 
 - (void)autoFillLoginWithSharedWebCredentialsIfAvailable
 {
+    if (self.prefersSelfHosted || !self.viewModel.userIsDotCom) {
+        // Ignore self-hosted autofilling since we can only autofill for the WordPress.com domain.
+        return;
+    }
+    
     __weak __typeof(self)weakSelf = self;
     [self requestSharedWebCredentials:^(NSString *username, NSString *password) {
         

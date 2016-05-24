@@ -49,8 +49,8 @@ public class ReaderPostMenu
         alertController.addActionWithTitle(ReaderPostMenuButtonTitles.share,
             style: .Default,
             handler: { (action:UIAlertAction) in
-                let sharingController = PostSharingController();
-                
+                let sharingController = PostSharingController()
+
                 sharingController.shareReaderPost(post, fromView: anchorView, inViewController: viewController)
         })
 
@@ -120,6 +120,7 @@ public class ReaderPostMenu
     private class func visitSiteForPost(post:ReaderPost, presentingViewController viewController:UIViewController) {
         let siteURL = NSURL(string: post.blogURL)!
         let controller = WPWebViewController(URL: siteURL)
+        controller.addsWPComReferrer = true
         let navController = UINavigationController(rootViewController: controller)
         viewController.presentViewController(navController, animated: true, completion: nil)
     }

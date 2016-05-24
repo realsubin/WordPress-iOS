@@ -21,6 +21,12 @@
            thumbnailCallback:(void (^)(NSURL *thumbnailURL))thumbnailCallback
                   completion:(void (^)(Media *media, NSError *error))completion;
 
+- (void)createMediaWithImage:(UIImage *)image
+                 withMediaID:(NSString *)mediaID
+             forPostObjectID:(NSManagedObjectID *)postObjectID
+           thumbnailCallback:(void (^)(NSURL *thumbnailURL))thumbnailCallback
+                  completion:(void (^)(Media *media, NSError *error))completion;
+
 /**
  Get the Media object from the server using the blog and the mediaID as the identifier of the resource
  
@@ -120,7 +126,11 @@
 #pragma mark - Media cleanup
 
 /**
- *  @brief      Removes all unused media files from the tmp directorys.
+ *  @brief      Removes all unused media files from the media directories
+ *  
+ *  @discussion This method looks for any media files that stored inside the media folder that aren't
+ * linked to any valid media object and remove them. These files can show up because of the app being killed
+ * while a media object was being created or when a CoreData migration fails and the database is recreated.
  */
 + (void)cleanUnusedMediaFileFromTmpDir;
 

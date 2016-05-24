@@ -7,6 +7,8 @@ enum FeatureFlag: Int {
     case People
     /// My Sites > Site > Plans
     case Plans
+    /// My Sites > Site > Domains
+    case Domains
     /// Me > My Profile
     case MyProfile
     /// Me > Account Settings
@@ -19,10 +21,10 @@ enum FeatureFlag: Int {
             return build(.Debug)
         case .Plans:
             return build(.Debug)
-        case .MyProfile, .AccountSettings:
-            // Disabled until we figure out this:
-            // https://github.com/wordpress-mobile/WordPress-iOS/issues/4888
+        case .Domains:
             return build(.Debug)
+        case .MyProfile, .AccountSettings:
+            return true
         }
     }
 }

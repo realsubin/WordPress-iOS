@@ -4,46 +4,42 @@ import Nimble
 
 class PlanListViewControllerTest: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     // MARK: - PlanListRow tests
 
-    func testPlanListRowAttributedTitleWhenCurrent() {
-        let attributedTitle = PlanListRow.Formatter.attributedTitle("Title", price: "$99", active: true)
-        expect(attributedTitle.string).to(equal("Title CURRENT PLAN"))
+    func testPlanListRowAttributedTitleWhenCurrentDoesNotContainPrice() {
+        let (title, price) = ("Title", "$99")
+        let attributedTitle = PlanListRow.Formatter.attributedTitle(title, price: price, active: true)
+
+        expect(attributedTitle.string).to(contain(title))
+        expect(attributedTitle.string).notTo(contain(price))
     }
 
-    func testPlanListRowAttributedTitleWhenNotCurrent() {
-        let attributedTitle = PlanListRow.Formatter.attributedTitle("Title", price: "$99", active: false)
-        expect(attributedTitle.string).to(equal("Title $99 per year"))
+    func testPlanListRowAttributedTitleWhenNotCurrentContainsTitleAndPrice() {
+        let (title, price) = ("Title", "$99")
+        let attributedTitle = PlanListRow.Formatter.attributedTitle(title, price: price, active: false)
+
+        expect(attributedTitle.string).to(contain(title))
+        expect(attributedTitle.string).to(contain(price))
     }
 
     // MARK: - PlanListViewModel tests
 
     func testPlanImageWhenActivePlanSet() {
-        let model = PlanListViewModel.Ready((siteID: 123, activePlan: defaultPlans[1], availablePlans: plansWithPrices))
+        let model = PlanListViewModel.Ready((siteID: 123, activePlan: TestPlans.premium.plan, availablePlans: plansWithPrices))
         let tableViewModel = model.tableViewModelWithPresenter(nil, planService: nil)
         let freeRow = tableViewModel.planRowAtIndex(0)
         let premiumRow = tableViewModel.planRowAtIndex(1)
         let businessRow = tableViewModel.planRowAtIndex(2)
 
-        expect(freeRow.icon).to(equal(defaultPlans[0].image))
-        expect(premiumRow.icon).to(equal(defaultPlans[1].activeImage))
-        expect(businessRow.icon).to(equal(defaultPlans[2].image))
+        expect(freeRow.iconUrl).to(equal(TestPlans.free.plan.iconUrl))
+        expect(premiumRow.iconUrl).to(equal(TestPlans.premium.plan.activeIconUrl))
+        expect(businessRow.iconUrl).to(equal(TestPlans.business.plan.iconUrl))
     }
 
     let plansWithPrices: [PricedPlan] = [
-        (defaultPlans[0], ""),
-        (defaultPlans[1], "$99.99"),
-        (defaultPlans[2], "$299.99")
+        (TestPlans.free.plan, ""),
+        (TestPlans.premium.plan, "$99.99"),
+        (TestPlans.business.plan, "$299.99")
     ]
 }
 

@@ -193,7 +193,7 @@ static NSString *CommentLayoutCellIdentifier = @"CommentLayoutCellIdentifier";
 
     CGFloat width = CGRectGetWidth(self.view.frame);
     [self updateCellsAndRefreshMediaForWidth:width];
-    [self.tableView reloadRowsAtIndexPaths:[self.tableView indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView reloadData];
 }
 
 
@@ -1112,24 +1112,13 @@ static NSString *CommentLayoutCellIdentifier = @"CommentLayoutCellIdentifier";
     }
 
     [self.tableViewHandler invalidateCachedRowHeightAtIndexPath:indexPath];
-
-    // HACK:
-    // For some reason, a single call to reloadRowsAtIndexPath can result in an
-    // invalid row height. Calling twice seems to prevent any layout errors at
-    // the expense of an extra layout pass.
-    // Wrapping the calls in a performWithoutAnimation block ensures the are no
-    // strange transitions from the old height to the new.
-    // BOTH calls to reloadRowsAtIndexPaths:withRowAnimation are needed to avoid
-    // visual oddity.
-    [UIView performWithoutAnimation:^{
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-    }];
+    [self.tableView reloadData];
 }
 
 - (void)commentCell:(UITableViewCell *)cell linkTapped:(NSURL *)url
 {
     WPWebViewController *webViewController = [WPWebViewController authenticatedWebViewController:url];
+    webViewController.addsWPComReferrer = YES;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:webViewController];
     [self presentViewController:navController animated:YES completion:nil];
 }
@@ -1171,6 +1160,7 @@ static NSString *CommentLayoutCellIdentifier = @"CommentLayoutCellIdentifier";
     }
 
     WPWebViewController *webViewController = [WPWebViewController authenticatedWebViewController:linkURL];
+    webViewController.addsWPComReferrer = YES;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:webViewController];
     [self presentViewController:navController animated:YES completion:nil];
 }
@@ -1184,6 +1174,7 @@ static NSString *CommentLayoutCellIdentifier = @"CommentLayoutCellIdentifier";
         controller = [[WPImageViewController alloc] initWithImage:imageControl.imageView.image andURL:imageControl.linkURL];
     } else if (imageControl.linkURL) {
         WPWebViewController *webViewController = [WPWebViewController authenticatedWebViewController:imageControl.linkURL];
+        webViewController.addsWPComReferrer = YES;
         controller = [[UINavigationController alloc] initWithRootViewController:webViewController];
     } else {
         controller = [[WPImageViewController alloc] initWithImage:imageControl.imageView.image];

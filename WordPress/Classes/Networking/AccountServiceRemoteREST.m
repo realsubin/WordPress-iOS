@@ -14,6 +14,10 @@ static NSString * const UserDictionaryPrimaryBlogKey = @"primary_blog";
 static NSString * const UserDictionaryAvatarURLKey = @"avatar_URL";
 static NSString * const UserDictionaryDateKey = @"date";
 
+@interface AccountServiceRemoteREST ()
+
+@end
+
 @implementation AccountServiceRemoteREST
 
 - (void)getBlogsWithSuccess:(void (^)(NSArray *))success
@@ -21,14 +25,18 @@ static NSString * const UserDictionaryDateKey = @"date";
 {
     NSString *requestUrl = [self pathForEndpoint:@"me/sites"
                                      withVersion:ServiceRemoteRESTApiVersion_1_1];
-    
-    [self.api GET:requestUrl
-       parameters:nil
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+    NSString *locale = [[WordPressComLanguageDatabase new] deviceLanguageSlug];
+    NSDictionary *parameters = @{
+                                 @"locale": locale
+                                 };
+    [self.wordPressComRestApi GET:requestUrl
+       parameters:parameters
+                    success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
               if (success) {
                   success([self remoteBlogsFromJSONArray:responseObject[@"sites"]]);
               }
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
               if (failure) {
                   failure(error);
               }
@@ -48,16 +56,16 @@ static NSString * const UserDictionaryDateKey = @"date";
     NSString *requestUrl = [self pathForEndpoint:@"me"
                                      withVersion:ServiceRemoteRESTApiVersion_1_1];
     
-    [self.api GET:requestUrl
+    [self.wordPressComRestApi GET:requestUrl
        parameters:nil
-          success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+          success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
               if (!success) {
                   return;
               }
               RemoteUser *remoteUser = [self remoteUserFromDictionary:responseObject];
               success(remoteUser);
           }
-          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
               if (failure) {
                   failure(error);
               }
@@ -96,22 +104,81 @@ static NSString * const UserDictionaryDateKey = @"date";
     }];
 
     NSDictionary *parameters = @{
-                                 @"sites": sites,
+                                 @"sites": sites
                                  };
     NSString *path = [self pathForEndpoint:@"me/sites"
                                withVersion:ServiceRemoteRESTApiVersion_1_1];
-    [self.api POST:path
+    [self.wordPressComRestApi POST:path
         parameters:parameters
-           success:^(AFHTTPRequestOperation *operation, id responseObject) {
+           success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
                if (success) {
                    success();
                }
-           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+           } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
                if (failure) {
                    failure(error);
                }
            }];
 }
+
+- (void)isEmailAvailable:(NSString *)email success:(void (^)(BOOL available))success failure:(void (^)(NSError *error))failure
+{
+    // TODO: (Aerych 2016-04) We need to make a versioned flavor of this endpoint
+    // and ensure it always returns a JSON object. See 7724 in the relevant trac.
+    // Remove the special case in `WordPressComApi.assertApiVersion` once the
+    // endpoint is versioned.
+    NSString *path = @"https://public-api.wordpress.com/is-available/email";
+    [self.wordPressComRestApi GET:path
+       parameters:@{ @"q": email, @"format": @"json"}
+          success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
+              if (!success) {
+                  return;
+              }
+
+              // If the email address is not available (has already been used)
+              // the endpoint will reply with a 200 status code and an JSON
+              // object describing an error.
+              // The error is that the queried email address is not available,
+              // which is our failure case. Test the error response for the
+              // "taken" reason to confirm the email address exists.
+              BOOL available = NO;
+              if ([responseObject isKindOfClass:[NSDictionary class]]) {
+                  NSDictionary *dict = (NSDictionary *)responseObject;
+                  available = [[dict numberForKey:@"available"] boolValue];
+              }
+              success(available);
+
+          } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
+              if (failure) {
+                  failure(error);
+              }
+          }];
+}
+
+- (void)requestWPComAuthLinkForEmail:(NSString *)email success:(void (^)())success failure:(void (^)(NSError *error))failure
+{
+    NSAssert([email length] > 0, @"Needs an email address.");
+
+    NSString *path = [self pathForEndpoint:@"auth/send-login-email"
+                                     withVersion:ServiceRemoteRESTApiVersion_1_1];
+
+    [self.wordPressComRestApi POST:path
+        parameters:@{
+                     @"email": email,
+                     @"client_id": [ApiCredentials client],
+                     @"client_secret": [ApiCredentials secret],
+                     }
+           success:^(id responseObject, NSHTTPURLResponse *httpResponse) {
+               if (success) {
+                   success();
+               }
+           } failure:^(NSError *error, NSHTTPURLResponse *httpResponse) {
+               if (failure) {
+                   failure(error);
+               }
+           }];
+}
+
 
 #pragma mark - Private Methods
 
@@ -147,10 +214,12 @@ static NSString * const UserDictionaryDateKey = @"date";
     blog.xmlrpc = [jsonBlog stringForKeyPath:@"meta.links.xmlrpc"];
     blog.jetpack = [[jsonBlog numberForKey:@"jetpack"] boolValue];
     blog.icon = [jsonBlog stringForKeyPath:@"icon.img"];
+    blog.capabilities = [jsonBlog dictionaryForKey:@"capabilities"];
     blog.isAdmin = [[jsonBlog numberForKeyPath:@"capabilities.manage_options"] boolValue];
     blog.visible = [[jsonBlog numberForKey:@"visible"] boolValue];
     blog.options = [RemoteBlogOptionsHelper mapOptionsFromResponse:jsonBlog];
     blog.planID = [jsonBlog numberForKeyPath:@"plan.product_id"];
+    blog.planTitle = [jsonBlog stringForKeyPath:@"plan.product_name_short"];
     return blog;
 }
 

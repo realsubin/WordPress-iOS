@@ -45,6 +45,7 @@ NSString * const OptionsKeyPublicizeDisabled = @"publicize_permanently_disabled"
 @dynamic tags;
 @dynamic comments;
 @dynamic connections;
+@dynamic domains;
 @dynamic themes;
 @dynamic media;
 @dynamic menus;
@@ -69,7 +70,9 @@ NSString * const OptionsKeyPublicizeDisabled = @"publicize_permanently_disabled"
 @dynamic username;
 @dynamic settings;
 @dynamic planID;
+@dynamic planTitle;
 @dynamic sharingButtons;
+@dynamic capabilities;
 
 @synthesize api = _api;
 @synthesize isSyncingPosts;
@@ -418,12 +421,12 @@ NSString * const OptionsKeyPublicizeDisabled = @"publicize_permanently_disabled"
              */
             return [self accountIsDefaultAccount];
         case BlogFeaturePeople:
+            return [self restApi] != nil && self.isListingUsersAllowed;
         case BlogFeatureWPComRESTAPI:
-            return [self restApi] != nil;
+        case BlogFeatureStats:
+            return [self supportsRestApi];
         case BlogFeatureSharing:
             return [self supportsSharing];
-        case BlogFeatureStats:
-            return [self restApiForStats] != nil;
         case BlogFeatureCommentLikes:
         case BlogFeatureReblog:
         case BlogFeatureMentions:
@@ -433,12 +436,15 @@ NSString * const OptionsKeyPublicizeDisabled = @"publicize_permanently_disabled"
         case BlogFeaturePushNotifications:
             return [self supportsPushNotifications];
         case BlogFeatureThemeBrowsing:
+        case BlogFeatureMenus:
             return [self isHostedAtWPcom] && [self isAdmin];
         case BlogFeaturePrivate:
             // Private visibility is only supported by wpcom blogs
             return [self isHostedAtWPcom];
         case BlogFeatureSiteManagement:
             return [self supportsSiteManagementServices];
+        case BlogFeatureDomains:
+            return [self isHostedAtWPcom] && [self supportsSiteManagementServices];
     }
 }
 
@@ -523,7 +529,7 @@ NSString * const OptionsKeyPublicizeDisabled = @"publicize_permanently_disabled"
 
 - (NSSet *)allowedFileTypes
 {
-    NSArray * allowedFileTypes = self.options[@"allowed_file_types"][@"value"];
+    NSArray *allowedFileTypes = [self.options arrayForKeyPath:@"allowed_file_types.value"];
     if (!allowedFileTypes || allowedFileTypes.count == 0) {
         return nil;
     }
@@ -591,18 +597,20 @@ NSString * const OptionsKeyPublicizeDisabled = @"publicize_permanently_disabled"
     return nil;
 }
 
-/*
- 2015-05-26 koke: this is a temporary method to check if a blog supports BlogFeatureStats.
- It works like restApi, but bypasses Jetpack REST checks, since we always want to use rest for Stats.
- */
-- (WordPressComApi *)restApiForStats
+- (WordPressComRestApi *)wordPressComRestApi
 {
     if (self.account) {
-        return self.account.restApi;
-    } else if (self.jetpackAccount && self.dotComID) {
-        return self.jetpackAccount.restApi;
+        return self.account.wordPressComRestApi;
+    } else if ([self jetpackRESTSupported]) {
+        return self.jetpackAccount.wordPressComRestApi;
     }
     return nil;
+}
+
+- (BOOL)supportsRestApi {
+    // We don't want to check for `restApi` as it can be `nil` when the token
+    // is missing from the keychain.
+    return (self.account || [self jetpackRESTSupported]);
 }
 
 #pragma mark - Jetpack

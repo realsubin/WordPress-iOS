@@ -6,17 +6,17 @@ extension UIImage {
     enum ErrorCode : Int {
         case FailedToWrite = 1
     }
-    
+
     private func errorForCode(errorCode: ErrorCode, failureReason: String) -> NSError {
         let userInfo = [NSLocalizedFailureReasonErrorKey: failureReason]
         let error = NSError(domain: "UIImage+ImageIOExtensions", code: errorCode.rawValue, userInfo: userInfo)
-        
+
         return error
     }
-    
+
     /**
      Writes an image to a url location with the designated type format and EXIF metadata
-     
+
      - Parameters:
      - url: file url to where the asset should be exported, this must be writable location
      - type: the UTI format to use when exporting the asset
@@ -37,8 +37,8 @@ extension UIImage {
                     failureReason: NSLocalizedString("Unable to write image to file", comment: "Error reason to display when the writing of a image to a file fails")
                 )
         }
-        CGImageDestinationSetProperties(destination, properties);
-        CGImageDestinationAddImage(destination, imageRef, finalMetadata);
+        CGImageDestinationSetProperties(destination, properties)
+        CGImageDestinationAddImage(destination, imageRef, finalMetadata)
         if (!CGImageDestinationFinalize(destination)) {
             throw errorForCode(.FailedToWrite,
                 failureReason: NSLocalizedString("Unable to write image to file", comment: "Error reason to display when the writing of a image to a file fails")
@@ -70,6 +70,60 @@ extension UIImage {
             case .LeftMirrored: return CGImagePropertyOrientation.LeftMirrored
             case .RightMirrored: return CGImagePropertyOrientation.RightMirrored
             }
+        }
+    }
+}
+
+extension UIImage: ExportableAsset
+{
+    func exportToURL(url: NSURL,
+                     targetUTI: String,
+                     maximumResolution: CGSize,
+                     stripGeoLocation: Bool,
+                     successHandler: SuccessHandler,
+                     errorHandler: ErrorHandler)
+    {
+        var finalImage = self
+        if (maximumResolution.width <= self.size.width || maximumResolution.height <= self.size.height) {
+            finalImage = self.resizedImageWithContentMode(.ScaleAspectFit, bounds:maximumResolution, interpolationQuality:.High)
+        }
+
+        do {
+            try finalImage.writeToURL(url, type:targetUTI, compressionQuality:0.9, metadata: nil)
+            successHandler(resultingSize: finalImage.size)
+        } catch let error as NSError {
+            errorHandler(error: error)
+        }
+    }
+
+    func exportThumbnailToURL(url: NSURL,
+                              targetSize: CGSize,
+                              synchronous: Bool,
+                              successHandler: SuccessHandler,
+                              errorHandler: ErrorHandler)
+    {
+        let thumbnail = self.resizedImageWithContentMode(.ScaleAspectFit, bounds:targetSize, interpolationQuality:.High)
+        do {
+            try self.writeToURL(url, type:kUTTypeJPEG as String, compressionQuality:0.9, metadata:nil)
+            successHandler(resultingSize: thumbnail.size)
+        } catch let error as NSError {
+            errorHandler(error:error)
+        }
+    }
+
+    func originalUTI() -> String? {
+        return kUTTypeJPEG as String
+    }
+
+    var assetMediaType: MediaType {
+        get {
+            return .Image
+        }
+    }
+
+    var defaultThumbnailUTI: String {
+        get {
+            return kUTTypeJPEG as String
         }
     }
 }

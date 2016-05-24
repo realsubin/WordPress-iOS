@@ -1,9 +1,9 @@
 #import <Foundation/Foundation.h>
-#import "ServiceRemoteREST.h"
+#import "ServiceRemoteWordPressComREST.h"
 
 @class RemoteReaderPost;
 
-@interface ReaderPostServiceRemote : ServiceRemoteREST
+@interface ReaderPostServiceRemote : ServiceRemoteWordPressComREST
 
 /**
  Fetches the posts from the specified remote endpoint
@@ -57,5 +57,14 @@
            forSite:(NSUInteger)siteID
            success:(void (^)())success
            failure:(void (^)(NSError *error))failure;
+
+/**
+ A helper method for constructing the endpoint URL for a reader search request.
+ 
+ @param phrase The search phrase
+ 
+ @return The endpoint URL as a string.
+ */
+- (NSString *)endpointUrlForSearchPhrase:(NSString *)phrase;
 
 @end

@@ -11,7 +11,6 @@
 #import "BlogListViewController.h"
 #import "BlogDetailsViewController.h"
 #import "NotificationsViewController.h"
-#import "PostListViewController.h"
 #import "ReaderViewController.h"
 #import "StatsViewController.h"
 #import "WPPostViewController.h"
@@ -198,6 +197,7 @@ static NSInteger const WPTabBarIconOffset = 5;
     _blogListNavigationController.tabBarItem.selectedImage = mySitesTabBarImage;
     _blogListNavigationController.restorationIdentifier = WPBlogListNavigationRestorationID;
     _blogListNavigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(WPTabBarIconOffset, 0, -1 * WPTabBarIconOffset, 0);
+    _blogListNavigationController.tabBarItem.title = @"";
     _blogListNavigationController.tabBarItem.accessibilityLabel = NSLocalizedString(@"My Sites", @"The accessibility value of the my sites tab.");
 
     NSManagedObjectContext *context = [[ContextManager sharedInstance] mainContext];
@@ -226,6 +226,7 @@ static NSInteger const WPTabBarIconOffset = 5;
     _readerNavigationController.tabBarItem.selectedImage = readerTabBarImage;
     _readerNavigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(WPTabBarIconOffset, -1 * WPTabBarIconOffset, -1 * WPTabBarIconOffset, WPTabBarIconOffset);
     _readerNavigationController.restorationIdentifier = WPReaderNavigationRestorationID;
+    _readerNavigationController.tabBarItem.title = @"";
     _readerNavigationController.tabBarItem.accessibilityIdentifier = @"Reader";
     _readerNavigationController.tabBarItem.accessibilityLabel = NSLocalizedString(@"Reader", @"The accessibility value of the reader tab.");
 
@@ -243,6 +244,7 @@ static NSInteger const WPTabBarIconOffset = 5;
     _newPostViewController = [[UIViewController alloc] init];
     _newPostViewController.tabBarItem.image = newPostImage;
     _newPostViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(WPTabBarIconOffset, 0, -1 * WPTabBarIconOffset, 0);
+    _newPostViewController.tabBarItem.title = @"";
     _newPostViewController.tabBarItem.accessibilityLabel = NSLocalizedString(@"New Post", @"The accessibility value of the post tab.");
 
     return _newPostViewController;
@@ -261,6 +263,7 @@ static NSInteger const WPTabBarIconOffset = 5;
     _meNavigationController.tabBarItem.selectedImage = meTabBarImage;
     _meNavigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(WPTabBarIconOffset, WPTabBarIconOffset, -1 * WPTabBarIconOffset, -1 * WPTabBarIconOffset);
     _meNavigationController.restorationIdentifier = WPMeNavigationRestorationID;
+    _meNavigationController.tabBarItem.title = @"";
     _meNavigationController.tabBarItem.accessibilityLabel = NSLocalizedString(@"Me", @"The accessibility value of the me tab.");
 
     return _meNavigationController;
@@ -281,6 +284,7 @@ static NSInteger const WPTabBarIconOffset = 5;
     _notificationsNavigationController.tabBarItem.selectedImage = notificationsTabBarImage;
     _notificationsNavigationController.tabBarItem.imageInsets = UIEdgeInsetsMake(WPTabBarIconOffset, 0, -1 * WPTabBarIconOffset, 0);
     _notificationsNavigationController.restorationIdentifier = WPNotificationsNavigationRestorationID;
+    _notificationsNavigationController.tabBarItem.title = @"";
     _notificationsNavigationController.tabBarItem.accessibilityLabel = NSLocalizedString(@"Notifications", @"Notifications tab bar item accessibility label");
     
     return _notificationsNavigationController;
@@ -363,8 +367,7 @@ static NSInteger const WPTabBarIconOffset = 5;
     }
 
     navController.modalPresentationStyle = UIModalPresentationFullScreen;
-    navController.navigationBar.translucent = NO;
-    [navController setToolbarHidden:NO]; // Make the toolbar visible here to avoid a weird left/right transition when the VC appears.
+    navController.navigationBar.translucent = NO;    
     [self presentViewController:navController animated:animated completion:nil];
 }
 

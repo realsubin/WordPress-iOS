@@ -3,14 +3,18 @@
 /**
  *  This class is a wrapper for the fields needed for logging into a WordPress site.
  */
+NS_ASSUME_NONNULL_BEGIN
 @interface LoginFields : NSObject
 
+@property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, copy) NSString *username;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *siteUrl;
 @property (nonatomic, copy) NSString *multifactorCode;
 @property (nonatomic, assign) BOOL userIsDotCom;
 @property (nonatomic, assign) BOOL shouldDisplayMultifactor;
+@property (nonatomic, assign) NSInteger safariStoredUsernameHash;
+@property (nonatomic, assign) NSInteger safariStoredPasswordHash;
 
 /**
  *  Helper method to initialize this class
@@ -32,4 +36,4 @@
                shouldDisplayMultiFactor:(BOOL)shouldDisplayMultifactor;
 
 @end
-
+NS_ASSUME_NONNULL_END

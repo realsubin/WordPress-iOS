@@ -2,7 +2,7 @@
 
 #import "ReaderTopicServiceRemote.h"
 #import "RemoteReaderTopic.h"
-#import "WordPressComApi.h"
+#import "WordPress-Swift.h"
 
 @interface ReaderTopicServiceRemote()
 - (RemoteReaderTopic *)normalizeTopicDictionary:(NSDictionary *)topicDict subscribed:(BOOL)subscribed recommended:(BOOL)recommended;
@@ -33,8 +33,8 @@
  */
 - (ReaderTopicServiceRemote *)service
 {
-    WordPressComApi *api = [[WordPressComApi alloc] initWithBaseURL:[NSURL URLWithString:@""]];
-    return [[ReaderTopicServiceRemote alloc] initWithApi:api];
+    WordPressComRestApi *api = [[WordPressComRestApi alloc] initWithOAuthToken:nil userAgent:nil];
+    return [[ReaderTopicServiceRemote alloc] initWithWordPressComRestApi:api];
 }
 
 #pragma mark - ReaderTopicServiceRemote tests
@@ -46,6 +46,7 @@
     NSDictionary *topicDictionaryWithID = @{
                                             @"ID": @"16166",
                                             @"title": @"Coffee",
+                                            @"display_name": @"coffee",
                                             @"URL": @"https://public-api.wordpress.com/rest/v1/read/tags/coffee/posts"
                                             };
     NSDictionary *topicDictionaryWithoutID = @{
@@ -60,7 +61,7 @@
     XCTAssertTrue(remoteTopic.isRecommended, @"Remote topic should be recommended but wasn't.");
     XCTAssertTrue(remoteTopic.isSubscribed, @"Remote topic should be subscribed but wasn't.");
     XCTAssertTrue([remoteTopic.path isEqualToString:topicDictionaryWithID[@"URL"]], @"Remote topic path did not match.");
-    XCTAssertEqual(remoteTopic.title, topicDictionaryWithID[@"title"], @"Remote topic title did not match.");
+    XCTAssertEqual(remoteTopic.title, topicDictionaryWithID[@"display_name"], @"Remote topic should prefer display_name over title.");
     XCTAssertEqual([remoteTopic.topicID integerValue], [topicDictionaryWithID[@"ID"] integerValue], @"Remote topic ID did not match.");
 
     remoteTopic = [remoteService normalizeTopicDictionary:topicDictionaryWithoutID subscribed:NO recommended:NO];

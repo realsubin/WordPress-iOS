@@ -1,6 +1,5 @@
 import AFNetworking
 import Foundation
-import RxSwift
 
 class AccountSettingsRemote: ServiceRemoteREST {
     static let remotes = NSMapTable(keyOptions: .StrongMemory, valueOptions: .WeakMemory)
@@ -14,7 +13,7 @@ class AccountSettingsRemote: ServiceRemoteREST {
         // In theory this would be taken care of by the fact that the api comes
         // from a WPAccount, and since WPAccount is a managed object Core Data
         // guarantees there's only one of it.
-        // 
+        //
         // However it might be possible that the account gets deallocated and
         // when it's fetched again it would create a different api object.
         let key = api.authToken.hashValue
@@ -29,63 +28,25 @@ class AccountSettingsRemote: ServiceRemoteREST {
         }
     }
 
-    let settings: Observable<AccountSettings>
-
-    /// Creates a new AccountSettingsRemote. It is recommended that you use AccountSettingsRemote.remoteWithApi(_)
-    /// instead.
-    override init(api: WordPressComApi) {
-        settings = AccountSettingsRemote.settingsWithApi(api)
-        super.init(api: api)
-    }
-
-    private static func settingsWithApi(api: WordPressComApi) -> Observable<AccountSettings> {
-        let settings = Observable<AccountSettings>.create { observer in
-            let remote = AccountSettingsRemote(api: api)
-            let operation = remote.getSettings(
-                success: { settings in
-                    observer.onNext(settings)
-                    observer.onCompleted()
-                }, failure: { error in
-                    let nserror = error as NSError
-                    if nserror.domain == NSURLErrorDomain && nserror.code == NSURLErrorCancelled {
-                        // If we canceled the operation, don't propagate the error
-                        // This probably means the observable is being disposed
-                        DDLogSwift.logError("Canceled refreshing settings")
-                    } else {
-                        observer.onError(error)
-                    }
-            })
-            return AnonymousDisposable() {
-                if let operation = operation {
-                    if !operation.finished {
-                        operation.cancel()
-                    }
-                }
-            }
-        }
-
-        return settings
-    }
-
-    func getSettings(success success: AccountSettings -> Void, failure: ErrorType -> Void) -> AFHTTPRequestOperation? {
+    func getSettings(success success: AccountSettings -> Void, failure: ErrorType -> Void) {
         let endpoint = "me/settings"
         let parameters = ["context": "edit"]
         let path = pathForEndpoint(endpoint, withVersion: ServiceRemoteRESTApiVersion_1_1)
 
-        return api.GET(path,
-            parameters: parameters,
-            success: {
-                operation, responseObject in
+        api.GET(path,
+                parameters: parameters,
+                success: {
+                    operation, responseObject in
 
-                do {
-                    let settings = try self.settingsFromResponse(responseObject)
-                    success(settings)
-                } catch {
-                    failure(error)
-                }
+                    do {
+                        let settings = try self.settingsFromResponse(responseObject)
+                        success(settings)
+                    } catch {
+                        failure(error)
+                    }
             },
-            failure: { operation, error in
-                failure(error)
+                failure: { operation, error in
+                    failure(error)
         })
     }
 
@@ -115,6 +76,8 @@ class AccountSettingsRemote: ServiceRemoteREST {
             aboutMe = response["description"] as? String,
             username = response["user_login"] as? String,
             email = response["user_email"] as? String,
+            emailPendingAddress = response["new_user_email"] as? String?,
+            emailPendingChange = response["user_email_change_pending"] as? Bool,
             primarySiteID = response["primary_site_ID"] as? Int,
             webAddress = response["user_URL"] as? String,
             language = response["language"] as? String else {
@@ -124,7 +87,17 @@ class AccountSettingsRemote: ServiceRemoteREST {
 
         let aboutMeText = aboutMe.stringByDecodingXMLCharacters()
 
-        return AccountSettings(firstName: firstName, lastName: lastName, displayName: displayName, aboutMe: aboutMeText, username: username, email: email, primarySiteID: primarySiteID, webAddress: webAddress, language: language)
+        return AccountSettings(firstName: firstName,
+                               lastName: lastName,
+                               displayName: displayName,
+                               aboutMe: aboutMeText,
+                               username: username,
+                               email: email,
+                               emailPendingAddress: emailPendingAddress,
+                               emailPendingChange: emailPendingChange,
+                               primarySiteID: primarySiteID,
+                               webAddress: webAddress,
+                               language: language)
     }
 
     private func fieldNameForChange(change: AccountSettingsChange) -> String {
@@ -139,6 +112,8 @@ class AccountSettingsRemote: ServiceRemoteREST {
             return "description"
         case .Email(_):
             return "user_email"
+        case .EmailRevertPendingChange(_):
+            return "user_email_change_pending"
         case .PrimarySite(_):
             return "primary_site_ID"
         case .WebAddress(_):
@@ -147,7 +122,7 @@ class AccountSettingsRemote: ServiceRemoteREST {
             return "language"
         }
     }
-    
+
     enum Error: ErrorType {
         case DecodeError
     }

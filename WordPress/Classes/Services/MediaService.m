@@ -13,14 +13,45 @@
 #import "WordPress-swift.h"
 #import <WordPressApi/WordPressApi.h>
 #import "WPXMLRPCDecoder.h"
-#import "WordPressComApi.h"
+#import "WordPress-Swift.h"
+
 
 @implementation MediaService
 
-- (void)createMediaWithPHAsset:(PHAsset *)asset
+- (void)createMediaWithImage:(UIImage *)image
+                 withMediaID:(NSString *)mediaID
              forPostObjectID:(NSManagedObjectID *)postObjectID
            thumbnailCallback:(void (^)(NSURL *thumbnailURL))thumbnailCallback
                   completion:(void (^)(Media *media, NSError *error))completion
+{
+    [self createMediaWith:image
+          forPostObjectID:postObjectID
+                mediaName:mediaID
+        thumbnailCallback:thumbnailCallback
+               completion:completion
+     ];
+}
+
+- (void)createMediaWithPHAsset:(PHAsset *)asset
+               forPostObjectID:(NSManagedObjectID *)postObjectID
+             thumbnailCallback:(void (^)(NSURL *thumbnailURL))thumbnailCallback
+                    completion:(void (^)(Media *media, NSError *error))completion
+{
+    NSString *mediaName = [asset originalFilename];
+    
+    [self createMediaWith:asset
+          forPostObjectID:postObjectID
+                mediaName:mediaName
+        thumbnailCallback:thumbnailCallback
+               completion:completion
+     ];
+}
+
+- (void)createMediaWith:(id<ExportableAsset>)asset
+        forPostObjectID:(NSManagedObjectID *)postObjectID
+              mediaName:(NSString *)mediaName
+      thumbnailCallback:(void (^)(NSURL *thumbnailURL))thumbnailCallback
+             completion:(void (^)(Media *media, NSError *error))completion
 {
     NSError *error = nil;
     AbstractPost *post = (AbstractPost *)[self.managedObjectContext existingObjectWithID:postObjectID error:&error];
@@ -30,37 +61,30 @@
         }
         return;
     }
-    MediaType mediaType = MediaTypeDocument;
-    NSSet *allowedFileTypes = nil;
+    
+    MediaType mediaType = [asset assetMediaType];
     NSString *assetUTI = [asset originalUTI];
     NSString *extension = [self extensionForUTI:assetUTI];
-    if (asset.mediaType == PHAssetMediaTypeImage) {
-        mediaType = MediaTypeImage;
-        allowedFileTypes = post.blog.allowedFileTypes;
+    if (mediaType == MediaTypeImage) {
+        NSSet *allowedFileTypes = post.blog.allowedFileTypes;
         if (![allowedFileTypes containsObject:extension]) {
             assetUTI = (__bridge NSString *)kUTTypeJPEG;
             extension = [self extensionForUTI:assetUTI];
         }
-    } else if (asset.mediaType == PHAssetMediaTypeVideo) {
-        /** HACK: Sergio Estevao (2015-11-09): We ignore allowsFileTypes for videos in WP.com
-         because we have an exception on the server for mobile that allows video uploads event 
-         if videopress is not enabled.
-        */
-        if (![post.blog isHostedAtWPcom] && ![allowedFileTypes containsObject:extension]) {
+    } else if (mediaType == MediaTypeVideo) {
+        if (![post.blog isHostedAtWPcom]) {
             assetUTI = (__bridge NSString *)kUTTypeQuickTimeMovie;
             extension = [self extensionForUTI:assetUTI];
         }
-        allowedFileTypes = nil;
-        mediaType = MediaTypeVideo;
     }
-
+    
     MediaSettings *mediaSettings = [MediaSettings new];
     BOOL stripGeoLocation = mediaSettings.removeLocationSetting;
-    
+
     NSInteger maxImageSize = [mediaSettings imageSizeForUpload];
     CGSize maximumResolution = CGSizeMake(maxImageSize, maxImageSize);
-
-    NSURL *mediaURL = [self urlForMediaWithFilename:[asset originalFilename] andExtension:extension];
+    
+    NSURL *mediaURL = [self urlForMediaWithFilename:mediaName andExtension:extension];
     NSURL *mediaThumbnailURL = [self urlForMediaWithFilename:[self pathForThumbnailOfFile:[mediaURL lastPathComponent]]
                                                 andExtension:[self extensionForUTI:[asset defaultThumbnailUTI]]];
     
@@ -69,33 +93,33 @@
                          targetSize:[UIScreen mainScreen].bounds.size
                         synchronous:YES
                      successHandler:^(CGSize thumbnailSize) {
-            if (thumbnailCallback) {
-                thumbnailCallback(mediaThumbnailURL);
-            }
-
-            [asset exportToURL:mediaURL
-                     targetUTI:assetUTI
-             maximumResolution:maximumResolution
-              stripGeoLocation:stripGeoLocation
-                successHandler:^(CGSize resultingSize)
-                {
-                    [self createMediaForPost:postObjectID
-                                    mediaURL:mediaURL
-                           mediaThumbnailURL:mediaThumbnailURL
-                                   mediaType:mediaType
-                                   mediaSize:resultingSize
-                                  completion:completion];
-                }
-                errorHandler:^(NSError *error) {
-                   if (completion){
-                       completion(nil, error);
-                   }
-                }];
-            } errorHandler:^(NSError *error) {
-                if (completion){
-                    completion(nil, error);
-                }
-            }];
+                         if (thumbnailCallback) {
+                             thumbnailCallback(mediaThumbnailURL);
+                         }
+                         
+                         [asset exportToURL:mediaURL
+                                  targetUTI:assetUTI
+                          maximumResolution:maximumResolution
+                           stripGeoLocation:stripGeoLocation
+                             successHandler:^(CGSize resultingSize) {
+                                 [self createMediaForPost:postObjectID
+                                                 mediaURL:mediaURL
+                                        mediaThumbnailURL:mediaThumbnailURL
+                                                mediaType:mediaType
+                                                mediaSize:resultingSize
+                                               completion:completion];
+                             }
+                               errorHandler:^(NSError *error) {
+                                   if (completion){
+                                       completion(nil, error);
+                                   }
+                               }];
+                     }
+                       errorHandler:^(NSError *error) {
+                           if (completion){
+                               completion(nil, error);
+                           }
+                       }];
     }];
 }
 
@@ -497,7 +521,7 @@
 
 static NSString * const MediaDirectory = @"Media";
 
-- (NSURL *)urlForMediaDirectory
++ (NSURL *)urlForMediaDirectory
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL * documentsURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
@@ -516,7 +540,7 @@ static NSString * const MediaDirectory = @"Media";
 
 - (NSURL *)urlForMediaWithFilename:(NSString *)filename andExtension:(NSString *)extension
 {
-    NSURL *mediaDirectoryURL = [self urlForMediaDirectory];
+    NSURL *mediaDirectoryURL = [[self class] urlForMediaDirectory];
     NSString *basename = [[filename stringByDeletingPathExtension] lowercaseString];
     NSURL *resultURL = [mediaDirectoryURL URLByAppendingPathComponent:basename];
     resultURL = [resultURL URLByAppendingPathExtension:extension];
@@ -560,9 +584,12 @@ static NSString * const MediaDirectory = @"Media";
 - (id<MediaServiceRemote>)remoteForBlog:(Blog *)blog
 {
     id <MediaServiceRemote> remote;
-    if (blog.restApi) {
-        remote = [[MediaServiceRemoteREST alloc] initWithApi:blog.restApi siteID:blog.dotComID];
-    } else {
+    if ([blog supports:BlogFeatureWPComRESTAPI]) {
+        if (blog.restApi) {
+            remote = [[MediaServiceRemoteREST alloc] initWithWordPressComRestApi:blog.wordPressComRestApi
+                                                                          siteID:blog.dotComID];
+        }
+    } else if (blog.api) {
         WPXMLRPCClient *client = [WPXMLRPCClient clientWithXMLRPCEndpoint:[NSURL URLWithString:blog.xmlrpc]];
         remote = [[MediaServiceRemoteXMLRPC alloc] initWithApi:client username:blog.username password:blog.password];
     }
@@ -637,7 +664,7 @@ static NSString * const MediaDirectory = @"Media";
     remoteMedia.height = media.height;
     remoteMedia.width = media.width;
     remoteMedia.localURL = media.absoluteLocalURL;
-    remoteMedia.mimeType = [self mimeTypeForFilename:media.localThumbnailURL];
+    remoteMedia.mimeType = [self mimeTypeForFilename:media.absoluteLocalURL];
 	remoteMedia.videopressGUID = media.videopressGUID;
     remoteMedia.remoteThumbnailURL = media.remoteThumbnailURL;
     remoteMedia.postID = media.postID;
@@ -649,60 +676,68 @@ static NSString * const MediaDirectory = @"Media";
 + (void)cleanUnusedMediaFileFromTmpDir
 {
     DDLogInfo(@"%@ %@", self, NSStringFromSelector(_cmd));
-    
+
     NSManagedObjectContext *context = [[ContextManager sharedInstance] newDerivedContext];
     [context performBlock:^{
-        
+
         // Fetch Media URL's and return them as Dictionary Results:
         // This way we'll avoid any CoreData Faulting Exception due to deletions performed on another context
-        NSString *localUrlProperty      = NSStringFromSelector(@selector(localURL));
-        
-        NSFetchRequest *fetchRequest    = [[NSFetchRequest alloc] init];
-        fetchRequest.entity             = [NSEntityDescription entityForName:NSStringFromClass([Media class]) inManagedObjectContext:context];
-        fetchRequest.predicate          = [NSPredicate predicateWithFormat:@"ANY posts.blog != NULL AND remoteStatusNumber <> %@", @(MediaRemoteStatusSync)];
-        
-        fetchRequest.propertiesToFetch  = @[ localUrlProperty ];
-        fetchRequest.resultType         = NSDictionaryResultType;
-        
+        NSString *localUrlProperty = NSStringFromSelector(@selector(localURL));
+        NSString *localThumbUrlProperty = NSStringFromSelector(@selector(localThumbnailURL));
+
+        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+        fetchRequest.entity = [NSEntityDescription entityForName:NSStringFromClass([Media class]) inManagedObjectContext:context];
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"blog != NULL"];
+
+        fetchRequest.propertiesToFetch = @[ localUrlProperty, localThumbUrlProperty ];
+        fetchRequest.resultType = NSDictionaryResultType;
+
         NSError *error = nil;
-        NSArray *mediaObjectsToKeep     = [context executeFetchRequest:fetchRequest error:&error];
-        
+        NSArray *mediaObjectsToKeep = [context executeFetchRequest:fetchRequest error:&error];
+
         if (error) {
             DDLogError(@"Error cleaning up tmp files: %@", error.localizedDescription);
             return;
         }
-        
+
         // Get a references to media files linked in a post
         DDLogInfo(@"%i media items to check for cleanup", mediaObjectsToKeep.count);
-        
+        NSString *documentsDirectory    = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
         NSMutableSet *pathsToKeep       = [NSMutableSet set];
         for (NSDictionary *mediaDict in mediaObjectsToKeep) {
             NSString *path = mediaDict[localUrlProperty];
             if (path) {
-                [pathsToKeep addObject:path];
+                NSString *absolutePath = [documentsDirectory stringByAppendingPathComponent:path];
+                [pathsToKeep addObject:absolutePath];
+            }
+
+            NSString *thumbPath = mediaDict[localThumbUrlProperty];
+            if (thumbPath) {
+                NSString *absoluteThumbPath = [documentsDirectory stringByAppendingPathComponent:thumbPath];
+                [pathsToKeep addObject:absoluteThumbPath];
             }
         }
-        
-        // Search for [JPG || JPEG || PNG || GIF] files within the Documents Folder
-        NSString *documentsDirectory    = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-        NSArray *contentsOfDir          = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsDirectory error:nil];
-        
-        NSSet *mediaExtensions          = [NSSet setWithObjects:@"jpg", @"jpeg", @"png", @"gif", @"mov", @"avi", @"mp4", nil];
-        
-        for (NSString *currentPath in contentsOfDir) {
-            NSString *extension = currentPath.pathExtension.lowercaseString;
-            if (![mediaExtensions containsObject:extension]) {
+
+        // Search for media extension files within the Media Folder
+        NSSet *mediaExtensions = [NSSet setWithObjects:@"jpg", @"jpeg", @"png", @"gif", @"mov", @"avi", @"mp4", nil];
+
+        NSArray *contentsOfDir = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:[self urlForMediaDirectory]
+                                                               includingPropertiesForKeys:nil
+                                                                                  options:NSDirectoryEnumerationSkipsHiddenFiles
+                                                                                    error:nil];
+
+        for (NSURL *currentURL in contentsOfDir) {
+            NSString *filepath = [currentURL path];
+            NSString *extension = filepath.pathExtension.lowercaseString;
+            if (![mediaExtensions containsObject:extension] ||
+                [pathsToKeep containsObject:filepath]) {
                 continue;
             }
-            
-            // If the file is not referenced in any post we can delete it
-            NSString *filepath = [documentsDirectory stringByAppendingPathComponent:currentPath];
-            
-            if (![pathsToKeep containsObject:filepath]) {
-                NSError *nukeError = nil;
-                if ([[NSFileManager defaultManager] removeItemAtPath:filepath error:&nukeError] == NO) {
-                    DDLogError(@"Error [%@] while nuking unused Media at path [%@]", nukeError.localizedDescription, filepath);
-                }
+
+            NSError *nukeError = nil;
+            if ([[NSFileManager defaultManager] fileExistsAtPath:filepath] &&
+                [[NSFileManager defaultManager] removeItemAtPath:filepath error:&nukeError] == NO) {
+                DDLogError(@"Error [%@] while nuking unused Media at path [%@]", nukeError.localizedDescription, filepath);
             }
         }
     }];

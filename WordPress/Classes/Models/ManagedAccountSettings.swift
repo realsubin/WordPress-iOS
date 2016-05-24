@@ -1,6 +1,8 @@
 import Foundation
 import CoreData
 
+// MARK: - Reflects the user's Account Settings, as stored in Core Data.
+//
 class ManagedAccountSettings: NSManagedObject {
     static let entityName = "AccountSettings"
 
@@ -12,19 +14,20 @@ class ManagedAccountSettings: NSManagedObject {
 
         username = accountSettings.username
         email = accountSettings.email
+        emailPendingAddress = accountSettings.emailPendingAddress
+        emailPendingChange = accountSettings.emailPendingChange
         primarySiteID = accountSettings.primarySiteID
         webAddress = accountSettings.webAddress
         language = accountSettings.language
     }
 
-    /**
-     Applies a change to the account settings
-
-     To change a setting, you create a change and apply it to the AccountSettings object.
-     This method will return a new change object to apply if you want to revert the changes (for instance, if they failed to save)
-
-     - returns: the change object needed to revert this change
-     */
+    /// Applies a change to the account settings
+    /// To change a setting, you create a change and apply it to the AccountSettings object.
+    /// This method will return a new change object to apply if you want to revert the changes
+    /// (for instance, if they failed to save)
+    ///
+    /// - Returns: the change object needed to revert this change
+    ///
     func applyChange(change: AccountSettingsChange) -> AccountSettingsChange {
         let reverse = reverseChange(change)
 
@@ -38,7 +41,11 @@ class ManagedAccountSettings: NSManagedObject {
         case .AboutMe(let value):
             self.aboutMe = value
         case .Email(let value):
-            self.email = value
+            self.emailPendingAddress = value
+            self.emailPendingChange = true
+        case .EmailRevertPendingChange:
+            self.emailPendingAddress = nil
+            self.emailPendingChange = false
         case .PrimarySite(let value):
             self.primarySiteID = value
         case .WebAddress(let value):
@@ -61,7 +68,9 @@ class ManagedAccountSettings: NSManagedObject {
         case .AboutMe(_):
             return .AboutMe(self.aboutMe)
         case .Email(_):
-            return .Email(self.email)
+            return .EmailRevertPendingChange
+        case .EmailRevertPendingChange(_):
+            return .Email(self.emailPendingAddress ?? String())
         case .PrimarySite(_):
             return .PrimarySite(self.primarySiteID.integerValue)
         case .WebAddress(_):
@@ -78,6 +87,7 @@ enum AccountSettingsChange {
     case DisplayName(String)
     case AboutMe(String)
     case Email(String)
+    case EmailRevertPendingChange
     case PrimarySite(Int)
     case WebAddress(String)
     case Language(String)
@@ -94,6 +104,8 @@ enum AccountSettingsChange {
             return value
         case .Email(let value):
             return value
+        case .EmailRevertPendingChange:
+            return String(false)
         case .PrimarySite(let value):
             return String(value)
         case .WebAddress(let value):

@@ -5,8 +5,6 @@
 #import "BlogDetailHeaderView.h"
 #import "CommentsViewController.h"
 #import "ContextManager.h"
-#import "PostListViewController.h"
-#import "PageListViewController.h"
 #import "ReachabilityUtils.h"
 #import "SiteSettingsViewController.h"
 #import "SharingViewController.h"
@@ -260,7 +258,7 @@ NSInteger const BlogDetailAccountHideViewAdminDay = 7;
                                                                [weakSelf showPlans];
                                                            }];
 
-        row.detail = [PlansBridge titleForPlanWithID:[self.blog.planID integerValue]];
+        row.detail = self.blog.planTitle;
 
         [rows addObject:row];
     }
@@ -331,6 +329,14 @@ NSInteger const BlogDetailAccountHideViewAdminDay = 7;
                                                         image:[Gridicon iconOfType:GridiconTypeUser]
                                                      callback:^{
                                                          [weakSelf showPeople];
+                                                     }]];
+    }
+
+    if ([Feature enabled:FeatureFlagDomains] && [self.blog supports:BlogFeatureDomains]) {
+        [rows addObject:[[BlogDetailsRow alloc] initWithTitle:NSLocalizedString(@"Domains", @"Noun. Title. Links to the domain purchase / management feature.")
+                                                        image:[Gridicon iconOfType:GridiconTypeDomains]
+                                                     callback:^{
+                                                         [weakSelf showDomains];
                                                      }]];
     }
 
@@ -505,18 +511,23 @@ NSInteger const BlogDetailAccountHideViewAdminDay = 7;
 - (void)showPeople
 {
     // TODO(@koke, 2015-11-02): add analytics
-    PeopleViewController *controller = [[UIStoryboard storyboardWithName:@"People" bundle:nil] instantiateInitialViewController];
-    controller.blog = self.blog;
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    [self showDetailViewController:navController sender:nil];
+    PeopleViewController *controller = [PeopleViewController controllerWithBlog:self.blog];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)showPlans
 {
-    // TODO(@koke, 2016-01-28): add analytics
+    [WPAppAnalytics track:WPAnalyticsStatOpenedPlans];
     PlanListViewController *controller = [[PlanListViewController alloc] initWithBlog:self.blog];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [self showDetailViewController:navController sender:nil];
+}
+
+- (void)showDomains
+{
+    // TODO(@frosty, 2016-04-01): add analytics
+    DomainsListViewController *controller = [DomainsListViewController controllerWithBlog:self.blog];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)showSettings

@@ -4,7 +4,7 @@
 #import "BlogService.h"
 #import "WPAccount.h"
 #import "Blog.h"
-#import <Automattic_Tracks_iOS/TracksService.h>
+@import AutomatticTracks;
 
 @interface  TracksEventPair : NSObject
 @property (nonatomic, copy) NSString *eventName;
@@ -155,6 +155,9 @@ NSString *const TracksUserDefaultsAnonymousUserIDKey = @"TracksAnonymousUserID";
     NSDictionary *eventProperties;
     
     switch (stat) {
+        case WPAnalyticsStatABTestStart:
+            eventName = @"abtest_start";
+            break;
         case WPAnalyticsStatAddedSelfHostedSite:
             eventName = @"self_hosted_blog_added";
             break;
@@ -303,6 +306,15 @@ NSString *const TracksUserDefaultsAnonymousUserIDKey = @"TracksAnonymousUserID";
         case WPAnalyticsStatEditorUploadMediaRetried:
             eventName = @"editor_upload_media_retried";
             break;
+        case WPAnalyticsStatGravatarCropped:
+            eventName = @"me_gravatar_cropped";
+            break;
+        case WPAnalyticsStatGravatarTapped:
+            eventName = @"me_gravatar_tapped";
+            break;
+        case WPAnalyticsStatGravatarUploaded:
+            eventName = @"me_gravatar_uploaded";
+            break;
         case WPAnalyticsStatLogSpecialCondition:
             eventName = @"log_special_condition";
             break;
@@ -323,6 +335,39 @@ NSString *const TracksUserDefaultsAnonymousUserIDKey = @"TracksAnonymousUserID";
             break;
         case WPAnalyticsStatLowMemoryWarning:
             eventName = @"application_low_memory_warning";
+            break;
+        case WPAnalyticsStatMenusAccessed:
+            eventName = @"menus_accessed";
+            break;
+        case WPAnalyticsStatMenusCreatedItem:
+            eventName = @"menus_created_item";
+            break;
+        case WPAnalyticsStatMenusCreatedMenu:
+            eventName = @"menus_created_menu";
+            break;
+        case WPAnalyticsStatMenusDeletedMenu:
+            eventName = @"menus_deleted_menu";
+            break;
+        case WPAnalyticsStatMenusDeletedItem:
+            eventName = @"menus_deleted_item";
+            break;
+        case WPAnalyticsStatMenusDiscardedChanges:
+            eventName = @"menus_discarded_changes";
+            break;
+        case WPAnalyticsStatMenusEditedItem:
+            eventName = @"menus_edited_item";
+            break;
+        case WPAnalyticsStatMenusOpenedItemEditor:
+            eventName = @"menus_opened_item_editor";
+            break;
+        case WPAnalyticsStatMenusOrderedItems:
+            eventName = @"menus_ordered_items";
+            break;
+        case WPAnalyticsStatMenusSavedMenu:
+            eventName = @"menus_saved_menu";
+            break;
+        case WPAnalyticsStatMenusUpdatedMenuName:
+            eventName = @"menus_updated_menu_name";
             break;
         case WPAnalyticsStatNotificationsCommentApproved:
             eventName = @"notifications_approved";
@@ -392,6 +437,13 @@ NSString *const TracksUserDefaultsAnonymousUserIDKey = @"TracksAnonymousUserID";
         case WPAnalyticsStatOpenedPages:
             eventName = @"site_menu_opened";
             eventProperties = @{ TracksEventPropertyMenuItemKey : @"pages" };
+            break;
+        case WPAnalyticsStatOpenedPlans:
+            eventName = @"site_menu_opened";
+            eventProperties = @{ TracksEventPropertyMenuItemKey : @"plans" };
+            break;
+        case WPAnalyticsStatOpenedPlansComparison:
+            eventName = @"plans_compare";
             break;
         case WPAnalyticsStatOpenedPosts:
             eventName = @"site_menu_opened";
@@ -732,6 +784,9 @@ NSString *const TracksUserDefaultsAnonymousUserIDKey = @"TracksAnonymousUserID";
         case WPAnalyticsStatOpenedAccountSettings:
             eventName = @"account_settings_opened";
             break;
+        case WPAnalyticsStatOpenedAppSettings:
+            eventName = @"app_settings_opened";
+            break;
         case WPAnalyticsStatOpenedMyProfile:
             eventName = @"my_profile_opened";
             break;
@@ -766,6 +821,12 @@ NSString *const TracksUserDefaultsAnonymousUserIDKey = @"TracksAnonymousUserID";
         case WPAnalyticsStatLoginMagicLinkOpened:
         case WPAnalyticsStatLoginMagicLinkRequested:
         case WPAnalyticsStatLoginMagicLinkSucceeded:
+
+            // to be implemented
+        case WPAnalyticsStatOpenedPeople:
+        case WPAnalyticsStatOpenedPerson:
+        case WPAnalyticsStatPersonRemoved:
+        case WPAnalyticsStatPersonUpdated:
 
         case WPAnalyticsStatDefaultAccountChanged:
         case WPAnalyticsStatNoStat:

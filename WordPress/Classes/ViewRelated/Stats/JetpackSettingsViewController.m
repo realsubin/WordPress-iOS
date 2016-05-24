@@ -9,7 +9,7 @@
 #import "WPNUXSecondaryButton.h"
 #import "UILabel+SuggestSize.h"
 #import "NSAttributedString+Util.h"
-#import "WordPressComOAuthClient.h"
+#import "WordPress-Swift.h"
 #import "AccountService.h"
 #import "BlogService.h"
 #import "JetpackService.h"
@@ -22,7 +22,7 @@
 #pragma mark ====================================================================================
 
 static NSString *JetpackInstallRelativePath                 = @"plugin-install.php?tab=plugin-information&plugin=jetpack";
-static NSString *JetpackMoreInformationURL                  = @"https://apps.wordpress.org/support/#faq-ios-15";
+static NSString *JetpackMoreInformationURL                  = @"https://apps.wordpress.com/support/#faq-ios-15";
 
 static CGFloat const JetpackiOS7StatusBarOffset             = 20.0;
 static CGFloat const JetpackStandardOffset                  = 16;

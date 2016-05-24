@@ -2,7 +2,6 @@
 #import "Post.h"
 #import "Coordinate.h"
 #import "PostCategory.h"
-#import "Page.h"
 #import "PostServiceRemote.h"
 #import "PostServiceRemoteREST.h"
 #import "PostServiceRemoteXMLRPC.h"
@@ -702,9 +701,11 @@ const NSUInteger PostServiceDefaultNumberToSync = 40;
 
 - (id<PostServiceRemote>)remoteForBlog:(Blog *)blog {
     id<PostServiceRemote> remote;
-    if (blog.restApi) {
-        remote = [[PostServiceRemoteREST alloc] initWithApi:blog.restApi siteID:blog.dotComID];
-    } else {
+    if ([blog supports:BlogFeatureWPComRESTAPI]) {
+        if (blog.wordPressComRestApi) {
+            remote = [[PostServiceRemoteREST alloc] initWithWordPressComRestApi:blog.wordPressComRestApi siteID:blog.dotComID];
+        }
+    } else if (blog.api) {
         remote = [[PostServiceRemoteXMLRPC alloc] initWithApi:blog.api username:blog.username password:blog.password];
     }
     return remote;

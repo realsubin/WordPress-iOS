@@ -5,6 +5,7 @@
 #import "ThemeService.h"
 #import "ThemeServiceRemote.h"
 #import "WPAccount.h"
+#import "Wordpress-Swift.h"
 
 #pragma mark - Support classes
 
@@ -39,11 +40,8 @@
 
 - (void)testThatWordPressBlogSupportsThemeServices
 {
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
-    
     Blog *blog = OCMStrictClassMock([Blog class]);
-    OCMStub([blog restApi]).andReturn(api);
-    OCMStub([blog dotComID]).andReturn(@1);
+    OCMStub([blog supports:BlogFeatureWPComRESTAPI]).andReturn(YES);
     
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     
@@ -57,9 +55,8 @@
 - (void)testThatSelfHostedBlogDoesNotSupportThemeServices
 {    
     Blog *blog = OCMStrictClassMock([Blog class]);
-    OCMStub([blog restApi]).andReturn(nil);
-    OCMStub([blog dotComID]).andReturn(nil);
-    
+    OCMStub([blog supports:BlogFeatureWPComRESTAPI]).andReturn(NO);
+
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     
     ThemeService *service = [[ThemeService alloc] initWithManagedObjectContext:context];
@@ -75,14 +72,15 @@
 {
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     Blog *blog = OCMStrictClassMock([Blog class]);
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     NSNumber *blogId = @1;
     NSString *url = [NSString stringWithFormat:@"v1.1/sites/%@/themes/mine", blogId];
     
-    OCMStub([blog restApi]).andReturn(api);
+    OCMStub([blog wordPressComRestApi]).andReturn(api);
     OCMStub([blog dotComID]).andReturn(blogId);
-    
+    OCMStub([blog supports:BlogFeatureWPComRESTAPI]).andReturn(YES);
+
     OCMStub([api GET:[OCMArg isEqual:url]
           parameters:[OCMArg isNil]
              success:[OCMArg any]
@@ -109,14 +107,15 @@
 {
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     Blog *blog = OCMStrictClassMock([Blog class]);
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     NSNumber *blogId = @1;
     NSString *url = [NSString stringWithFormat:@"v1.1/sites/%@/themes/purchased", blogId];
     
-    OCMStub([blog restApi]).andReturn(api);
+    OCMStub([blog wordPressComRestApi]).andReturn(api);
     OCMStub([blog dotComID]).andReturn(blogId);
-    
+    OCMStub([blog supports:BlogFeatureWPComRESTAPI]).andReturn(YES);
+
     OCMStub([api GET:[OCMArg isEqual:url]
           parameters:[OCMArg isNil]
              success:[OCMArg any]
@@ -143,12 +142,12 @@
 {
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     WPAccount *account = OCMStrictClassMock([WPAccount class]);
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     NSString *themeId = @"SomeTheme";
     NSString *url = [NSString stringWithFormat:@"v1.1/themes/%@", themeId];
     
-    OCMStub([account restApi]).andReturn(api);
+    OCMStub([account wordPressComRestApi]).andReturn(api);
     
     OCMStub([api GET:[OCMArg isEqual:url]
           parameters:[OCMArg isNil]
@@ -166,10 +165,10 @@
 {
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     WPAccount *account = OCMStrictClassMock([WPAccount class]);
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     
-    OCMStub([account restApi]).andReturn(api);
+    OCMStub([account wordPressComRestApi]).andReturn(api);
     
     XCTAssertNoThrow(service = [[ThemeService alloc] initWithManagedObjectContext:context]);
     XCTAssertThrows([service getThemeId:nil
@@ -195,11 +194,11 @@
 {
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     WPAccount *account = OCMStrictClassMock([WPAccount class]);
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     NSString *url = @"v1.2/themes";
     
-    OCMStub([account restApi]).andReturn(api);
+    OCMStub([account wordPressComRestApi]).andReturn(api);
     
     OCMStub([api GET:[OCMArg isEqual:url]
           parameters:[OCMArg isNotNil]
@@ -230,13 +229,14 @@
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     Blog *blog = OCMStrictClassMock([Blog class]);
     NSNumber *blogId = @1;
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     NSString *url = [NSString stringWithFormat:@"v1.2/sites/%@/themes", blogId];
     
-    OCMStub([blog restApi]).andReturn(api);
+    OCMStub([blog wordPressComRestApi]).andReturn(api);
     OCMStub([blog dotComID]).andReturn(blogId);
-    
+    OCMStub([blog supports:BlogFeatureWPComRESTAPI]).andReturn(YES);
+
     OCMStub([api GET:[OCMArg isEqual:url]
           parameters:[OCMArg isNotNil]
              success:[OCMArg any]
@@ -269,15 +269,16 @@
     Blog *blog = OCMStrictClassMock([Blog class]);
     Theme *theme = OCMStrictClassMock([ThemeForStubbing class]);
     NSNumber *blogId = @1;
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     NSString *url = [NSString stringWithFormat:@"v1.1/sites/%@/themes/mine", blogId];
     
     OCMStub([theme themeId]).andReturn(@"SomeThemeId");
     
-    OCMStub([blog restApi]).andReturn(api);
+    OCMStub([blog wordPressComRestApi]).andReturn(api);
     OCMStub([blog dotComID]).andReturn(blogId);
-    
+    OCMStub([blog supports:BlogFeatureWPComRESTAPI]).andReturn(YES);
+
     OCMStub([api POST:[OCMArg isEqual:url]
            parameters:[OCMArg isNotNil]
               success:[OCMArg any]
@@ -295,10 +296,10 @@
     NSManagedObjectContext *context = OCMStrictClassMock([NSManagedObjectContext class]);
     Blog *blog = OCMStrictClassMock([Blog class]);
     NSNumber *blogId = @1;
-    WordPressComApi *api = OCMStrictClassMock([WordPressComApi class]);
+    WordPressComRestApi *api = OCMStrictClassMock([WordPressComRestApi class]);
     ThemeService *service = nil;
     
-    OCMStub([blog restApi]).andReturn(api);
+    OCMStub([blog wordPressComRestApi]).andReturn(api);
     OCMStub([blog dotComID]).andReturn(blogId);
     
     XCTAssertNoThrow(service = [[ThemeService alloc] initWithManagedObjectContext:context]);

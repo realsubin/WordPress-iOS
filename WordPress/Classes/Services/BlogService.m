@@ -6,7 +6,6 @@
 #import "WPError.h"
 #import "Comment.h"
 #import "Post.h"
-#import "Page.h"
 #import "Media.h"
 #import "PostCategoryService.h"
 #import "CommentService.h"
@@ -508,10 +507,16 @@ CGFloat const OneHourInSeconds = 60.0 * 60.0;
 
 - (Blog *)createBlogWithAccount:(WPAccount *)account
 {
+    Blog *blog = [self createBlog];
+    blog.account = account;
+    return blog;
+}
+
+- (Blog *)createBlog
+{
     NSString *entityName = NSStringFromClass([Blog class]);
     Blog *blog = [NSEntityDescription insertNewObjectForEntityForName:entityName
                                                inManagedObjectContext:self.managedObjectContext];
-    blog.account = account;
     blog.settings = [self createSettingsWithBlog:blog];
     return blog;
 }
@@ -584,11 +589,13 @@ CGFloat const OneHourInSeconds = 60.0 * 60.0;
         blog.dotComID = remoteBlog.blogID;
         blog.isHostedAtWPcom = !remoteBlog.jetpack;
         blog.icon = remoteBlog.icon;
+        blog.capabilities = remoteBlog.capabilities;
         blog.isAdmin = remoteBlog.isAdmin;
         blog.visible = remoteBlog.visible;
         blog.options = remoteBlog.options;
         blog.planID = remoteBlog.planID;
-
+        blog.planTitle = remoteBlog.planTitle;
+        
         // Update 'Top Level' Settings
         BlogSettings *settings = blog.settings;
         settings.name = [remoteBlog.name stringByDecodingXMLCharacters];
@@ -637,9 +644,11 @@ CGFloat const OneHourInSeconds = 60.0 * 60.0;
 - (id<BlogServiceRemote>)remoteForBlog:(Blog *)blog
 {
     id<BlogServiceRemote> remote;
-    if (blog.restApi) {
-        remote = [[BlogServiceRemoteREST alloc] initWithApi:blog.restApi siteID:blog.dotComID];
-    } else {
+    if ([blog supports:BlogFeatureWPComRESTAPI]) {
+        if (blog.wordPressComRestApi) {
+            remote = [[BlogServiceRemoteREST alloc] initWithWordPressComRestApi:blog.wordPressComRestApi siteID:blog.dotComID];
+        }
+    } else if (blog.api) {
         remote = [[BlogServiceRemoteXMLRPC alloc] initWithApi:blog.api username:blog.username password:blog.password];
     }
 
@@ -648,7 +657,11 @@ CGFloat const OneHourInSeconds = 60.0 * 60.0;
 
 - (id<AccountServiceRemote>)remoteForAccount:(WPAccount *)account
 {
-    return [[AccountServiceRemoteREST alloc] initWithApi:account.restApi];
+    if (account.wordPressComRestApi == nil) {
+        return nil;
+    }
+
+    return [[AccountServiceRemoteREST alloc] initWithWordPressComRestApi:account.wordPressComRestApi];
 }
 
 - (Blog *)blogWithPredicate:(NSPredicate *)predicate

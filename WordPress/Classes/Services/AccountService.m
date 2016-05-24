@@ -128,6 +128,36 @@ NSString * const WPAccountEmailAndDefaultBlogUpdatedNotification = @"WPAccountEm
 
 }
 
+- (void)isEmailAvailable:(NSString *)email success:(void (^)(BOOL available))success failure:(void (^)(NSError *error))failure
+{
+    id<AccountServiceRemote> remote = [self remoteForAnonymous];
+    [remote isEmailAvailable:email success:^(BOOL available) {
+        if (success) {
+            success(available);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+
+- (void)requestAuthenticationLink:(NSString *)email success:(void (^)())success failure:(void (^)(NSError *error))failure
+{
+    id<AccountServiceRemote> remote = [self remoteForAnonymous];
+    [remote requestWPComAuthLinkForEmail:email success:^{
+        if (success) {
+            success();
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
+
 ///-----------------------
 /// @name Account creation
 ///-----------------------
@@ -181,7 +211,7 @@ NSString * const WPAccountEmailAndDefaultBlogUpdatedNotification = @"WPAccountEm
 - (WPAccount *)findAccountWithUsername:(NSString *)username
 {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Account"];
-    [request setPredicate:[NSPredicate predicateWithFormat:@"username like %@", username]];
+    [request setPredicate:[NSPredicate predicateWithFormat:@"username =[c] %@", username]];
     [request setIncludesPendingChanges:YES];
 
     NSArray *results = [self.managedObjectContext executeFetchRequest:request error:nil];
@@ -224,9 +254,18 @@ NSString * const WPAccountEmailAndDefaultBlogUpdatedNotification = @"WPAccountEm
     }];
 }
 
+- (id<AccountServiceRemote>)remoteForAnonymous
+{
+    return [[AccountServiceRemoteREST alloc] initWithWordPressComRestApi:[AccountServiceRemoteREST anonymousWordPressComRestApi]];
+}
+
 - (id<AccountServiceRemote>)remoteForAccount:(WPAccount *)account
 {
-    return [[AccountServiceRemoteREST alloc] initWithApi:account.restApi];
+    if (account.wordPressComRestApi == nil) {
+        return nil;
+    }
+
+    return [[AccountServiceRemoteREST alloc] initWithWordPressComRestApi:account.wordPressComRestApi];
 }
 
 - (void)updateAccount:(WPAccount *)account withUserDetails:(RemoteUser *)userDetails

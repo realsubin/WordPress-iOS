@@ -44,6 +44,11 @@
 @property (nonatomic, copy) NSNumber *planID;
 
 /**
+ *  @details Product name of the site's current plan, if it has one.
+ */
+@property (nonatomic, copy) NSString *planTitle;
+
+/**
  *  @details Indicates whether it's a jetpack site, or not.
  */
 @property (nonatomic, assign) BOOL jetpack;
@@ -62,5 +67,10 @@
  *  @details Blog's options preferences.
  */
 @property (nonatomic, strong) NSDictionary *options;
+
+/**
+ * @details Blog's capabilities: Indicate which actions are allowed / not allowed, for the current user.
+ */
+@property (nonatomic, strong) NSDictionary *capabilities;
 
 @end

@@ -1,13 +1,17 @@
 import Foundation
 
-class PlanFeaturesRemote: ServiceRemoteREST {
+class PlanFeaturesRemote: ServiceRemoteWordPressComREST {
 
     enum Error: ErrorType {
         case DecodeError
     }
 
     private var cacheDate: NSDate?
-    private let cacheFilename = "plan-features.json"
+    private let languageDatabase = WordPressComLanguageDatabase()
+    private var cacheFilename: String {
+        let locale = languageDatabase.deviceLanguage.slug
+        return "plan-features-\(locale).json"
+    }
 
     func getPlanFeatures(success: PlanFeatures -> Void, failure: ErrorType -> Void) {
         // First we'll try and return plan features from memory, then check our disk cache,
@@ -58,7 +62,7 @@ class PlanFeaturesRemote: ServiceRemoteREST {
         return planFeatures
     }
 
-    /// - returns: An optional tuple containing a collection of cached plan features and the date when they were fetched
+    /// - Returns: An optional tuple containing a collection of cached plan features and the date when they were fetched
     private func cachedPlanFeaturesWithDate() -> (PlanFeatures, NSDate)? {
         guard let cacheFileURL = cacheFileURL,
             let path = cacheFileURL.path,
@@ -78,21 +82,23 @@ class PlanFeaturesRemote: ServiceRemoteREST {
 
     private func fetchPlanFeatures(success: PlanFeatures -> Void, failure: ErrorType -> Void) {
         let endpoint = "plans/features"
-        let path = pathForEndpoint(endpoint, withVersion: ServiceRemoteRESTApiVersion_1_2)
+        let path = pathForEndpoint(endpoint, withVersion: .Version_1_2)
+        let locale = languageDatabase.deviceLanguage.slug
+        let parameters = ["locale": locale]
 
-        api.GET(path,
-                parameters: nil,
+        wordPressComRestApi.GET(path,
+                parameters: parameters,
                 success: {
-                    [weak self] requestOperation, response in
+                    [weak self] responseObject, _ in
                     do {
-                        let planFeatures = try mapPlanFeaturesResponse(response)
-                        self?.cacheResponseData(requestOperation.responseData)
+                        let planFeatures = try mapPlanFeaturesResponse(responseObject)
+                        self?.cacheResponseObject(responseObject)
                         success(planFeatures)
                     } catch {
                         failure(error)
                     }
             }, failure: {
-                _, error in
+                error, _ in
                 failure(error)
         })
     }
@@ -103,8 +109,9 @@ class PlanFeaturesRemote: ServiceRemoteREST {
         return cacheDirectory.URLByAppendingPathComponent(cacheFilename)
     }
 
-    private func cacheResponseData(responseData: NSData?) {
-        guard let responseData = responseData else { return }
+    private func cacheResponseObject(responseObject: AnyObject) {
+        let data = try? NSJSONSerialization.dataWithJSONObject(responseObject, options: NSJSONWritingOptions())
+        guard let responseData = data else { return }
         guard let cacheFileURL = cacheFileURL else { return }
 
         responseData.writeToURL(cacheFileURL, atomically: true)

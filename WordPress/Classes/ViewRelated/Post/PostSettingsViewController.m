@@ -24,6 +24,7 @@
 #import "WPAndDeviceMediaLibraryDataSource.h"
 #import <WPMediaPicker/WPMediaPicker.h>
 #import <Photos/Photos.h>
+#import <Reachability/Reachability.h>
 #import "WPGUIConstants.h"
 #import "WordPress-Swift.h"
 
@@ -566,7 +567,7 @@ UIPopoverControllerDelegate, WPMediaPickerViewControllerDelegate, PostCategories
         // Publish date
         cell = [self getWPTableViewCell];
         if (self.apost.dateCreated) {
-            if ([self.apost isScheduled]) {
+            if ([self.apost hasFuturePublishDate]) {
                 cell.textLabel.text = NSLocalizedString(@"Scheduled for", @"Scheduled for [date]");
             } else {
                 cell.textLabel.text = NSLocalizedString(@"Published on", @"Published on [date]");
@@ -844,7 +845,7 @@ UIPopoverControllerDelegate, WPMediaPickerViewControllerDelegate, PostCategories
     }];
 
     NSDictionary *statusDict = @{
-                                 @"DefaultValue": PostStatusPublish,
+                                 @"DefaultValue": [self.apost availableStatusForPublishOrScheduled],
                                  @"Title" : NSLocalizedString(@"Status", nil),
                                  @"Titles" : titles,
                                  @"Values" : statuses,
@@ -1118,7 +1119,7 @@ UIPopoverControllerDelegate, WPMediaPickerViewControllerDelegate, PostCategories
                           __typeof__(self) strongSelf = weakSelf;
                           strongSelf.isUploadingMedia = NO;
                           [strongSelf.tableView reloadData];
-                          if (error.domain == NSURLErrorDomain && error.code == NSURLErrorCancelled) {
+                          if ([error.domain isEqualToString:NSURLErrorDomain] && error.code == NSURLErrorCancelled) {
                               return;
                           }
                           [WPError showAlertWithTitle:NSLocalizedString(@"Couldn't upload featured image", @"The title for an alert that says to the user that the featured image he selected couldn't be uploaded.") message:error.localizedDescription];

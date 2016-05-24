@@ -20,18 +20,19 @@ public class AppSettingsViewController: UITableViewController {
     public required convenience init() {
         self.init(style: .Grouped)
     }
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
 
         ImmuTable.registerRows([
             MediaSizeRow.self,
-            SwitchRow.self
+            SwitchRow.self,
+            NavigationItemRow.self
             ], tableView: self.tableView)
 
         handler = ImmuTableViewHandler(takeOver: self)
         handler.viewModel = tableViewModel()
-            
+
         WPStyleGuide.resetReadableMarginsForTableView(tableView)
         WPStyleGuide.configureColorsForView(view, andTableView: tableView)
     }
@@ -59,6 +60,12 @@ public class AppSettingsViewController: UITableViewController {
             onChange: visualEditorChanged()
         )
 
+        let aboutHeader = NSLocalizedString("About", comment: "Link to About section (contains info about the app)")
+        let aboutApp = NavigationItemRow(
+            title: NSLocalizedString("WordPress for iOS", comment: "Link to About screen for WordPress for iOS"),
+            action: pushAbout()
+        )
+
         return ImmuTable(sections: [
             ImmuTableSection(
                 headerText: mediaHeader,
@@ -72,11 +79,17 @@ public class AppSettingsViewController: UITableViewController {
                 rows: [
                     visualEditor
                 ],
+                footerText: nil),
+            ImmuTableSection(
+                headerText: aboutHeader,
+                rows: [
+                    aboutApp
+                ],
                 footerText: nil)
             ])
     }
-    
-    
+
+
     // MARK: - Actions
 
     func mediaSizeChanged() -> Int -> Void {
@@ -104,5 +117,11 @@ public class AppSettingsViewController: UITableViewController {
             WPPostViewController.setNewEditorEnabled(enabled)
         }
     }
-}
 
+    func pushAbout() -> ImmuTableAction {
+        return { [unowned self] row in
+            let controller = AboutViewController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+}

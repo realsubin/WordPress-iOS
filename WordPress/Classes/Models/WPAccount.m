@@ -1,10 +1,14 @@
 #import "WPAccount.h"
 #import "SFHFKeychainUtils.h"
-#import "WordPressComOAuthClient.h"
+#import "WordPress-Swift.h"
+
+static NSString * const WordPressComOAuthKeychainServiceName = @"public-api.wordpress.com";
 
 @interface WPAccount ()
 
 @property (nonatomic, strong, readwrite) WordPressComApi *restApi;
+@property (nonatomic, strong, readwrite) WordPressComRestApi *wordPressComRestApi;
+
 
 @end
 
@@ -22,6 +26,7 @@
 @dynamic avatarURL;
 @dynamic managedSettings;
 @synthesize restApi = _restApi;
+@synthesize wordPressComRestApi = _wordPressComRestApi;
 
 #pragma mark - NSManagedObject subclass methods
 
@@ -35,7 +40,8 @@
     // Beware: Lazy getters below. Let's hit directly the ivar
     [_restApi.operationQueue cancelAllOperations];
     [_restApi reset];
-    
+    [_wordPressComRestApi invalidateAndCancelTasks];
+    _wordPressComRestApi = nil;
     self.authToken = nil;
 }
 
@@ -127,6 +133,16 @@
         _restApi = [[WordPressComApi alloc] initWithOAuthToken:self.authToken];
     }
     return _restApi;
+}
+
+- (WordPressComRestApi *)wordPressComRestApi
+{
+    if (!_wordPressComRestApi && self.authToken.length > 0) {
+        _wordPressComRestApi = [[WordPressComRestApi alloc] initWithOAuthToken:self.authToken
+                                                                     userAgent: [WPUserAgent wordPressUserAgent]];
+    }
+    return _wordPressComRestApi;
+
 }
 
 @end

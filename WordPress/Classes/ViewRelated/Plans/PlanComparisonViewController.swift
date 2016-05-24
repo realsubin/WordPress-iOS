@@ -38,8 +38,7 @@ class PlanComparisonViewController: PagedViewController {
         self.service = service
 
         let viewControllers: [PlanDetailViewController] = pricedPlans.map({ (plan, price) in
-            let isActive = sitePricedPlans.activePlan == plan
-            let controller = PlanDetailViewController.controllerWithPlan(plan, siteID: sitePricedPlans.siteID, isActive: isActive, price: price)
+            let controller = PlanDetailViewController.controllerWithPlan(plan, siteID: sitePricedPlans.siteID, activePlan: sitePricedPlans.activePlan, price: price)
 
             return controller
         })
@@ -51,7 +50,7 @@ class PlanComparisonViewController: PagedViewController {
 
         super.init(viewControllers: viewControllers, initialIndex: initialIndex!)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
