@@ -12,6 +12,7 @@ cache:
 notifications:
   email: true
 install:
+- gem install rake
 - rake dependencies
 script:
 - rake test
