@@ -12,7 +12,6 @@ cache:
 notifications:
   email: true
 install:
-- gem install rake
 - bundle install
 - bundle exec rake dependencies
 script:
