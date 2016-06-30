@@ -59,8 +59,12 @@ static CGFloat const DefaultCellHeight = 44.0;
 
 - (void)updateTitleForSection:(NSUInteger)section
 {
-    WPTableViewSectionHeaderFooterView *sectionHeaderView = (WPTableViewSectionHeaderFooterView *)[self tableView:self.tableView viewForHeaderInSection:section];
-    sectionHeaderView.title = [self tableView:self.tableView titleForHeaderInSection:section];
+    NSString *title = [self tableView:self.tableView titleForHeaderInSection:section];
+    UIView *sectionView = [self tableView:self.tableView viewForHeaderInSection:section];
+    if ([sectionView isKindOfClass:[UITableViewHeaderFooterView class]]) {
+        UITableViewHeaderFooterView *sectionHeaderFooterView = (UITableViewHeaderFooterView *)sectionView;
+        sectionHeaderFooterView.textLabel.text = title;
+    }
 }
 
 - (void)clearCachedRowHeights

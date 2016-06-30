@@ -98,7 +98,7 @@
 @property (nonatomic) UITableViewRowAnimation sectionRowAnimation;
 
 - (instancetype)initWithTableView:(UITableView *)tableView;
-- (void)updateTitleForSection:(NSUInteger)section;
+- (void)updateTitleForSection:(NSUInteger)section DEPRECATED_MSG_ATTRIBUTE("Method updateTitleForSection: is deprecated, use default tableView reloading methods instead.");
 - (void)clearCachedRowHeights;
 - (void)refreshCachedRowHeightsForWidth:(CGFloat)width;
 - (void)invalidateCachedRowHeightAtIndexPath:(NSIndexPath *)indexPath;
