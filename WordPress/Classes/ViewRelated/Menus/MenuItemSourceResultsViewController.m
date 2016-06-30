@@ -47,7 +47,6 @@ static CGFloat const SearchBarHeight = 44.0;
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.separatorColor = [WPStyleGuide greyLighten20];
-    tableView.cellLayoutMarginsFollowReadableWidth = NO;
     UIEdgeInsets inset = tableView.contentInset;
     inset.top = MenusDesignDefaultContentSpacing / 2.0;
     tableView.contentInset = inset;

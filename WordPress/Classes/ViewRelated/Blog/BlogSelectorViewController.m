@@ -89,7 +89,6 @@ static CGFloat BlogCellRowHeight = 54.0;
     // TableView
     [WPStyleGuide configureColorsForView:self.view andTableView:self.tableView];
     
-    self.tableView.cellLayoutMarginsFollowReadableWidth = NO;
     [self.tableView registerClass:[WPBlogTableViewCell class] forCellReuseIdentifier:BlogCellIdentifier];
     [self.tableView reloadData];
 
