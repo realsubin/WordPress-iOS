@@ -290,7 +290,7 @@ typedef NS_ENUM(NSUInteger, ImageDetailsTextField) {
     return 0;
 }
 
-- (NSString *)titleForHeaderInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSInteger sec = [[self.sections objectAtIndex:section] integerValue];
     if (sec == ImageDetailsSectionDetails) {
@@ -299,31 +299,12 @@ typedef NS_ENUM(NSUInteger, ImageDetailsTextField) {
     } else if (sec == ImageDetailsSectionDisplay) {
         return NSLocalizedString(@"Web Display Settings", @"The title of the option group for editing an image's size, alignment, etc. on the image details screen.");
     }
-
-    return @"";
+    return nil;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
 {
-    WPTableViewSectionHeaderFooterView *header = [[WPTableViewSectionHeaderFooterView alloc] initWithReuseIdentifier:nil style:WPTableViewSectionStyleHeader];
-    header.title = [self titleForHeaderInSection:section];
-    return header;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return WPTableViewTopMargin;
-    }
-
-    NSString *title = [self titleForHeaderInSection:section];
-    return [WPTableViewSectionHeaderFooterView heightForHeader:title width:CGRectGetWidth(self.view.bounds)];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-{
-    // Remove extra padding caused by section footers in grouped table views
-    return 1.0f;
+    [WPStyleGuide configureTableViewSectionHeader:view];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
