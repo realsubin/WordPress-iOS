@@ -19,7 +19,6 @@
     #import <WordPressShared/WPStyleGuide.h>
 
 	// Project-specific
-    #import "WPStyleGuide+ReadableMargins.h"
     #import "NSString+Util.h"
     #import "WPError.h"
     #import "UIColor+Helpers.h"

@@ -42,7 +42,6 @@ import WordPressShared
 
 
     func configureTableView() {
-        WPStyleGuide.resetReadableMarginsForTableView(tableView)
 
         tableView.registerClass(WPTableViewCell.self, forCellReuseIdentifier: defaultCellIdentifier)
         tableView.registerClass(WPTableViewCell.self, forCellReuseIdentifier: actionCellIdentifier)

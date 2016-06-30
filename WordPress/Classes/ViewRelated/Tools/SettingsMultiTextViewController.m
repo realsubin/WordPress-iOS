@@ -46,7 +46,6 @@ static CGFloat const SettingsMinHeight = 41.0f;
 {
     [super viewDidLoad];
     self.tableView.allowsSelection = NO;
-    [WPStyleGuide resetReadableMarginsForTableView:self.tableView];
     [WPStyleGuide configureColorsForView:self.view andTableView:self.tableView];
 }
 
