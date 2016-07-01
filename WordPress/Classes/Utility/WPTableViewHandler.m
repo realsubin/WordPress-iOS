@@ -57,16 +57,6 @@ static CGFloat const DefaultCellHeight = 44.0;
 
 #pragma mark - Public Methods
 
-- (void)updateTitleForSection:(NSUInteger)section
-{
-    NSString *title = [self tableView:self.tableView titleForHeaderInSection:section];
-    UIView *sectionView = [self tableView:self.tableView viewForHeaderInSection:section];
-    if ([sectionView isKindOfClass:[UITableViewHeaderFooterView class]]) {
-        UITableViewHeaderFooterView *sectionHeaderFooterView = (UITableViewHeaderFooterView *)sectionView;
-        sectionHeaderFooterView.textLabel.text = title;
-    }
-}
-
 - (void)clearCachedRowHeights
 {
     [self.cachedRowHeights removeAllObjects];
