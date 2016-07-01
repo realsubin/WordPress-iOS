@@ -65,16 +65,19 @@ typedef NS_ENUM(NSUInteger, CommentsDetailsRow) {
                                           action:@selector(dismissKeyboardIfNeeded:)];
     tapRecognizer.cancelsTouchesInView = NO;
 
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.tableView.estimatedRowHeight = 44.0;
-    [self.tableView addGestureRecognizer:tapRecognizer];
-    [self.view addSubview:self.tableView];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    tableView.cellLayoutMarginsFollowReadableWidth = YES;
+    tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    tableView.estimatedRowHeight = 44.0;
+    [tableView addGestureRecognizer:tapRecognizer];
+    [self.view addSubview:tableView];
 
-    [WPStyleGuide configureColorsForView:self.view andTableView:self.tableView];
+    self.tableView = tableView;
+
+    [WPStyleGuide configureColorsForView:self.view andTableView:tableView];
 
     // Register Cell Nibs
     NSArray *cellClassNames = @[
@@ -91,7 +94,6 @@ typedef NS_ENUM(NSUInteger, CommentsDetailsRow) {
         [self.tableView registerNib:tableViewCellNib forCellReuseIdentifier:[cellClass reuseIdentifier]];
         [self.tableView registerNib:tableViewCellNib forCellReuseIdentifier:[cellClass layoutIdentifier]];
     }
-
     
     [self attachSuggestionsTableViewIfNeeded];
     [self attachReplyViewIfNeeded];
