@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeR-f3-QEg">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jeR-f3-QEg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rKi-z3-DxP">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <rect key="frame" x="8" y="0.0" width="584" height="600"/>
                                         <subviews>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SgI-Di-4eO">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="584" height="65"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" placeholder="YES" id="ldL-to-OGb" userLabel="height = 65 (Placeholder)"/>
                                                 </constraints>
@@ -33,14 +33,14 @@
                                                 </connections>
                                             </containerView>
                                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQz-Gx-SBt" userLabel="Design Spacer View">
-                                                <rect key="frame" x="0.0" y="65" width="600" height="12"/>
+                                                <rect key="frame" x="0.0" y="65" width="584" height="12"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="GvV-EP-KgS"/>
                                                 </constraints>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOD-SR-ehW">
-                                                <rect key="frame" x="0.0" y="77" width="600" height="52"/>
+                                                <rect key="frame" x="0.0" y="77" width="584" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="52" id="pif-hY-mFd"/>
                                                 </constraints>
@@ -49,7 +49,7 @@
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsJ-Ns-q0r">
-                                                <rect key="frame" x="0.0" y="129" width="600" height="471"/>
+                                                <rect key="frame" x="0.0" y="129" width="584" height="471"/>
                                                 <connections>
                                                     <segue destination="RgC-zH-1f6" kind="embed" id="prB-5y-3cx"/>
                                                 </connections>
@@ -64,13 +64,12 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="rKi-z3-DxP" firstAttribute="leading" secondItem="jeR-f3-QEg" secondAttribute="leading" id="8gY-Em-9tg"/>
+                                    <constraint firstItem="rKi-z3-DxP" firstAttribute="leading" secondItem="jeR-f3-QEg" secondAttribute="leadingMargin" id="8gY-Em-9tg"/>
                                     <constraint firstItem="rKi-z3-DxP" firstAttribute="centerX" secondItem="jeR-f3-QEg" secondAttribute="centerX" id="Fyv-sX-5KK"/>
                                     <constraint firstItem="rKi-z3-DxP" firstAttribute="centerY" secondItem="jeR-f3-QEg" secondAttribute="centerY" placeholder="YES" id="M2Z-Qr-5sj"/>
-                                    <constraint firstItem="rKi-z3-DxP" firstAttribute="width" secondItem="jeR-f3-QEg" secondAttribute="width" id="bif-86-bwO"/>
                                     <constraint firstItem="rKi-z3-DxP" firstAttribute="top" secondItem="jeR-f3-QEg" secondAttribute="top" id="qW0-Sp-MRs"/>
                                     <constraint firstAttribute="bottom" secondItem="rKi-z3-DxP" secondAttribute="bottom" id="sAi-Qp-rof"/>
-                                    <constraint firstAttribute="trailing" secondItem="rKi-z3-DxP" secondAttribute="trailing" id="tTx-vc-j9x"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="rKi-z3-DxP" secondAttribute="trailing" id="tTx-vc-j9x"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -103,11 +102,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iSi-Rl-mAC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bdk-zs-oZO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="471"/>
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="471"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OQY-P1-Jeo">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="471"/>
+                                <rect key="frame" x="0.0" y="0.0" width="584" height="471"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,17 +136,17 @@
                         <viewControllerLayoutGuide type="bottom" id="aO1-LR-kg6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hoo-UX-xBf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="52"/>
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="52"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="WRq-at-Ffn">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="52"/>
+                                <rect key="frame" x="0.0" y="0.0" width="584" height="52"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="230" placeholderIntrinsicWidth="471" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="rTp-r7-MfI">
-                                        <rect key="frame" x="0.0" y="6" width="489" height="40"/>
+                                        <rect key="frame" x="0.0" y="6" width="473" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Menu Name" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Cbo-az-zau">
-                                                <rect key="frame" x="10" y="0.0" width="475" height="40"/>
+                                                <rect key="frame" x="10" y="0.0" width="459" height="40"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                                 <connections>
@@ -164,7 +163,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Je-dj-7Tz">
-                                        <rect key="frame" x="499" y="6" width="55" height="40"/>
+                                        <rect key="frame" x="483" y="6" width="55" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="999" constant="55" id="OQ1-bw-deR"/>
@@ -174,7 +173,7 @@
                                         <state key="normal" title="Done"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLL-54-qPA">
-                                        <rect key="frame" x="564" y="6" width="36" height="40"/>
+                                        <rect key="frame" x="548" y="6" width="36" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.051290923320000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" priority="999" constant="36" id="dd4-LI-GKE"/>
@@ -221,23 +220,23 @@
                         <viewControllerLayoutGuide type="bottom" id="7qb-WK-upi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Sq1-7m-KXH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                        <rect key="frame" x="0.0" y="0.0" width="584" height="65"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="SjG-3s-G5l">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="65"/>
+                                <rect key="frame" x="0.0" y="0.0" width="584" height="65"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="240" horizontalCompressionResistancePriority="760" translatesAutoresizingMaskIntoConstraints="NO" id="Fyw-BZ-Tlx" customClass="MenusSelectionView">
-                                        <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="65"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="D5M-Tv-O2r">
-                                                <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="277" height="65"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Glt-4z-Ehn" customClass="MenusSelectionDetailView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="277" height="65"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2dT-vV-4hP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="277" height="65"/>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -273,7 +272,7 @@
                                         </connections>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" text="uses" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="50" translatesAutoresizingMaskIntoConstraints="NO" id="SjQ-Yf-tqE">
-                                        <rect key="frame" x="285" y="0.0" width="30" height="65"/>
+                                        <rect key="frame" x="277" y="0.0" width="30" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="65" id="0Ec-gW-hfT" userLabel="height = 65 (Placeholder)"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="gDN-jv-ahA"/>
@@ -291,16 +290,16 @@
                                         </variation>
                                     </label>
                                     <view contentMode="scaleToFill" horizontalHuggingPriority="240" horizontalCompressionResistancePriority="760" translatesAutoresizingMaskIntoConstraints="NO" id="k6Q-Ut-cV3" customClass="MenusSelectionView">
-                                        <rect key="frame" x="315" y="0.0" width="285" height="65"/>
+                                        <rect key="frame" x="307" y="0.0" width="277" height="65"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="flg-cx-nu7">
-                                                <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="277" height="65"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgb-Ci-5mG" customClass="MenusSelectionDetailView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="277" height="65"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gZZ-lD-ySJ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="285" height="65"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="277" height="65"/>
                                                             </stackView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
