@@ -44,6 +44,7 @@ static CGFloat const SearchBarHeight = 44.0;
 {
     UITableView *tableView = [[UITableView alloc] init];
     tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    tableView.cellLayoutMarginsFollowReadableWidth = NO;
     tableView.dataSource = self;
     tableView.delegate = self;
     tableView.separatorColor = [WPStyleGuide greyLighten20];
