@@ -429,11 +429,11 @@ UIPopoverControllerDelegate, WPMediaPickerViewControllerDelegate, PostCategories
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat width = IS_IPAD ? WPTableViewFixedWidth : CGRectGetWidth(self.tableView.frame);
+    CGFloat width = CGRectGetWidth(self.tableView.frame);
     NSInteger sectionId = [[self.sections objectAtIndex:indexPath.section] integerValue];
 
     if (sectionId == PostSettingsSectionGeolocation && self.post.geolocation != nil) {
-        return ceilf(width * 0.75f);
+        return ceilf(width * 0.50f);
     }
 
     if (sectionId == PostSettingsSectionFeaturedImage) {
