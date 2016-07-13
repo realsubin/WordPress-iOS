@@ -50,7 +50,7 @@ typedef NS_ENUM(NSUInteger, ImageDetailsRow) {
 
 + (instancetype)controllerForDetails:(WPImageMeta *)details forPost:(AbstractPost *)post
 {
-    EditImageDetailsViewController *controller = [EditImageDetailsViewController new];
+    EditImageDetailsViewController *controller = [[EditImageDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped];
     controller.imageDetails = details;
     controller.post = post;
     return controller;
